@@ -1,0 +1,120 @@
+[
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/about/",
+	"title": "About CrySPY",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 1 About CrySPY CrySPY is a crystal structure prediction tool written in Python, distributed under the MIT License.\nTable of contents  Crystal structure prediction   Searching algorithms   Interface   Logo   "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/",
+	"title": "Crystal structure prediction",
+	"tags": [],
+	"description": "",
+	"content": "Input  Elements Number of atoms  Output  Stable structure (global minimum)  "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/installation/",
+	"title": "Installation",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 2 Installation You need to install the following in your workstation, super computer, and so on:\n CrySPY Python environment Structure optimizer  Table of contents  System requirements   find_wy (optional)   CrySPY   "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/rs/",
+	"title": "Random Search (RS)",
+	"tags": [],
+	"description": "",
+	"content": "Random search\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/",
+	"title": "System requirements",
+	"tags": [],
+	"description": "",
+	"content": " You need (CrySPY + Python environment + structure optimizer) in your workstation, super computer, etc.\n Python Tested with Python 3.7.5 and 3.8.5 on Mac, and Python 3.6.7 (miniconda3-4.3.30) and 3.8.2 on Linux.\n Python 3.x.x  COMBO  pymatgen  PyXtal  (CrySPY 0.9.0 or later)    Structure optimizer At least one optimizer is required.\n First-principles calculation  VASP  Quantum Espresso  OpenMX  (CrySPY 0.9.0 or later)   Interatomic potential  soiap  LAMMPS     Others  find_wy  (optional in CrySPY 0.9.0 or later, required in CrySPY 0.8.x or earlier)  "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/ea/",
+	"title": "Evolutionary Algorithm (EA)",
+	"tags": [],
+	"description": "",
+	"content": "EA\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/installation/find_wy/",
+	"title": "find_wy (optional)",
+	"tags": [],
+	"description": "",
+	"content": "CrySPY have utilized find_wy  to generate a random structure for a given space group (symmetry). However, CrySPY employs PyXtal  library for structure generation as default since version 0.9.0. You can skip to install find_wy in CrySPY 0.9.0 or later, but you may use find_wy. For CrySPY 0.8.x or earlier, find_wy is required to generate a random structure for a given space group.\nYou can skip to install find_wy in CrySPY 0.9.0 or later.\n Installation of find_wy m_tspace First you need compile m_tspace  for find_wy. Check these sites to compile it.\n m_tspace  Wiki of m_tspace   Download the source code of m_tspace in an arbitrary directory. For example:\n$ mkdir -p ~/local $ cd ~/local $ git clone https://github.com/nim-hrkn/m_tspace.git Additional two files are required to compile m_tspace. Download the following files in ~/local/m_tspace from TSPASE :\n  tsp98.f   prmtsp.f   $ cd m_tspace $ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/tsp98.f $ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/prmtsp.f Edit the makefile and run the make command. If you use ifort, you had better delete -check all option and use -O2 option.\n$ emacs makefile $ head -n 4 makefile #FC=gfortran #FFLAGS=-g -cpp -DUSE_GEN -ffixed-line-length-255 FC=ifort FFLAGS=-O2 -g -traceback -cpp -DUSE_GEN -132 $ make If you used gfortran, you might face the following problem:\ntsp98.f:9839:32: CALL SUBGRP(MG,JG,MGT,JGT,NTAB,IND) 1 Error: Actual argument contains too few elements for dummy argument 'ntab' (12/48) at (1) make: *** [tsp98.o] Error 1 Then change the source file of tsp98.f like this (line 9925):\nBefore:\n9913: C SUBROUTINE SUBGRP ====*====3====*====4====*====5====*====6====*====7 9914: C 9915: C IF (JG(I),I=1,MG) IS A SUBGROUP OF (JGT(J),J=1,MGT) THEN 9916: C TABLE (NTAB(I),I=1,MG) IS MADE HERE AND IND=0 9917: C ELSE 9918: C IND=-1 9919: C 9920: C 1993/12/25 9921: C BY S.TANAKA AND A. YANASE 9922: C---*----1----*----2----*----3----*----4----*----5----*----6----*----7 9923: C 9924: SUBROUTINE SUBGRP(MG,JG,MGT,JGT,NTAB,IND) 9925: DIMENSION NTAB(48),JG(48),JGT(48) After:\n9913: C SUBROUTINE SUBGRP ====*====3====*====4====*====5====*====6====*====7 9914: C 9915: C IF (JG(I),I=1,MG) IS A SUBGROUP OF (JGT(J),J=1,MGT) THEN 9916: C TABLE (NTAB(I),I=1,MG) IS MADE HERE AND IND=0 9917: C ELSE 9918: C IND=-1 9919: C 9920: C 1993/12/25 9921: C BY S.TANAKA AND A. YANASE 9922: C---*----1----*----2----*----3----*----4----*----5----*----6----*----7 9923: C 9924: SUBROUTINE SUBGRP(MG,JG,MGT,JGT,NTAB,IND) 9925: DIMENSION NTAB(12),JG(48),JGT(48) If you succeed in compiling, you get m_tsp.a.\nfind_wy Check these sites to compile find_wy:\n find_wy  Wiki of find_wy   Download the source code of find_wy in an arbitrary directory. For example:\n$ mkdir -p ~/local $ cd ~/local $ git clone https://github.com/nim-hrkn/find_wy.git Edit make.inc and set the path to the m_tsp.a that you just prepared.\n$ cd find_wy $ emacs make.inc $ head -n 4 make.inc TSPPATH=~/local/m_tspace #INCPATH = -I $(TSPPATH) TSP=$(TSPPATH)/m_tsp.a You can delete -check all option and use -O2 option. Then run the make command.\n$ make When you get the executable file of find_wy, run the following command for test:\n$ ./find_wy input_sample/input_si4o8.txt If there is no problem, POS_WY_SKEL_ALL.json file is generated.\nCopy the executable file of find_wy When you use find_wy for structure generation, for example, copy the executable file of find_wy to ~/CrySPY_root/CrySPY-x.x.x/CrySPY/find_wy/find_wy after downloading CrySPY.\nSee Setup find_wy .\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/",
+	"title": "Searching algorithms",
+	"tags": [],
+	"description": "",
+	"content": "The following searching algorithms are available in CrySPY:\n Random Search (RS) Evolutionary Algorithm (EA) Bayesian Optimization (BO) Look Ahead based on Quadratic Approximation (LAQA)  In a nutshell Random Search (RS) Random.\nEvolutionary Algorithm (EA) EA for crystal structure prediction has been developed by Oganov\u0026#39;s group .\nWe also employ EA in CrySPY, and support the following:\n Selection methods  Tournament selection Roulette selection Elite selection   Evolutionary operations  Crossover Permutation Strain   etc.  Survival of the fittest Dedupe structures in survival of the fittest    Bayesian Optimization (BO) One of the selection-type algorithms.\nLook Ahead based on Quadratic Approximation (LAQA) One of the selection-type algorithms.\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/",
+	"title": "Bayesian Optimization (BO)",
+	"tags": [],
+	"description": "",
+	"content": "BO\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/",
+	"title": "CrySPY",
+	"tags": [],
+	"description": "",
+	"content": "Installation of CrySPY is very simple. Just download it!\nDownload You can put the source code of CrySPY in an arbitrary directory. Here, let us put the source code in ~/CrySPY_root/CrySPY-x.x.x (x.x.x means the version). Use git or the compressed file.\nGit $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git CrySPY-x.x.x zip or tar.gz file Download the source as a zip or tar.gz file from  GitHub release  .\nThen put the source in ~/CrySPY_root/CrySPY-x.x.x\nDirectory tree Directory tree in ~/CrySPY_root/CrySPY-x.x.x/:\nCrySPY-x.x.x ├── CHANGELOG.md ├── CrySPY/ │ ├── BO/ │ ├── EA/ │ ├── IO/ │ ├── LAQA/ │ ├── RS/ │ ├── __init__.py │ ├── calc_dscrpt/ │ ├── f-fingerprint/ │ ├── find_wy/ │ ├── gen_struc/ │ ├── interface/ │ ├── job/ │ └── start/ │ └── utility.py ├── LICENSE ├── README.md ├── cryspy.py ├── docs/ ├── example/ └── utility/  Main script is cryspy.py.\nOnce downloading CrySPY, you can read this document offline, check docs/index.html.\n Setup (optional) find_wy (optional) When you use find_wy, put the executable file of find_wy in ~/CrySPY_root/CrySPY-x.x.x/CrySPY/find_wy/, so that the executable file path is ~/CrySPY_root/CrySPY-x.x.x/CrySPY/find_wy/find_wy.\n$ cd ~/CrySPY_root/CrySPY-x.x.x/CrySPY/find_wy $ cp ~/local/find_wy/find_wy . Compile cal_fingerprint (optional) When you use Bayesian optimization, compile cal_fingerpirnt program which calculates structure descriptors.\n$ cd ~/CrySPY_root/CrySPY-x.x.x/CrySPY/f-fingerprint $ emacs Makefile $ make Make sure that the executable file of cal_fingerprint exists in ~/CrySPY_root/CrySPY-x.x.x/CrySPY/f-fingerprint/.\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/",
+	"title": "Interface",
+	"tags": [],
+	"description": "",
+	"content": "CrySPY is interfaced with several structure optimizers:\n First-principles calculation  VASP  Quantum Espresso  OpenMX  (CrySPY 0.9.0 or later)   Interatomic potential  soiap  LAMMPS     At least one optimizer is required.\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/",
+	"title": "Tutorial",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 3 Tutorial Table of contents  Random Search (RS)   Evolutionary Algorithm (EA)   Bayesian Optimization (BO)   LAQA   "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/laqa/",
+	"title": "LAQA",
+	"tags": [],
+	"description": "",
+	"content": "LAQA\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/",
+	"title": "Logo",
+	"tags": [],
+	"description": "",
+	"content": "PNG (transparent background) JPG "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": "    document CrySPY is a crystal structure prediction tool written in Python.\nYou can automatically do the following things with CrySPY.\n Structure generation Submitting jobs for structure optimization Collecting data for structure optimization Selecting candidates using machine learning  You can also use CrySPY partly for the purpose of only struture generation and descriptor calculation for crystal structures.\nLicense CrySPY is distributed under the MIT License \nCopyright (c) 2018 CrySPY Development Team\nLatest version CrySPY 0.9.0b (beta version)\nNews Click to expand old news.\n [2020 ???? ??] version 0.9.0 released  Interfaced with OpenMX  Employ PyXtal  library to generate initial structures If you use PyXtal (default), find_wy  program is not required Change the name: [lattice] section –\u0026gt; [structure] section Several input variables move to [structure] section  natot: [basic] –\u0026gt; [structure] atype: [basic] –\u0026gt; [structure] nat: [basic] –\u0026gt; [structure] maxcnt: [option] –\u0026gt; [structure] symprec: [option] –\u0026gt; [structure] spgnum: [option] –\u0026gt; [structure]   New features  Molecular crystal structure generation Scale volume        [2020 March 19] paper published    Our paper on adjusting the descriptor for CSP Bayesian optimization has been published in Physical Review Materials        [2020 February 16] version 0.8.0 released    Migrate to Python 3 CrySPY logo created Change several variable names and data formats Change style of output for energy: eV/cell –\u0026gt; eV/atom IDs of working directories corresponds to structure IDs New features  recalculation manual select in BO         [2018 December 5] version 0.7.0 released    New features  Evolutionary algorithm      [2018 August 20] version 0.6.4 released [2018 July 2] version 0.6.3 released [2018 June 26] Version 0.6.2 released [2018 March 1] Version 0.6.1 released    [2018 January 9] paper published    Our paper on CrySPY has been published in Physical Review Materials      Reference  Bayesian optimization  T. Yamashita, N. Sato, H. Kino, T. Miyake, K. Tsuda, and T. Oguchi,\n\u0026ldquo;Crystal structure prediction accelerated by Bayesian optimization\u0026rdquo;,\nPhys. Rev. Mater. 2, 013803 (2018). Link  Sato, T. Yamashita, T. Oguchi, K. Hukushima, and T. Miyake,\n\u0026ldquo;Adjusting the descriptor for a crystal structure search using Bayesian optimization\u0026rdquo;,\nPhys. Rev. Mater. 4, 033801 (2020). Link    LAQA  K.Terayama, T. Yamashita, T. Oguchi, and K. Tsuda,\nFine-grained optimization method for crystal structure prediction\u0026quot;,\nnpj Comput. Mater. 4, 32 (2018).. Link     Link   GitHub repo   GitHub release   Google group  "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

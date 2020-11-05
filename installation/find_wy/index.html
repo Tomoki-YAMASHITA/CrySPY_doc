@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CrySPY_doc/images/favicon.png" type="image/png">
+
+    <title>find_wy (optional) :: CrySPY</title>
+
+    
+    <link href="/CrySPY_doc/css/nucleus.css?1604571496" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1604571496" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1604571496" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1604571496" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1604571496" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1604571496" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1604571496" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1604571496" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1604571496" rel="stylesheet">
+    
+    <link href="/CrySPY_doc/css/theme-green.css?1604571496" rel="stylesheet">
+    
+    
+
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1604571496"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CrySPY_doc/installation/find_wy/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://tomoki-yamashita.github.io/CrySPY_doc">
+<img src="/CrySPY/images/logo/cryspy_logo_white.png" alt="CrySPY">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1604571496"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1604571496"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc";
+    
+</script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1604571496"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/about/" title="About CrySPY" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/about/">
+          <b>1. </b>About CrySPY
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/about/csp/" title="Crystal structure prediction" class="dd-item ">
+        <a href="/CrySPY_doc/about/csp/">
+        Crystal structure prediction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/about/algorithms/" title="Searching algorithms" class="dd-item ">
+        <a href="/CrySPY_doc/about/algorithms/">
+        Searching algorithms
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/about/interface/" title="Interface" class="dd-item ">
+        <a href="/CrySPY_doc/about/interface/">
+        Interface
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/about/logo/" title="Logo" class="dd-item ">
+        <a href="/CrySPY_doc/about/logo/">
+        Logo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/installation/" title="Installation" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CrySPY_doc/installation/">
+          <b>2. </b>Installation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/installation/requirements/" title="System requirements" class="dd-item ">
+        <a href="/CrySPY_doc/installation/requirements/">
+        System requirements
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/installation/find_wy/" title="find_wy (optional)" class="dd-item active">
+        <a href="/CrySPY_doc/installation/find_wy/">
+        find_wy (optional)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/installation/cryspy/" title="CrySPY" class="dd-item ">
+        <a href="/CrySPY_doc/installation/cryspy/">
+        CrySPY
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/tutorial/" title="Tutorial" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/tutorial/">
+          <b>3. </b>Tutorial
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/tutorial/rs/" title="Random Search (RS)" class="dd-item ">
+        <a href="/CrySPY_doc/tutorial/rs/">
+        Random Search (RS)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/tutorial/ea/" title="Evolutionary Algorithm (EA)" class="dd-item ">
+        <a href="/CrySPY_doc/tutorial/ea/">
+        Evolutionary Algorithm (EA)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item ">
+        <a href="/CrySPY_doc/tutorial/bo/">
+        Bayesian Optimization (BO)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/tutorial/laqa/" title="LAQA" class="dd-item ">
+        <a href="/CrySPY_doc/tutorial/laqa/">
+        LAQA
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>Link</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Tomoki-YAMASHITA/CrySPY"><i class='fab fa-github'></i> GitHub repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Tomoki-YAMASHITA/CrySPY/release"><i class='fas fa-download'></i> GitHub release</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://groups.google.com/forum/#!forum/cryspy-user"><i class='fab fa-google'></i> Google group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/installation/find_wy/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="ja" value="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/find_wy/">日本語</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/installation/'>Installation</a> > find_wy (optional)
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#installation-of-find_wy">Installation of find_wy</a>
+      <ul>
+        <li><a href="#m_tspace">m_tspace</a></li>
+        <li><a href="#find_wy">find_wy</a></li>
+      </ul>
+    </li>
+    <li><a href="#copy-the-executable-file-of-find_wy">Copy the executable file of find_wy</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              find_wy (optional)
+            </h1>
+          
+
+        
+
+
+<p>CrySPY have utilized <a href="https://github.com/nim-hrkn/find_wy" target="_blank">find_wy</a>
+<i class="fas fa-external-link-alt"></i> to generate a random structure for a given space group (symmetry).
+However, CrySPY employs <a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a>
+<i class="fas fa-external-link-alt"></i> library for structure generation as default since version 0.9.0.
+You can skip to install find_wy in CrySPY 0.9.0 or later, but you may use find_wy.
+For CrySPY 0.8.x or earlier, find_wy is required to generate a random structure for a given space group.</p>
+
+<div class="notices note" ><p>You can skip to install find_wy in CrySPY 0.9.0 or later.</p>
+</div>
+
+<h2 id="installation-of-find_wy">Installation of find_wy</h2>
+<h3 id="m_tspace">m_tspace</h3>
+<p>First you need compile <a href="https://github.com/nim-hrkn/m_tspace" target="_blank">m_tspace</a>
+<i class="fas fa-external-link-alt"></i> for find_wy.
+Check these sites to compile it.</p>
+<ul>
+<li><a href="https://github.com/nim-hrkn/m_tspace" target="_blank">m_tspace</a>
+<i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://github.com/nim-hrkn/m_tspace/wiki" target="_blank">Wiki of m_tspace</a>
+<i class="fas fa-external-link-alt"></i></li>
+</ul>
+<p>Download the source code of m_tspace in an arbitrary directory. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir -p ~/local
+$ cd ~/local
+$ git clone https://github.com/nim-hrkn/m_tspace.git
+</code></pre></div><p>Additional two files are required to compile m_tspace.
+Download the following files in <code>~/local/m_tspace</code> from <a href="http://phoenix.mp.es.osaka-u.ac.jp/~tspace/" target="_blank">TSPASE</a>
+<i class="fas fa-external-link-alt"></i>:</p>
+<ul>
+<li><i class="far fa-file-alt"></i> <a href="http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/tsp98.f" target="_blank">tsp98.f</a>
+</li>
+<li><i class="far fa-file-alt"></i> <a href="http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/prmtsp.f" target="_blank">prmtsp.f</a>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd m_tspace
+$ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/tsp98.f
+$ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/prmtsp.f
+</code></pre></div><p>Edit the makefile and run the make command.
+If you use <code>ifort</code>, you had better delete <code>-check all</code> option and use <code>-O2</code> option.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ emacs makefile
+$ head -n <span style="color:#ae81ff">4</span> makefile
+<span style="color:#75715e">#FC=gfortran</span>
+<span style="color:#75715e">#FFLAGS=-g -cpp -DUSE_GEN -ffixed-line-length-255</span>
+FC<span style="color:#f92672">=</span>ifort
+FFLAGS<span style="color:#f92672">=</span>-O2 -g -traceback -cpp -DUSE_GEN -132
+$ make
+</code></pre></div><p>If you used <code>gfortran</code>, you might face the following problem:</p>
+<pre><code>tsp98.f:9839:32:
+
+       CALL SUBGRP(MG,JG,MGT,JGT,NTAB,IND)
+                                1
+Error: Actual argument contains too few elements for dummy argument 'ntab' (12/48) at (1)
+make: *** [tsp98.o] Error 1
+</code></pre><p>Then change the source file of <code>tsp98.f</code> like this (line 9925):</p>
+<p>Before:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran"><span style="color:#ae81ff">9913</span>: C <span style="color:#66d9ef">SUBROUTINE </span>SUBGRP <span style="color:#f92672">====*====</span><span style="color:#ae81ff">3</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">4</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">5</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">6</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">7</span>
+<span style="color:#ae81ff">9914</span>: C
+<span style="color:#ae81ff">9915</span>: C    <span style="color:#66d9ef">IF</span> (JG(I),I<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MG) <span style="color:#66d9ef">IS </span>A SUBGROUP OF (JGT(J),J<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MGT) <span style="color:#66d9ef">THEN
+</span><span style="color:#66d9ef"></span><span style="color:#ae81ff">9916</span>: C          TABLE (NTAB(I),I<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MG) <span style="color:#66d9ef">IS </span>MADE HERE AND IND<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+<span style="color:#ae81ff">9917</span>: C    <span style="color:#66d9ef">ELSE
+</span><span style="color:#66d9ef"></span><span style="color:#ae81ff">9918</span>: C          IND<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>
+<span style="color:#ae81ff">9919</span>: C
+<span style="color:#ae81ff">9920</span>: C                 <span style="color:#ae81ff">1993</span><span style="color:#f92672">/</span><span style="color:#ae81ff">12</span><span style="color:#f92672">/</span><span style="color:#ae81ff">25</span>
+<span style="color:#ae81ff">9921</span>: C                   BY  S.TANAKA AND A. YANASE
+<span style="color:#ae81ff">9922</span>: C<span style="color:#f92672">---*----</span><span style="color:#ae81ff">1</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">2</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">3</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">4</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">5</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">6</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">7</span>
+<span style="color:#ae81ff">9923</span>: C
+<span style="color:#ae81ff">9924</span>:       <span style="color:#66d9ef">SUBROUTINE </span>SUBGRP(MG,JG,MGT,JGT,NTAB,IND)
+<span style="color:#ae81ff">9925</span>:       <span style="color:#66d9ef">DIMENSION </span>NTAB(<span style="color:#ae81ff">48</span>),JG(<span style="color:#ae81ff">48</span>),JGT(<span style="color:#ae81ff">48</span>)
+</code></pre></div><p>After:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran"><span style="color:#ae81ff">9913</span>: C <span style="color:#66d9ef">SUBROUTINE </span>SUBGRP <span style="color:#f92672">====*====</span><span style="color:#ae81ff">3</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">4</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">5</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">6</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">7</span>
+<span style="color:#ae81ff">9914</span>: C
+<span style="color:#ae81ff">9915</span>: C    <span style="color:#66d9ef">IF</span> (JG(I),I<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MG) <span style="color:#66d9ef">IS </span>A SUBGROUP OF (JGT(J),J<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MGT) <span style="color:#66d9ef">THEN
+</span><span style="color:#66d9ef"></span><span style="color:#ae81ff">9916</span>: C          TABLE (NTAB(I),I<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MG) <span style="color:#66d9ef">IS </span>MADE HERE AND IND<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+<span style="color:#ae81ff">9917</span>: C    <span style="color:#66d9ef">ELSE
+</span><span style="color:#66d9ef"></span><span style="color:#ae81ff">9918</span>: C          IND<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>
+<span style="color:#ae81ff">9919</span>: C
+<span style="color:#ae81ff">9920</span>: C                 <span style="color:#ae81ff">1993</span><span style="color:#f92672">/</span><span style="color:#ae81ff">12</span><span style="color:#f92672">/</span><span style="color:#ae81ff">25</span>
+<span style="color:#ae81ff">9921</span>: C                   BY  S.TANAKA AND A. YANASE
+<span style="color:#ae81ff">9922</span>: C<span style="color:#f92672">---*----</span><span style="color:#ae81ff">1</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">2</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">3</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">4</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">5</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">6</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">7</span>
+<span style="color:#ae81ff">9923</span>: C
+<span style="color:#ae81ff">9924</span>:       <span style="color:#66d9ef">SUBROUTINE </span>SUBGRP(MG,JG,MGT,JGT,NTAB,IND)
+<span style="color:#ae81ff">9925</span>:       <span style="color:#66d9ef">DIMENSION </span>NTAB(<span style="color:#ae81ff">12</span>),JG(<span style="color:#ae81ff">48</span>),JGT(<span style="color:#ae81ff">48</span>)
+</code></pre></div><p>If you succeed in compiling, you get <code>m_tsp.a</code>.</p>
+<h3 id="find_wy">find_wy</h3>
+<p>Check these sites to compile find_wy:</p>
+<ul>
+<li><a href="https://github.com/nim-hrkn/find_wy" target="_blank">find_wy</a>
+<i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://github.com/nim-hrkn/find_wy/wiki" target="_blank">Wiki of find_wy</a>
+<i class="fas fa-external-link-alt"></i></li>
+</ul>
+<p>Download the source code of find_wy in an arbitrary directory. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir -p ~/local
+$ cd ~/local
+$ git clone https://github.com/nim-hrkn/find_wy.git
+</code></pre></div><p>Edit <code>make.inc</code> and set the path to the <code>m_tsp.a</code> that you just prepared.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd find_wy
+$ emacs make.inc
+$ head -n <span style="color:#ae81ff">4</span> make.inc
+TSPPATH<span style="color:#f92672">=</span>~/local/m_tspace
+<span style="color:#75715e">#INCPATH = -I $(TSPPATH)</span>
+TSP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>TSPPATH<span style="color:#66d9ef">)</span>/m_tsp.a
+</code></pre></div><p>You can delete <code>-check all</code> option and use <code>-O2</code> option.
+Then run the make command.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ make
+</code></pre></div><p>When you get the executable file of find_wy, run the following command for test:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ./find_wy input_sample/input_si4o8.txt
+</code></pre></div><p>If there is no problem, <code>POS_WY_SKEL_ALL.json</code> file is generated.</p>
+<h2 id="copy-the-executable-file-of-find_wy">Copy the executable file of find_wy</h2>
+<p>When you use find_wy for structure generation, for example, copy the executable file of find_wy to <code>~/CrySPY_root/CrySPY-x.x.x/CrySPY/find_wy/find_wy</code> after downloading CrySPY.</p>
+<p>See <a href="/CrySPY_doc/installation/cryspy/#find_wy-optional">Setup find_wy</a>
+<i class="fas fa-link"></i>.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/CrySPY_doc/installation/requirements/" title="System requirements"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/CrySPY_doc/installation/cryspy/" title="CrySPY" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1604571496"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1604571496"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1604571496"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1604571496"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1604571496"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1604571496"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1604571496"></script>
+    <script src="/CrySPY_doc/js/learn.js?1604571496"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1604571496"></script>
+    
+        
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1604571496"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

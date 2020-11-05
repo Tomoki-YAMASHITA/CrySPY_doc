@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ja" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CrySPY_doc/images/favicon.png" type="image/png">
+
+    <title> :: CrySPY</title>
+
+    
+    <link href="/CrySPY_doc/css/nucleus.css?1604571497" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1604571497" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1604571497" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1604571497" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1604571497" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1604571497" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1604571497" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1604571497" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1604571497" rel="stylesheet">
+    
+    <link href="/CrySPY_doc/css/theme-green.css?1604571497" rel="stylesheet">
+    
+    
+
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1604571497"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CrySPY_doc/ja/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://tomoki-yamashita.github.io/CrySPY_doc">
+<img src="/CrySPY/images/logo/cryspy_logo_white.png" alt="CrySPY">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="検索...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1604571497"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1604571497"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc\/ja";
+    
+</script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1604571497"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/about/" title="CrySPYについて" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/about/">
+          <b>1. </b>CrySPYについて
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/about/csp/" title="結晶構造探索" class="dd-item ">
+        <a href="/CrySPY_doc/ja/about/csp/">
+        結晶構造探索
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/about/algorithms/" title="探索アルゴリズム" class="dd-item ">
+        <a href="/CrySPY_doc/ja/about/algorithms/">
+        探索アルゴリズム
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/about/interface/" title="インターフェース" class="dd-item ">
+        <a href="/CrySPY_doc/ja/about/interface/">
+        インターフェース
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/about/logo/" title="ロゴ" class="dd-item ">
+        <a href="/CrySPY_doc/ja/about/logo/">
+        ロゴ
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/installation/" title="インストール" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/installation/">
+          <b>2. </b>インストール
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/installation/requirements/" title="システム要件" class="dd-item ">
+        <a href="/CrySPY_doc/ja/installation/requirements/">
+        システム要件
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/installation/find_wy/" title="find_wy (オプション)" class="dd-item ">
+        <a href="/CrySPY_doc/ja/installation/find_wy/">
+        find_wy (オプション)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/installation/cryspy/" title="CrySPY" class="dd-item ">
+        <a href="/CrySPY_doc/ja/installation/cryspy/">
+        CrySPY
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>リンク</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Tomoki-YAMASHITA/CrySPY"><i class='fab fa-github'></i> GitHub repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Tomoki-YAMASHITA/CrySPY/release"><i class='fas fa-download'></i> GitHub release</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://groups.google.com/forum/#!forum/cryspy-user"><i class='fab fa-google'></i> Google group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="ja" value="https://tomoki-yamashita.github.io/CrySPY_doc/ja/" selected>日本語</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+
+        
+
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
+</span>
+
+ 
+<hr>
+<figure>
+    <img src="/CrySPY_doc/images/logo/cryspy_fix-03.png"/> 
+</figure>
+
+<hr>
+<h1 id="ドキュメント">ドキュメント</h1>
+<p>CrySPYは機械学習を利用したPython製の結晶構造探索ツールであり，クリスピーと読む．
+難しい操作を必要とせず，入力ファイルを準備するだけで以下の事が自動で行える．</p>
+<ul>
+<li>構造生成</li>
+<li>構造最適化のジョブの実行</li>
+<li>構造最適化データの収集</li>
+<li>機械学習による候補の選択</li>
+</ul>
+<p>また，CrySPYを構造生成や構造の記述子計算のみにライブラリのように利用することも可能である．</p>
+<h2 id="ライセンス">ライセンス</h2>
+<p>CrySPY is distributed under the <a href="https://opensource.org/licenses/mit-license.php" target="_blank">MIT License</a>
+<i class="fas fa-external-link-alt"></i><br>
+Copyright (c) 2018 CrySPY Development Team</p>
+<h2 id="最新バージョン">最新バージョン</h2>
+<p>CrySPY 0.9.0b （開発バージョン）</p>
+<h2 id="ニュース">ニュース</h2>
+<p>古いニュースはクリックして展開．</p>
+<ul>
+<li>[2020 ???? ??] version 0.9.0 released
+<ul>
+<li>Interfaced with <a href="http://www.openmx-square.org/" target="_blank">OpenMX</a>
+<i class="fas fa-external-link-alt"></i></li>
+<li>Employ <a href="https://pyxtal.readthedocs.io/en/latest" target="_blank">PyXtal</a>
+<i class="fas fa-external-link-alt"></i> library to generate initial structures</li>
+<li>If you use PyXtal (default), <a href="https://github.com/nim-hrkn/find_wy" target="_blank">find_wy</a>
+<i class="fas fa-external-link-alt"></i> program is not required</li>
+<li>Change the name: [lattice] section –&gt; [structure] section</li>
+<li>Several input variables move to [structure] section
+<ul>
+<li>natot: [basic] –&gt; [structure]</li>
+<li>atype: [basic] –&gt; [structure]</li>
+<li>nat: [basic] –&gt; [structure]</li>
+<li>maxcnt: [option] –&gt; [structure]</li>
+<li>symprec: [option] –&gt; [structure]</li>
+<li>spgnum: [option] –&gt; [structure]</li>
+</ul>
+</li>
+<li>New features
+<ul>
+<li>Molecular crystal structure generation</li>
+<li>Scale volume</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	[2020 March 19] paper published
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <ul>
+<li>Our paper on adjusting the descriptor for CSP Bayesian optimization has been published in <a href="https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.4.033801" target="_blank">Physical Review Materials</a>
+<i class="fas fa-external-link-alt"></i></li>
+</ul>
+
+    </div>
+</div></li>
+<li>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	[2020 February 16] version 0.8.0 released
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <ul>
+<li>Migrate to Python 3</li>
+<li>CrySPY logo created</li>
+<li>Change several variable names and data formats</li>
+<li>Change style of output for energy: eV/cell –&gt; eV/atom</li>
+<li>IDs of working directories corresponds to structure IDs</li>
+<li>New features
+<ul>
+<li>recalculation</li>
+<li>manual select in BO</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div></li>
+<li>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	[2018 December 5] version 0.7.0 released
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <ul>
+<li>New features
+<ul>
+<li>Evolutionary algorithm</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</div></li>
+<li>[2018 August 20] version 0.6.4 released</li>
+<li>[2018 July 2] version 0.6.3 released</li>
+<li>[2018 June 26] Version 0.6.2 released</li>
+<li>[2018 March 1] Version 0.6.1 released</li>
+<li>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	[2018 January 9] paper published
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <ul>
+<li>Our paper on CrySPY has been published in <a href="https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.2.013803" target="_blank">Physical Review Materials</a>
+<i class="fas fa-external-link-alt"></i></li>
+</ul>
+
+    </div>
+</div></li>
+</ul>
+<h2 id="関連文献">関連文献</h2>
+<ul>
+<li>ベイズ最適化
+<ul>
+<li>T. Yamashita, N. Sato, H. Kino, T. Miyake, K. Tsuda, and T. Oguchi,<br>
+&ldquo;Crystal structure prediction accelerated by Bayesian optimization&rdquo;,<br>
+Phys. Rev. Mater. 2, 013803 (2018). <a href="https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.2.013803" target="_blank">Link</a>
+<i class="fas fa-external-link-alt"></i></li>
+<li>Sato, T. Yamashita, T. Oguchi, K. Hukushima, and T. Miyake,<br>
+&ldquo;Adjusting the descriptor for a crystal structure search using Bayesian optimization&rdquo;,<br>
+Phys. Rev. Mater. 4, 033801 (2020). <a href="https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.4.033801" target="_blank">Link</a>
+<i class="fas fa-external-link-alt"></i></li>
+</ul>
+</li>
+<li>LAQA
+<ul>
+<li>K.Terayama, T. Yamashita, T. Oguchi, and K. Tsuda,<br>
+Fine-grained optimization method for crystal structure prediction&quot;,<br>
+npj Comput. Mater. 4, 32 (2018).. <a href="https://www.nature.com/articles/s41524-018-0090-y" target="_blank">Link</a>
+<i class="fas fa-external-link-alt"></i></li>
+</ul>
+</li>
+</ul>
+<h2 id="link">Link</h2>
+<p>
+<a  href="https://github.com/Tomoki-YAMASHITA/CrySPY" target="_blank"  class="btn btn-default">
+  
+  
+  
+    
+  <i class="fab fa-github"></i>
+    
+  
+  GitHub repo
+  
+</a>
+
+
+<a  href="https://github.com/Tomoki-YAMASHITA/CrySPY/releases" target="_blank"  class="btn btn-default">
+  
+  
+  
+    
+  <i class="fas fa-download"></i>
+    
+  
+  GitHub release
+  
+</a>
+
+
+<a  href="https://groups.google.com/forum/#!forum/cryspy-user" target="_blank"  class="btn btn-default">
+  
+  
+  
+    
+  <i class="fab fa-google"></i>
+    
+  
+  Google group
+  
+</a>
+</p>
+	
+  
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+		
+			<a class="nav nav-next" href="/CrySPY_doc/ja/about/" title="CrySPYについて" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1604571497"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1604571497"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1604571497"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1604571497"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1604571497"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1604571497"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1604571497"></script>
+    <script src="/CrySPY_doc/js/learn.js?1604571497"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1604571497"></script>
+    
+        
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1604571497"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

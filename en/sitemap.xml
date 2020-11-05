@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/csp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/installation/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/rs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/ea/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/installation/find_wy/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/find_wy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/find_wy/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/algorithms/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/interface/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/laqa/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/logo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/tags/"
+                />
+  </url>
+  
+</urlset>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installation on CrySPY</title>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/</link>
+    <description>Recent content in Installation on CrySPY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System requirements</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/</guid>
+      <description>You need (CrySPY + Python environment + structure optimizer) in your workstation, super computer, etc.
+ Python Tested with Python 3.7.5 and 3.8.5 on Mac, and Python 3.6.7 (miniconda3-4.3.30) and 3.8.2 on Linux.
+ Python 3.x.x  COMBO  pymatgen  PyXtal  (CrySPY 0.9.0 or later)    Structure optimizer At least one optimizer is required.
+ First-principles calculation  VASP  Quantum Espresso  OpenMX  (CrySPY 0.</description>
+    </item>
+    
+    <item>
+      <title>find_wy (optional)</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/find_wy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/find_wy/</guid>
+      <description>CrySPY have utilized find_wy  to generate a random structure for a given space group (symmetry). However, CrySPY employs PyXtal  library for structure generation as default since version 0.9.0. You can skip to install find_wy in CrySPY 0.9.0 or later, but you may use find_wy. For CrySPY 0.8.x or earlier, find_wy is required to generate a random structure for a given space group.
+You can skip to install find_wy in CrySPY 0.</description>
+    </item>
+    
+    <item>
+      <title>CrySPY</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/</guid>
+      <description>Installation of CrySPY is very simple. Just download it!
+Download You can put the source code of CrySPY in an arbitrary directory. Here, let us put the source code in ~/CrySPY_root/CrySPY-x.x.x (x.x.x means the version). Use git or the compressed file.
+Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git CrySPY-x.x.x zip or tar.gz file Download the source as a zip or tar.gz file from  GitHub release  .</description>
+    </item>
+    
+  </channel>
+</rss>

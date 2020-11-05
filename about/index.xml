@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About CrySPY on CrySPY</title>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/</link>
+    <description>Recent content in About CrySPY on CrySPY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crystal structure prediction</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/</guid>
+      <description>Input  Elements Number of atoms  Output  Stable structure (global minimum)  </description>
+    </item>
+    
+    <item>
+      <title>Searching algorithms</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/</guid>
+      <description>The following searching algorithms are available in CrySPY:
+ Random Search (RS) Evolutionary Algorithm (EA) Bayesian Optimization (BO) Look Ahead based on Quadratic Approximation (LAQA)  In a nutshell Random Search (RS) Random.
+Evolutionary Algorithm (EA) EA for crystal structure prediction has been developed by Oganov&amp;#39;s group .
+We also employ EA in CrySPY, and support the following:
+ Selection methods  Tournament selection Roulette selection Elite selection   Evolutionary operations  Crossover Permutation Strain   etc.</description>
+    </item>
+    
+    <item>
+      <title>Interface</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/</guid>
+      <description>CrySPY is interfaced with several structure optimizers:
+ First-principles calculation  VASP  Quantum Espresso  OpenMX  (CrySPY 0.9.0 or later)   Interatomic potential  soiap  LAMMPS     At least one optimizer is required.</description>
+    </item>
+    
+    <item>
+      <title>Logo</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/</guid>
+      <description>PNG (transparent background) JPG </description>
+    </item>
+    
+  </channel>
+</rss>

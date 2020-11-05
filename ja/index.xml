@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CrySPY</title>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/</link>
+    <description>Recent content on CrySPY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>システム要件</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/</guid>
+      <description>使用予定のワークステーションやスパコンにおいて，(CrySPY + Python環境 + 構造最適化ソフト) が必要となる．
+ Python Tested with Python 3.7.5 and 3.8.5 on Mac, and Python 3.6.7 (miniconda3-4.3.30) and 3.8.2 on Linux.
+ Python 3.x.x  COMBO  pymatgen  PyXtal  (CrySPY 0.9.0 以上)    構造最適化ソフト 少なくとも１つは必要．
+ 第一原理計算  VASP  Quantum Espresso  OpenMX  (CrySPY 0.9.0 以上)   原子間ポテンシャル  soiap  LAMMPS     その他  find_wy  (CrySPY 0.</description>
+    </item>
+    
+    <item>
+      <title>結晶構造探索</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/csp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/csp/</guid>
+      <description>Input  元素 原子数  Output  最安定構造（グローバルミニマム）  </description>
+    </item>
+    
+    <item>
+      <title>find_wy (オプション)</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/find_wy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/find_wy/</guid>
+      <description>CrySPYではこれまで，任意の空間（対称性）持つ構造を生成するためにfind_wy を利用してきた．しかし，CrySPY 0.9.0からはデフォルトではPyXtal ライブラリを採用している． CrySPY 0.9.0 以上で構造生成にPyXtalを使う場合は，find_wyのインストールはスキップできる． 従来通りfind_wyを利用することももちろん可能である． CrySPY 0.8.0 以前のものでは，空間群を考慮した構造生成にはfind_wyのインストールが必要となる．
+CrySPY 0.9.0 以上ではfind_wyのインストールはスキップできる．
+ find_wyのインストール m_tspace find_wyをコンパイルするためには，まずはm_tspace をコンパイルして，ライブラリを生成する必要がある．詳細は以下のm_tspaceのサイトを参照すること．
+ m_tspace  Wiki of m_tspace   m_tspace のソースをgitでダウンロードしてくる．ダウンロード先は例えば
+$ mkdir -p ~/local $ cd ~/local $ git clone https://github.com/nim-hrkn/m_tspace.git m_tspace のコンパイルにはさらに二つのファイルが必要となる．
+TSPASE  から下記ファイルを~/local/m_tspaceにダウンロードする:
+  tsp98.f   prmtsp.f   $ cd m_tspace $ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/tsp98.f $ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/prmtsp.f makefileをコンパイラに合わせて編集して，makeする． コンパイラにifortを使う場合は，-check allオプションを消さないとうまく動かない．また-O2オプションを設定する．
+$ emacs makefile $ head -n 4 makefile #FC=gfortran #FFLAGS=-g -cpp -DUSE_GEN -ffixed-line-length-255 FC=ifort FFLAGS=-O2 -g -traceback -cpp -DUSE_GEN -132 $ make gfortranを使う場合は，以下のようなエラーに遭遇するかもしれない．</description>
+    </item>
+    
+    <item>
+      <title>探索アルゴリズム</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/algorithms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/algorithms/</guid>
+      <description>CrySPYでは以下の探索アルゴリズムが使用可能．
+ ランダムサーチ (RS) 進化的アルゴリズム (EA) ベイズ最適化 (BO) LAQA  概略 ランダムサーチ (RS) ランダム．
+進化的アルゴリズム (EA) 進化的アルゴリズムを用いた結晶構造探索手法はOganovグループ によって開発された．
+CrySPYでも効率的な探索が可能な進化的アルゴリズムを採用した．以下のようなことができる．
+ 親の選択方法  トーナメント選択 ルーレット選択 エリート選択   進化的操作  交叉 置換 ひずみ   etc.  適者生存 適者生存の中で重複した構造の排除    ベイズ最適化 (BO) 選択型アルゴリズムの一種．
+LAQA 選択型アルゴリズムの一種．</description>
+    </item>
+    
+    <item>
+      <title>CrySPY</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/</guid>
+      <description>CrySPYのインストールはシンプルで，ダウンロードするだけで良い．
+ダウンロード CrySPYは任意の場所に置いて良い．ここでは例として~/CrySPY_root/CrySPY-x.x.x (x.x.x はバージョン番号)にダウンロードすることにする． gitコマンドを使うか，リリースページから圧縮ファイルをダウンロードする．
+Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git CrySPY-x.x.x zip or tar.gz file zip または tar.gz ファイルをここからダウンロードする．  GitHub release  .
+ダウンロードして展開したソースを~/CrySPY_root/CrySPY-x.x.xに置く．
+ディレクトリ構成 ~/CrySPY_root/CrySPY-x.x.x/のディレクトリ構成:
+CrySPY-x.x.x ├── CHANGELOG.md ├── CrySPY/ │ ├── BO/ │ ├── EA/ │ ├── IO/ │ ├── LAQA/ │ ├── RS/ │ ├── __init__.py │ ├── calc_dscrpt/ │ ├── f-fingerprint/ │ ├── find_wy/ │ ├── gen_struc/ │ ├── interface/ │ ├── job/ │ └── start/ │ └── utility.</description>
+    </item>
+    
+    <item>
+      <title>インターフェース</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/interface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/interface/</guid>
+      <description>CrySPYはエネルギー計算や構造最適化に外部のソフトウェアを利用する． 以下のソフトウェアを利用可能．
+ 第一原理計算  VASP  Quantum Espresso  OpenMX  （CrySPY 0.9.0 以上）   原子間ポテンシャル  soiap  LAMMPS     少なくともどれか一つは必要．</description>
+    </item>
+    
+    <item>
+      <title>ロゴ</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/logo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/logo/</guid>
+      <description>PNG (背景透明) JPG </description>
+    </item>
+    
+  </channel>
+</rss>

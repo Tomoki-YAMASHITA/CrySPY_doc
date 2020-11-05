@@ -1,0 +1,85 @@
+[
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/",
+	"title": "CrySPYについて",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 1 CrySPYについて CrySPYは機械学習を利用したPython製の結晶構造探索ツールであり，クリスピーと読む．オープンソース．\n目次  結晶構造探索   探索アルゴリズム   インターフェース   ロゴ   "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/",
+	"title": "インストール",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 2 インストール 下記のものをワークステーションやスーパーコンピュータなどにインストールする必要がある．\n CrySPY Python環境 構造最適化ソフト  目次  システム要件   find_wy (オプション)   CrySPY   "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/",
+	"title": "システム要件",
+	"tags": [],
+	"description": "",
+	"content": " 使用予定のワークステーションやスパコンにおいて，(CrySPY + Python環境 + 構造最適化ソフト) が必要となる．\n Python Tested with Python 3.7.5 and 3.8.5 on Mac, and Python 3.6.7 (miniconda3-4.3.30) and 3.8.2 on Linux.\n Python 3.x.x  COMBO  pymatgen  PyXtal  (CrySPY 0.9.0 以上)    構造最適化ソフト 少なくとも１つは必要．\n 第一原理計算  VASP  Quantum Espresso  OpenMX  (CrySPY 0.9.0 以上)   原子間ポテンシャル  soiap  LAMMPS     その他  find_wy  (CrySPY 0.9.0 以上では必須ではなくなった, CrySPY 0.8.x 以下では必要)  "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/csp/",
+	"title": "結晶構造探索",
+	"tags": [],
+	"description": "",
+	"content": "Input  元素 原子数  Output  最安定構造（グローバルミニマム）  "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/find_wy/",
+	"title": "find_wy (オプション)",
+	"tags": [],
+	"description": "",
+	"content": "CrySPYではこれまで，任意の空間（対称性）持つ構造を生成するためにfind_wy を利用してきた．しかし，CrySPY 0.9.0からはデフォルトではPyXtal ライブラリを採用している． CrySPY 0.9.0 以上で構造生成にPyXtalを使う場合は，find_wyのインストールはスキップできる． 従来通りfind_wyを利用することももちろん可能である． CrySPY 0.8.0 以前のものでは，空間群を考慮した構造生成にはfind_wyのインストールが必要となる．\nCrySPY 0.9.0 以上ではfind_wyのインストールはスキップできる．\n find_wyのインストール m_tspace find_wyをコンパイルするためには，まずはm_tspace をコンパイルして，ライブラリを生成する必要がある．詳細は以下のm_tspaceのサイトを参照すること．\n m_tspace  Wiki of m_tspace   m_tspace のソースをgitでダウンロードしてくる．ダウンロード先は例えば\n$ mkdir -p ~/local $ cd ~/local $ git clone https://github.com/nim-hrkn/m_tspace.git m_tspace のコンパイルにはさらに二つのファイルが必要となる．\nTSPASE  から下記ファイルを~/local/m_tspaceにダウンロードする:\n  tsp98.f   prmtsp.f   $ cd m_tspace $ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/tsp98.f $ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/prmtsp.f makefileをコンパイラに合わせて編集して，makeする． コンパイラにifortを使う場合は，-check allオプションを消さないとうまく動かない．また-O2オプションを設定する．\n$ emacs makefile $ head -n 4 makefile #FC=gfortran #FFLAGS=-g -cpp -DUSE_GEN -ffixed-line-length-255 FC=ifort FFLAGS=-O2 -g -traceback -cpp -DUSE_GEN -132 $ make gfortranを使う場合は，以下のようなエラーに遭遇するかもしれない．\ntsp98.f:9839:32: CALL SUBGRP(MG,JG,MGT,JGT,NTAB,IND) 1 Error: Actual argument contains too few elements for dummy argument 'ntab' (12/48) at (1) make: *** [tsp98.o] Error 1 その時はtsp98.fを以下のように書き換える(9925行目):\nBefore:\n9913: C SUBROUTINE SUBGRP ====*====3====*====4====*====5====*====6====*====7 9914: C 9915: C IF (JG(I),I=1,MG) IS A SUBGROUP OF (JGT(J),J=1,MGT) THEN 9916: C TABLE (NTAB(I),I=1,MG) IS MADE HERE AND IND=0 9917: C ELSE 9918: C IND=-1 9919: C 9920: C 1993/12/25 9921: C BY S.TANAKA AND A. YANASE 9922: C---*----1----*----2----*----3----*----4----*----5----*----6----*----7 9923: C 9924: SUBROUTINE SUBGRP(MG,JG,MGT,JGT,NTAB,IND) 9925: DIMENSION NTAB(48),JG(48),JGT(48) After:\n9913: C SUBROUTINE SUBGRP ====*====3====*====4====*====5====*====6====*====7 9914: C 9915: C IF (JG(I),I=1,MG) IS A SUBGROUP OF (JGT(J),J=1,MGT) THEN 9916: C TABLE (NTAB(I),I=1,MG) IS MADE HERE AND IND=0 9917: C ELSE 9918: C IND=-1 9919: C 9920: C 1993/12/25 9921: C BY S.TANAKA AND A. YANASE 9922: C---*----1----*----2----*----3----*----4----*----5----*----6----*----7 9923: C 9924: SUBROUTINE SUBGRP(MG,JG,MGT,JGT,NTAB,IND) 9925: DIMENSION NTAB(12),JG(48),JGT(48) コンパイルに成功すればm_tsp.aというライブラリができる．\nfind_wy 詳細はfind_wyのサイトをチェックすること:\n find_wy  Wiki of find_wy   find_wyのソースをgitでクローンしてくる．例えば:\n$ mkdir -p ~/local $ cd ~/local $ git clone https://github.com/nim-hrkn/find_wy.git make.incを編集して，先ほど用意したm_tsp.aのパスを設定する．\n$ cd find_wy $ emacs make.inc $ head -n 4 make.inc TSPPATH=~/local/m_tspace #INCPATH = -I $(TSPPATH) TSP=$(TSPPATH)/m_tsp.a ここでも-check allを削除して-O2オプションを付けた方が良い． 準備できたらmakeする．\n$ make コンパイルできてfind_wyの実行ファイルが得られたら，実行してテストする．\n$ ./find_wy input_sample/input_si4o8.txt 問題なければPOS_WY_SKEL_ALL.jsonなどのファイルが生成される．\nfind_wyの実行ファイルをコピー CrySPYでfind_wyを構造生成に用いる場合は所定の位置にfind_wyの実行ファイルを置いておく必要がるので，CrySPY本体をダウンロード後にfind_wyの実行ファイルをコピーしておく．CrySPYは任意のディレクトリに設置できるので，例えば~/CrySPY_root/CrySPY-x.x.x/CrySPY/find_wy/find_wy．\n詳細はこちら セットアップ find_wy ．\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/algorithms/",
+	"title": "探索アルゴリズム",
+	"tags": [],
+	"description": "",
+	"content": "CrySPYでは以下の探索アルゴリズムが使用可能．\n ランダムサーチ (RS) 進化的アルゴリズム (EA) ベイズ最適化 (BO) LAQA  概略 ランダムサーチ (RS) ランダム．\n進化的アルゴリズム (EA) 進化的アルゴリズムを用いた結晶構造探索手法はOganovグループ によって開発された．\nCrySPYでも効率的な探索が可能な進化的アルゴリズムを採用した．以下のようなことができる．\n 親の選択方法  トーナメント選択 ルーレット選択 エリート選択   進化的操作  交叉 置換 ひずみ   etc.  適者生存 適者生存の中で重複した構造の排除    ベイズ最適化 (BO) 選択型アルゴリズムの一種．\nLAQA 選択型アルゴリズムの一種．\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/",
+	"title": "CrySPY",
+	"tags": [],
+	"description": "",
+	"content": "CrySPYのインストールはシンプルで，ダウンロードするだけで良い．\nダウンロード CrySPYは任意の場所に置いて良い．ここでは例として~/CrySPY_root/CrySPY-x.x.x (x.x.x はバージョン番号)にダウンロードすることにする． gitコマンドを使うか，リリースページから圧縮ファイルをダウンロードする．\nGit $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git CrySPY-x.x.x zip or tar.gz file zip または tar.gz ファイルをここからダウンロードする．  GitHub release  .\nダウンロードして展開したソースを~/CrySPY_root/CrySPY-x.x.xに置く．\nディレクトリ構成 ~/CrySPY_root/CrySPY-x.x.x/のディレクトリ構成:\nCrySPY-x.x.x ├── CHANGELOG.md ├── CrySPY/ │ ├── BO/ │ ├── EA/ │ ├── IO/ │ ├── LAQA/ │ ├── RS/ │ ├── __init__.py │ ├── calc_dscrpt/ │ ├── f-fingerprint/ │ ├── find_wy/ │ ├── gen_struc/ │ ├── interface/ │ ├── job/ │ └── start/ │ └── utility.py ├── LICENSE ├── README.md ├── cryspy.py ├── docs/ ├── example/ └── utility/  cryspy.pyがメインスクリプト．\nこのドキュメントもdocs/index.htmlに置いてあるのでCrySPYをPCにダウンロードしておくとオフラインでもドキュメントを見ることができる．\n セットアップ (オプション) find_wy (オプション) find_wyを使う時は，find_wyの実行ファイルを（例えば）~/CrySPY_root/CrySPY-x.x.x/CrySPY/find_wy/以下に置く必要がある． つまり~/CrySPY_root/CrySPY-x.x.x/CrySPY/find_wy/find_wy.\n$ cd ~/CrySPY_root/CrySPY-x.x.x/CrySPY/find_wy $ cp ~/local/find_wy/find_wy . cal_fingerprintのコンパイル (オプション) ベイズ最適化を使う場合は，構造の記述子を計算するためのプログラムであるcal_fingerpirntをコンパイルする必要がある．\n$ cd ~/CrySPY_root/CrySPY-x.x.x/CrySPY/f-fingerprint $ emacs Makefile $ make cal_fingerprintの実行ファイルが例えば~/CrySPY_root/CrySPY-x.x.x/CrySPY/f-fingerprint/以下にあるようにする． コンパイルすれば自動的にそうなるはず．\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/interface/",
+	"title": "インターフェース",
+	"tags": [],
+	"description": "",
+	"content": "CrySPYはエネルギー計算や構造最適化に外部のソフトウェアを利用する． 以下のソフトウェアを利用可能．\n 第一原理計算  VASP  Quantum Espresso  OpenMX  （CrySPY 0.9.0 以上）   原子間ポテンシャル  soiap  LAMMPS     少なくともどれか一つは必要．\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/logo/",
+	"title": "ロゴ",
+	"tags": [],
+	"description": "",
+	"content": "PNG (背景透明) JPG "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": "    ドキュメント CrySPYは機械学習を利用したPython製の結晶構造探索ツールであり，クリスピーと読む． 難しい操作を必要とせず，入力ファイルを準備するだけで以下の事が自動で行える．\n 構造生成 構造最適化のジョブの実行 構造最適化データの収集 機械学習による候補の選択  また，CrySPYを構造生成や構造の記述子計算のみにライブラリのように利用することも可能である．\nライセンス CrySPY is distributed under the MIT License \nCopyright (c) 2018 CrySPY Development Team\n最新バージョン CrySPY 0.9.0b （開発バージョン）\nニュース 古いニュースはクリックして展開．\n [2020 ???? ??] version 0.9.0 released  Interfaced with OpenMX  Employ PyXtal  library to generate initial structures If you use PyXtal (default), find_wy  program is not required Change the name: [lattice] section –\u0026gt; [structure] section Several input variables move to [structure] section  natot: [basic] –\u0026gt; [structure] atype: [basic] –\u0026gt; [structure] nat: [basic] –\u0026gt; [structure] maxcnt: [option] –\u0026gt; [structure] symprec: [option] –\u0026gt; [structure] spgnum: [option] –\u0026gt; [structure]   New features  Molecular crystal structure generation Scale volume        [2020 March 19] paper published    Our paper on adjusting the descriptor for CSP Bayesian optimization has been published in Physical Review Materials        [2020 February 16] version 0.8.0 released    Migrate to Python 3 CrySPY logo created Change several variable names and data formats Change style of output for energy: eV/cell –\u0026gt; eV/atom IDs of working directories corresponds to structure IDs New features  recalculation manual select in BO         [2018 December 5] version 0.7.0 released    New features  Evolutionary algorithm      [2018 August 20] version 0.6.4 released [2018 July 2] version 0.6.3 released [2018 June 26] Version 0.6.2 released [2018 March 1] Version 0.6.1 released    [2018 January 9] paper published    Our paper on CrySPY has been published in Physical Review Materials      関連文献  ベイズ最適化  T. Yamashita, N. Sato, H. Kino, T. Miyake, K. Tsuda, and T. Oguchi,\n\u0026ldquo;Crystal structure prediction accelerated by Bayesian optimization\u0026rdquo;,\nPhys. Rev. Mater. 2, 013803 (2018). Link  Sato, T. Yamashita, T. Oguchi, K. Hukushima, and T. Miyake,\n\u0026ldquo;Adjusting the descriptor for a crystal structure search using Bayesian optimization\u0026rdquo;,\nPhys. Rev. Mater. 4, 033801 (2020). Link    LAQA  K.Terayama, T. Yamashita, T. Oguchi, and K. Tsuda,\nFine-grained optimization method for crystal structure prediction\u0026quot;,\nnpj Comput. Mater. 4, 32 (2018).. Link     Link   GitHub repo   GitHub release   Google group  "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/ja/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
