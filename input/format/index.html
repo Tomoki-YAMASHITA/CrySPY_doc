@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/CrySPY_doc/images/favicon.png" type="image/png">
 
-    <title>Bayesian Optimization (BO) :: CrySPY</title>
+    <title>File format :: CrySPY</title>
 
     
-    <link href="/CrySPY_doc/css/nucleus.css?1605168062" rel="stylesheet">
-    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1605168062" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hybrid.css?1605168062" rel="stylesheet">
-    <link href="/CrySPY_doc/css/featherlight.min.css?1605168062" rel="stylesheet">
-    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1605168062" rel="stylesheet">
-    <link href="/CrySPY_doc/css/auto-complete.css?1605168062" rel="stylesheet">
-    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1605168062" rel="stylesheet">
-    <link href="/CrySPY_doc/css/theme.css?1605168062" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hugo-theme.css?1605168062" rel="stylesheet">
+    <link href="/CrySPY_doc/css/nucleus.css?1605168061" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1605168061" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1605168061" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1605168061" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1605168061" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1605168061" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1605168061" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1605168061" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1605168061" rel="stylesheet">
     
-    <link href="/CrySPY_doc/css/theme-green.css?1605168062" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme-green.css?1605168061" rel="stylesheet">
     
     
 
-    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1605168062"></script>
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1605168061"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CrySPY_doc/tutorial/bo/">
+  <body class="" data-url="/CrySPY_doc/input/format/">
     <nav id="sidebar" class="">
 
 
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1605168062"></script>
-<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1605168062"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1605168061"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1605168061"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc";
     
 </script>
-<script type="text/javascript" src="/CrySPY_doc/js/search.js?1605168062"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1605168061"></script>
 
     
   </div>
@@ -296,7 +296,7 @@
   
     
     <li data-nav-id="/CrySPY_doc/tutorial/" title="Tutorial" class="dd-item 
-        parent
+        
         
         
         ">
@@ -528,7 +528,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item active">
+      <li data-nav-id="/CrySPY_doc/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item ">
         <a href="/CrySPY_doc/tutorial/bo/">
         Bayesian Optimization (BO)
         
@@ -578,7 +578,7 @@
   
     
     <li data-nav-id="/CrySPY_doc/input/" title="Input file" class="dd-item 
-        
+        parent
         
         
         ">
@@ -604,7 +604,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/input/format/" title="File format" class="dd-item ">
+      <li data-nav-id="/CrySPY_doc/input/format/" title="File format" class="dd-item active">
         <a href="/CrySPY_doc/input/format/">
         File format
         
@@ -692,7 +692,7 @@
                   
                     
                     
-                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/" selected>English</option>
+                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/input/format/" selected>English</option>
                     
                   
               
@@ -758,7 +758,7 @@
             
           
           
-            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/tutorial/'>Tutorial</a> > Bayesian Optimization (BO)
+            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/input/'>Input file</a> > File format
           
         
           
@@ -787,14 +787,33 @@
           
             <h1>
               
-              Bayesian Optimization (BO)
+              File format
             </h1>
           
 
         
 
 
-<p>BO</p>
+<p>CrySPY uses the <a href="https://docs.python.org/3/library/configparser.html" target="_blank">configparser</a>
+<i class="fas fa-external-link-alt"></i> module to read input file, <code>cryspy.in</code> .
+<code>cryspy.in</code> consists of sections, led by a <code>[section]</code> header and followed by <code>name = value</code> or <code>name : value</code> entries.
+Section names and values are case sensitive, but names are not.
+Lines beginning with <code>#</code> or <code>;</code> are ignored and may be used to provide comments.
+Accepted bool values are <code>1</code>, <code>yes</code>, <code>true</code>, and <code>on</code>, which cause this method to return <code>True</code>,
+and <code>0</code>, <code>no</code>, <code>false</code>, and <code>off</code>, which cause it to return <code>False</code>.
+These string values for bool are checked in a case-insensitive manner.
+Some values are given in a space-separated manner.</p>
+
+<div class="notices info" ><p>See <a href="https://docs.python.org/3/library/configparser.html" target="_blank">configparser</a>
+<i class="fas fa-external-link-alt"></i> in detail.</p>
+</div>
+
+
+<div class="notices note" ><p>section name: case sensitive<br>
+name: case insensitive<br>
+value: case sensitive except for bool</p>
+</div>
+
 
 
 <footer class="footline">
@@ -979,7 +998,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -994,9 +1012,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1142,7 +1157,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1158,9 +1172,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1181,6 +1192,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1193,6 +1205,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1209,6 +1222,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1233,10 +1249,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CrySPY_doc/tutorial/ea/" title="Evolutionary Algorithm (EA)"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CrySPY_doc/input/" title="Input file"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CrySPY_doc/tutorial/laqa/" title="LAQA" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CrySPY_doc/input/basic_sec/" title="[basic] section" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1246,19 +1262,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CrySPY_doc/js/clipboard.min.js?1605168062"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1605168062"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1605168062"></script>
-    <script src="/CrySPY_doc/js/jquery.sticky.js?1605168062"></script>
-    <script src="/CrySPY_doc/js/featherlight.min.js?1605168062"></script>
-    <script src="/CrySPY_doc/js/highlight.pack.js?1605168062"></script>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1605168061"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1605168061"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1605168061"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1605168061"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1605168061"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1605168061"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1605168062"></script>
-    <script src="/CrySPY_doc/js/learn.js?1605168062"></script>
-    <script src="/CrySPY_doc/js/hugo-learn.js?1605168062"></script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1605168061"></script>
+    <script src="/CrySPY_doc/js/learn.js?1605168061"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1605168061"></script>
     
         
-            <script src="/CrySPY_doc/mermaid/mermaid.js?1605168062"></script>
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1605168061"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

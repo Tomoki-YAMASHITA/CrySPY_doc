@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CrySPY_doc/images/favicon.png" type="image/png">
 
-    <title>Bayesian Optimization (BO) :: CrySPY</title>
+    <title>Firsrt run :: CrySPY</title>
 
     
     <link href="/CrySPY_doc/css/nucleus.css?1605168062" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CrySPY_doc/tutorial/bo/">
+  <body class="" data-url="/CrySPY_doc/tutorial/random/first_run/">
     <nav id="sidebar" class="">
 
 
@@ -325,7 +325,7 @@
   
     
     <li data-nav-id="/CrySPY_doc/tutorial/random/" title="Random Search (RS)" class="dd-item 
-        
+        parent
         
         
         ">
@@ -414,7 +414,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/tutorial/random/first_run/" title="Firsrt run" class="dd-item ">
+      <li data-nav-id="/CrySPY_doc/tutorial/random/first_run/" title="Firsrt run" class="dd-item active">
         <a href="/CrySPY_doc/tutorial/random/first_run/">
         Firsrt run
         
@@ -528,7 +528,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item active">
+      <li data-nav-id="/CrySPY_doc/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item ">
         <a href="/CrySPY_doc/tutorial/bo/">
         Bayesian Optimization (BO)
         
@@ -692,7 +692,7 @@
                   
                     
                     
-                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/" selected>English</option>
+                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/" selected>English</option>
                     
                   
               
@@ -758,7 +758,13 @@
             
           
           
-            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/tutorial/'>Tutorial</a> > Bayesian Optimization (BO)
+            
+            
+          
+          
+            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/tutorial/'>Tutorial</a> > <a href='/CrySPY_doc/tutorial/random/'>Random Search (RS)</a> > Firsrt run
+          
+        
           
         
           
@@ -787,14 +793,61 @@
           
             <h1>
               
-              Bayesian Optimization (BO)
+              Firsrt run
             </h1>
           
 
         
 
 
-<p>BO</p>
+<p>Make sure you have</p>
+<ul>
+<li>calc_in/</li>
+<li>(cryspy)</li>
+<li>cryspy.in</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ ls
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">calc_in  cryspy  cryspy.in
+</code></pre></div><p>Then, run CyrSPY!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ bash ./cryspy
+</code></pre></div><p>or, if you move the <code>cryspy</code> script in your $PATH, just type</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ cryspy
+</code></pre></div><p>At the first run, CrySPY goes into structure generation mode.
+CrySPY stops after 5 structure generation.</p>
+<p>If it worked properly, <code>log</code> would look like this.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">2020/11/11 19:59:18
+CrySPY 0.9.0
+Start cryspy.py
+
+Read input file, cryspy.in
+Write input data in cryspy.out
+Save input data in cryspy.stat
+
+# --------- Generate initial structures
+Structure ID      0 was generated. Space group: 136 --&gt; 139 I4/mmm
+Structure ID      1 was generated. Space group:  98 --&gt;  98 I4_122
+Structure ID      2 was generated. Space group:  16 --&gt;  16 P222
+Structure ID      3 was generated. Space group:  36 --&gt;  36 Cmc2_1
+Structure ID      4 was generated. Space group:  36 --&gt;  36 Cmc2_1
+
+</code></pre></div><p>Several output files are also generated.</p>
+<ul>
+<li><code>cryspy.out</code>: Short log.</li>
+<li><code>cryspy.stat</code>: Status file.</li>
+<li><code>data/init_POSCARS</code>: Initial struture file in POSCAR format.
+You can open this file using <a href="https://jp-minerals.org/vesta/en/" target="_blank">VESTA</a>
+<i class="fas fa-external-link-alt"></i></li>
+<li><code>data/pkl_data</code>: Directory to save pickled data.</li>
+<li><code>err</code>: Error message.</li>
+<li><code>log</code>: Detail log.</li>
+</ul>
+<p>Let&rsquo;s take a look at <code>cryspy.stat</code> file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">...
+(omit)
+...
+[status]
+id_queueing = 0 1 2 3 4
+</code></pre></div><p>Structure ID 0 &ndash; 4 are queueing because we just generated structures, and have not submitted yet.</p>
 
 
 <footer class="footline">
@@ -995,8 +1048,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1010,6 +1061,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1059,6 +1113,26 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1102,22 +1176,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1142,7 +1200,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1158,9 +1215,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1233,10 +1287,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CrySPY_doc/tutorial/ea/" title="Evolutionary Algorithm (EA)"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CrySPY_doc/tutorial/random/script_to_run/" title="Script to run"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CrySPY_doc/tutorial/laqa/" title="LAQA" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CrySPY_doc/tutorial/random/submit_job/" title="Submit job" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

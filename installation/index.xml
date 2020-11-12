@@ -13,9 +13,9 @@
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/</guid>
       <description>You need (CrySPY + Python environment + structure optimizer) in your workstation, super computer, etc.
- Python Tested with Python 3.7.5 and 3.8.5 on Mac, and Python 3.6.7 (miniconda3-4.3.30) and 3.8.2 on Linux.
+ Python Tested with Python 3.8.5 on Mac, and Python 3.8.2, 3.8.3 on Linux.
  Python 3.x.x  COMBO  pymatgen  PyXtal  (CrySPY 0.9.0 or later)    Structure optimizer At least one optimizer is required.
- First-principles calculation  VASP  Quantum Espresso  OpenMX  (CrySPY 0.</description>
+ First-principles calculation  VASP  Quantum Espresso  OpenMX  (CrySPY 0.9.0 or later)   Interatomic potential  soiap  LAMMPS     Others  find_wy  (optional in CrySPY 0.</description>
     </item>
     
     <item>
@@ -35,8 +35,8 @@ You can skip to install find_wy in CrySPY 0.</description>
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/</guid>
       <description>Installation of CrySPY is very simple. Just download it!
-Download You can put the source code of CrySPY in an arbitrary directory. Here, let us put the source code in ~/CrySPY_root/CrySPY-x.x.x (x.x.x means the version). Use git or the compressed file.
-Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git CrySPY-x.x.x zip or tar.gz file Download the source as a zip or tar.gz file from  GitHub release  .</description>
+Download You can put the source code of CrySPY in an arbitrary directory. Here, let us put the source code in ~/CrySPY_root/x.x.x (x.x.x means the version). Use git or the compressed file.
+Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git x.x.x zip or tar.gz file Download the source as a zip or tar.gz file from  GitHub release  .</description>
     </item>
     
   </channel>

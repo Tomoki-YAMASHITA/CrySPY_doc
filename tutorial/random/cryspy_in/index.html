@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CrySPY_doc/images/favicon.png" type="image/png">
 
-    <title>Bayesian Optimization (BO) :: CrySPY</title>
+    <title>Check cryspy.in :: CrySPY</title>
 
     
     <link href="/CrySPY_doc/css/nucleus.css?1605168062" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CrySPY_doc/tutorial/bo/">
+  <body class="" data-url="/CrySPY_doc/tutorial/random/cryspy_in/">
     <nav id="sidebar" class="">
 
 
@@ -325,7 +325,7 @@
   
     
     <li data-nav-id="/CrySPY_doc/tutorial/random/" title="Random Search (RS)" class="dd-item 
-        
+        parent
         
         
         ">
@@ -372,7 +372,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/tutorial/random/cryspy_in/" title="Check cryspy.in" class="dd-item ">
+      <li data-nav-id="/CrySPY_doc/tutorial/random/cryspy_in/" title="Check cryspy.in" class="dd-item active">
         <a href="/CrySPY_doc/tutorial/random/cryspy_in/">
         Check cryspy.in
         
@@ -528,7 +528,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item active">
+      <li data-nav-id="/CrySPY_doc/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item ">
         <a href="/CrySPY_doc/tutorial/bo/">
         Bayesian Optimization (BO)
         
@@ -692,7 +692,7 @@
                   
                     
                     
-                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/" selected>English</option>
+                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/" selected>English</option>
                     
                   
               
@@ -758,7 +758,13 @@
             
           
           
-            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/tutorial/'>Tutorial</a> > Bayesian Optimization (BO)
+            
+            
+          
+          
+            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/tutorial/'>Tutorial</a> > <a href='/CrySPY_doc/tutorial/random/'>Random Search (RS)</a> > Check cryspy.in
+          
+        
           
         
           
@@ -771,7 +777,12 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-section">[basic] section</a></li>
+    <li><a href="#structure-section">[structure] section</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -787,14 +798,53 @@
           
             <h1>
               
-              Bayesian Optimization (BO)
+              Check cryspy.in
             </h1>
           
 
         
 
 
-<p>BO</p>
+<p>See <a href="/CrySPY_doc/input/">Input file</a>
+ in detail.</p>
+<p>Let&rsquo;s take a look at <code>cryspy.in</code> again.
+This may be slightly different depending on <code>calc_code</code> you chose.</p>
+<pre><code>[basic]
+algo = RS
+calc_code = soiap
+tot_struc = 5
+nstage = 1
+njob = 2
+jobcmd = zsh
+jobfile = job_cryspy
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+
+[soiap]
+soiap_infile = soiap.in
+soiap_outfile = soiap.out
+soiap_cif = initial.cif
+
+[option]
+</code></pre><h2 id="basic-section">[basic] section</h2>
+<ul>
+<li><code>algo</code>: Algorithm. Set <code>RS</code> for Random Search.</li>
+<li><code>calc_code</code>: Structure optimizer. Choose from <code>VASP</code>, <code>QE</code>, <code>soiap</code>, <code>LAMMPS</code>, <code>OMX</code></li>
+<li><code>tot_struc</code>: Number of total structures. In this case, 5 random structures are generated at 1st run.</li>
+<li><code>nstage</code>: Number of stages. It&rsquo;s up to you.</li>
+<li><code>njob</code>: Number of jobs running at the same time. In this example, CrySPY sets 2 slots for structure optimization, in other word, optimizes every 2 structures.</li>
+<li><code>jobcmd</code>: Command for jobs. Use <code>bash</code>, <code>zsh</code>, <code>qsub</code>, and so on.</li>
+<li><code>jobfile</code>: File name of the job file.</li>
+</ul>
+<h2 id="structure-section">[structure] section</h2>
+<ul>
+<li><code>natot</code>: Number of total atoms in unit cell. e.g. for Na8Cl8: <code>natot = 16</code>.</li>
+<li><code>atype</code>: Atom type. e.g. for Na8Cl8: <code>atype = Na Cl</code>.</li>
+<li><code>nat</code>: Number of each atom. e.g. for Na8Cl8: <code>nat = 8 8</code></li>
+</ul>
 
 
 <footer class="footline">
@@ -995,8 +1045,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1010,6 +1058,45 @@
             
             
                 
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1086,38 +1173,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1142,7 +1197,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1158,9 +1212,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1233,10 +1284,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CrySPY_doc/tutorial/ea/" title="Evolutionary Algorithm (EA)"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CrySPY_doc/tutorial/random/soiap/" title="soiap in your local PC"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CrySPY_doc/tutorial/laqa/" title="LAQA" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CrySPY_doc/tutorial/random/script_to_run/" title="Script to run" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

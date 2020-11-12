@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CrySPY_doc/images/favicon.png" type="image/png">
 
-    <title>Bayesian Optimization (BO) :: CrySPY</title>
+    <title>Check results :: CrySPY</title>
 
     
     <link href="/CrySPY_doc/css/nucleus.css?1605168062" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CrySPY_doc/tutorial/bo/">
+  <body class="" data-url="/CrySPY_doc/tutorial/random/result/">
     <nav id="sidebar" class="">
 
 
@@ -325,7 +325,7 @@
   
     
     <li data-nav-id="/CrySPY_doc/tutorial/random/" title="Random Search (RS)" class="dd-item 
-        
+        parent
         
         
         ">
@@ -456,7 +456,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/tutorial/random/result/" title="Check results" class="dd-item ">
+      <li data-nav-id="/CrySPY_doc/tutorial/random/result/" title="Check results" class="dd-item active">
         <a href="/CrySPY_doc/tutorial/random/result/">
         Check results
         
@@ -528,7 +528,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item active">
+      <li data-nav-id="/CrySPY_doc/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item ">
         <a href="/CrySPY_doc/tutorial/bo/">
         Bayesian Optimization (BO)
         
@@ -692,7 +692,7 @@
                   
                     
                     
-                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/" selected>English</option>
+                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/" selected>English</option>
                     
                   
               
@@ -758,7 +758,13 @@
             
           
           
-            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/tutorial/'>Tutorial</a> > Bayesian Optimization (BO)
+            
+            
+          
+          
+            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/tutorial/'>Tutorial</a> > <a href='/CrySPY_doc/tutorial/random/'>Random Search (RS)</a> > Check results
+          
+        
           
         
           
@@ -787,14 +793,35 @@
           
             <h1>
               
-              Bayesian Optimization (BO)
+              Check results
             </h1>
           
 
         
 
 
-<p>BO</p>
+<p>Move to <code>data</code> directory. There should be a few more files.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ cd data
+$ ls
+</code></pre></div><pre><code>cryspy_rslt  cryspy_rslt_energy_asc  init_POSCARS  opt_POSCARS  pkl_data
+</code></pre><ul>
+<li><code>cryspy_rslt</code>: Result file.</li>
+<li><code>cryspy_rslt_energy_asc</code>: Result file sorted by energy in ascending order.</li>
+<li><code>init_POSCARS</code>: Initial struture file in POSCAR format.</li>
+<li><code>opt_POSCARS</code>: Optimized structure file in POSCAR format.</li>
+<li><code>pkl_data</code>: Directory to save pickled data.</li>
+</ul>
+<p><code>cryspy_rslt_energy_asc</code> file is suitable for checking results.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ less cryspy_rslt_energy_asc
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">   Spg_num Spg_sym  Spg_num_opt Spg_sym_opt  E_eV_atom  Magmom      Opt
+1       98  I4_122           12        C2/m  -3.978441     NaN  not_yet
+3       36  Cmc2_1           36      Cmc2_1  -3.520306     NaN  not_yet
+2       16    P222           16        P222  -3.348616     NaN  not_yet
+4       36  Cmc2_1            4        P2_1  -3.304168     NaN  not_yet
+0      139  I4/mmm          139      I4/mmm  -3.000850     NaN     done
+</code></pre></div><p><code>Spg_num</code> and <code>Spg_sym</code> shows space group information on initial structures.
+<code>Spg_num_opt</code> and <code>Spg_sym_opt</code> are those of optimized structures.
+The last column <code>Opt</code> indicates whether or not optimization reached required accuracy.</p>
 
 
 <footer class="footline">
@@ -995,8 +1022,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1010,6 +1035,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1091,6 +1119,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1098,6 +1127,28 @@
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1118,9 +1169,6 @@
             
         
                     
-            
-        
-                    
                         
             
             
@@ -1141,26 +1189,6 @@
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1233,10 +1261,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CrySPY_doc/tutorial/ea/" title="Evolutionary Algorithm (EA)"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CrySPY_doc/tutorial/random/submit_job/" title="Submit job"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CrySPY_doc/tutorial/laqa/" title="LAQA" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CrySPY_doc/tutorial/random/append/" title="Append structures" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

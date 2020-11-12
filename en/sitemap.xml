@@ -31,6 +31,10 @@
   </url>
   
   <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/input/format/</loc>
+  </url>
+  
+  <url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/installation/</loc>
     <xhtml:link
                 rel="alternate"
@@ -45,7 +49,11 @@
   </url>
   
   <url>
-    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/rs/</loc>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/</loc>
   </url>
   
   <url>
@@ -60,6 +68,10 @@
                 hreflang="en"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/input/basic_sec/</loc>
   </url>
   
   <url>
@@ -131,6 +143,10 @@
   </url>
   
   <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/input/</loc>
+  </url>
+  
+  <url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/laqa/</loc>
   </url>
   
@@ -146,6 +162,30 @@
                 hreflang="en"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/script_to_run/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/submit_job/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/</loc>
   </url>
   
   <url>

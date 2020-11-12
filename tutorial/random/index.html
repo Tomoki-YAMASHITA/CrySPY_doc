@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CrySPY_doc/images/favicon.png" type="image/png">
 
-    <title>Bayesian Optimization (BO) :: CrySPY</title>
+    <title>Random Search (RS) :: CrySPY</title>
 
     
     <link href="/CrySPY_doc/css/nucleus.css?1605168062" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CrySPY_doc/tutorial/bo/">
+  <body class="" data-url="/CrySPY_doc/tutorial/random/">
     <nav id="sidebar" class="">
 
 
@@ -325,8 +325,8 @@
   
     
     <li data-nav-id="/CrySPY_doc/tutorial/random/" title="Random Search (RS)" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/CrySPY_doc/tutorial/random/">
@@ -528,7 +528,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item active">
+      <li data-nav-id="/CrySPY_doc/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item ">
         <a href="/CrySPY_doc/tutorial/bo/">
         Bayesian Optimization (BO)
         
@@ -692,7 +692,7 @@
                   
                     
                     
-                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/" selected>English</option>
+                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/" selected>English</option>
                     
                   
               
@@ -758,7 +758,7 @@
             
           
           
-            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/tutorial/'>Tutorial</a> > Bayesian Optimization (BO)
+            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/tutorial/'>Tutorial</a> > Random Search (RS)
           
         
           
@@ -771,7 +771,12 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#preparation-of-input-files">Preparation of input files</a></li>
+    <li><a href="#running-cryspy">Running CrySPY</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -787,17 +792,42 @@
           
             <h1>
               
-              Bayesian Optimization (BO)
+              Random Search (RS)
             </h1>
           
 
         
 
 
-<p>BO</p>
+
+	<h2 id="preparation-of-input-files">Preparation of input files</h2>
+<p>Prepare input files of CrySPY and programs for structure optimization.
+Follow any one of the pages and then go to &ldquo;Running CrySPY&rdquo; section.</p>
+<ul>
+<li><a href="/CrySPY_doc/tutorial/random/soiap/">soiap in your local PC</a>
+</li>
+</ul>
+<h2 id="running-cryspy">Running CrySPY</h2>
+<ol>
+<li><a href="/CrySPY_doc/tutorial/random/cryspy_in/">Check cryspy.in</a>
+</li>
+<li><a href="/CrySPY_doc/tutorial/random/script_to_run/">Script to run</a>
+</li>
+<li><a href="/CrySPY_doc/tutorial/random/first_run/">First run</a>
+</li>
+<li><a href="/CrySPY_doc/tutorial/random/submit_job/">Submit job</a>
+</li>
+<li><a href="/CrySPY_doc/tutorial/random/result/">Check results</a>
+</li>
+<li><a href="/CrySPY_doc/tutorial/random/append/">Append structures</a>
+</li>
+</ol>
 
 
-<footer class="footline">
+
+
+
+<footer class=" footline" >
 	
 </footer>
 
@@ -995,8 +1025,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1010,6 +1038,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1142,7 +1173,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1158,9 +1188,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1233,10 +1260,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CrySPY_doc/tutorial/ea/" title="Evolutionary Algorithm (EA)"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CrySPY_doc/tutorial/" title="Tutorial"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CrySPY_doc/tutorial/laqa/" title="LAQA" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CrySPY_doc/tutorial/random/soiap/" title="soiap in your local PC" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1268,4 +1295,3 @@
 
   </body>
 </html>
-
