@@ -39,5 +39,16 @@ Download You can put the source code of CrySPY in an arbitrary directory. Here, 
 Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git x.x.x zip or tar.gz file Download the source as a zip or tar.gz file from  GitHub release  .</description>
     </item>
     
+    <item>
+      <title>CrySPY utility (optional)</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/</guid>
+      <description>Python environment in local PC Setting up Python environment in your local PC is useful to analyze CrySPY results. Utility tools (jupyter notebook and python scripts) are available for analysis and visualization.
+You need several Python libraries such as
+ jupyter  NumPy  pandas  matplotlib  pymatgen   Download CrySPY utility Git $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git zip Go to CrySPY utility  and click green Code button, then choose Download ZIP.</description>
+    </item>
+    
   </channel>
 </rss>

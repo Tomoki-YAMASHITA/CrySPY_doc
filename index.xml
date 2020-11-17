@@ -16,6 +16,17 @@
     </item>
     
     <item>
+      <title>energy_step_data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/energy_step/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/energy_step/</guid>
+      <description>energy_step_data is saved in energy_step_data.pkl if you set energy_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
+energy_step_flag = True is currently available only with VASP and soiap.
+ Data format  type: dict  key: structure ID value: list of energy step data in each stage   string form  {0: [array([-3.4439912 , -3.55040935, -3.66697038, ..]), array([-4.0613393 , -4.05445631, -4.06159641, &amp;hellip;]), &amp;hellip;],</description>
+    </item>
+    
+    <item>
       <title>File format</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/format/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -90,6 +101,26 @@ We also employ EA in CrySPY, and support the following:
     </item>
     
     <item>
+      <title>struc_step_data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/struc_step/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/struc_step/</guid>
+      <description>struc_step_data is saved in struc_step_data.pkl if you set struc_step_flag = True in [option] section of cryspy.in. pymatgen  library is required to analyze this data file.
+struc_step_flag = True is currently available only with VASP and soiap.
+ Data format  type: dict  key: structure ID value: list of structure step data in each stage   string form  {0: [[Structure Summary &amp;hellip;, Structure Summary, &amp;hellip;], [&amp;hellip;], &amp;hellip;],</description>
+    </item>
+    
+    <item>
+      <title>VASP</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/</guid>
+      <description>Coming soon.</description>
+    </item>
+    
+    <item>
       <title>Bayesian Optimization (BO)</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -110,6 +141,17 @@ Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomo
     </item>
     
     <item>
+      <title>force_step_data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/force_step/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/force_step/</guid>
+      <description>force_step_data is saved in force_step_data.pkl if you set force_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
+force_step_flag = True is currently available only with VASP and soiap.
+ Data format  type: dict  key: structure ID value: list of force step data in each stage   string form  {0: [array([[ 0.26314927, -0.26314927, -0. ], [&amp;hellip;], &amp;hellip;[&amp;hellip;]]), array([[&amp;hellip;], &amp;hellip;, [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
+    </item>
+    
+    <item>
       <title>Interface</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -117,6 +159,35 @@ Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomo
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/</guid>
       <description>CrySPY is interfaced with several structure optimizers:
  First-principles calculation  VASP  Quantum Espresso  OpenMX  (CrySPY 0.9.0 or later)   Interatomic potential  soiap  LAMMPS     At least one optimizer is required.</description>
+    </item>
+    
+    <item>
+      <title>QE</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/</guid>
+      <description>Coming soon.</description>
+    </item>
+    
+    <item>
+      <title>CrySPY utility (optional)</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/</guid>
+      <description>Python environment in local PC Setting up Python environment in your local PC is useful to analyze CrySPY results. Utility tools (jupyter notebook and python scripts) are available for analysis and visualization.
+You need several Python libraries such as
+ jupyter  NumPy  pandas  matplotlib  pymatgen   Download CrySPY utility Git $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git zip Go to CrySPY utility  and click green Code button, then choose Download ZIP.</description>
+    </item>
+    
+    <item>
+      <title>LAMMPS</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/</guid>
+      <description>Coming soon.</description>
     </item>
     
     <item>
@@ -135,6 +206,26 @@ Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomo
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/</guid>
       <description>PNG (transparent background) JPG </description>
+    </item>
+    
+    <item>
+      <title>stress_step_data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/stress_step/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/stress_step/</guid>
+      <description>stress_step_data is saved in stress_step_data.pkl if you set stress_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
+stress_step_flag = True is currently available only with VASP and soiap.
+ Data format  type: dict  key: structure ID value: list of stress step data in each stage   string form  {0: [array([[-0.16770062, 0. , 0. ], [&amp;hellip;], [&amp;hellip;]]), array([[&amp;hellip;], ]&amp;hellip;], [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
+    </item>
+    
+    <item>
+      <title>OpenMX</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/</guid>
+      <description>Coming soon.</description>
     </item>
     
     <item>
@@ -157,7 +248,7 @@ Let&amp;rsquo;s take a look at cryspy.in again. This may be slightly different d
       <description>Assumption Here, we assume the following condition:
  CrySPY main script: ~/CrySPY_root/0.9.0/cryspy.py  Make script Let&amp;rsquo;s make a convenient shell script to avoid typing long commands over and over again. Here, we create the script, cryspy (any file name will do).
 $ emacs cryspy $ chmod 744 cryspy #!/bin/sh  python3 -u ~/CrySPY_root/0.9.0/cryspy.py 1&amp;gt;&amp;gt; log 2&amp;gt;&amp;gt; err -u option (unbuffered option) can be omitted.
-You can put this script in your $PATH, or just use like bash .</description>
+You can put this script in your $PATH, or just use like zsh .</description>
     </item>
     
     <item>
@@ -168,7 +259,7 @@ You can put this script in your $PATH, or just use like bash .</description>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/</guid>
       <description>Make sure you have
  calc_in/ (cryspy) cryspy.in  $ ls calc_in cryspy cryspy.in Then, run CyrSPY!
-$ bash ./cryspy or, if you move the cryspy script in your $PATH, just type
+$ zsh ./cryspy or, if you move the cryspy script in your $PATH, just type
 $ cryspy At the first run, CrySPY goes into structure generation mode. CrySPY stops after 5 structure generation.
 If it worked properly, log would look like this.
 2020/11/11 19:59:18 CrySPY 0.9.0 Start cryspy.py Read input file, cryspy.in Write input data in cryspy.</description>
@@ -184,7 +275,7 @@ If it worked properly, log would look like this.
 Continue if you have crypy.stat
 Start from the beginning if you don&amp;rsquo;t have cryspy.stat
  Submit job Run CyrSPY again.
-$ bash ./cryspy Check log file.
+$ zsh ./cryspy Check log file.
 2020/11/11 20:02:54 CrySPY 0.9.0 Restart cryspy.py # ---------- job status ID 0: submit job, Stage 1 ID 1: submit job, Stage 1 And also cryspy.stat file.
 ... (omit) ... [status] id_queueing = 2 3 4 id 0 = Stage 1 id 1 = Stage 1 CrySPY submitted two jobs for structure ID 0 and 1 as you set njob = 2 in cryspy.</description>
     </item>
@@ -196,8 +287,7 @@ $ bash ./cryspy Check log file.
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/</guid>
       <description>Move to data directory. There should be a few more files.
-$ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_data  cryspy_rslt: Result file. cryspy_rslt_energy_asc: Result file sorted by energy in ascending order. init_POSCARS: Initial struture file in POSCAR format. opt_POSCARS: Optimized structure file in POSCAR format. pkl_data: Directory to save pickled data.  cryspy_rslt_energy_asc file is suitable for checking results.
-$ less cryspy_rslt_energy_asc Spg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom Magmom Opt 1 98 I4_122 12 C2/m -3.</description>
+$ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_data  cryspy_rslt: Result file. cryspy_rslt_energy_asc: Result file sorted in energy ascending order. init_POSCARS: Initial struture file in POSCAR format. opt_POSCARS: Optimized structure file in POSCAR format. pkl_data: Directory to save pickled data.  The results are written to text files, cryspy_rslt and cryspy_rslt_energy_asc (and also saved in pickle data in pkl_data directory).</description>
     </item>
     
     <item>
@@ -209,6 +299,16 @@ $ less cryspy_rslt_energy_asc Spg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom 
       <description>Of course only 5 structures are not enough to find stable structures. You can append structures whenever you want. Here let&amp;rsquo;s append more 5 structures.
 Edit cryspy.in and change the value of tot_struc into 10.
 $ emacs cryspy.in [basic] algo = RS calc_code = soiap tot_struc = 10 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.</description>
+    </item>
+    
+    <item>
+      <title>Analysis and visualization</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/</guid>
+      <description>Download the data It is assumed here that you analyze and visualize CrySPY data in your local PC. If you use CrySPY in super computers or workstations, download the data in your local PC. You can delete the work directory if you do not need it because the file size could be very large.
+jupyter notebook Move to the data directory in results you just download. Then copy cryspy_analyzer_RS.ipynb from CrySPY utility .</description>
     </item>
     
   </channel>

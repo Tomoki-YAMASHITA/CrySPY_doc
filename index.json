@@ -7,11 +7,25 @@
 	"content": "About CrySPY CrySPY is a crystal structure prediction tool written in Python, distributed under the MIT License.\nTable of contents  Crystal structure prediction   Searching algorithms   Interface   Logo   "
 },
 {
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/",
+	"title": "Common data",
+	"tags": [],
+	"description": "",
+	"content": "Table of contents  "
+},
+{
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/",
 	"title": "Crystal structure prediction",
 	"tags": [],
 	"description": "",
 	"content": "Input  Elements Number of atoms  Output  Stable structure (global minimum)  "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/energy_step/",
+	"title": "energy_step_data",
+	"tags": [],
+	"description": "",
+	"content": "energy_step_data is saved in energy_step_data.pkl if you set energy_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.\nenergy_step_flag = True is currently available only with VASP and soiap.\n Data format  type: dict  key: structure ID value: list of energy step data in each stage   string form  {0: [array([-3.4439912 , -3.55040935, -3.66697038, ..]), array([-4.0613393 , -4.05445631, -4.06159641, \u0026hellip;]), \u0026hellip;],\n1: [array([-2.68209823, -2.69012487, -2.68364907, ..]), array([-2.79140967, -2.79183827, -2.79206508, \u0026hellip;]), \u0026hellip;],\n\u0026hellip;}   unit of energy  eV/atom    How to access import pickle with open(\u0026#39;energy_step_data.pkl\u0026#39;, \u0026#39;rb\u0026#39;) as f: energy_step_data = pickle.load(f) # energy_step_data[ID][stage][step] # energy_step_data[ID][0] \u0026lt;-- stage 1 # energy_step_data[ID][1] \u0026lt;-- stage 2 # # in LAQA # energy_step_data[ID][selection][step] # energy_step_data[ID][0] \u0026lt;-- 1st selection # energy_step_data[ID][1] \u0026lt;-- 2nd selection # ---------- energy step data of ID 3, stage 1 cid = 3 # ID stage = 1 # stage energy_step_data[cid][stage-1][:10] # show only 10 enegies in jupyter array([-3.4439912 , -3.55040935, -3.66697038, -3.77192063, -3.84320717, -3.80679245, -3.84633935, -3.87374706, -3.89123193, -3.90422926]) "
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/input/format/",
@@ -25,21 +39,21 @@
 	"title": "Installation",
 	"tags": [],
 	"description": "",
-	"content": "Installation You need to install the following in your workstation, super computer, and so on:\n CrySPY Python environment Structure optimizer  Table of contents  System requirements   find_wy (optional)   CrySPY   "
+	"content": "Installation You need to install the following in your workstation, super computer, and so on:\n CrySPY Python environment Structure optimizer  Table of contents  System requirements   find_wy (optional)   CrySPY   CrySPY utility (optional)   "
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/",
 	"title": "Random Search (RS)",
 	"tags": [],
 	"description": "",
-	"content": "Preparation of input files Prepare input files of CrySPY and programs for structure optimization. Follow any one of the pages and then go to \u0026ldquo;Running CrySPY\u0026rdquo; section.\n soiap in your local PC   Running CrySPY  Check cryspy.in  Script to run  First run  Submit job  Check results  Append structures   "
+	"content": "Preparation of input files Follow any one of the examples and then go to \u0026ldquo;Running CrySPY\u0026rdquo; section.\n soiap in your local PC  VASP  QE  LAMMPS  OPenMX   Running CrySPY  Check cryspy.in  Script to run  First run  Submit job  Check results  Append structures  Analysis and visualization   "
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/",
 	"title": "soiap in your local PC",
 	"tags": [],
 	"description": "",
-	"content": "soiap  is Structure Optimization with InterAtomic Potential. It is suitable for testing CrySPY because of its fast structure optimization. See instructions  to install soiap.\nIn this tutorial, we try to use CrySPY in your local PC (Mac or Linux). The target system is Si 8 atoms.\nAssumption Here, we assume the following condition:\n CrySPY main script: ~/CrySPY_root/0.9.0/cryspy.py CrySPY job filename: job_cryspy soiap executable file: ~/local/soiap-0.3.0/src/soiap soiap input filename: soiap.in soiap output filename: soiap.out soiap input structure filename: initial.cif  Input files Move to your working directory, and copy input example files.\n$ cp -r ~/CrySPY_root/0.9.0/example/v0.9.0/soiap_RS_Si8 . $ cd soiap_RS_Si8 $ tree . ├── calc_in │ ├── job_cryspy │ └── soiap.in_1 └── cryspy.in cryspy.in cryspy.in is the input file of CrySPY.\n[basic] algo = RS calc_code = soiap tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] In [basic] section, jobcmd = zsh can be changed to jobcmd = sh or jobcmd = bash in accordance with your environment. CrySPY runs zsh job_cryspy internally.\n[soiap] section is required when you use soiap.\nYou can name the following files whatever you want:\n jobfile soiap_infile soiap_outfile soiap_cif  The other input variables are discussed later.\ncalc_in directory Job file The job file and input files for soiap are prepared in this directory.\nThe name of the job file must match the value of jobfile in cryspy.in. The example of job file (here, job_cryspy) is shown below.\n#!/bin/sh  # ---------- soiap EXEPATH=/path/to/soiap $EXEPATH/soiap soiap.in 2\u0026gt;\u0026amp;1 \u0026gt; soiap.out # ---------- CrySPY sed -i -e \u0026#39;3 s/^.*$/done/\u0026#39; stat_job Change /path/to/soiap into right path suitable for your environment. You can specify the input (soiap.in) and output (soiap.out) file names, but they must match the values of soiap_infile and soiap_outfile in cryspy.in. The job file is written in the same way as the one you usually use except for the last line. You must add sed -i -e '3 s/^.*$/done/' stat_job at the end of the file in CrySPY.\nsed -i -e '3 s/^.*$/done/' stat_job is required at the end of the job file.\n Input for soiap Input files based on the number of stages (nstage in cryspy.in) are required. Name the input file(s) with a suffix _x. Here x means the stage number.\nWe are using nstage = 1, so we need only soiap.in_1.\nsoiap.in_1 is listed below.\ncrystal initial.cif ! CIF file for the initial structure symmetry 1 ! 0: not symmetrize displacements of the atoms or 1: symmetrize  md_mode_cell 3 ! cell-relaxation method  ! 0: FIRE, 2: quenched MD, or 3: RFC5 number_max_relax_cell 100 ! max. number of the cell relaxation number_max_relax 1 ! max. number of the atom relaxation max_displacement 0.1 ! max. displacement of atoms in Bohr  external_stress_v 0.0 0.0 0.0 ! external pressure in GPa  th_force 5d-5 ! convergence threshold for the force in Hartree a.u. th_stress 5d-7 ! convergence threshold for the stress in Hartree a.u.  force_field 1 ! force field  ! 1: Stillinger-Weber for Si, 2: Tsuneyuki potential for SiO2,  ! 3: ZRL for Si-O-N-H, 4: ADP for Nd-Fe-B, 5: Jmatgen, or  ! 6: Lennard-Jones The input structure file is specified at the first line. Use the same name as the value of soiap_cif in cryspy.in.\nRunning CrySPY Go to Running CrySPY "
+	"content": "soiap  is Structure Optimization with InterAtomic Potential. It is suitable for testing CrySPY because of its fast structure optimization. See instructions  to install soiap.\nIn this tutorial, we try to use CrySPY in your local PC (Mac or Linux). The target system is Si 8 atoms.\nAssumption Here, we assume the following condition:\n CrySPY main script: ~/CrySPY_root/0.9.0/cryspy.py CrySPY job filename: job_cryspy soiap executable file: ~/local/soiap-0.3.0/src/soiap soiap input filename: soiap.in soiap output filename: soiap.out soiap input structure filename: initial.cif  Input files Move to your working directory, and copy input example files.\n$ cp -r ~/CrySPY_root/0.9.0/example/v0.9.0/soiap_RS_Si8 . $ cd soiap_RS_Si8 $ tree . ├── calc_in │ ├── job_cryspy │ └── soiap.in_1 └── cryspy.in cryspy.in cryspy.in is the input file of CrySPY.\n[basic] algo = RS calc_code = soiap tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] In [basic] section, jobcmd = zsh can be changed to jobcmd = sh or jobcmd = bash in accordance with your environment. CrySPY runs zsh job_cryspy internally.\n[soiap] section is required when you use soiap.\nYou can name the following files whatever you want:\n jobfile soiap_infile soiap_outfile soiap_cif  The other input variables are discussed later.\ncalc_in directory Job file The job file and input files for soiap are prepared in this directory.\nThe name of the job file must match the value of jobfile in cryspy.in. The example of job file (here, job_cryspy) is shown below.\n#!/bin/sh  # ---------- soiap EXEPATH=/path/to/soiap $EXEPATH/soiap soiap.in 2\u0026gt;\u0026amp;1 \u0026gt; soiap.out # ---------- CrySPY sed -i -e \u0026#39;3 s/^.*$/done/\u0026#39; stat_job Change /path/to/soiap into right path suitable for your environment. You can specify the input (soiap.in) and output (soiap.out) file names, but they must match the values of soiap_infile and soiap_outfile in cryspy.in. The job file is written in the same way as the one you usually use except for the last line. You must add sed -i -e '3 s/^.*$/done/' stat_job at the end of the file in CrySPY.\nsed -i -e '3 s/^.*$/done/' stat_job is required at the end of the job file.\n In the job file of CrySPY, the string \u0026ldquo;CrySPY_ID\u0026rdquo; is automatically replaced with the structure ID. When you use a job scheduler such as PBS and SLURM, it is useful to set the structure ID to the job name. For example, in the PBS system, #PBS -N Si_CrySPY_ID in ID 10 is replaced with #PBS -N Si_10. Note that starting with a number will result in an error. You should add a prefix like Si_.\n Input for soiap Input files based on the number of stages (nstage in cryspy.in) are required. Name the input file(s) with a suffix _x. Here x means the stage number.\nWe are using nstage = 1, so we need only soiap.in_1.\nsoiap.in_1 is listed below.\ncrystal initial.cif ! CIF file for the initial structure symmetry 1 ! 0: not symmetrize displacements of the atoms or 1: symmetrize  md_mode_cell 3 ! cell-relaxation method  ! 0: FIRE, 2: quenched MD, or 3: RFC5 number_max_relax_cell 100 ! max. number of the cell relaxation number_max_relax 1 ! max. number of the atom relaxation max_displacement 0.1 ! max. displacement of atoms in Bohr  external_stress_v 0.0 0.0 0.0 ! external pressure in GPa  th_force 5d-5 ! convergence threshold for the force in Hartree a.u. th_stress 5d-7 ! convergence threshold for the stress in Hartree a.u.  force_field 1 ! force field  ! 1: Stillinger-Weber for Si, 2: Tsuneyuki potential for SiO2,  ! 3: ZRL for Si-O-N-H, 4: ADP for Nd-Fe-B, 5: Jmatgen, or  ! 6: Lennard-Jones The input structure file is specified at the first line. Use the same name as the value of soiap_cif in cryspy.in.\nRunning CrySPY Go to Running CrySPY "
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/",
@@ -70,11 +84,32 @@
 	"content": "CrySPY have utilized find_wy  to generate a random structure for a given space group (symmetry). However, CrySPY employs PyXtal  library for structure generation as default since version 0.9.0. You can skip to install find_wy in CrySPY 0.9.0 or later, but you may use find_wy. For CrySPY 0.8.x or earlier, find_wy is required to generate a random structure for a given space group.\nYou can skip to install find_wy in CrySPY 0.9.0 or later.\n Installation of find_wy m_tspace First you need compile m_tspace  for find_wy. Check these sites to compile it.\n m_tspace  Wiki of m_tspace   Download the source code of m_tspace in an arbitrary directory. For example:\n$ mkdir -p ~/local $ cd ~/local $ git clone https://github.com/nim-hrkn/m_tspace.git Additional two files are required to compile m_tspace. Download the following files in ~/local/m_tspace from TSPASE :\n  tsp98.f   prmtsp.f   $ cd m_tspace $ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/tsp98.f $ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/prmtsp.f Edit the makefile and run the make command. If you use ifort, you had better delete -check all option and use -O2 option.\n$ emacs makefile $ head -n 4 makefile #FC=gfortran #FFLAGS=-g -cpp -DUSE_GEN -ffixed-line-length-255 FC=ifort FFLAGS=-O2 -g -traceback -cpp -DUSE_GEN -132 $ make If you used gfortran, you might face the following problem:\ntsp98.f:9839:32: CALL SUBGRP(MG,JG,MGT,JGT,NTAB,IND) 1 Error: Actual argument contains too few elements for dummy argument 'ntab' (12/48) at (1) make: *** [tsp98.o] Error 1 Then change the source file of tsp98.f like this (line 9925):\nBefore:\n9913: C SUBROUTINE SUBGRP ====*====3====*====4====*====5====*====6====*====7 9914: C 9915: C IF (JG(I),I=1,MG) IS A SUBGROUP OF (JGT(J),J=1,MGT) THEN 9916: C TABLE (NTAB(I),I=1,MG) IS MADE HERE AND IND=0 9917: C ELSE 9918: C IND=-1 9919: C 9920: C 1993/12/25 9921: C BY S.TANAKA AND A. YANASE 9922: C---*----1----*----2----*----3----*----4----*----5----*----6----*----7 9923: C 9924: SUBROUTINE SUBGRP(MG,JG,MGT,JGT,NTAB,IND) 9925: DIMENSION NTAB(48),JG(48),JGT(48) After:\n9913: C SUBROUTINE SUBGRP ====*====3====*====4====*====5====*====6====*====7 9914: C 9915: C IF (JG(I),I=1,MG) IS A SUBGROUP OF (JGT(J),J=1,MGT) THEN 9916: C TABLE (NTAB(I),I=1,MG) IS MADE HERE AND IND=0 9917: C ELSE 9918: C IND=-1 9919: C 9920: C 1993/12/25 9921: C BY S.TANAKA AND A. YANASE 9922: C---*----1----*----2----*----3----*----4----*----5----*----6----*----7 9923: C 9924: SUBROUTINE SUBGRP(MG,JG,MGT,JGT,NTAB,IND) 9925: DIMENSION NTAB(12),JG(48),JGT(48) If you succeed in compiling, you get m_tsp.a.\nfind_wy Check these sites to compile find_wy:\n find_wy  Wiki of find_wy   Download the source code of find_wy in an arbitrary directory. For example:\n$ mkdir -p ~/local $ cd ~/local $ git clone https://github.com/nim-hrkn/find_wy.git Edit make.inc and set the path to the m_tsp.a that you just prepared.\n$ cd find_wy $ emacs make.inc $ head -n 4 make.inc TSPPATH=~/local/m_tspace #INCPATH = -I $(TSPPATH) TSP=$(TSPPATH)/m_tsp.a You can delete -check all option and use -O2 option. Then run the make command.\n$ make When you get the executable file of find_wy, run the following command for test:\n$ ./find_wy input_sample/input_si4o8.txt If there is no problem, POS_WY_SKEL_ALL.json file is generated.\nCopy the executable file of find_wy When you use find_wy for structure generation, for example, copy the executable file of find_wy to ~/CrySPY_root/CrySPY-x.x.x/CrySPY/find_wy/find_wy after downloading CrySPY.\nSee Setup find_wy .\n"
 },
 {
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/data_format/rs_data/",
+	"title": "Random Search (RS)",
+	"tags": [],
+	"description": "",
+	"content": "Table of contents  "
+},
+{
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/",
 	"title": "Searching algorithms",
 	"tags": [],
 	"description": "",
 	"content": "The following searching algorithms are available in CrySPY:\n Random Search (RS) Evolutionary Algorithm (EA) Bayesian Optimization (BO) Look Ahead based on Quadratic Approximation (LAQA)  In a nutshell Random Search (RS) Random.\nEvolutionary Algorithm (EA) EA for crystal structure prediction has been developed by Oganov\u0026#39;s group .\nWe also employ EA in CrySPY, and support the following:\n Selection methods  Tournament selection Roulette selection Elite selection   Evolutionary operations  Crossover Permutation Strain   etc.  Survival of the fittest Dedupe structures in survival of the fittest    Bayesian Optimization (BO) One of the selection-type algorithms.\nLook Ahead based on Quadratic Approximation (LAQA) One of the selection-type algorithms.\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/struc_step/",
+	"title": "struc_step_data",
+	"tags": [],
+	"description": "",
+	"content": "struc_step_data is saved in struc_step_data.pkl if you set struc_step_flag = True in [option] section of cryspy.in. pymatgen  library is required to analyze this data file.\nstruc_step_flag = True is currently available only with VASP and soiap.\n Data format  type: dict  key: structure ID value: list of structure step data in each stage   string form  {0: [[Structure Summary \u0026hellip;, Structure Summary, \u0026hellip;], [\u0026hellip;], \u0026hellip;],\n1: [[Structure Summary \u0026hellip;, Structure Summary, \u0026hellip;], [\u0026hellip;], \u0026hellip;], \u0026hellip;}   structure data format  pymatgen.core.structure.Structure     How to access import pickle with open(\u0026#39;struc_step_data.pkl\u0026#39;, \u0026#39;rb\u0026#39;) as f: struc_step_data = pickle.load(f) # struc_step_data[ID][stage][step] # struc_step_data[ID][0] \u0026lt;-- stage 1 # struc_step_data[ID][1] \u0026lt;-- stage 2 # # # in LAQA # struc_step_data[ID][selection][step] # struc_step_data[ID][0] \u0026lt;-- 1st selection # struc_step_data[ID][1] \u0026lt;-- 2nd selection # ---------- structure step data of ID 3, stage 1, step 4 cid = 0 # ID stage = 1 # stage step = 0 # step index (start from 0) struc_step_data[cid][stage-1][step] # to show initial structure of ID 0 at stage 1 in jupyter Structure Summary Lattice abc : 5.727301 5.727301 4.405757 angles : 90.0 90.0 90.0 volume : 144.5175386563631 A : 5.727301 0.0 0.0 B : 0.0 5.727301 0.0 C : 0.0 0.0 4.405757 PeriodicSite: Si (0.2506, 5.4767, 1.1014) [0.0438, 0.9562, 0.2500] PeriodicSite: Si (2.6130, 3.1143, 1.1014) [0.4562, 0.5438, 0.2500] PeriodicSite: Si (3.1143, 0.2506, 1.1014) [0.5438, 0.0438, 0.2500] PeriodicSite: Si (5.4767, 2.6130, 1.1014) [0.9562, 0.4562, 0.2500] PeriodicSite: Si (5.4767, 0.2506, 3.3043) [0.9562, 0.0438, 0.7500] PeriodicSite: Si (3.1143, 2.6130, 3.3043) [0.5438, 0.4562, 0.7500] PeriodicSite: Si (2.6130, 5.4767, 3.3043) [0.4562, 0.9562, 0.7500] PeriodicSite: Si (0.2506, 3.1143, 3.3043) [0.0438, 0.5438, 0.7500] "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/",
+	"title": "VASP",
+	"tags": [],
+	"description": "",
+	"content": "Coming soon.\n"
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/",
@@ -91,6 +126,20 @@
 	"content": "Installation of CrySPY is very simple. Just download it!\nDownload You can put the source code of CrySPY in an arbitrary directory. Here, let us put the source code in ~/CrySPY_root/x.x.x (x.x.x means the version). Use git or the compressed file.\nGit $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git x.x.x zip or tar.gz file Download the source as a zip or tar.gz file from  GitHub release  .\nThen put the source in ~/CrySPY_root/x.x.x\nDirectory tree Directory tree in ~/CrySPY_root/x.x.x/:\nx.x.x ├── CHANGELOG.md ├── CrySPY/ │ ├── BO/ │ ├── EA/ │ ├── IO/ │ ├── LAQA/ │ ├── RS/ │ ├── __init__.py │ ├── calc_dscrpt/ │ ├── f-fingerprint/ │ ├── find_wy/ │ ├── gen_struc/ │ ├── interface/ │ ├── job/ │ └── start/ │ └── utility.py ├── LICENSE ├── README.md ├── cryspy.py ├── docs/ ├── example/ └── utility/  Main script is cryspy.py.\nOnce downloading CrySPY, you can read this document offline, check docs/index.html.\n Setup (optional) find_wy (optional) When you use find_wy, put the executable file of find_wy in ~/CrySPY_root/x.x.x/CrySPY/find_wy/, so that the executable file path is ~/CrySPY_root/x.x.x/CrySPY/find_wy/find_wy.\n$ cd ~/CrySPY_root/x.x.x/CrySPY/find_wy $ cp ~/local/find_wy/find_wy . Compile cal_fingerprint (optional) When you use Bayesian optimization, compile cal_fingerpirnt program which calculates structure descriptors.\n$ cd ~/CrySPY_root/x.x.x/CrySPY/f-fingerprint $ emacs Makefile $ make Make sure that the executable file of cal_fingerprint exists in ~/CrySPY_root/x.x.x/CrySPY/f-fingerprint/.\n"
 },
 {
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/data_format/ea_data/",
+	"title": "Evolutionary algorithm (EA)",
+	"tags": [],
+	"description": "",
+	"content": "Table of contents  "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/force_step/",
+	"title": "force_step_data",
+	"tags": [],
+	"description": "",
+	"content": "force_step_data is saved in force_step_data.pkl if you set force_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.\nforce_step_flag = True is currently available only with VASP and soiap.\n Data format  type: dict  key: structure ID value: list of force step data in each stage   string form  {0: [array([[ 0.26314927, -0.26314927, -0. ], [\u0026hellip;], \u0026hellip;[\u0026hellip;]]), array([[\u0026hellip;], \u0026hellip;, [\u0026hellip;]]), \u0026hellip;], 1: [array([[ 0. , 0. , 0. ], [\u0026hellip;], \u0026hellip;[\u0026hellip;]]), array([[\u0026hellip;], \u0026hellip;, [\u0026hellip;]]), \u0026hellip;],\n\u0026hellip;}   unit of force  eV/Å    How to access import pickle with open(\u0026#39;force_step_data.pkl\u0026#39;, \u0026#39;rb\u0026#39;) as f: force_step_data = pickle.load(f) # force_step_data[ID][stage][step][atom] # force_step_data[ID][0] \u0026lt;-- stage 1 # force_step_data[ID][1] \u0026lt;-- stage 2 # # in LAQA # force_step_data[ID][selection][step][atom] # force_step_data[ID][0] \u0026lt;-- 1st selection # force_step_data[ID][1] \u0026lt;-- 2nd selection # ---------- force step data of ID 3, stage 1 cid = 0 # ID stage = 1 # stage force_step_data[cid][stage-1][:3] # to show only 3 steps in jupyter  [array([[ 0.26314927, -0.26314927, -0. ], [-0.26314927, 0.26314927, -0. ], [ 0.26314927, 0.26314927, 0. ], [-0.26314927, -0.26314927, -0. ], [-0.26314927, 0.26314927, -0. ], [ 0.26314927, -0.26314927, 0. ], [-0.26314927, -0.26314927, -0. ], [ 0.26314927, 0.26314927, 0. ]]), array([[-0.12103692, 0.12103692, 0. ], [ 0.12103692, -0.12103692, -0. ], [-0.12103692, -0.12103692, -0. ], [ 0.12103692, 0.12103692, 0. ], [ 0.12103692, -0.12103692, -0. ], [-0.12103692, 0.12103692, 0. ], [ 0.12103692, 0.12103692, 0. ], [-0.12103692, -0.12103692, -0. ]]), array([[-0.29801618, 0.29801618, 0. ], [ 0.29801618, -0.29801618, -0. ], [-0.29801618, -0.29801618, -0. ], [ 0.29801618, 0.29801618, 0. ], [ 0.29801618, -0.29801618, -0. ], [-0.29801618, 0.29801618, 0. ], [ 0.29801618, 0.29801618, 0. ], [-0.29801618, -0.29801618, -0. ]])] step = 0 # step index (start from 0) atom = 2 # atom index (start from 0) force_step_data[cid][stage-1][step][atom] array([0.26314927, 0.26314927, 0. ]) "
+},
+{
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/",
 	"title": "Interface",
 	"tags": [],
@@ -98,11 +147,32 @@
 	"content": "CrySPY is interfaced with several structure optimizers:\n First-principles calculation  VASP  Quantum Espresso  OpenMX  (CrySPY 0.9.0 or later)   Interatomic potential  soiap  LAMMPS     At least one optimizer is required.\n"
 },
 {
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/",
+	"title": "QE",
+	"tags": [],
+	"description": "",
+	"content": "Coming soon.\n"
+},
+{
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/",
 	"title": "Tutorial",
 	"tags": [],
 	"description": "",
-	"content": "Tutorial Table of contents  Random Search (RS)    soiap in your local PC   Check cryspy.in   Script to run   Firsrt run   Submit job   Check results   Append structures    Evolutionary Algorithm (EA)     Bayesian Optimization (BO)     LAQA     "
+	"content": "Tutorial Table of contents  Random Search (RS)   Evolutionary Algorithm (EA)   Bayesian Optimization (BO)   LAQA   "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/data_format/bo_data/",
+	"title": "Bayesian Optimization (BO)",
+	"tags": [],
+	"description": "",
+	"content": "Table of contents  "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/",
+	"title": "CrySPY utility (optional)",
+	"tags": [],
+	"description": "",
+	"content": "Python environment in local PC Setting up Python environment in your local PC is useful to analyze CrySPY results. Utility tools (jupyter notebook and python scripts) are available for analysis and visualization.\nYou need several Python libraries such as\n jupyter  NumPy  pandas  matplotlib  pymatgen   Download CrySPY utility Git $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git zip Go to CrySPY utility  and click green Code button, then choose Download ZIP.\n"
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/input/",
@@ -110,6 +180,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Input file Description of the input file, cryspy.in.\nTable of contents  File format     [basic] section     "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/",
+	"title": "LAMMPS",
+	"tags": [],
+	"description": "",
+	"content": "Coming soon.\n"
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/laqa/",
@@ -126,46 +203,88 @@
 	"content": "PNG (transparent background) JPG "
 },
 {
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/stress_step/",
+	"title": "stress_step_data",
+	"tags": [],
+	"description": "",
+	"content": "stress_step_data is saved in stress_step_data.pkl if you set stress_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.\nstress_step_flag = True is currently available only with VASP and soiap.\n Data format  type: dict  key: structure ID value: list of stress step data in each stage   string form  {0: [array([[-0.16770062, 0. , 0. ], [\u0026hellip;], [\u0026hellip;]]), array([[\u0026hellip;], ]\u0026hellip;], [\u0026hellip;]]), \u0026hellip;], 1: [array([[ 0.39260083, -0. , -0. ], [\u0026hellip;], [\u0026hellip;]]), array([[\u0026hellip;], [\u0026hellip;], [\u0026hellip;]]), \u0026hellip;],\n\u0026hellip;}   unit of stress  eV/(Å**3)    How to access import pickle with open(\u0026#39;stress_step_data.pkl\u0026#39;, \u0026#39;rb\u0026#39;) as f: stress_step_data = pickle.load(f) # stress_step_data[ID][stage][step][atom] # stress_step_data[ID][0] \u0026lt;-- stage 1 # stress_step_data[ID][1] \u0026lt;-- stage 2 # # in LAQA # stress_step_data[ID][selection][step][atom] # stress_step_data[ID][0] \u0026lt;-- 1st selection # stress_step_data[ID][1] \u0026lt;-- 2nd selection # ---------- stress step data of ID 3, stage 1 cid = 0 # ID stage = 1 # stage stress_step_data[cid][stage-1][:3] # to show only 3 steps in jupyter  [array([[-0.16770062, 0. , 0. ], [ 0. , -0.16770062, -0. ], [ 0. , 0. , 0.21823358]]), array([[-0.16020785, -0. , -0. ], [-0. , -0.16020785, 0. ], [-0. , 0. , 0.18646321]]), array([[-0.13572003, -0. , 0. ], [-0. , -0.13572003, 0. ], [-0. , 0. , 0.15953926]])] "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/data_format/",
+	"title": "Data format",
+	"tags": [],
+	"description": "",
+	"content": "Data format All pickle data are stored in the ./data/pkl_data/ directory.\nTable of contents  Common data     Random Search (RS)     Evolutionary algorithm (EA)     Bayesian Optimization (BO)     LAQA     Optional data    energy_step_data   struc_step_data   force_step_data   stress_step_data    "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/",
+	"title": "OpenMX",
+	"tags": [],
+	"description": "",
+	"content": "Coming soon.\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/data_format/laqa_data/",
+	"title": "LAQA",
+	"tags": [],
+	"description": "",
+	"content": "Table of contents  "
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/",
+	"title": "Optional data",
+	"tags": [],
+	"description": "",
+	"content": "Table of contents  energy_step_data     struc_step_data     force_step_data     stress_step_data     "
+},
+{
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/",
 	"title": "Check cryspy.in",
 	"tags": [],
 	"description": "",
-	"content": "See Input file in detail.\nLet\u0026rsquo;s take a look at cryspy.in again. This may be slightly different depending on calc_code you chose.\n[basic] algo = RS calc_code = soiap tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] [basic] section  algo: Algorithm. Set RS for Random Search. calc_code: Structure optimizer. Choose from VASP, QE, soiap, LAMMPS, OMX tot_struc: Number of total structures. In this case, 5 random structures are generated at 1st run. nstage: Number of stages. It\u0026rsquo;s up to you. njob: Number of jobs running at the same time. In this example, CrySPY sets 2 slots for structure optimization, in other word, optimizes every 2 structures. jobcmd: Command for jobs. Use bash, zsh, qsub, and so on. jobfile: File name of the job file.  [structure] section  natot: Number of total atoms in unit cell. e.g. for Na8Cl8: natot = 16. atype: Atom type. e.g. for Na8Cl8: atype = Na Cl. nat: Number of each atom. e.g. for Na8Cl8: nat = 8 8  "
+	"content": "See Input file in detail.\nLet\u0026rsquo;s take a look at cryspy.in again. This may be slightly different depending on calc_code you chose.\n[basic] algo = RS calc_code = soiap tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] [basic] section  algo: Algorithm. Set RS for Random Search. calc_code: Structure optimizer. Choose from VASP, QE, soiap, LAMMPS, OMX tot_struc: Number of total structures. In this case, 5 random structures are generated at 1st run. nstage: Number of stages. It\u0026rsquo;s up to you. njob: Number of jobs running at the same time. In this example, CrySPY sets 2 slots for structure optimization, in other words, optimizes every 2 structures. jobcmd: Command for jobs. Use bash, zsh, qsub, and so on. jobfile: File name of the job file.  [structure] section  natot: Number of total atoms in unit cell. e.g. for Na8Cl8: natot = 16. atype: Atom type. e.g. for Na8Cl8: atype = Na Cl. nat: Number of each atom. e.g. for Na8Cl8: nat = 8 8  "
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/script_to_run/",
 	"title": "Script to run",
 	"tags": [],
 	"description": "",
-	"content": "Assumption Here, we assume the following condition:\n CrySPY main script: ~/CrySPY_root/0.9.0/cryspy.py  Make script Let\u0026rsquo;s make a convenient shell script to avoid typing long commands over and over again. Here, we create the script, cryspy (any file name will do).\n$ emacs cryspy $ chmod 744 cryspy #!/bin/sh  python3 -u ~/CrySPY_root/0.9.0/cryspy.py 1\u0026gt;\u0026gt; log 2\u0026gt;\u0026gt; err -u option (unbuffered option) can be omitted.\nYou can put this script in your $PATH, or just use like bash ./cryspy.\n"
+	"content": "Assumption Here, we assume the following condition:\n CrySPY main script: ~/CrySPY_root/0.9.0/cryspy.py  Make script Let\u0026rsquo;s make a convenient shell script to avoid typing long commands over and over again. Here, we create the script, cryspy (any file name will do).\n$ emacs cryspy $ chmod 744 cryspy #!/bin/sh  python3 -u ~/CrySPY_root/0.9.0/cryspy.py 1\u0026gt;\u0026gt; log 2\u0026gt;\u0026gt; err -u option (unbuffered option) can be omitted.\nYou can put this script in your $PATH, or just use like zsh ./cryspy.\n"
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/",
 	"title": "Firsrt run",
 	"tags": [],
 	"description": "",
-	"content": "Make sure you have\n calc_in/ (cryspy) cryspy.in  $ ls calc_in cryspy cryspy.in Then, run CyrSPY!\n$ bash ./cryspy or, if you move the cryspy script in your $PATH, just type\n$ cryspy At the first run, CrySPY goes into structure generation mode. CrySPY stops after 5 structure generation.\nIf it worked properly, log would look like this.\n2020/11/11 19:59:18 CrySPY 0.9.0 Start cryspy.py Read input file, cryspy.in Write input data in cryspy.out Save input data in cryspy.stat # --------- Generate initial structures Structure ID 0 was generated. Space group: 136 --\u0026gt; 139 I4/mmm Structure ID 1 was generated. Space group: 98 --\u0026gt; 98 I4_122 Structure ID 2 was generated. Space group: 16 --\u0026gt; 16 P222 Structure ID 3 was generated. Space group: 36 --\u0026gt; 36 Cmc2_1 Structure ID 4 was generated. Space group: 36 --\u0026gt; 36 Cmc2_1 Several output files are also generated.\n cryspy.out: Short log. cryspy.stat: Status file. data/init_POSCARS: Initial struture file in POSCAR format. You can open this file using VESTA  data/pkl_data: Directory to save pickled data. err: Error message. log: Detail log.  Let\u0026rsquo;s take a look at cryspy.stat file.\n... (omit) ... [status] id_queueing = 0 1 2 3 4 Structure ID 0 \u0026ndash; 4 are queueing because we just generated structures, and have not submitted yet.\n"
+	"content": "Make sure you have\n calc_in/ (cryspy) cryspy.in  $ ls calc_in cryspy cryspy.in Then, run CyrSPY!\n$ zsh ./cryspy or, if you move the cryspy script in your $PATH, just type\n$ cryspy At the first run, CrySPY goes into structure generation mode. CrySPY stops after 5 structure generation.\nIf it worked properly, log would look like this.\n2020/11/11 19:59:18 CrySPY 0.9.0 Start cryspy.py Read input file, cryspy.in Write input data in cryspy.out Save input data in cryspy.stat # --------- Generate initial structures Structure ID 0 was generated. Space group: 136 --\u0026gt; 139 I4/mmm Structure ID 1 was generated. Space group: 98 --\u0026gt; 98 I4_122 Structure ID 2 was generated. Space group: 16 --\u0026gt; 16 P222 Structure ID 3 was generated. Space group: 36 --\u0026gt; 36 Cmc2_1 Structure ID 4 was generated. Space group: 36 --\u0026gt; 36 Cmc2_1 Several output files are also generated.\n cryspy.out: Short log. cryspy.stat: Status file. data/init_POSCARS: Initial struture file in POSCAR format. You can open this file using VESTA  data/pkl_data: Directory to save pickled data. err: Error message. log: Detail log.  Let\u0026rsquo;s take a look at cryspy.stat file.\n... (omit) ... [status] id_queueing = 0 1 2 3 4 Structure ID 0 \u0026ndash; 4 are queueing because we just generated structures, and have not submitted yet.\n"
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/submit_job/",
 	"title": "Submit job",
 	"tags": [],
 	"description": "",
-	"content": "Continue CrySPY continues the simulation if you have cryspy.stat file.\nContinue if you have crypy.stat\nStart from the beginning if you don\u0026rsquo;t have cryspy.stat\n Submit job Run CyrSPY again.\n$ bash ./cryspy Check log file.\n2020/11/11 20:02:54 CrySPY 0.9.0 Restart cryspy.py # ---------- job status ID 0: submit job, Stage 1 ID 1: submit job, Stage 1 And also cryspy.stat file.\n... (omit) ... [status] id_queueing = 2 3 4 id 0 = Stage 1 id 1 = Stage 1 CrySPY submitted two jobs for structure ID 0 and 1 as you set njob = 2 in cryspy.in. Calculations are performed in work directory.\nWhen the two jobs are done, run CrySPY again.\n$ bash ./cryspy If you set nstage = 2 (more than 2), new jobs on stage 2 for ID 0 and 1 are submitted. If you set nstage = 1, CrySPY collects calculation data of ID 0 and 1, then submits next ID\u0026rsquo;s jobs.\nRepeat several times until all 5 structures are done.\n"
+	"content": "Continue CrySPY continues the simulation if you have cryspy.stat file.\nContinue if you have crypy.stat\nStart from the beginning if you don\u0026rsquo;t have cryspy.stat\n Submit job Run CyrSPY again.\n$ zsh ./cryspy Check log file.\n2020/11/11 20:02:54 CrySPY 0.9.0 Restart cryspy.py # ---------- job status ID 0: submit job, Stage 1 ID 1: submit job, Stage 1 And also cryspy.stat file.\n... (omit) ... [status] id_queueing = 2 3 4 id 0 = Stage 1 id 1 = Stage 1 CrySPY submitted two jobs for structure ID 0 and 1 as you set njob = 2 in cryspy.in. Calculations are performed in work directory. These directory names correspond to their structure ID.\n$ tree -d work work ├── 000000 ├── 000001 └── fin When the two jobs are done, run CrySPY again.\n$ zsh ./cryspy If you set nstage = 2 (more than 2), new jobs on stage 2 for ID 0 and 1 are submitted. If you set nstage = 1, CrySPY collects calculation data of ID 0 and 1, then submits next ID\u0026rsquo;s jobs. Directories of the finished structure are moved to the fin directory.\nRepeat zsh ./cryspy several times until all 5 structures are done. You can delete the work directory when the simulation is done if you do not need it.\n"
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/",
 	"title": "Check results",
 	"tags": [],
 	"description": "",
-	"content": "Move to data directory. There should be a few more files.\n$ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_data  cryspy_rslt: Result file. cryspy_rslt_energy_asc: Result file sorted by energy in ascending order. init_POSCARS: Initial struture file in POSCAR format. opt_POSCARS: Optimized structure file in POSCAR format. pkl_data: Directory to save pickled data.  cryspy_rslt_energy_asc file is suitable for checking results.\n$ less cryspy_rslt_energy_asc Spg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom Magmom Opt 1 98 I4_122 12 C2/m -3.978441 NaN not_yet 3 36 Cmc2_1 36 Cmc2_1 -3.520306 NaN not_yet 2 16 P222 16 P222 -3.348616 NaN not_yet 4 36 Cmc2_1 4 P2_1 -3.304168 NaN not_yet 0 139 I4/mmm 139 I4/mmm -3.000850 NaN done Spg_num and Spg_sym shows space group information on initial structures. Spg_num_opt and Spg_sym_opt are those of optimized structures. The last column Opt indicates whether or not optimization reached required accuracy.\n"
+	"content": "Move to data directory. There should be a few more files.\n$ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_data  cryspy_rslt: Result file. cryspy_rslt_energy_asc: Result file sorted in energy ascending order. init_POSCARS: Initial struture file in POSCAR format. opt_POSCARS: Optimized structure file in POSCAR format. pkl_data: Directory to save pickled data.  The results are written to text files, cryspy_rslt and cryspy_rslt_energy_asc (and also saved in pickle data in pkl_data directory).\nEach result appends to cryspy_rslt file in the order in which one finished earlier.\n$ cat cryspy_rslt Spg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom Magmom Opt 0 139 I4/mmm 139 I4/mmm -3.000850 NaN done 1 98 I4_122 12 C2/m -3.978441 NaN not_yet 2 16 P222 16 P222 -3.348616 NaN not_yet 3 36 Cmc2_1 36 Cmc2_1 -3.520306 NaN not_yet 4 36 Cmc2_1 4 P2_1 -3.304168 NaN not_yet  Not ID order in cryspy_rslt\n In cryspy_rslt_energy_asc file, the results are sorted in energy ascending order.\n$ cat cryspy_rslt_energy_asc Spg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom Magmom Opt 1 98 I4_122 12 C2/m -3.978441 NaN not_yet 3 36 Cmc2_1 36 Cmc2_1 -3.520306 NaN not_yet 2 16 P222 16 P222 -3.348616 NaN not_yet 4 36 Cmc2_1 4 P2_1 -3.304168 NaN not_yet 0 139 I4/mmm 139 I4/mmm -3.000850 NaN done Spg_num and Spg_sym shows space group information on initial structures. Spg_num_opt and Spg_sym_opt are those of optimized structures. The last column Opt indicates whether or not optimization reached required accuracy.\n"
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/",
 	"title": "Append structures",
 	"tags": [],
 	"description": "",
-	"content": "Of course only 5 structures are not enough to find stable structures. You can append structures whenever you want. Here let\u0026rsquo;s append more 5 structures.\nEdit cryspy.in and change the value of tot_struc into 10.\n$ emacs cryspy.in [basic] algo = RS calc_code = soiap tot_struc = 10 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] Then run cryspy, and check log file.\n$ bash ./cryspy $ less log ... (omit) ... 2020/11/11 20:23:41 CrySPY 0.9.0 Restart cryspy.py Changed tot_struc from 6 to 10 # ---------- Append structures Structure ID 5 was generated. Space group: 212 --\u0026gt; 214 I4_132 Structure ID 6 was generated. Space group: 39 --\u0026gt; 39 Aem2 Structure ID 7 was generated. Space group: 184 --\u0026gt; 183 P6mm Structure ID 8 was generated. Space group: 159 --\u0026gt; 159 P31c Structure ID 9 was generated. Space group: 61 --\u0026gt; 47 Pmmm Remember that CrySPY goes into structure generation mode whenever you change the value of tot_struc. In this mode, CrySPY does not do any other action such as collecting data, submitting jobs, and so on.\nStructure generation mode whenever you change the value of tot_struc\n "
+	"content": "Of course only 5 structures are not enough to find stable structures. You can append structures whenever you want. Here let\u0026rsquo;s append more 5 structures.\nEdit cryspy.in and change the value of tot_struc into 10.\n$ emacs cryspy.in [basic] algo = RS calc_code = soiap tot_struc = 10 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] Then run cryspy, and check log file.\n$ zsh ./cryspy $ less log ... (omit) ... 2020/11/11 20:23:41 CrySPY 0.9.0 Restart cryspy.py Changed tot_struc from 6 to 10 # ---------- Append structures Structure ID 5 was generated. Space group: 212 --\u0026gt; 214 I4_132 Structure ID 6 was generated. Space group: 39 --\u0026gt; 39 Aem2 Structure ID 7 was generated. Space group: 184 --\u0026gt; 183 P6mm Structure ID 8 was generated. Space group: 159 --\u0026gt; 159 P31c Structure ID 9 was generated. Space group: 61 --\u0026gt; 47 Pmmm Remember that CrySPY goes into structure generation mode whenever you change the value of tot_struc. In this mode, CrySPY does not do any other action such as collecting data, submitting jobs, and so on.\nStructure generation mode whenever you change the value of tot_struc\n Repeat zsh ./cryspy several times until all appended structures are done.\n"
+},
+{
+	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/",
+	"title": "Analysis and visualization",
+	"tags": [],
+	"description": "",
+	"content": "Download the data It is assumed here that you analyze and visualize CrySPY data in your local PC. If you use CrySPY in super computers or workstations, download the data in your local PC. You can delete the work directory if you do not need it because the file size could be very large.\njupyter notebook Move to the data directory in results you just download. Then copy cryspy_analyzer_RS.ipynb from CrySPY utility .\n$ ls calc_in cryspy cryspy.in cryspy.out cryspy.stat data err log $ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_CIFS.cif opt_POSCARS pkl_data $ cp /path/to/CrySPY/utility/cryspy_analyzer_RS.ipynb . Run jupyter. (jupyter lab or jupyter notebook)\n$ jupyter lab You can get the following figure by simply running the steps in order.\n"
 },
 {
 	"uri": "https://tomoki-yamashita.github.io/CrySPY_doc/",

@@ -19,6 +19,42 @@ Assumption Here, we assume the following condition:
     </item>
     
     <item>
+      <title>VASP</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/</guid>
+      <description>Coming soon.</description>
+    </item>
+    
+    <item>
+      <title>QE</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/</guid>
+      <description>Coming soon.</description>
+    </item>
+    
+    <item>
+      <title>LAMMPS</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/</guid>
+      <description>Coming soon.</description>
+    </item>
+    
+    <item>
+      <title>OpenMX</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/</guid>
+      <description>Coming soon.</description>
+    </item>
+    
+    <item>
       <title>Check cryspy.in</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -38,7 +74,7 @@ Let&amp;rsquo;s take a look at cryspy.in again. This may be slightly different d
       <description>Assumption Here, we assume the following condition:
  CrySPY main script: ~/CrySPY_root/0.9.0/cryspy.py  Make script Let&amp;rsquo;s make a convenient shell script to avoid typing long commands over and over again. Here, we create the script, cryspy (any file name will do).
 $ emacs cryspy $ chmod 744 cryspy #!/bin/sh  python3 -u ~/CrySPY_root/0.9.0/cryspy.py 1&amp;gt;&amp;gt; log 2&amp;gt;&amp;gt; err -u option (unbuffered option) can be omitted.
-You can put this script in your $PATH, or just use like bash .</description>
+You can put this script in your $PATH, or just use like zsh .</description>
     </item>
     
     <item>
@@ -49,7 +85,7 @@ You can put this script in your $PATH, or just use like bash .</description>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/</guid>
       <description>Make sure you have
  calc_in/ (cryspy) cryspy.in  $ ls calc_in cryspy cryspy.in Then, run CyrSPY!
-$ bash ./cryspy or, if you move the cryspy script in your $PATH, just type
+$ zsh ./cryspy or, if you move the cryspy script in your $PATH, just type
 $ cryspy At the first run, CrySPY goes into structure generation mode. CrySPY stops after 5 structure generation.
 If it worked properly, log would look like this.
 2020/11/11 19:59:18 CrySPY 0.9.0 Start cryspy.py Read input file, cryspy.in Write input data in cryspy.</description>
@@ -65,7 +101,7 @@ If it worked properly, log would look like this.
 Continue if you have crypy.stat
 Start from the beginning if you don&amp;rsquo;t have cryspy.stat
  Submit job Run CyrSPY again.
-$ bash ./cryspy Check log file.
+$ zsh ./cryspy Check log file.
 2020/11/11 20:02:54 CrySPY 0.9.0 Restart cryspy.py # ---------- job status ID 0: submit job, Stage 1 ID 1: submit job, Stage 1 And also cryspy.stat file.
 ... (omit) ... [status] id_queueing = 2 3 4 id 0 = Stage 1 id 1 = Stage 1 CrySPY submitted two jobs for structure ID 0 and 1 as you set njob = 2 in cryspy.</description>
     </item>
@@ -77,8 +113,7 @@ $ bash ./cryspy Check log file.
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/</guid>
       <description>Move to data directory. There should be a few more files.
-$ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_data  cryspy_rslt: Result file. cryspy_rslt_energy_asc: Result file sorted by energy in ascending order. init_POSCARS: Initial struture file in POSCAR format. opt_POSCARS: Optimized structure file in POSCAR format. pkl_data: Directory to save pickled data.  cryspy_rslt_energy_asc file is suitable for checking results.
-$ less cryspy_rslt_energy_asc Spg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom Magmom Opt 1 98 I4_122 12 C2/m -3.</description>
+$ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_data  cryspy_rslt: Result file. cryspy_rslt_energy_asc: Result file sorted in energy ascending order. init_POSCARS: Initial struture file in POSCAR format. opt_POSCARS: Optimized structure file in POSCAR format. pkl_data: Directory to save pickled data.  The results are written to text files, cryspy_rslt and cryspy_rslt_energy_asc (and also saved in pickle data in pkl_data directory).</description>
     </item>
     
     <item>
@@ -90,6 +125,16 @@ $ less cryspy_rslt_energy_asc Spg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom 
       <description>Of course only 5 structures are not enough to find stable structures. You can append structures whenever you want. Here let&amp;rsquo;s append more 5 structures.
 Edit cryspy.in and change the value of tot_struc into 10.
 $ emacs cryspy.in [basic] algo = RS calc_code = soiap tot_struc = 10 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.</description>
+    </item>
+    
+    <item>
+      <title>Analysis and visualization</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/</guid>
+      <description>Download the data It is assumed here that you analyze and visualize CrySPY data in your local PC. If you use CrySPY in super computers or workstations, download the data in your local PC. You can delete the work directory if you do not need it because the file size could be very large.
+jupyter notebook Move to the data directory in results you just download. Then copy cryspy_analyzer_RS.ipynb from CrySPY utility .</description>
     </item>
     
   </channel>

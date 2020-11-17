@@ -17,6 +17,10 @@
   </url>
   
   <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/</loc>
+  </url>
+  
+  <url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/</loc>
     <xhtml:link
                 rel="alternate"
@@ -28,6 +32,10 @@
                 hreflang="en"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/energy_step/</loc>
   </url>
   
   <url>
@@ -93,6 +101,10 @@
   </url>
   
   <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/rs_data/</loc>
+  </url>
+  
+  <url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/</loc>
     <xhtml:link
                 rel="alternate"
@@ -104,6 +116,14 @@
                 hreflang="en"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/struc_step/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/</loc>
   </url>
   
   <url>
@@ -125,6 +145,14 @@
   </url>
   
   <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/ea_data/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/force_step/</loc>
+  </url>
+  
+  <url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/</loc>
     <xhtml:link
                 rel="alternate"
@@ -139,11 +167,27 @@
   </url>
   
   <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/</loc>
+  </url>
+  
+  <url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/</loc>
   </url>
   
   <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/bo_data/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/</loc>
+  </url>
+  
+  <url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/input/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/</loc>
   </url>
   
   <url>
@@ -162,6 +206,26 @@
                 hreflang="en"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/stress_step/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/laqa_data/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/</loc>
   </url>
   
   <url>
@@ -186,6 +250,10 @@
   
   <url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/</loc>
+  </url>
+  
+  <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/</loc>
   </url>
   
   <url>
