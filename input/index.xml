@@ -21,7 +21,96 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/basic_sec/</guid>
-      <description>   Name Value Default Description     algo RS, EA, BO, LAQA  Algorithm   calc_code VASP, QE, soiap, LAMMPS, OMX  Caluculation code for structure optimization          </description>
+      <description>Name Value Default Description     algo RS, EA, BO, LAQA  Algorithm   calc_code VASP, QE, OMX, soiap, LAMMPS  Caluculation code for structure optimization   tot_struc int  The total number of structures   nstage int  The number of stages   njob int  The number of jobs running at the same time.   jobcmd str  Command to submit jobs such as qsub and sbatch.</description>
+    </item>
+    
+    <item>
+      <title>[structure] section</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/structure_sec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/structure_sec/</guid>
+      <description>Name Value Default Description     struc_mode crystal, mol, mol_bs crystal Structure generation mode   natot int  The total number of atoms.   atype atomic symbol [atomic symbol &amp;hellip;]  Atom type. e.g. atype = Na Cl.   nat int [int &amp;hellip;]  The number of atoms in each atom type. e.g. nat = 8 8.   mol_file str [str &amp;hellip;], None None Path of molecule files or molecule names.</description>
+    </item>
+    
+    <item>
+      <title>[VASP] section</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/vasp_sec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/vasp_sec/</guid>
+      <description>[VASP] section is required only if you use VASP (calc_code = VASP)
+   Name Value Default Description     kppvol int [int &amp;hellip;]  Grid density per Å**(-3) of reciprocal cell in each stage   force_gamma bool False If true, force gamma-centered mesh.    </description>
+    </item>
+    
+    <item>
+      <title>[QE] section</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/qe_sec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/qe_sec/</guid>
+      <description>[QE] section is required only if you use QE (calc_code = QE)
+   Name Value Default Description     kppvol int [int &amp;hellip;]  Grid density per Å**(-3) of reciprocal cell in each stage   qe_infile str  File name of QE input file.   qe_outfile str  File name of QE output file.    </description>
+    </item>
+    
+    <item>
+      <title>[OMX] section</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/omx_sec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/omx_sec/</guid>
+      <description>[OMX] section is required only if you use OpenMX (calc_code = OMX)
+   Name Value Default Description     kppvol int [int &amp;hellip;]  Grid density per Å**(-3) of reciprocal cell in each stage   OMX_infile str  File name of OpenMX input file.   OMX_outfile str  File name of OpenMX output file.   ValenceElectrons str float float [str float float &amp;hellip;]  The number of initial charges for up and down spin states.</description>
+    </item>
+    
+    <item>
+      <title>[soaip] section</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/soiap_sec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/soiap_sec/</guid>
+      <description>[soiap] section is required only if you use soiap (calc_code = soiap)
+   Name Value Default Description     soiap_infile str  File name of soiap input file.   soiap_outfile str  File name of soiap output file.   soiap_cif str  File name of soiap CIF-formatted initial structure.    </description>
+    </item>
+    
+    <item>
+      <title>[LAMMPS] section</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/lammps_sec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/lammps_sec/</guid>
+      <description>[LAMMPS] section is required only if you use LAMMPS (calc_code = LAMMPS)
+   Name Value Default Description     lammps_infile str  File name of LAMMPS input file.   lammps_outfile str  File name of LAMMPS output file.   lammps_potential str [str &amp;hellip;], None None Potential.   lammps_data str  File name of LAMMPS data file.    </description>
+    </item>
+    
+    <item>
+      <title>[EA] section</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/ea/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/ea/</guid>
+      <description>[EA] section is required only if you use EA (algo = EA)
+   Name Value Default Description     n_pop int  Population from second generation.   n_crsov int  The number of structures generated by crossover.   n_perm int  The number of structures generated by permutation.   n_strain int  The number of structures generated by strain.   n_rand int  The number of structures generated randomly.</description>
+    </item>
+    
+    <item>
+      <title>[BO] section</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/bo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/bo/</guid>
+      <description>[BO] section is required only if you use BO (algo = BO)
+   Name Value Default Description     nselect_bo int  The number of structures to be selected at once.   score TS, EI, PI  Acquisition function.   num_rand_basis int  If 0, Gaussian process. The number of basis function.   cdev float 0.001 Cutoff of deviation for standardization.   dscrpt FP  Descriptor for structures.</description>
+    </item>
+    
+    <item>
+      <title>[LAQA] section</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/laqa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/laqa/</guid>
+      <description>[LAQA] section is required only if you use LAQA (algo = LAQA)
+   Name Value Default Description     nselect_laqa int  The number of structures to be selected at once.   weight_laqa float 1.0 Weight of bias in the score.    </description>
     </item>
     
   </channel>

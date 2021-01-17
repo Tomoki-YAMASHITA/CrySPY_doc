@@ -24,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/find_wy/</guid>
-      <description>CrySPYではこれまで，任意の空間（対称性）持つ構造を生成するためにfind_wy を利用してきた．しかし，CrySPY 0.9.0からはデフォルトではPyXtal ライブラリを採用している． CrySPY 0.9.0 以上で構造生成にPyXtalを使う場合は，find_wyのインストールはスキップできる． 従来通りfind_wyを利用することももちろん可能である． CrySPY 0.8.0 以前のものでは，空間群を考慮した構造生成にはfind_wyのインストールが必要となる．
+      <description>CrySPYではこれまで，任意の空間群（対称性）持つ構造を生成するためにfind_wy を利用してきた．しかし，CrySPY 0.9.0からはデフォルトではPyXtal ライブラリを採用している． CrySPY 0.9.0 以上で構造生成にPyXtalを使う場合は，find_wyのインストールはスキップできる． 従来通りfind_wyを利用することももちろん可能である． CrySPY 0.8.0 以前のものでは，空間群を考慮した構造生成にはfind_wyのインストールが必要となる．
 CrySPY 0.9.0 以上ではfind_wyのインストールはスキップできる．
  find_wyのインストール m_tspace find_wyをコンパイルするためには，まずはm_tspace をコンパイルして，ライブラリを生成する必要がある．詳細は以下のm_tspaceのサイトを参照すること．
  m_tspace  Wiki of m_tspace   m_tspace のソースをgitでダウンロードしてくる．ダウンロード先は例えば
@@ -46,6 +46,17 @@ Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomo
 ダウンロードして展開したソースを~/CrySPY_root/x.x.xに置く．
 ディレクトリ構成 ~/CrySPY_root/x.x.x/のディレクトリ構成:
 x.x.x ├── CHANGELOG.md ├── CrySPY/ │ ├── BO/ │ ├── EA/ │ ├── IO/ │ ├── LAQA/ │ ├── RS/ │ ├── __init__.py │ ├── calc_dscrpt/ │ ├── f-fingerprint/ │ ├── find_wy/ │ ├── gen_struc/ │ ├── interface/ │ ├── job/ │ └── start/ │ └── utility.</description>
+    </item>
+    
+    <item>
+      <title>CrySPYユーティリティ (オプション)</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/utility/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/utility/</guid>
+      <description>ローカルPCのPython環境 ローカルPCにPython環境を構築しておくと，計算結果の解析および可視化を行うのに便利である． jupyter notebookやPythonスクリプトなどのユーティリティツールが利用できる．
+ユーティリティツールを使うには以下のライブラリ等が必要になる．
+ jupyter  NumPy  pandas  matplotlib  pymatgen   ユーティリティツールのダウンロード Git $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git zip CrySPY utility へ飛んで，緑のCodeと書かれたボタンをクリック，Download ZIPを選んでダウンロード.</description>
     </item>
     
   </channel>

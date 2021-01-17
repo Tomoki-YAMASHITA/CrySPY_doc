@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>オプションデータ on CrySPY</title>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/</link>
+    <description>Recent content in オプションデータ on CrySPY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>energy_step_data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/</guid>
+      <description>energy_step_data is saved in energy_step_data.pkl if you set energy_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
+energy_step_flag = True is currently available only with VASP and soiap.
+ Data format  type: dict  key: structure ID value: list of energy step data in each stage   string form  {0: [array([-3.4439912 , -3.55040935, -3.66697038, ..]), array([-4.0613393 , -4.05445631, -4.06159641, &amp;hellip;]), &amp;hellip;],</description>
+    </item>
+    
+    <item>
+      <title>struc_step_data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/struc_step/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/struc_step/</guid>
+      <description>struc_step_data is saved in struc_step_data.pkl if you set struc_step_flag = True in [option] section of cryspy.in. pymatgen  library is required to analyze this data file.
+struc_step_flag = True is currently available only with VASP and soiap.
+ Data format  type: dict  key: structure ID value: list of structure step data in each stage   string form  {0: [[Structure Summary &amp;hellip;, Structure Summary, &amp;hellip;], [&amp;hellip;], &amp;hellip;],</description>
+    </item>
+    
+    <item>
+      <title>force_step_data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/force_step/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/force_step/</guid>
+      <description>force_step_data is saved in force_step_data.pkl if you set force_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
+force_step_flag = True is currently available only with VASP and soiap.
+ Data format  type: dict  key: structure ID value: list of force step data in each stage   string form  {0: [array([[ 0.26314927, -0.26314927, -0. ], [&amp;hellip;], &amp;hellip;[&amp;hellip;]]), array([[&amp;hellip;], &amp;hellip;, [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
+    </item>
+    
+    <item>
+      <title>stress_step_data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/stress_step/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/stress_step/</guid>
+      <description>stress_step_data is saved in stress_step_data.pkl if you set stress_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
+stress_step_flag = True is currently available only with VASP and soiap.
+ Data format  type: dict  key: structure ID value: list of stress step data in each stage   string form  {0: [array([[-0.16770062, 0. , 0. ], [&amp;hellip;], [&amp;hellip;]]), array([[&amp;hellip;], ]&amp;hellip;], [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
+    </item>
+    
+  </channel>
+</rss>
