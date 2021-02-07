@@ -13,9 +13,8 @@
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/</guid>
       <description>You need (CrySPY + Python environment + structure optimizer) in your workstation, super computer, etc.
- Python Tested with Python 3.8.5 on Mac, and Python 3.8.2, 3.8.3 on Linux.
- Python 3.x.x  COMBO  pymatgen  PyXtal  (CrySPY 0.9.0 or later)    Structure optimizer At least one optimizer is required.
- First-principles calculation  VASP  Quantum Espresso  OpenMX  (CrySPY 0.9.0 or later)   Interatomic potential  soiap  LAMMPS     Others  find_wy  (optional in CrySPY 0.</description>
+ Python Tested with Python 3.8.5 and 3.8.7 on Mac, and Python 3.8.2, 3.8.3 on Linux.
+ Python 3.x.x  COMBO  pymatgen  PyXtal  (CrySPY 0.9.0 or later)    [2021 Feb. 5] PyXtal depends on numba, but numba does not support Python 3.9. So you should use Python 3.8.x for a while.</description>
     </item>
     
     <item>
