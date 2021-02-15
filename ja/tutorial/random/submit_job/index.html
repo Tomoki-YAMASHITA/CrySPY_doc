@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.79.1" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>Submit job :: CrySPY</title>
 
     
-    <link href="/CrySPY_doc/css/nucleus.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hybrid.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/featherlight.min.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/auto-complete.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/theme.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hugo-theme.css?1612678461" rel="stylesheet">
+    <link href="/CrySPY_doc/css/nucleus.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1613356355" rel="stylesheet">
     
-    <link href="/CrySPY_doc/css/theme-green.css?1612678461" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme-green.css?1613356355" rel="stylesheet">
     
     
 
-    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1612678461"></script>
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1613356355"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1612678461"></script>
-<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1612678461"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1613356355"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1613356355"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc\/ja";
     
 </script>
-<script type="text/javascript" src="/CrySPY_doc/js/search.js?1612678461"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1613356355"></script>
 
     
   </div>
@@ -1364,7 +1364,7 @@ Start from the beginning if you don&rsquo;t have <code>cryspy.stat</code></p>
 
 <h2 id="submit-job">Submit job</h2>
 <p>Run CyrSPY again.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ zsh ./cryspy
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ cryspy &amp;
 </code></pre></div><p>Check <code>log</code> file.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">2020/11/11 20:02:54
 CrySPY 0.9.0
@@ -1384,7 +1384,7 @@ id_queueing = 2 3 4
 id      0 = Stage 1
 id      1 = Stage 1
 </code></pre></div><p>CrySPY submitted two jobs for structure ID 0 and 1 as you set <code>njob = 2</code> in <code>cryspy.in</code>.
-Calculations are performed in <code>work</code> directory.
+Calculations are performed in the <code>work</code> directory.
 These directory names correspond to their structure ID.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ tree -d work
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">work
@@ -1392,11 +1392,11 @@ These directory names correspond to their structure ID.</p>
 ├── 000001
 └── fin
 </code></pre></div><p>When the two jobs are done, run CrySPY again.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ zsh ./cryspy
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ cryspy &amp;
 </code></pre></div><p>If you set <code>nstage = 2</code> (more than 2), new jobs on stage 2 for ID 0 and 1 are submitted.
 If you set <code>nstage = 1</code>, CrySPY collects calculation data of ID 0 and 1, then submits next ID&rsquo;s jobs.
 Directories of the finished structure are moved to the <code>fin</code> directory.</p>
-<p>Repeat <code>zsh ./cryspy</code> several times until all 5 structures are done.
+<p>Repeat <code>cryspy &amp;</code> several times until all 5 structures are done.
 You can delete the <code>work</code> directory when the simulation is done if you do not need it.</p>
 
 
@@ -2220,19 +2220,19 @@ You can delete the <code>work</code> directory when the simulation is done if yo
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CrySPY_doc/js/clipboard.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/jquery.sticky.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/featherlight.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/highlight.pack.js?1612678461"></script>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1613356355"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/learn.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/hugo-learn.js?1612678461"></script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/learn.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1613356355"></script>
     
         
-            <script src="/CrySPY_doc/mermaid/mermaid.js?1612678461"></script>
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1613356355"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

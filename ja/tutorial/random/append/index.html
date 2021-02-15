@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.79.1" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>Append structures :: CrySPY</title>
 
     
-    <link href="/CrySPY_doc/css/nucleus.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hybrid.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/featherlight.min.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/auto-complete.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/theme.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hugo-theme.css?1612678461" rel="stylesheet">
+    <link href="/CrySPY_doc/css/nucleus.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1613356355" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1613356355" rel="stylesheet">
     
-    <link href="/CrySPY_doc/css/theme-green.css?1612678461" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme-green.css?1613356355" rel="stylesheet">
     
     
 
-    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1612678461"></script>
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1613356355"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1612678461"></script>
-<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1612678461"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1613356355"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1613356355"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc\/ja";
     
 </script>
-<script type="text/javascript" src="/CrySPY_doc/js/search.js?1612678461"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1613356355"></script>
 
     
   </div>
@@ -1355,6 +1355,7 @@ You can append structures whenever you want.
 Here let&rsquo;s append more 5 structures.</p>
 <p>Edit <code>cryspy.in</code> and change the value of <code>tot_struc</code> into <code>10</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ emacs cryspy.in
+$ cat cryspy.in
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">[basic]
 algo = RS
 calc_code = soiap
@@ -1376,8 +1377,8 @@ soiap_cif = initial.cif
 
 [option]
 </code></pre></div><p>Then run cryspy, and check <code>log</code> file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ zsh ./cryspy
-$ less log
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ cryspy &amp;
+$ cat log
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">...
 (omit)
 ...
@@ -1403,7 +1404,7 @@ In this mode, CrySPY does not do any other action such as collecting data, submi
 <div class="notices note" ><p>Structure generation mode whenever you change the value of <code>tot_struc</code></p>
 </div>
 
-<p>Repeat <code>zsh ./cryspy</code> several times until all appended structures are done.</p>
+<p>Repeat <code>cryspy &amp;</code> several times until all appended structures are done.</p>
 
 
 <footer class="footline">
@@ -2226,19 +2227,19 @@ In this mode, CrySPY does not do any other action such as collecting data, submi
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CrySPY_doc/js/clipboard.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/jquery.sticky.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/featherlight.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/highlight.pack.js?1612678461"></script>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1613356355"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/learn.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/hugo-learn.js?1612678461"></script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/learn.js?1613356355"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1613356355"></script>
     
         
-            <script src="/CrySPY_doc/mermaid/mermaid.js?1612678461"></script>
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1613356355"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

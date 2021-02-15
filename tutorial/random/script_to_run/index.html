@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.79.1" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>Script to run :: CrySPY</title>
 
     
-    <link href="/CrySPY_doc/css/nucleus.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hybrid.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/featherlight.min.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/auto-complete.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/theme.css?1612678461" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hugo-theme.css?1612678461" rel="stylesheet">
+    <link href="/CrySPY_doc/css/nucleus.css?1613356354" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1613356354" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1613356354" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1613356354" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1613356354" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1613356354" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1613356354" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1613356354" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1613356354" rel="stylesheet">
     
-    <link href="/CrySPY_doc/css/theme-green.css?1612678461" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme-green.css?1613356354" rel="stylesheet">
     
     
 
-    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1612678461"></script>
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1613356354"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1612678461"></script>
-<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1612678461"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1613356354"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1613356354"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc";
     
 </script>
-<script type="text/javascript" src="/CrySPY_doc/js/search.js?1612678461"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1613356354"></script>
 
     
   </div>
@@ -1421,18 +1421,19 @@
 <h2 id="assumption">Assumption</h2>
 <p>Here, we assume the following condition:</p>
 <ul>
-<li>CrySPY main script: <code>~/CrySPY_root/0.9.0/cryspy.py</code></li>
+<li>CrySPY main script: <code>~/CrySPY_root/CrySPY-0.9.0/cryspy.py</code></li>
 </ul>
 <h2 id="make-script">Make script</h2>
 <p>Let&rsquo;s make a convenient shell script to avoid typing long commands over and over again.
 Here, we create the script, <code>cryspy</code> (any file name will do).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ emacs cryspy
 $ chmod <span style="color:#ae81ff">744</span> cryspy
+$ cat cryspy
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>
-python3 -u ~/CrySPY_root/0.9.0/cryspy.py 1&gt;&gt; log 2&gt;&gt; err
+python3 -u ~/CrySPY_root/CrySPY-0.9.0/cryspy.py 1&gt;&gt; log 2&gt;&gt; err
 </code></pre></div><p><code>-u</code> option (unbuffered option) can be omitted.</p>
-<p>You can put this script in your $PATH, or just use like <code>zsh ./cryspy</code>.</p>
+<p>You can put this script in your $PATH, or just use like <code>bash ./cryspy</code>.</p>
 
 
 <footer class="footline">
@@ -2303,19 +2304,19 @@ python3 -u ~/CrySPY_root/0.9.0/cryspy.py 1&gt;&gt; log 2&gt;&gt; err
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CrySPY_doc/js/clipboard.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/jquery.sticky.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/featherlight.min.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/highlight.pack.js?1612678461"></script>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1613356354"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1613356354"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1613356354"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1613356354"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1613356354"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1613356354"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/learn.js?1612678461"></script>
-    <script src="/CrySPY_doc/js/hugo-learn.js?1612678461"></script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1613356354"></script>
+    <script src="/CrySPY_doc/js/learn.js?1613356354"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1613356354"></script>
     
         
-            <script src="/CrySPY_doc/mermaid/mermaid.js?1612678461"></script>
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1613356354"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -34,8 +34,8 @@ You can skip to install find_wy in CrySPY 0.</description>
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/</guid>
       <description>Installation of CrySPY is very simple. Just download it!
-Download You can put the source code of CrySPY in an arbitrary directory. Here, let us put the source code in ~/CrySPY_root/x.x.x (x.x.x means the version). Use git or the compressed file.
-Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git x.x.x zip or tar.gz file Download the source as a zip or tar.gz file from  GitHub release  .</description>
+Download You can put the source code of CrySPY in an arbitrary directory. For example, let us put the source code in ~/CrySPY_root/CrySPY-x.x.x (x.x.x means the version). Use git or download the compressed file.
+Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git CrySPY-x.x.x zip or tar.gz file Download the source as a zip or tar.gz file from  GitHub release  .</description>
     </item>
     
     <item>

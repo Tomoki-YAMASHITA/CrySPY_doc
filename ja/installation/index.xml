@@ -43,11 +43,11 @@ $ emacs makefile $ head -n 4 makefile #FC=gfortran #FFLAGS=-g -cpp -DUSE_GEN -ff
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/</guid>
       <description>CrySPYのインストールはシンプルで，ダウンロードするだけで良い．
-ダウンロード CrySPYは任意の場所に置いて良い．ここでは例として~/CrySPY_root/x.x.x (x.x.x はバージョン番号)にダウンロードすることにする． gitコマンドを使うか，リリースページから圧縮ファイルをダウンロードする．
-Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git x.x.x zip or tar.gz file zip または tar.gz ファイルをここからダウンロードする．  GitHub release  .
-ダウンロードして展開したソースを~/CrySPY_root/x.x.xに置く．
-ディレクトリ構成 ~/CrySPY_root/x.x.x/のディレクトリ構成:
-x.x.x ├── CHANGELOG.md ├── CrySPY/ │ ├── BO/ │ ├── EA/ │ ├── IO/ │ ├── LAQA/ │ ├── RS/ │ ├── __init__.py │ ├── calc_dscrpt/ │ ├── f-fingerprint/ │ ├── find_wy/ │ ├── gen_struc/ │ ├── interface/ │ ├── job/ │ └── start/ │ └── utility.</description>
+ダウンロード CrySPYは任意の場所に置いて良い．ここでは例として~/CrySPY_root/CrySPY-x.x.x (x.x.x はバージョン番号)にダウンロードすることにする． gitコマンドを使うか，リリースページから圧縮ファイルをダウンロードする．
+Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git CrySPY-x.x.x zip or tar.gz file zip または tar.gz ファイルをここからダウンロードする．  GitHub release  .
+ダウンロードして展開したソースを~/CrySPY_root/CrySPY-x.x.xに置く．
+ディレクトリ構成 ~/CrySPY_root/CrySPY-x.x.x/のディレクトリ構成:
+CrySPY-x.x.x ├── CHANGELOG.md ├── CrySPY/ │ ├── BO/ │ ├── EA/ │ ├── IO/ │ ├── LAQA/ │ ├── RS/ │ ├── __init__.py │ ├── calc_dscrpt/ │ ├── f-fingerprint/ │ ├── find_wy/ │ ├── gen_struc/ │ ├── interface/ │ ├── job/ │ └── start/ │ └── utility.</description>
     </item>
     
     <item>
