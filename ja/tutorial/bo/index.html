@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="ja" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.79.1" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/CrySPY_doc/images/favicon.png" type="image/png">
+
+    <title>Bayesian Optimization (BO) :: CrySPY</title>
+
+    
+    <link href="/CrySPY_doc/css/nucleus.css?1613646287" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1613646287" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1613646287" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1613646287" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1613646287" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1613646287" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1613646287" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1613646287" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1613646287" rel="stylesheet">
+    
+    <link href="/CrySPY_doc/css/theme-green.css?1613646287" rel="stylesheet">
+    
+    
+
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1613646287"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/CrySPY_doc/ja/tutorial/bo/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://tomoki-yamashita.github.io/CrySPY_doc">
+<img src="/CrySPY_doc/images/logo/cryspy_logo_white.png" alt="CrySPY">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="検索...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1613646287"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1613646287"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc\/ja";
+    
+</script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1613646287"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/about/" title="CrySPYについて" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/about/">
+          CrySPYについて
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/about/csp/" title="結晶構造探索" class="dd-item ">
+        <a href="/CrySPY_doc/ja/about/csp/">
+        結晶構造探索
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/about/algorithms/" title="探索アルゴリズム" class="dd-item ">
+        <a href="/CrySPY_doc/ja/about/algorithms/">
+        探索アルゴリズム
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/about/interface/" title="インターフェース" class="dd-item ">
+        <a href="/CrySPY_doc/ja/about/interface/">
+        インターフェース
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/about/logo/" title="ロゴ" class="dd-item ">
+        <a href="/CrySPY_doc/ja/about/logo/">
+        ロゴ
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/installation/" title="インストール" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/installation/">
+          インストール
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/installation/requirements/" title="システム要件" class="dd-item ">
+        <a href="/CrySPY_doc/ja/installation/requirements/">
+        システム要件
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/installation/find_wy/" title="find_wy (オプション)" class="dd-item ">
+        <a href="/CrySPY_doc/ja/installation/find_wy/">
+        find_wy (オプション)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/installation/cryspy/" title="CrySPY" class="dd-item ">
+        <a href="/CrySPY_doc/ja/installation/cryspy/">
+        CrySPY
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/installation/utility/" title="CrySPYユーティリティ (オプション)" class="dd-item ">
+        <a href="/CrySPY_doc/ja/installation/utility/">
+        CrySPYユーティリティ (オプション)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/tutorial/" title="チュートリアル" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/tutorial/">
+          チュートリアル
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/tutorial/random/" title="Random Search (RS)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/tutorial/random/">
+          Random Search (RS)
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/soiap/" title="soiap in your local PC" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/soiap/">
+        soiap in your local PC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/vasp/" title="VASP" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/vasp/">
+        VASP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/qe/" title="QE" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/qe/">
+        QE
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/omx/" title="OpenMX" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/omx/">
+        OpenMX
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/lammps/" title="LAMMPS" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/lammps/">
+        LAMMPS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/cryspy_in/" title="Check cryspy.in" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/cryspy_in/">
+        Check cryspy.in
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/script_to_run/" title="Script to run" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/script_to_run/">
+        Script to run
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/first_run/" title="Firsrt run" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/first_run/">
+        Firsrt run
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/submit_job/" title="Submit job" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/submit_job/">
+        Submit job
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/result/" title="Check results" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/result/">
+        Check results
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/append/" title="Append structures" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/append/">
+        Append structures
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/random/analysis_visualization/" title="Analysis and visualization" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/random/analysis_visualization/">
+        Analysis and visualization
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/ea/" title="Evolutionary Algorithm (EA)" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/ea/">
+        Evolutionary Algorithm (EA)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/bo/" title="Bayesian Optimization (BO)" class="dd-item active">
+        <a href="/CrySPY_doc/ja/tutorial/bo/">
+        Bayesian Optimization (BO)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/laqa/" title="LAQA" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/laqa/">
+        LAQA
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/mol/" title="Molecular crystal structure prediction" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/mol/">
+        Molecular crystal structure prediction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/tutorial/restrict_dist/" title="Restriction on interatomic distances" class="dd-item ">
+        <a href="/CrySPY_doc/ja/tutorial/restrict_dist/">
+        Restriction on interatomic distances
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/input/" title="入力ファイル" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/input/">
+          入力ファイル
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/input/format/" title="File format" class="dd-item ">
+        <a href="/CrySPY_doc/ja/input/format/">
+        File format
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/input/basic_sec/" title="[basic] section" class="dd-item ">
+        <a href="/CrySPY_doc/ja/input/basic_sec/">
+        [basic] section
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/input/structure_sec/" title="[structure] section" class="dd-item ">
+        <a href="/CrySPY_doc/ja/input/structure_sec/">
+        [structure] section
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/input/vasp_sec/" title="[VASP] section" class="dd-item ">
+        <a href="/CrySPY_doc/ja/input/vasp_sec/">
+        [VASP] section
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/input/qe_sec/" title="[QE] section" class="dd-item ">
+        <a href="/CrySPY_doc/ja/input/qe_sec/">
+        [QE] section
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/input/omx_sec/" title="[OMX] section" class="dd-item ">
+        <a href="/CrySPY_doc/ja/input/omx_sec/">
+        [OMX] section
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/input/soiap_sec/" title="[soaip] section" class="dd-item ">
+        <a href="/CrySPY_doc/ja/input/soiap_sec/">
+        [soaip] section
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/input/lammps_sec/" title="[LAMMPS] section" class="dd-item ">
+        <a href="/CrySPY_doc/ja/input/lammps_sec/">
+        [LAMMPS] section
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/input/ea/" title="[EA] section" class="dd-item ">
+        <a href="/CrySPY_doc/ja/input/ea/">
+        [EA] section
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/input/bo/" title="[BO] section" class="dd-item ">
+        <a href="/CrySPY_doc/ja/input/bo/">
+        [BO] section
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/input/laqa/" title="[LAQA] section" class="dd-item ">
+        <a href="/CrySPY_doc/ja/input/laqa/">
+        [LAQA] section
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/data_format/" title="データフォーマット" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/data_format/">
+          データフォーマット
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/data_format/common_data/" title="Common data" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/data_format/common_data/">
+          Common data
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/data_format/rs_data/" title="Random Search (RS)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/data_format/rs_data/">
+          Random Search (RS)
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/data_format/ea_data/" title="Evolutionary algorithm (EA)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/data_format/ea_data/">
+          Evolutionary algorithm (EA)
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/data_format/bo_data/" title="Bayesian Optimization (BO)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/data_format/bo_data/">
+          Bayesian Optimization (BO)
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/data_format/laqa_data/" title="LAQA" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/data_format/laqa_data/">
+          LAQA
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/CrySPY_doc/ja/data_format/optional_data/" title="オプションデータ" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/CrySPY_doc/ja/data_format/optional_data/">
+          オプションデータ
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/data_format/optional_data/energy_step/" title="energy_step_data" class="dd-item ">
+        <a href="/CrySPY_doc/ja/data_format/optional_data/energy_step/">
+        energy_step_data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/data_format/optional_data/struc_step/" title="struc_step_data" class="dd-item ">
+        <a href="/CrySPY_doc/ja/data_format/optional_data/struc_step/">
+        struc_step_data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/data_format/optional_data/force_step/" title="force_step_data" class="dd-item ">
+        <a href="/CrySPY_doc/ja/data_format/optional_data/force_step/">
+        force_step_data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/CrySPY_doc/ja/data_format/optional_data/stress_step/" title="stress_step_data" class="dd-item ">
+        <a href="/CrySPY_doc/ja/data_format/optional_data/stress_step/">
+        stress_step_data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>リンク</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Tomoki-YAMASHITA/CrySPY"><i class='fab fa-github'></i> GitHub repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Tomoki-YAMASHITA/CrySPY/releases"><i class='fas fa-download'></i> GitHub releases</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/Tomoki-YAMASHITA/CrySPY_utility"><i class='fab fa-github'></i> CrySPY utility</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://groups.google.com/forum/#!forum/cryspy-user"><i class='fab fa-google'></i> Google group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="ja" value="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/bo/" selected>日本語</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/CrySPY_doc/ja/'></a> > <a href='/CrySPY_doc/ja/tutorial/'>チュートリアル</a> > Bayesian Optimization (BO)
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Bayesian Optimization (BO)
+            </h1>
+          
+
+        
+
+
+<p>BO</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/CrySPY_doc/ja/tutorial/ea/" title="Evolutionary Algorithm (EA)"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/CrySPY_doc/ja/tutorial/laqa/" title="LAQA" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1613646287"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1613646287"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1613646287"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1613646287"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1613646287"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1613646287"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1613646287"></script>
+    <script src="/CrySPY_doc/js/learn.js?1613646287"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1613646287"></script>
+    
+        
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1613646287"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

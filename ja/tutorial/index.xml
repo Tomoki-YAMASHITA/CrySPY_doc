@@ -6,5 +6,55 @@
     <description>Recent content in チュートリアル on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Evolutionary Algorithm (EA)</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/ea/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/ea/</guid>
+      <description>EA</description>
+    </item>
+    
+    <item>
+      <title>Bayesian Optimization (BO)</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/bo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/bo/</guid>
+      <description>BO</description>
+    </item>
+    
+    <item>
+      <title>LAQA</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/laqa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/laqa/</guid>
+      <description>LAQA</description>
+    </item>
+    
+    <item>
+      <title>Molecular crystal structure prediction</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mol/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mol/</guid>
+      <description>First, see Random Search (RS) for basic usage of CrySPY.
+ In this section, we give a tutorial on the molecular structure generation part only. Since version 0.9.0, CrySPY has been able to generate random molecular crystal structures using PyXtal .
+You need to use a pre-defined molecular by PyXtal&amp;rsquo;s database (see, https://pyxtal.readthedocs.io/en/latest/Others.html#working-with-molecules ) or create molecule files that define molecular structures.
+Assumption Here, we assume the following condition:</description>
+    </item>
+    
+    <item>
+      <title>Restriction on interatomic distances</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/restrict_dist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/restrict_dist/</guid>
+      <description>First, see Random Search (RS) for basic usage of CrySPY.
+ You can restrict the interatomic distance in structure generation. Here is an example of [structure] section in the input file to limit minimum interatomic distance for a A-B system.
+[structure] natot = 8 atype = A B nat = 4 4 mindist_1 = 2.0 1.8 mindist_2 = 1.8 1.5 This means that minimum interatomic distances of A-A, A-B, and B-B are limited to 2.</description>
+    </item>
+    
   </channel>
 </rss>

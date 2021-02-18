@@ -14,7 +14,7 @@
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/</guid>
       <description>soiap  is Structure Optimization with InterAtomic Potential. It is suitable for testing CrySPY because of its fast structure optimization. See instructions  to install soiap.
 In this tutorial, we try to use CrySPY in your local PC (Mac or Linux). The target system is Si 8 atoms.
-Assumption Here, we assume the following condition:
+Assumption Here, we assume the following conditions:
  CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job filename: job_cryspy soiap executable file: ~/local/soiap-0.3.0/src/soiap soiap input filename: soiap.</description>
     </item>
     
@@ -34,7 +34,7 @@ Assumption Here, we assume the following condition:
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/</guid>
       <description>In this tutorial, we try to use CrySPY in a machine with a job scheduler system such as PBS. Here we employ QUANTUM ESPRESSO. (QE). The target system is Si 8 atoms.
-Assumption Here, we assume the following condition:
+Assumption Here, we assume the following conditions:
  CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job command: qsub CrySPY job filename: job_cryspy QE executable file: /usr/local/qe-6.5/bin/pw.x QE input filename: pwscf.in QE output filename: pwscf.out  Input files Move to your working directory, and copy input example files.</description>
     </item>
     
