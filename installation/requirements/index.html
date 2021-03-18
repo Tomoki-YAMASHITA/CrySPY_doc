@@ -12,21 +12,21 @@
     <title>System requirements :: CrySPY</title>
 
     
-    <link href="/CrySPY_doc/css/nucleus.css?1613646287" rel="stylesheet">
-    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1613646287" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hybrid.css?1613646287" rel="stylesheet">
-    <link href="/CrySPY_doc/css/featherlight.min.css?1613646287" rel="stylesheet">
-    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1613646287" rel="stylesheet">
-    <link href="/CrySPY_doc/css/auto-complete.css?1613646287" rel="stylesheet">
-    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1613646287" rel="stylesheet">
-    <link href="/CrySPY_doc/css/theme.css?1613646287" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hugo-theme.css?1613646287" rel="stylesheet">
+    <link href="/CrySPY_doc/css/nucleus.css?1616058279" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1616058279" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1616058279" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1616058279" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1616058279" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1616058279" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1616058279" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1616058279" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1616058279" rel="stylesheet">
     
-    <link href="/CrySPY_doc/css/theme-green.css?1613646287" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme-green.css?1616058279" rel="stylesheet">
     
     
 
-    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1613646287"></script>
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1616058279"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1613646287"></script>
-<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1613646287"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1616058279"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1616058279"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc";
     
 </script>
-<script type="text/javascript" src="/CrySPY_doc/js/search.js?1613646287"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1616058279"></script>
 
     
   </div>
@@ -1428,7 +1428,13 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#python">Python</a></li>
+    <li><a href="#python">Python</a>
+      <ul>
+        <li><a href="#cryspy-092">CrySPY 0.9.2</a></li>
+        <li><a href="#cryspy-090----091">CrySPY 0.9.0 &ndash; 0.9.1</a></li>
+        <li><a href="#cryspy-080-or-earlier">CrySPY 0.8.0 or earlier</a></li>
+      </ul>
+    </li>
     <li><a href="#structure-optimizer">Structure optimizer</a></li>
     <li><a href="#others">Others</a></li>
   </ul>
@@ -1460,31 +1466,56 @@
 </div>
 
 <h2 id="python">Python</h2>
-<p>Tested with Python 3.8.5 and 3.8.7 on Mac, and Python 3.8.2, 3.8.3 on Linux.</p>
+<h3 id="cryspy-092">CrySPY 0.9.2</h3>
+<p>Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.</p>
 <ul>
 <li>Python 3.x.x
 <ul>
 <li><a href="https://github.com/tsudalab/combo3" target="_blank">COMBO</a>
 <i class="fas fa-external-link-alt"></i></li>
-<li><a href="https://pymatgen.org/" target="_blank">pymatgen</a>
+<li><a href="https://pymatgen.org/" target="_blank">pymatgen 2022.x.x or later</a>
 <i class="fas fa-external-link-alt"></i></li>
-<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a>
-<i class="fas fa-external-link-alt"></i> (CrySPY 0.9.0 or later)</li>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal 0.2.2 or later</a>
+<i class="fas fa-external-link-alt"></i></li>
 </ul>
 </li>
 </ul>
 
-<div class="notices warning" ><p>[2021 Feb. 5]
+<div class="notices info" ><p>[2021 March 18]
+There is a breaking change in pymatgen 2022.x.x. CrySPY 0.9.2 and PyXtal 0.2.2 support this change in pymatgen.</p>
+</div>
+
+
+<div class="notices info" ><p>[2021 Feb. 5]
 PyXtal depends on numba, but numba does not support Python 3.9.
-So you should use Python 3.8.x for a while.</p>
+So you should use Python 3.8.x for a while.<br>
+[2021 March 18]
+Currently numba supports Python 3.9.x.</p>
 </div>
 
 
-<div class="notices warning" ><p>[2021 Feb. 7]
+<div class="notices info" ><p>[2021 Feb. 7]
 PyXtal requires SciPy, but the latest version of SciPy (v1.6.0) might include a bug for deepcopy.
-You should use SciPy v1.5.4 for a while.</p>
+You should use SciPy v1.5.4 for a while.<br>
+[2021 March 18]
+This bug has been fixed in SciPy v1.6.1.</p>
 </div>
 
+<h3 id="cryspy-090----091">CrySPY 0.9.0 &ndash; 0.9.1</h3>
+<ul>
+<li>Python 3.8.x
+<ul>
+<li><a href="https://github.com/tsudalab/combo3" target="_blank">COMBO</a>
+<i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://pymatgen.org/" target="_blank">pymatgen 2021.x.x or earlier</a>
+<i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal 0.1.6 - 0.2.1</a>
+<i class="fas fa-external-link-alt"></i></li>
+</ul>
+</li>
+</ul>
+<h3 id="cryspy-080-or-earlier">CrySPY 0.8.0 or earlier</h3>
+<p>See the old document which is included CrySPY itself.</p>
 <h2 id="structure-optimizer">Structure optimizer</h2>
 <p>At least one optimizer is required.</p>
 <ul>
@@ -2410,19 +2441,19 @@ You should use SciPy v1.5.4 for a while.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CrySPY_doc/js/clipboard.min.js?1613646287"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1613646287"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1613646287"></script>
-    <script src="/CrySPY_doc/js/jquery.sticky.js?1613646287"></script>
-    <script src="/CrySPY_doc/js/featherlight.min.js?1613646287"></script>
-    <script src="/CrySPY_doc/js/highlight.pack.js?1613646287"></script>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1616058279"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1616058279"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1616058279"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1616058279"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1616058279"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1616058279"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1613646287"></script>
-    <script src="/CrySPY_doc/js/learn.js?1613646287"></script>
-    <script src="/CrySPY_doc/js/hugo-learn.js?1613646287"></script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1616058279"></script>
+    <script src="/CrySPY_doc/js/learn.js?1616058279"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1616058279"></script>
     
         
-            <script src="/CrySPY_doc/mermaid/mermaid.js?1613646287"></script>
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1616058279"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
