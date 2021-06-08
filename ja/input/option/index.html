@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CrySPY_doc/images/favicon.png" type="image/png">
 
-    <title>[basic] section :: CrySPY</title>
+    <title>[option] section :: CrySPY</title>
 
     
     <link href="/CrySPY_doc/css/nucleus.css?1623118650" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CrySPY_doc/ja/input/basic_sec/">
+  <body class="" data-url="/CrySPY_doc/ja/input/option/">
     <nav id="sidebar" class="">
 
 
@@ -793,7 +793,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/ja/input/basic_sec/" title="[basic] section" class="dd-item active">
+      <li data-nav-id="/CrySPY_doc/ja/input/basic_sec/" title="[basic] section" class="dd-item ">
         <a href="/CrySPY_doc/ja/input/basic_sec/">
         [basic] section
         
@@ -1003,7 +1003,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/ja/input/option/" title="[option] section" class="dd-item ">
+      <li data-nav-id="/CrySPY_doc/ja/input/option/" title="[option] section" class="dd-item active">
         <a href="/CrySPY_doc/ja/input/option/">
         [option] section
         
@@ -1356,7 +1356,7 @@
                   
                     
                     
-                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/input/basic_sec/">English</option>
+                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/input/option/">English</option>
                     
                   
               
@@ -1370,7 +1370,7 @@
                   
                     
                     
-                      <option id="ja" value="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/basic_sec/" selected>日本語</option>
+                      <option id="ja" value="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/option/" selected>日本語</option>
                     
                   
               
@@ -1434,7 +1434,7 @@
             
           
           
-            <a href='/CrySPY_doc/ja/'></a> > <a href='/CrySPY_doc/ja/input/'>入力ファイル</a> > [basic] section
+            <a href='/CrySPY_doc/ja/'></a> > <a href='/CrySPY_doc/ja/input/'>入力ファイル</a> > [option] section
           
         
           
@@ -1463,7 +1463,7 @@
           
             <h1>
               
-              [basic] section
+              [option] section
             </h1>
           
 
@@ -1481,46 +1481,58 @@
 </thead>
 <tbody>
 <tr>
-<td><code>algo</code></td>
-<td><code>RS</code>, <code>EA</code>, <code>BO</code>, <code>LAQA</code></td>
-<td></td>
-<td>Algorithm</td>
-</tr>
-<tr>
-<td><code>calc_code</code></td>
-<td><code>VASP</code>, <code>QE</code>, <code>OMX</code>, <code>soiap</code>, <code>LAMMPS</code></td>
-<td></td>
-<td>Caluculation code for structure optimization</td>
-</tr>
-<tr>
-<td><code>tot_struc</code></td>
+<td><code>stop_chkpt</code></td>
 <td>int</td>
-<td></td>
-<td>The total number of structures</td>
+<td>0</td>
+<td>CrySPY stops at a specified check point.</td>
 </tr>
 <tr>
-<td><code>nstage</code></td>
-<td>int</td>
-<td></td>
-<td>The number of stages</td>
+<td><code>load_struc_flag</code></td>
+<td>bool</td>
+<td><code>False</code></td>
+<td>If True, load initial structures from <code>./data/pkl_data/init_struc_data.pkl</code>.</td>
 </tr>
 <tr>
-<td><code>njob</code></td>
-<td>int</td>
-<td></td>
-<td>The number of jobs running at the same time.</td>
+<td><code>stop_next_struc</code></td>
+<td>bool</td>
+<td><code>False</code></td>
+<td>If True, CrySPY does not submit jobs for next structures, but jobs for next stage are submitted.</td>
 </tr>
 <tr>
-<td><code>jobcmd</code></td>
-<td>str</td>
-<td></td>
-<td>Command to submit jobs such as qsub and sbatch.</td>
+<td><code>recalc</code></td>
+<td>int [int &hellip;]</td>
+<td>(empty list)</td>
+<td>Specify structure IDs if you want to recalculate or continue optimization.</td>
 </tr>
 <tr>
-<td><code>jobfile</code></td>
-<td>str</td>
-<td></td>
-<td>File name of the job file.</td>
+<td><code>append_struc_ea</code></td>
+<td>bool</td>
+<td><code>False</code></td>
+<td>If True, append structures by EA.</td>
+</tr>
+<tr>
+<td><code>energy_step_flag</code></td>
+<td>bool</td>
+<td><code>False</code></td>
+<td>If True, save energy_step_data in <code>./data/pkl_data/energy_step_data.pkl</code>.</td>
+</tr>
+<tr>
+<td><code>struc_step_flag</code></td>
+<td>bool</td>
+<td><code>False</code></td>
+<td>If True, save struc_step_data in <code>./data/pkl_data/struc_step_data.pkl</code>.</td>
+</tr>
+<tr>
+<td><code>force_step_flag</code></td>
+<td>bool</td>
+<td><code>False</code></td>
+<td>If True, save force_step_data in <code>./data/pkl_data/force_step_data.pkl</code>.</td>
+</tr>
+<tr>
+<td><code>stress_step_flag</code></td>
+<td>bool</td>
+<td><code>False</code></td>
+<td>If True, save stress_step_data in <code>./data/pkl_data/stress_step_data.pkl</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -2063,26 +2075,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -2238,6 +2230,23 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2245,6 +2254,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2428,10 +2440,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CrySPY_doc/ja/input/format/" title="File format"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CrySPY_doc/ja/input/laqa/" title="[LAQA] section"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CrySPY_doc/ja/input/structure_sec/" title="[structure] section" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CrySPY_doc/ja/data_format/" title="データフォーマット" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

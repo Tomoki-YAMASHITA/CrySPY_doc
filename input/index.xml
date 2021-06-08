@@ -113,5 +113,14 @@
    Name Value Default Description     nselect_laqa int  The number of structures to be selected at once.   weight_laqa float 1.0 Weight of bias in the score.    </description>
     </item>
     
+    <item>
+      <title>[option] section</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/option/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/option/</guid>
+      <description>Name Value Default Description     stop_chkpt int 0 CrySPY stops at a specified check point.   load_struc_flag bool False If True, load initial structures from ./data/pkl_data/init_struc_data.pkl.   stop_next_struc bool False If True, CrySPY does not submit jobs for next structures, but jobs for next stage are submitted.   recalc int [int &amp;hellip;] (empty list) Specify structure IDs if you want to recalculate or continue optimization.</description>
+    </item>
+    
   </channel>
 </rss>

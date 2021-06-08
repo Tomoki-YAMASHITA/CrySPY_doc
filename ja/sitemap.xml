@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/</loc>
     <xhtml:link
@@ -14,9 +13,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/common_data/</loc>
     <xhtml:link
                 rel="alternate"
@@ -28,9 +25,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/common_data/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/</loc>
     <xhtml:link
                 rel="alternate"
@@ -42,9 +37,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/format/</loc>
     <xhtml:link
                 rel="alternate"
@@ -56,9 +49,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/format/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/</loc>
     <xhtml:link
                 rel="alternate"
@@ -70,9 +61,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/soiap/</loc>
     <xhtml:link
                 rel="alternate"
@@ -84,9 +73,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/soiap/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/</loc>
     <xhtml:link
                 rel="alternate"
@@ -98,9 +85,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/</loc>
     <xhtml:link
                 rel="alternate"
@@ -112,9 +97,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/csp/</loc>
     <xhtml:link
                 rel="alternate"
@@ -126,9 +109,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/csp/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/basic_sec/</loc>
     <xhtml:link
                 rel="alternate"
@@ -140,9 +121,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/basic_sec/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/ea/</loc>
     <xhtml:link
                 rel="alternate"
@@ -154,9 +133,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/ea/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/find_wy/</loc>
     <xhtml:link
                 rel="alternate"
@@ -168,9 +145,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/find_wy/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/rs_data/</loc>
     <xhtml:link
                 rel="alternate"
@@ -182,9 +157,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/rs_data/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/struc_step/</loc>
     <xhtml:link
                 rel="alternate"
@@ -196,9 +169,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/struc_step/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/vasp/</loc>
     <xhtml:link
                 rel="alternate"
@@ -210,9 +181,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/vasp/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/algorithms/</loc>
     <xhtml:link
                 rel="alternate"
@@ -224,9 +193,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/algorithms/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/structure_sec/</loc>
     <xhtml:link
                 rel="alternate"
@@ -238,9 +205,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/structure_sec/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/bo/</loc>
     <xhtml:link
                 rel="alternate"
@@ -252,9 +217,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/bo/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/</loc>
     <xhtml:link
                 rel="alternate"
@@ -266,9 +229,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/ea_data/</loc>
     <xhtml:link
                 rel="alternate"
@@ -280,9 +241,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/ea_data/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/force_step/</loc>
     <xhtml:link
                 rel="alternate"
@@ -294,9 +253,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/force_step/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/qe/</loc>
     <xhtml:link
                 rel="alternate"
@@ -308,9 +265,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/qe/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/interface/</loc>
     <xhtml:link
                 rel="alternate"
@@ -322,9 +277,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/interface/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/</loc>
     <xhtml:link
                 rel="alternate"
@@ -336,9 +289,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/vasp_sec/</loc>
     <xhtml:link
                 rel="alternate"
@@ -350,9 +301,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/vasp_sec/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/bo_data/</loc>
     <xhtml:link
                 rel="alternate"
@@ -364,9 +313,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/bo_data/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/utility/</loc>
     <xhtml:link
                 rel="alternate"
@@ -378,9 +325,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/utility/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/laqa/</loc>
     <xhtml:link
                 rel="alternate"
@@ -392,9 +337,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/laqa/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/omx/</loc>
     <xhtml:link
                 rel="alternate"
@@ -406,9 +349,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/omx/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/stress_step/</loc>
     <xhtml:link
                 rel="alternate"
@@ -420,9 +361,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/stress_step/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/logo/</loc>
     <xhtml:link
                 rel="alternate"
@@ -434,9 +373,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/logo/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/</loc>
     <xhtml:link
                 rel="alternate"
@@ -448,9 +385,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/qe_sec/</loc>
     <xhtml:link
                 rel="alternate"
@@ -462,9 +397,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/qe_sec/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/lammps/</loc>
     <xhtml:link
                 rel="alternate"
@@ -476,9 +409,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/lammps/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mol/</loc>
     <xhtml:link
                 rel="alternate"
@@ -490,9 +421,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mol/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/</loc>
     <xhtml:link
                 rel="alternate"
@@ -504,9 +433,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/omx_sec/</loc>
     <xhtml:link
                 rel="alternate"
@@ -518,9 +445,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/omx_sec/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/laqa_data/</loc>
     <xhtml:link
                 rel="alternate"
@@ -532,9 +457,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/laqa_data/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/restrict_dist/</loc>
     <xhtml:link
                 rel="alternate"
@@ -546,9 +469,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/restrict_dist/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/soiap_sec/</loc>
     <xhtml:link
                 rel="alternate"
@@ -560,9 +481,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/soiap_sec/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/</loc>
     <xhtml:link
                 rel="alternate"
@@ -574,9 +493,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/lammps_sec/</loc>
     <xhtml:link
                 rel="alternate"
@@ -588,9 +505,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/lammps_sec/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/ea/</loc>
     <xhtml:link
                 rel="alternate"
@@ -602,9 +517,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/ea/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/bo/</loc>
     <xhtml:link
                 rel="alternate"
@@ -616,9 +529,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/bo/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/cryspy_in/</loc>
     <xhtml:link
                 rel="alternate"
@@ -630,9 +541,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/cryspy_in/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/laqa/</loc>
     <xhtml:link
                 rel="alternate"
@@ -644,9 +553,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/laqa/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/script_to_run/</loc>
     <xhtml:link
                 rel="alternate"
@@ -658,9 +565,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/script_to_run/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/first_run/</loc>
     <xhtml:link
                 rel="alternate"
@@ -672,9 +577,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/first_run/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/submit_job/</loc>
     <xhtml:link
                 rel="alternate"
@@ -686,9 +589,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/submit_job/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/result/</loc>
     <xhtml:link
                 rel="alternate"
@@ -700,9 +601,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/result/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/append/</loc>
     <xhtml:link
                 rel="alternate"
@@ -714,9 +613,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/append/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/analysis_visualization/</loc>
     <xhtml:link
                 rel="alternate"
@@ -728,9 +625,19 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/analysis_visualization/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/option/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/input/option/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/option/"
+                />
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/</loc>
     <priority>0</priority>
     <xhtml:link
@@ -743,9 +650,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -757,9 +662,7 @@
                 hreflang="ja"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -772,5 +675,4 @@
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tags/"
                 />
   </url>
-  
 </urlset>
