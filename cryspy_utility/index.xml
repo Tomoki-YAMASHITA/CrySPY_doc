@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CrySPY Utility on CrySPY</title>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/</link>
+    <description>Recent content in CrySPY Utility on CrySPY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kpt_check.py</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/</guid>
+      <description>kpt_check.py can check a k-point mesh with a given kppvol. This script supports POSCAR, CONTCAR, and init_struc_data.pkl. pymatgen library is required.
+After generating initial structures, you can try to see how much the value of kppvol should be.
+Usage python3 kpt_check.py [-h] [-w] [-n NSTRUC] infile kppvol positional arguments: infile input file: POSCAR or CONTCAR or init_struc_data.pkl kppvol kppvol optional arguments: -h, --help show this help message and exit -w, --write write KPOINTS -n NSTRUC, --nstruc NSTRUC number of structure to check Example POSCAR with a given kppvol $ python3 kpt_check.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -434,6 +434,18 @@
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/input/omx_sec/"
                 />
   </url><url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/"
+                />
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/laqa_data/</loc>
     <xhtml:link
                 rel="alternate"
@@ -468,6 +480,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/input/soiap_sec/"
+                />
+  </url><url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/kpt_check/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/"
                 />
   </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/</loc>
