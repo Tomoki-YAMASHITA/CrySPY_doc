@@ -13,11 +13,9 @@
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/</guid>
       <description>使用予定のワークステーションやスパコンにおいて，(CrySPY + Python環境 + 構造最適化ソフト) が必要となる．
- Python CrySPY 0.9.2 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
- Python 3.x.x  COMBO  pymatgen 2022.x.x or later  PyXtal 0.2.2 or later     [2021 March 18] pymatgen 2022.x.x.でbreaking changeがあって，importの書き方等が変わった． CrySPY 0.9.2とPyXtal 0.2.2はpymatgen 2022をサポート．
- [2021 Feb. 5] PyXtalを使うにはnumbaが必要だが，numbaは現在のところPython 3.9に対応していないのでしばらくはPython 3.9ではなくPython 3.8を利用する．
-[2021 March 18] numbaがPython 3.9.xをサポート．CrySPYもPython 3.9で動作可能
- [2021 Feb.</description>
+ Python CrySPY 0.10.0 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
+ Python 3.x.x  COMBO  PyXtal 0.2.2 or later  (PyXtal requires pymatgen) pymatgen 2022.x.x or later     CrySPY 0.9.2 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
+ Python 3.x.x  COMBO  pymatgen 2022.</description>
     </item>
     
     <item>

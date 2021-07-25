@@ -13,8 +13,9 @@
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/</guid>
       <description>energy_step_data is saved in energy_step_data.pkl if you set energy_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-energy_step_flag = True is currently available only with VASP and soiap.
- Data format  type: dict  key: structure ID value: list of energy step data in each stage   string form  {0: [array([-3.4439912 , -3.55040935, -3.66697038, ..]), array([-4.0613393 , -4.05445631, -4.06159641, &amp;hellip;]), &amp;hellip;],</description>
+energy_step_flag = True is currently available only with VASP, QE, and soiap.
+ In soiap, energy_step_data is collected only if loopa == 1. This is because other data (struc, force, and stress) are output only when loopa == 1. See, https://github.com/nbsato/soiap/blob/master/doc/instructions.md
+ Data format  type: dict  key: structure ID value: list of energy step data in each stage   string form  {0: [array([-3.</description>
     </item>
     
     <item>
@@ -45,11 +46,9 @@ Assumption Here, we assume the following conditions:
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/</guid>
       <description>使用予定のワークステーションやスパコンにおいて，(CrySPY + Python環境 + 構造最適化ソフト) が必要となる．
- Python CrySPY 0.9.2 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
- Python 3.x.x  COMBO  pymatgen 2022.x.x or later  PyXtal 0.2.2 or later     [2021 March 18] pymatgen 2022.x.x.でbreaking changeがあって，importの書き方等が変わった． CrySPY 0.9.2とPyXtal 0.2.2はpymatgen 2022をサポート．
- [2021 Feb. 5] PyXtalを使うにはnumbaが必要だが，numbaは現在のところPython 3.9に対応していないのでしばらくはPython 3.9ではなくPython 3.8を利用する．
-[2021 March 18] numbaがPython 3.9.xをサポート．CrySPYもPython 3.9で動作可能
- [2021 Feb.</description>
+ Python CrySPY 0.10.0 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
+ Python 3.x.x  COMBO  PyXtal 0.2.2 or later  (PyXtal requires pymatgen) pymatgen 2022.x.x or later     CrySPY 0.9.2 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
+ Python 3.x.x  COMBO  pymatgen 2022.</description>
     </item>
     
     <item>
@@ -102,7 +101,8 @@ $ emacs makefile $ head -n 4 makefile #FC=gfortran #FFLAGS=-g -cpp -DUSE_GEN -ff
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/struc_step/</guid>
       <description>struc_step_data is saved in struc_step_data.pkl if you set struc_step_flag = True in [option] section of cryspy.in. pymatgen  library is required to analyze this data file.
-struc_step_flag = True is currently available only with VASP and soiap.
+struc_step_flag = True is currently available only with VASP, QE, and soiap.
+ struc_step_data includes initial structures. For example, struc_step_data[cid][0][0] is the initial structure of ID = cid.
  Data format  type: dict  key: structure ID value: list of structure step data in each stage   string form  {0: [[Structure Summary &amp;hellip;, Structure Summary, &amp;hellip;], [&amp;hellip;], &amp;hellip;],</description>
     </item>
     
@@ -168,7 +168,7 @@ CrySPY-x.x.x ├── CHANGELOG.md ├── CrySPY/ │ ├── BO/ │ ├�
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/force_step/</guid>
       <description>force_step_data is saved in force_step_data.pkl if you set force_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-force_step_flag = True is currently available only with VASP and soiap.
+force_step_flag = True is currently available only with VASP, QE, and soiap.
  Data format  type: dict  key: structure ID value: list of force step data in each stage   string form  {0: [array([[ 0.26314927, -0.26314927, -0. ], [&amp;hellip;], &amp;hellip;[&amp;hellip;]]), array([[&amp;hellip;], &amp;hellip;, [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
     </item>
     
@@ -239,7 +239,7 @@ Assumption Here, we assume the following conditions:
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/stress_step/</guid>
       <description>stress_step_data is saved in stress_step_data.pkl if you set stress_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-stress_step_flag = True is currently available only with VASP and soiap.
+stress_step_flag = True is currently available only with VASP, QE, and soiap.
  Data format  type: dict  key: structure ID value: list of stress step data in each stage   string form  {0: [array([[-0.16770062, 0. , 0. ], [&amp;hellip;], [&amp;hellip;]]), array([[&amp;hellip;], ]&amp;hellip;], [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
     </item>
     

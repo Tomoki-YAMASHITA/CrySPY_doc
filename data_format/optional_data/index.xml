@@ -13,8 +13,9 @@
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/energy_step/</guid>
       <description>energy_step_data is saved in energy_step_data.pkl if you set energy_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-energy_step_flag = True is currently available only with VASP and soiap.
- Data format  type: dict  key: structure ID value: list of energy step data in each stage   string form  {0: [array([-3.4439912 , -3.55040935, -3.66697038, ..]), array([-4.0613393 , -4.05445631, -4.06159641, &amp;hellip;]), &amp;hellip;],</description>
+energy_step_flag = True is currently available only with VASP, QE, and soiap.
+ In soiap, energy_step_data is collected only if loopa == 1. This is because other data (struc, force, and stress) are output only when loopa == 1. See, https://github.com/nbsato/soiap/blob/master/doc/instructions.md
+ Data format  type: dict  key: structure ID value: list of energy step data in each stage   string form  {0: [array([-3.</description>
     </item>
     
     <item>
@@ -24,7 +25,8 @@ energy_step_flag = True is currently available only with VASP and soiap.
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/struc_step/</guid>
       <description>struc_step_data is saved in struc_step_data.pkl if you set struc_step_flag = True in [option] section of cryspy.in. pymatgen  library is required to analyze this data file.
-struc_step_flag = True is currently available only with VASP and soiap.
+struc_step_flag = True is currently available only with VASP, QE, and soiap.
+ struc_step_data includes initial structures. For example, struc_step_data[cid][0][0] is the initial structure of ID = cid.
  Data format  type: dict  key: structure ID value: list of structure step data in each stage   string form  {0: [[Structure Summary &amp;hellip;, Structure Summary, &amp;hellip;], [&amp;hellip;], &amp;hellip;],</description>
     </item>
     
@@ -35,7 +37,7 @@ struc_step_flag = True is currently available only with VASP and soiap.
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/force_step/</guid>
       <description>force_step_data is saved in force_step_data.pkl if you set force_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-force_step_flag = True is currently available only with VASP and soiap.
+force_step_flag = True is currently available only with VASP, QE, and soiap.
  Data format  type: dict  key: structure ID value: list of force step data in each stage   string form  {0: [array([[ 0.26314927, -0.26314927, -0. ], [&amp;hellip;], &amp;hellip;[&amp;hellip;]]), array([[&amp;hellip;], &amp;hellip;, [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
     </item>
     
@@ -46,7 +48,7 @@ force_step_flag = True is currently available only with VASP and soiap.
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/stress_step/</guid>
       <description>stress_step_data is saved in stress_step_data.pkl if you set stress_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-stress_step_flag = True is currently available only with VASP and soiap.
+stress_step_flag = True is currently available only with VASP, QE, and soiap.
  Data format  type: dict  key: structure ID value: list of stress step data in each stage   string form  {0: [array([[-0.16770062, 0. , 0. ], [&amp;hellip;], [&amp;hellip;]]), array([[&amp;hellip;], ]&amp;hellip;], [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
     </item>
     
