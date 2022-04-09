@@ -7,6 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>pos2pkl.py</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/pos2pkl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/pos2pkl/</guid>
+      <description>あらかじめ用意した構造のテキストデータをinit_struc_data.pklに変換するスクリプト． 入力のデフォルトはinit_POSCARS形式．オプションでPOSCARやcifファイルなどのシングル構造データも変換可能． 出力はinit_struc_data.pkl． すでに存在するinit_struc_data.pklに構造データを追加することもできる． 構造IDは考慮されず，新しく割り振られる． 原子数が異なる場合はエラーが出る．
+init_struc_data.pklはCrySPYでシミュレーション開始時にロードすることが可能．
+使い方 usage: pos2pkl.py [-h] [-s [SINGLE ...]] [infile ...] positional arguments: infile input file: init_POSCARS optional arguments: -h, --help show this help message and exit -s [SINGLE ...], --single [SINGLE ...] input file: single structure file (POSCAR, cif) 例 init_POSCARS &amp;ndash;&amp;gt; init_struc_data.pkl CrySPYで構造生成後に出力されるinit_POSCARSをスパコン等の別のマシンに移すような場合に使える．複数のファイルを変換可能．
+$ python3 pos2pkl.py init_POSCARS Converted. The number of structures: 4 Save init_struc_data.pkl 複数の入力ファイルの場合．
+$ python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3 Converted. The number of structures: 12 Save init_struc_data.</description>
+    </item>
+    
+    <item>
       <title>kpt_check.py</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/kpt_check/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -88,6 +88,16 @@ You can skip to install find_wy in CrySPY 0.</description>
     </item>
     
     <item>
+      <title>pos2pkl.py</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/pos2pkl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/pos2pkl/</guid>
+      <description>Script to convert structre data into init_struc_data.pkl. The default input format is init_POSCARS. Single structure data such as POSCAR and cif files can be optionally converted. Output is init_struc_data.pkl. Structure data can be added to an already existing init_struc_data.pkl. The structure ID is not taken into account and is newly assigned. If the number of atoms is different, an error is generated.
+init_struc_data.pkl can be loaded at the start of the simulation in CrySPY.</description>
+    </item>
+    
+    <item>
       <title>Searching algorithms</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
