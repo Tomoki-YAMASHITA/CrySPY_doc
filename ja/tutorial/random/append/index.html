@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>Append structures :: CrySPY</title>
 
     
-    <link href="/CrySPY_doc/css/nucleus.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hybrid.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/featherlight.min.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/auto-complete.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/theme.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hugo-theme.css?1649519508" rel="stylesheet">
+    <link href="/CrySPY_doc/css/nucleus.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1650348903" rel="stylesheet">
     
-    <link href="/CrySPY_doc/css/theme-green.css?1649519508" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme-green.css?1650348903" rel="stylesheet">
     
     
 
-    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1649519508"></script>
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1650348903"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1649519508"></script>
-<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1649519508"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1650348903"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1650348903"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc\/ja";
     
 </script>
-<script type="text/javascript" src="/CrySPY_doc/js/search.js?1649519508"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1650348903"></script>
 
     
   </div>
@@ -1556,51 +1556,50 @@
 You can append structures whenever you want.
 Here let&rsquo;s append more 5 structures.</p>
 <p>Edit <code>cryspy.in</code> and change the value of <code>tot_struc</code> into <code>10</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ emacs cryspy.in
-$ cat cryspy.in
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">[basic]
-algo = RS
-calc_code = soiap
-tot_struc = 10
-nstage = 1
-njob = 2
-jobcmd = zsh
-jobfile = job_cryspy
-
-[structure]
-natot = 8
-atype = Si
-nat = 8
-
-[soiap]
-soiap_infile = soiap.in
-soiap_outfile = soiap.out
-soiap_cif = initial.cif
-
-[option]
-</code></pre></div><p>Then run cryspy, and check <code>log</code> file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ cryspy &amp;
-$ cat log
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">...
-(omit)
-...
-
-
-2020/11/11 20:23:41
-CrySPY 0.9.0
-Restart cryspy.py
-
-
-Changed tot_struc from 6 to 10
-
-# ---------- Append structures
-Structure ID      5 was generated. Space group: 212 --&gt; 214 I4_132
-Structure ID      6 was generated. Space group:  39 --&gt;  39 Aem2
-Structure ID      7 was generated. Space group: 184 --&gt; 183 P6mm
-Structure ID      8 was generated. Space group: 159 --&gt; 159 P31c
-Structure ID      9 was generated. Space group:  61 --&gt;  47 Pmmm
-
-</code></pre></div><p>Remember that CrySPY goes into structure generation mode whenever you change the value of <code>tot_struc</code>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ emacs cryspy.in
+</span></span><span style="display:flex;"><span>$ cat cryspy.in
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>[basic]
+</span></span><span style="display:flex;"><span>algo = RS
+</span></span><span style="display:flex;"><span>calc_code = soiap
+</span></span><span style="display:flex;"><span>tot_struc = 10
+</span></span><span style="display:flex;"><span>nstage = 1
+</span></span><span style="display:flex;"><span>njob = 2
+</span></span><span style="display:flex;"><span>jobcmd = zsh
+</span></span><span style="display:flex;"><span>jobfile = job_cryspy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[structure]
+</span></span><span style="display:flex;"><span>natot = 8
+</span></span><span style="display:flex;"><span>atype = Si
+</span></span><span style="display:flex;"><span>nat = 8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[soiap]
+</span></span><span style="display:flex;"><span>soiap_infile = soiap.in
+</span></span><span style="display:flex;"><span>soiap_outfile = soiap.out
+</span></span><span style="display:flex;"><span>soiap_cif = initial.cif
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[option]
+</span></span></code></pre></div><p>Then run cryspy, and check <code>log</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cryspy &amp;
+</span></span><span style="display:flex;"><span>$ cat log
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>(omit)
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>2020/11/11 20:23:41
+</span></span><span style="display:flex;"><span>CrySPY 0.9.0
+</span></span><span style="display:flex;"><span>Restart cryspy.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Changed tot_struc from 6 to 10
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># ---------- Append structures
+</span></span><span style="display:flex;"><span>Structure ID      5 was generated. Space group: 212 --&gt; 214 I4_132
+</span></span><span style="display:flex;"><span>Structure ID      6 was generated. Space group:  39 --&gt;  39 Aem2
+</span></span><span style="display:flex;"><span>Structure ID      7 was generated. Space group: 184 --&gt; 183 P6mm
+</span></span><span style="display:flex;"><span>Structure ID      8 was generated. Space group: 159 --&gt; 159 P31c
+</span></span><span style="display:flex;"><span>Structure ID      9 was generated. Space group:  61 --&gt;  47 Pmmm
+</span></span></code></pre></div><p>Remember that CrySPY goes into structure generation mode whenever you change the value of <code>tot_struc</code>.
 In this mode, CrySPY does not do any other action such as collecting data, submitting jobs, and so on.</p>
 
 <div class="notices note" ><p>Structure generation mode whenever you change the value of <code>tot_struc</code></p>
@@ -2573,19 +2572,19 @@ In this mode, CrySPY does not do any other action such as collecting data, submi
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CrySPY_doc/js/clipboard.min.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/jquery.sticky.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/featherlight.min.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/highlight.pack.js?1649519508"></script>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1650348903"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/learn.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/hugo-learn.js?1649519508"></script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/learn.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1650348903"></script>
     
         
-            <script src="/CrySPY_doc/mermaid/mermaid.js?1649519508"></script>
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1650348903"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -14,9 +14,8 @@
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/pos2pkl/</guid>
       <description>あらかじめ用意した構造のテキストデータをinit_struc_data.pklに変換するスクリプト． 入力のデフォルトはinit_POSCARS形式．オプションでPOSCARやcifファイルなどのシングル構造データも変換可能． 出力はinit_struc_data.pkl． すでに存在するinit_struc_data.pklに構造データを追加することもできる． 構造IDは考慮されず，新しく割り振られる． 原子数が異なる場合はエラーが出る．
 init_struc_data.pklはCrySPYでシミュレーション開始時にロードすることが可能．
-使い方 usage: pos2pkl.py [-h] [-s [SINGLE ...]] [infile ...] positional arguments: infile input file: init_POSCARS optional arguments: -h, --help show this help message and exit -s [SINGLE ...], --single [SINGLE ...] input file: single structure file (POSCAR, cif) 例 init_POSCARS &amp;ndash;&amp;gt; init_struc_data.pkl CrySPYで構造生成後に出力されるinit_POSCARSをスパコン等の別のマシンに移すような場合に使える．複数のファイルを変換可能．
-$ python3 pos2pkl.py init_POSCARS Converted. The number of structures: 4 Save init_struc_data.pkl 複数の入力ファイルの場合．
-$ python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3 Converted. The number of structures: 12 Save init_struc_data.</description>
+使い方 usage: pos2pkl.py [-h] [-s [SINGLE ...]] [infile ...]  positional arguments:  infile input file: init_POSCARS  optional arguments:  -h, --help show this help message and exit  -s [SINGLE ...], --single [SINGLE ...]  input file: single structure file (POSCAR, cif) 例 init_POSCARS &amp;ndash;&amp;gt; init_struc_data.pkl CrySPYで構造生成後に出力されるinit_POSCARSをスパコン等の別のマシンに移すような場合に使える．複数のファイルを変換可能．
+$ python3 pos2pkl.py init_POSCARS  Converted. The number of structures: 4 Save init_struc_data.pkl 複数の入力ファイルの場合．</description>
     </item>
     
     <item>
@@ -27,7 +26,7 @@ $ python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3 Converted. The num
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/kpt_check/</guid>
       <description>kpt_check.pyはkppvolを入力した際にkメッシュがどれくらいになるかをチェックすることができる． POSCAR，CONTCAR，およびinit_struc_data.pklが読み込み可能． pymatgenライブラリが必要．
 初期構造を生成後に，kppvolの値をどれくらいにしたら良いか色々試すことができる．（下記の最後の例を参照）
-使い方 python3 kpt_check.py [-h] [-w] [-n NSTRUC] infile kppvol positional arguments: infile input file: POSCAR or CONTCAR or init_struc_data.pkl kppvol kppvol optional arguments: -h, --help show this help message and exit -w, --write write KPOINTS -n NSTRUC, --nstruc NSTRUC number of structure to check 例 POSCARとkppvol $ python3 kpt_check.py POSCAR 100 a = 10.689217 b = 10.689217 c = 10.730846 Lattice vector 10.689217 0.000000 0.000000 0.000000 10.</description>
+使い方 python3 kpt_check.py [-h] [-w] [-n NSTRUC] infile kppvol  positional arguments:  infile input file: POSCAR or CONTCAR or init_struc_data.pkl  kppvol kppvol  optional arguments:  -h, --help show this help message and exit  -w, --write write KPOINTS  -n NSTRUC, --nstruc NSTRUC  number of structure to check 例 POSCARとkppvol $ python3 kpt_check.py POSCAR 100 a = 10.689217 b = 10.689217 c = 10.</description>
     </item>
     
   </channel>

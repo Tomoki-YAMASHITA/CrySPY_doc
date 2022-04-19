@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>struc_step_data :: CrySPY</title>
 
     
-    <link href="/CrySPY_doc/css/nucleus.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hybrid.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/featherlight.min.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/auto-complete.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/theme.css?1649519508" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hugo-theme.css?1649519508" rel="stylesheet">
+    <link href="/CrySPY_doc/css/nucleus.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1650348903" rel="stylesheet">
     
-    <link href="/CrySPY_doc/css/theme-green.css?1649519508" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme-green.css?1650348903" rel="stylesheet">
     
     
 
-    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1649519508"></script>
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1650348903"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1649519508"></script>
-<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1649519508"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1650348903"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1650348903"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc\/ja";
     
 </script>
-<script type="text/javascript" src="/CrySPY_doc/js/search.js?1649519508"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1650348903"></script>
 
     
   </div>
@@ -1591,42 +1591,42 @@ For example, <code>struc_step_data[cid][0][0]</code> is the initial structure of
 </li>
 </ul>
 <h2 id="how-to-access">How to access</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pickle
-<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;struc_step_data.pkl&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
-    struc_step_data <span style="color:#f92672">=</span> pickle<span style="color:#f92672">.</span>load(f)
-
-<span style="color:#75715e"># struc_step_data[ID][stage][step]</span>
-<span style="color:#75715e"># struc_step_data[ID][0] &lt;-- stage 1</span>
-<span style="color:#75715e"># struc_step_data[ID][1] &lt;-- stage 2</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># in LAQA</span>
-<span style="color:#75715e"># struc_step_data[ID][selection][step]</span>
-<span style="color:#75715e"># struc_step_data[ID][0] &lt;-- 1st selection</span>
-<span style="color:#75715e"># struc_step_data[ID][1] &lt;-- 2nd selection</span>
-
-<span style="color:#75715e"># ---------- structure step data of ID 3, stage 1, step 4</span>
-cid <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>      <span style="color:#75715e"># ID</span>
-stage <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>    <span style="color:#75715e"># stage</span>
-step <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>     <span style="color:#75715e"># step index (start from 0)</span>
-struc_step_data[cid][stage<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][step]    <span style="color:#75715e"># to show initial structure of ID 0 at stage 1 in jupyter</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Structure Summary
-Lattice
-    abc : 5.727301 5.727301 4.405757
- angles : 90.0 90.0 90.0
- volume : 144.5175386563631
-      A : 5.727301 0.0 0.0
-      B : 0.0 5.727301 0.0
-      C : 0.0 0.0 4.405757
-PeriodicSite: Si (0.2506, 5.4767, 1.1014) [0.0438, 0.9562, 0.2500]
-PeriodicSite: Si (2.6130, 3.1143, 1.1014) [0.4562, 0.5438, 0.2500]
-PeriodicSite: Si (3.1143, 0.2506, 1.1014) [0.5438, 0.0438, 0.2500]
-PeriodicSite: Si (5.4767, 2.6130, 1.1014) [0.9562, 0.4562, 0.2500]
-PeriodicSite: Si (5.4767, 0.2506, 3.3043) [0.9562, 0.0438, 0.7500]
-PeriodicSite: Si (3.1143, 2.6130, 3.3043) [0.5438, 0.4562, 0.7500]
-PeriodicSite: Si (2.6130, 5.4767, 3.3043) [0.4562, 0.9562, 0.7500]
-PeriodicSite: Si (0.2506, 3.1143, 3.3043) [0.0438, 0.5438, 0.7500]
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;struc_step_data.pkl&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    struc_step_data <span style="color:#f92672">=</span> pickle<span style="color:#f92672">.</span>load(f)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][stage][step]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][0] &lt;-- stage 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][1] &lt;-- stage 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># in LAQA</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][selection][step]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][0] &lt;-- 1st selection</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][1] &lt;-- 2nd selection</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- structure step data of ID 3, stage 1, step 4</span>
+</span></span><span style="display:flex;"><span>cid <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>      <span style="color:#75715e"># ID</span>
+</span></span><span style="display:flex;"><span>stage <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>    <span style="color:#75715e"># stage</span>
+</span></span><span style="display:flex;"><span>step <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>     <span style="color:#75715e"># step index (start from 0)</span>
+</span></span><span style="display:flex;"><span>struc_step_data[cid][stage<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][step]    <span style="color:#75715e"># to show initial structure of ID 0 at stage 1 in jupyter</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Structure Summary
+</span></span><span style="display:flex;"><span>Lattice
+</span></span><span style="display:flex;"><span>    abc : 5.727301 5.727301 4.405757
+</span></span><span style="display:flex;"><span> angles : 90.0 90.0 90.0
+</span></span><span style="display:flex;"><span> volume : 144.5175386563631
+</span></span><span style="display:flex;"><span>      A : 5.727301 0.0 0.0
+</span></span><span style="display:flex;"><span>      B : 0.0 5.727301 0.0
+</span></span><span style="display:flex;"><span>      C : 0.0 0.0 4.405757
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (0.2506, 5.4767, 1.1014) [0.0438, 0.9562, 0.2500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (2.6130, 3.1143, 1.1014) [0.4562, 0.5438, 0.2500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (3.1143, 0.2506, 1.1014) [0.5438, 0.0438, 0.2500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (5.4767, 2.6130, 1.1014) [0.9562, 0.4562, 0.2500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (5.4767, 0.2506, 3.3043) [0.9562, 0.0438, 0.7500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (3.1143, 2.6130, 3.3043) [0.5438, 0.4562, 0.7500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (2.6130, 5.4767, 3.3043) [0.4562, 0.9562, 0.7500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (0.2506, 3.1143, 3.3043) [0.0438, 0.5438, 0.7500]
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -2595,19 +2595,19 @@ PeriodicSite: Si (0.2506, 3.1143, 3.3043) [0.0438, 0.5438, 0.7500]
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CrySPY_doc/js/clipboard.min.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/jquery.sticky.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/featherlight.min.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/highlight.pack.js?1649519508"></script>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1650348903"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/learn.js?1649519508"></script>
-    <script src="/CrySPY_doc/js/hugo-learn.js?1649519508"></script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/learn.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1650348903"></script>
     
         
-            <script src="/CrySPY_doc/mermaid/mermaid.js?1649519508"></script>
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1650348903"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

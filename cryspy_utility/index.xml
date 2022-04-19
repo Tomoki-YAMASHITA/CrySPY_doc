@@ -24,7 +24,7 @@ init_struc_data.pkl can be loaded at the start of the simulation in CrySPY.</des
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/</guid>
       <description>kpt_check.py can check a k-point mesh with a given kppvol. This script supports POSCAR, CONTCAR, and init_struc_data.pkl. pymatgen library is required.
 After generating initial structures, you can try to see how much the value of kppvol should be.
-Usage python3 kpt_check.py [-h] [-w] [-n NSTRUC] infile kppvol positional arguments: infile input file: POSCAR or CONTCAR or init_struc_data.pkl kppvol kppvol optional arguments: -h, --help show this help message and exit -w, --write write KPOINTS -n NSTRUC, --nstruc NSTRUC number of structure to check Example POSCAR with a given kppvol $ python3 kpt_check.</description>
+Usage python3 kpt_check.py [-h] [-w] [-n NSTRUC] infile kppvol  positional arguments:  infile input file: POSCAR or CONTCAR or init_struc_data.pkl  kppvol kppvol  optional arguments:  -h, --help show this help message and exit  -w, --write write KPOINTS  -n NSTRUC, --nstruc NSTRUC  number of structure to check Example POSCAR with a given kppvol $ python3 kpt_check.</description>
     </item>
     
   </channel>
