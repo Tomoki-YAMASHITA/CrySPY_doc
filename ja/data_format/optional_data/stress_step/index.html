@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>stress_step_data :: CrySPY</title>
 
     
-    <link href="/CrySPY_doc/css/nucleus.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hybrid.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/featherlight.min.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/auto-complete.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/theme.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hugo-theme.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/nucleus.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1652710705" rel="stylesheet">
     
-    <link href="/CrySPY_doc/css/theme-green.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme-green.css?1652710705" rel="stylesheet">
     
     
 
-    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1652710705"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1650348903"></script>
-<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1650348903"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1652710705"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1652710705"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc\/ja";
     
 </script>
-<script type="text/javascript" src="/CrySPY_doc/js/search.js?1650348903"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1652710705"></script>
 
     
   </div>
@@ -1344,6 +1344,27 @@
  
   
     
+      <li data-nav-id="/CrySPY_doc/ja/cryspy_utility/extract_struc/" title="extract_struc.py" class="dd-item ">
+        <a href="/CrySPY_doc/ja/cryspy_utility/extract_struc/">
+        extract_struc.py
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/CrySPY_doc/ja/cryspy_utility/pos2pkl/" title="pos2pkl.py" class="dd-item ">
         <a href="/CrySPY_doc/ja/cryspy_utility/pos2pkl/">
         pos2pkl.py
@@ -1584,33 +1605,33 @@
 </li>
 </ul>
 <h2 id="how-to-access">How to access</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;stress_step_data.pkl&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>    stress_step_data <span style="color:#f92672">=</span> pickle<span style="color:#f92672">.</span>load(f)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># stress_step_data[ID][stage][step][atom]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># stress_step_data[ID][0] &lt;-- stage 1</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># stress_step_data[ID][1] &lt;-- stage 2</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># in LAQA</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># stress_step_data[ID][selection][step][atom]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># stress_step_data[ID][0] &lt;-- 1st selection</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># stress_step_data[ID][1] &lt;-- 2nd selection</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- stress step data of ID 3, stage 1</span>
-</span></span><span style="display:flex;"><span>cid <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>      <span style="color:#75715e"># ID</span>
-</span></span><span style="display:flex;"><span>stage <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>    <span style="color:#75715e"># stage</span>
-</span></span><span style="display:flex;"><span>stress_step_data[cid][stage<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][:<span style="color:#ae81ff">3</span>]    <span style="color:#75715e"># to show only 3 steps in jupyter </span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>[array([[-0.16770062,  0.        ,  0.        ],
-</span></span><span style="display:flex;"><span>        [ 0.        , -0.16770062, -0.        ],
-</span></span><span style="display:flex;"><span>        [ 0.        ,  0.        ,  0.21823358]]),
-</span></span><span style="display:flex;"><span> array([[-0.16020785, -0.        , -0.        ],
-</span></span><span style="display:flex;"><span>        [-0.        , -0.16020785,  0.        ],
-</span></span><span style="display:flex;"><span>        [-0.        ,  0.        ,  0.18646321]]),
-</span></span><span style="display:flex;"><span> array([[-0.13572003, -0.        ,  0.        ],
-</span></span><span style="display:flex;"><span>        [-0.        , -0.13572003,  0.        ],
-</span></span><span style="display:flex;"><span>        [-0.        ,  0.        ,  0.15953926]])]
-</span></span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pickle
+<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;stress_step_data.pkl&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    stress_step_data <span style="color:#f92672">=</span> pickle<span style="color:#f92672">.</span>load(f)
+
+<span style="color:#75715e"># stress_step_data[ID][stage][step][atom]</span>
+<span style="color:#75715e"># stress_step_data[ID][0] &lt;-- stage 1</span>
+<span style="color:#75715e"># stress_step_data[ID][1] &lt;-- stage 2</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># in LAQA</span>
+<span style="color:#75715e"># stress_step_data[ID][selection][step][atom]</span>
+<span style="color:#75715e"># stress_step_data[ID][0] &lt;-- 1st selection</span>
+<span style="color:#75715e"># stress_step_data[ID][1] &lt;-- 2nd selection</span>
+
+<span style="color:#75715e"># ---------- stress step data of ID 3, stage 1</span>
+cid <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>      <span style="color:#75715e"># ID</span>
+stage <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>    <span style="color:#75715e"># stage</span>
+stress_step_data[cid][stage<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][:<span style="color:#ae81ff">3</span>]    <span style="color:#75715e"># to show only 3 steps in jupyter </span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">[array([[-0.16770062,  0.        ,  0.        ],
+        [ 0.        , -0.16770062, -0.        ],
+        [ 0.        ,  0.        ,  0.21823358]]),
+ array([[-0.16020785, -0.        , -0.        ],
+        [-0.        , -0.16020785,  0.        ],
+        [-0.        ,  0.        ,  0.18646321]]),
+ array([[-0.13572003, -0.        ,  0.        ],
+        [-0.        , -0.13572003,  0.        ],
+        [-0.        ,  0.        ,  0.15953926]])]
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -2554,6 +2575,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2579,19 +2616,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CrySPY_doc/js/clipboard.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/jquery.sticky.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/featherlight.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/highlight.pack.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1652710705"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/learn.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/hugo-learn.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/learn.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1652710705"></script>
     
         
-            <script src="/CrySPY_doc/mermaid/mermaid.js?1650348903"></script>
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1652710705"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

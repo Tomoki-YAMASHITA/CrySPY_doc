@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>pos2pkl.py :: CrySPY</title>
 
     
-    <link href="/CrySPY_doc/css/nucleus.css?1650348902" rel="stylesheet">
-    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1650348902" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hybrid.css?1650348902" rel="stylesheet">
-    <link href="/CrySPY_doc/css/featherlight.min.css?1650348902" rel="stylesheet">
-    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1650348902" rel="stylesheet">
-    <link href="/CrySPY_doc/css/auto-complete.css?1650348902" rel="stylesheet">
-    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1650348902" rel="stylesheet">
-    <link href="/CrySPY_doc/css/theme.css?1650348902" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hugo-theme.css?1650348902" rel="stylesheet">
+    <link href="/CrySPY_doc/css/nucleus.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1652710705" rel="stylesheet">
     
-    <link href="/CrySPY_doc/css/theme-green.css?1650348902" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme-green.css?1652710705" rel="stylesheet">
     
     
 
-    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1650348902"></script>
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1652710705"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1650348902"></script>
-<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1650348902"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1652710705"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1652710705"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc";
     
 </script>
-<script type="text/javascript" src="/CrySPY_doc/js/search.js?1650348902"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1652710705"></script>
 
     
   </div>
@@ -1344,6 +1344,27 @@
  
   
     
+      <li data-nav-id="/CrySPY_doc/cryspy_utility/extract_struc/" title="extract_struc.py" class="dd-item ">
+        <a href="/CrySPY_doc/cryspy_utility/extract_struc/">
+        extract_struc.py
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/CrySPY_doc/cryspy_utility/pos2pkl/" title="pos2pkl.py" class="dd-item active">
         <a href="/CrySPY_doc/cryspy_utility/pos2pkl/">
         pos2pkl.py
@@ -1560,53 +1581,53 @@
 <p>Script to convert structre data into <code>init_struc_data.pkl</code>. The default input format is <code>init_POSCARS</code>. Single structure data such as POSCAR and cif files can be optionally converted. Output is <code>init_struc_data.pkl</code>. Structure data can be added to an already existing <code>init_struc_data.pkl</code>. The structure ID is not taken into account and is newly assigned. If the number of atoms is different, an error is generated.</p>
 <p><code>init_struc_data.pkl</code> can be loaded at the start of the simulation in CrySPY.</p>
 <h2 id="usage">Usage</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>usage: pos2pkl.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-s <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>infile ...<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>positional arguments:
-</span></span><span style="display:flex;"><span>  infile                input file: init_POSCARS
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>optional arguments:
-</span></span><span style="display:flex;"><span>  -h, --help            show this help message and exit
-</span></span><span style="display:flex;"><span>  -s <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]</span>, --single <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>                        input file: single structure file <span style="color:#f92672">(</span>POSCAR, cif<span style="color:#f92672">)</span>
-</span></span></code></pre></div><h2 id="examples">Examples</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">usage: pos2pkl.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-s <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>infile ...<span style="color:#f92672">]</span>
+
+positional arguments:
+  infile                input file: init_POSCARS
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]</span>, --single <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]</span>
+                        input file: single structure file <span style="color:#f92672">(</span>POSCAR, cif<span style="color:#f92672">)</span>
+</code></pre></div><h2 id="examples">Examples</h2>
 <h3 id="init_poscars----init_struc_datapkl">init_POSCARS &ndash;&gt; init_struc_data.pkl</h3>
 <p>It can be used to convert <code>init_POSCARS</code> generated by CrySPY to <code>init_struc_data.pkl</code> in another machine such as a supercomputer. Multiple input files can be converted.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py init_POSCARS
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">4</span>
-</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
-</span></span></code></pre></div><p>Multiple inputs:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">12</span>
-</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
-</span></span></code></pre></div><p>If <code>init_struc_data.pkl</code> already exists in the current directory and you want to append to it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py init_POSCARS
-</span></span><span style="display:flex;"><span>init_struc_data.pkl already exists.
-</span></span><span style="display:flex;"><span>Append to init_struc_data.pkl? <span style="color:#f92672">[</span>y/n<span style="color:#f92672">]</span>: y
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Load init_struc_data. The number of structures: <span style="color:#ae81ff">12</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">16</span>
-</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
-</span></span></code></pre></div><h3 id="poscar-or-cif----init_struc_datapkl">POSCAR or cif &ndash;&gt; init_struc_data.pkl</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ python3 pos2pkl.py init_POSCARS
+
+Converted. The number of structures: <span style="color:#ae81ff">4</span>
+Save init_struc_data.pkl
+</code></pre></div><p>Multiple inputs:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3
+
+Converted. The number of structures: <span style="color:#ae81ff">12</span>
+Save init_struc_data.pkl
+</code></pre></div><p>If <code>init_struc_data.pkl</code> already exists in the current directory and you want to append to it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ python3 pos2pkl.py init_POSCARS
+init_struc_data.pkl already exists.
+Append to init_struc_data.pkl? <span style="color:#f92672">[</span>y/n<span style="color:#f92672">]</span>: y
+
+Load init_struc_data. The number of structures: <span style="color:#ae81ff">12</span>
+
+Converted. The number of structures: <span style="color:#ae81ff">16</span>
+Save init_struc_data.pkl
+</code></pre></div><h3 id="poscar-or-cif----init_struc_datapkl">POSCAR or cif &ndash;&gt; init_struc_data.pkl</h3>
 <p>Single structure data such as POSCAR and cif files can also be converted. <code>-s/--single</code> option is required.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py -s POSCAR test.cif
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
-</span></span></code></pre></div><h3 id="init_poscars-poscar----init_struc_datapkl">init_POSCARS, POSCAR &ndash;&gt; init_struc_data.pkl</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py init_POSCARS -s POSCAR
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">5</span>
-</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
-</span></span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ python3 pos2pkl.py -s POSCAR test.cif
+
+Converted. The number of structures: <span style="color:#ae81ff">2</span>
+Save init_struc_data.pkl
+</code></pre></div><h3 id="init_poscars-poscar----init_struc_datapkl">init_POSCARS, POSCAR &ndash;&gt; init_struc_data.pkl</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ python3 pos2pkl.py init_POSCARS -s POSCAR
+
+Converted. The number of structures: <span style="color:#ae81ff">5</span>
+Save init_struc_data.pkl
+</code></pre></div>
 <div class="notices warning" ><p>The following is wrong. The <code>init_POSCARS</code> is also treated as a single structure.</p>
 </div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py -s POSCAR init_POSCARS
-</span></span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ python3 pos2pkl.py -s POSCAR init_POSCARS
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -2512,6 +2533,25 @@
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -2555,7 +2595,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CrySPY_doc/cryspy_utility/" title="CrySPY Utility"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CrySPY_doc/cryspy_utility/extract_struc/" title="extract_struc.py"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/CrySPY_doc/cryspy_utility/kpt_check/" title="kpt_check.py" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -2568,19 +2608,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CrySPY_doc/js/clipboard.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/jquery.sticky.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/featherlight.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/highlight.pack.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1652710705"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/learn.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/hugo-learn.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/learn.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1652710705"></script>
     
         
-            <script src="/CrySPY_doc/mermaid/mermaid.js?1650348903"></script>
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1652710705"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

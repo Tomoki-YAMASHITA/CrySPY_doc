@@ -104,7 +104,7 @@ Continue if you have crypy.stat
 Start from the beginning if you don&amp;rsquo;t have cryspy.stat
  Submit job Run CyrSPY again.
 $ cryspy &amp;amp; Check log file.
-2020/11/11 20:02:54 CrySPY 0.9.0 Restart cryspy.py    # ---------- job status ID 0: submit job, Stage 1 ID 1: submit job, Stage 1 And also cryspy.stat file.
+2020/11/11 20:02:54 CrySPY 0.9.0 Restart cryspy.py # ---------- job status ID 0: submit job, Stage 1 ID 1: submit job, Stage 1 And also cryspy.stat file.
 ... (omit) ... [status] id_queueing = 2 3 4 id 0 = Stage 1 id 1 = Stage 1 CrySPY submitted two jobs for structure ID 0 and 1 as you set njob = 2 in cryspy.</description>
     </item>
     
@@ -126,7 +126,7 @@ $ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_d
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/append/</guid>
       <description>Of course only 5 structures are not enough to find stable structures. You can append structures whenever you want. Here let&amp;rsquo;s append more 5 structures.
 Edit cryspy.in and change the value of tot_struc into 10.
-$ emacs cryspy.in $ cat cryspy.in [basic] algo = RS calc_code = soiap tot_struc = 10 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy  [structure] natot = 8 atype = Si nat = 8  [soiap] soiap_infile = soiap.</description>
+$ emacs cryspy.in $ cat cryspy.in [basic] algo = RS calc_code = soiap tot_struc = 10 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.</description>
     </item>
     
     <item>

@@ -14,7 +14,8 @@
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/</guid>
       <description>energy_step_data is saved in energy_step_data.pkl if you set energy_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
 energy_step_flag = True is currently available only with VASP, QE, and soiap.
- In soiap, energy_step_data is collected only if loopa == 1. This is because other data (struc, force, and stress) are output only when loopa == 1. See, https://github.com/nbsato/soiap/blob/master/doc/instructions.md  Data format  type: dict  key: structure ID value: list of energy step data in each stage   string form  {0: [array([-3.</description>
+ In soiap, energy_step_data is collected only if loopa == 1. This is because other data (struc, force, and stress) are output only when loopa == 1. See, https://github.com/nbsato/soiap/blob/master/doc/instructions.md
+ Data format  type: dict  key: structure ID value: list of energy step data in each stage   string form  {0: [array([-3.</description>
     </item>
     
     <item>

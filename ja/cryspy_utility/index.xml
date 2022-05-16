@@ -7,6 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>extract_struc.py</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/extract_struc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/extract_struc/</guid>
+      <description>init_struc_data.pklやopt_struc_data.pklから構造ごとにcifファイルを出力するスクリプト．
+-iオプションでインデックス（構造ID)を（複数）指定できる．-aオプションの場合は全ての構造をcifファイルに出力する．数が多い場合はディレクトリを作成してそこに移動してから実行したほうが良い．-sオプションをつけると対称性（空間群）の情報を付けられる．ただし，セルや原子数が変わるので注意．
+使い方 usage: extract_struc.py [-h] [-a] [-i [INDEX ...]] [-s] infile positional arguments: infile input file optional arguments: -h, --help show this help message and exit -a, --all_id flag for all structures -i [INDEX ...], --index [INDEX ...] structure ID -s, --symmetrized flag for symmetrized structure 例 構造ID指定 $ python3 extract_struc.py init_struc_data.pkl -i 7 10 12 以下のファイルが出力される．
+7.cif，10.cif，12.cif
+対称性の情報あり $ python3 extract_struc.py init_struc_data.pkl -i 7 10 12 -s 全構造 構造が多い場合はディレクトリを先に作った方が良い．</description>
+    </item>
+    
+    <item>
       <title>pos2pkl.py</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/pos2pkl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -14,8 +27,9 @@
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/pos2pkl/</guid>
       <description>あらかじめ用意した構造のテキストデータをinit_struc_data.pklに変換するスクリプト． 入力のデフォルトはinit_POSCARS形式．オプションでPOSCARやcifファイルなどのシングル構造データも変換可能． 出力はinit_struc_data.pkl． すでに存在するinit_struc_data.pklに構造データを追加することもできる． 構造IDは考慮されず，新しく割り振られる． 原子数が異なる場合はエラーが出る．
 init_struc_data.pklはCrySPYでシミュレーション開始時にロードすることが可能．
-使い方 usage: pos2pkl.py [-h] [-s [SINGLE ...]] [infile ...]  positional arguments:  infile input file: init_POSCARS  optional arguments:  -h, --help show this help message and exit  -s [SINGLE ...], --single [SINGLE ...]  input file: single structure file (POSCAR, cif) 例 init_POSCARS &amp;ndash;&amp;gt; init_struc_data.pkl CrySPYで構造生成後に出力されるinit_POSCARSをスパコン等の別のマシンに移すような場合に使える．複数のファイルを変換可能．
-$ python3 pos2pkl.py init_POSCARS  Converted. The number of structures: 4 Save init_struc_data.pkl 複数の入力ファイルの場合．</description>
+使い方 usage: pos2pkl.py [-h] [-s [SINGLE ...]] [infile ...] positional arguments: infile input file: init_POSCARS optional arguments: -h, --help show this help message and exit -s [SINGLE ...], --single [SINGLE ...] input file: single structure file (POSCAR, cif) 例 init_POSCARS &amp;ndash;&amp;gt; init_struc_data.pkl CrySPYで構造生成後に出力されるinit_POSCARSをスパコン等の別のマシンに移すような場合に使える．複数のファイルを変換可能．
+$ python3 pos2pkl.py init_POSCARS Converted. The number of structures: 4 Save init_struc_data.pkl 複数の入力ファイルの場合．
+$ python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3 Converted. The number of structures: 12 Save init_struc_data.</description>
     </item>
     
     <item>
@@ -26,7 +40,7 @@ $ python3 pos2pkl.py init_POSCARS  Converted. The number of structures: 4 Save i
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/kpt_check/</guid>
       <description>kpt_check.pyはkppvolを入力した際にkメッシュがどれくらいになるかをチェックすることができる． POSCAR，CONTCAR，およびinit_struc_data.pklが読み込み可能． pymatgenライブラリが必要．
 初期構造を生成後に，kppvolの値をどれくらいにしたら良いか色々試すことができる．（下記の最後の例を参照）
-使い方 python3 kpt_check.py [-h] [-w] [-n NSTRUC] infile kppvol  positional arguments:  infile input file: POSCAR or CONTCAR or init_struc_data.pkl  kppvol kppvol  optional arguments:  -h, --help show this help message and exit  -w, --write write KPOINTS  -n NSTRUC, --nstruc NSTRUC  number of structure to check 例 POSCARとkppvol $ python3 kpt_check.py POSCAR 100 a = 10.689217 b = 10.689217 c = 10.</description>
+使い方 python3 kpt_check.py [-h] [-w] [-n NSTRUC] infile kppvol positional arguments: infile input file: POSCAR or CONTCAR or init_struc_data.pkl kppvol kppvol optional arguments: -h, --help show this help message and exit -w, --write write KPOINTS -n NSTRUC, --nstruc NSTRUC number of structure to check 例 POSCARとkppvol $ python3 kpt_check.py POSCAR 100 a = 10.689217 b = 10.689217 c = 10.730846 Lattice vector 10.689217 0.000000 0.000000 0.000000 10.</description>
     </item>
     
   </channel>

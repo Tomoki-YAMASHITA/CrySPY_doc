@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/CrySPY_doc/images/favicon.png" type="image/png">
 
-    <title>LAMMPS :: CrySPY</title>
+    <title>extract_struc.py :: CrySPY</title>
 
     
     <link href="/CrySPY_doc/css/nucleus.css?1652710705" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/CrySPY_doc/tutorial/random/lammps/">
+  <body class="" data-url="/CrySPY_doc/cryspy_utility/extract_struc/">
     <nav id="sidebar" class="">
 
 
@@ -317,7 +317,7 @@
   
     
     <li data-nav-id="/CrySPY_doc/tutorial/" title="Tutorial" class="dd-item 
-        parent
+        
         
         
         ">
@@ -346,7 +346,7 @@
   
     
     <li data-nav-id="/CrySPY_doc/tutorial/random/" title="Random Search (RS)" class="dd-item 
-        parent
+        
         
         
         ">
@@ -456,7 +456,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/tutorial/random/lammps/" title="LAMMPS" class="dd-item active">
+      <li data-nav-id="/CrySPY_doc/tutorial/random/lammps/" title="LAMMPS" class="dd-item ">
         <a href="/CrySPY_doc/tutorial/random/lammps/">
         LAMMPS
         
@@ -1318,7 +1318,7 @@
   
     
     <li data-nav-id="/CrySPY_doc/cryspy_utility/" title="CrySPY Utility" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1344,7 +1344,7 @@
  
   
     
-      <li data-nav-id="/CrySPY_doc/cryspy_utility/extract_struc/" title="extract_struc.py" class="dd-item ">
+      <li data-nav-id="/CrySPY_doc/cryspy_utility/extract_struc/" title="extract_struc.py" class="dd-item active">
         <a href="/CrySPY_doc/cryspy_utility/extract_struc/">
         extract_struc.py
         
@@ -1453,7 +1453,7 @@
                   
                     
                     
-                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/" selected>English</option>
+                      <option id="en" value="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/extract_struc/" selected>English</option>
                     
                   
               
@@ -1467,7 +1467,7 @@
                   
                     
                     
-                      <option id="ja" value="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/lammps/">日本語</option>
+                      <option id="ja" value="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/extract_struc/">日本語</option>
                     
                   
               
@@ -1531,13 +1531,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/tutorial/'>Tutorial</a> > <a href='/CrySPY_doc/tutorial/random/'>Random Search (RS)</a> > LAMMPS
-          
-        
+            <a href='/CrySPY_doc/'></a> > <a href='/CrySPY_doc/cryspy_utility/'>CrySPY Utility</a> > extract_struc.py
           
         
           
@@ -1550,7 +1544,19 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#examples">Examples</a>
+      <ul>
+        <li><a href="#structure-ids">Structure ID(s)</a></li>
+        <li><a href="#structure-ids-with-symmetry-information">Structure ID(s) with symmetry information</a></li>
+        <li><a href="#all-the-structures">All the structures</a></li>
+        <li><a href="#all-the-structures-with-symmetry-information">All the structures with symmetry information</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1566,15 +1572,45 @@
           
             <h1>
               
-              LAMMPS
+              extract_struc.py
             </h1>
           
 
         
 
 
-<p>Coming soon.</p>
+<p>Script to extract (a) structure(s) from <code>init_struc_data.pkl</code> and <code>opt_struc_data.pkl</code>, and output (a) cif file(s).</p>
+<p>One can specify structure ID(s) using <code>-i</code> option. <code>-a</code> option is for outputting all the structures.
+(note that many cif files will be output.)
+<code>-s</code> option adds symmetry information, but note that</p>
+<h2 id="usage">Usage</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">usage: extract_struc.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-a<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-i <span style="color:#f92672">[</span>INDEX ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>-s<span style="color:#f92672">]</span> infile
 
+positional arguments:
+  infile                input file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -a, --all_id          flag <span style="color:#66d9ef">for</span> all structures
+  -i <span style="color:#f92672">[</span>INDEX ...<span style="color:#f92672">]</span>, --index <span style="color:#f92672">[</span>INDEX ...<span style="color:#f92672">]</span>
+                        structure ID
+  -s, --symmetrized     flag <span style="color:#66d9ef">for</span> symmetrized structure
+</code></pre></div><h2 id="examples">Examples</h2>
+<h3 id="structure-ids">Structure ID(s)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ python3 extract_struc.py init_struc_data.pkl -i <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">12</span>
+</code></pre></div><p><code>7.cif</code>, <code>10.cif</code>, and <code>12.cif</code> are output.</p>
+<h3 id="structure-ids-with-symmetry-information">Structure ID(s) with symmetry information</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ python3 extract_struc.py init_struc_data.pkl -i <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">12</span> -s
+</code></pre></div><h3 id="all-the-structures">All the structures</h3>
+<p>You should make a directory.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ mkdir init_cifs
+$ cd init_cifs
+$ python3 extract_struc.py init_struc_data.pkl -a
+</code></pre></div><h3 id="all-the-structures-with-symmetry-information">All the structures with symmetry information</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ mkdir init_cifs
+$ cd init_cifs
+$ python3 extract_struc.py init_struc_data.pkl -as
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -1774,7 +1810,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1790,7 +1825,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1798,25 +1832,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1871,7 +1886,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1888,8 +1902,21 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -2475,6 +2502,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2487,6 +2515,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -2503,6 +2532,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2543,10 +2575,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CrySPY_doc/tutorial/random/omx/" title="OpenMX"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/CrySPY_doc/cryspy_utility/" title="CrySPY Utility"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CrySPY_doc/tutorial/random/cryspy_in/" title="Check cryspy.in" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/CrySPY_doc/cryspy_utility/pos2pkl/" title="pos2pkl.py" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

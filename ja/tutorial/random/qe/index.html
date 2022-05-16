@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>QE :: CrySPY</title>
 
     
-    <link href="/CrySPY_doc/css/nucleus.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hybrid.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/featherlight.min.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/auto-complete.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/theme.css?1650348903" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hugo-theme.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/nucleus.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1652710705" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1652710705" rel="stylesheet">
     
-    <link href="/CrySPY_doc/css/theme-green.css?1650348903" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme-green.css?1652710705" rel="stylesheet">
     
     
 
-    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1652710705"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1650348903"></script>
-<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1650348903"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1652710705"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1652710705"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc\/ja";
     
 </script>
-<script type="text/javascript" src="/CrySPY_doc/js/search.js?1650348903"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1652710705"></script>
 
     
   </div>
@@ -1344,6 +1344,27 @@
  
   
     
+      <li data-nav-id="/CrySPY_doc/ja/cryspy_utility/extract_struc/" title="extract_struc.py" class="dd-item ">
+        <a href="/CrySPY_doc/ja/cryspy_utility/extract_struc/">
+        extract_struc.py
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/CrySPY_doc/ja/cryspy_utility/pos2pkl/" title="pos2pkl.py" class="dd-item ">
         <a href="/CrySPY_doc/ja/cryspy_utility/pos2pkl/">
         pos2pkl.py
@@ -1578,18 +1599,18 @@ The target system is Si 8 atoms.</p>
 </ul>
 <h2 id="input-files">Input files</h2>
 <p>Move to your working directory, and copy input example files.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cp -r ~/CrySPY_root/CrySPY-0.9.0/example/v0.9.0/QE_Si8_RS  .
-</span></span><span style="display:flex;"><span>$ cd QE_RS_Si8
-</span></span><span style="display:flex;"><span>$ tree
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>.
-</span></span><span style="display:flex;"><span>├── calc_in
-</span></span><span style="display:flex;"><span>│   ├── job_cryspy
-</span></span><span style="display:flex;"><span>│   ├── pwscf.in_1
-</span></span><span style="display:flex;"><span>│   └── pwscf.in_2
-</span></span><span style="display:flex;"><span>└── cryspy.in
-</span></span></code></pre></div><h3 id="cryspyin">cryspy.in</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ cp -r ~/CrySPY_root/CrySPY-0.9.0/example/v0.9.0/QE_Si8_RS  .
+$ cd QE_RS_Si8
+$ tree
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">.
+├── calc_in
+│   ├── job_cryspy
+│   ├── pwscf.in_1
+│   └── pwscf.in_2
+└── cryspy.in
+</code></pre></div><h3 id="cryspyin">cryspy.in</h3>
 <p><code>cryspy.in</code> is the input file of CrySPY.</p>
-<pre tabindex="0"><code>[basic]
+<pre><code>[basic]
 algo = RS
 calc_code = QE
 tot_struc = 5
@@ -1630,24 +1651,24 @@ You have to specify k-point grid density (Å^-3) for each stage in <code>kppvol<
 <h4 id="job-file">Job file</h4>
 <p>The name of the job file must match the value of <code>jobfile</code> in <code>cryspy.in</code>.
 The example of job file (here, <code>job_cryspy</code>) is shown below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#$ -cwd</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#$ -V -S /bin/bash</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">####$ -V -S /bin/zsh</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#$ -N Si8_CrySPY_ID</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#$ -pe smp 8</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">####$ -q ibis1.q</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">####$ -q ibis2.q</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>mpirun -np $NSLOTS pw.x -nk <span style="color:#ae81ff">4</span> -nb <span style="color:#ae81ff">2</span> &lt; pwscf.in &gt; pwscf.out
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -e <span style="color:#e6db74">&#34;CRASH&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sed -i -e <span style="color:#e6db74">&#39;3 s/^.*$/done/&#39;</span> stat_job
-</span></span></code></pre></div><p>Change <code>pw.x</code> to appropriate path suitable for your environment.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span><span style="color:#75715e">#$ -cwd</span>
+<span style="color:#75715e">#$ -V -S /bin/bash</span>
+<span style="color:#75715e">####$ -V -S /bin/zsh</span>
+<span style="color:#75715e">#$ -N Si8_CrySPY_ID</span>
+<span style="color:#75715e">#$ -pe smp 8</span>
+<span style="color:#75715e">####$ -q ibis1.q</span>
+<span style="color:#75715e">####$ -q ibis2.q</span>
+
+mpirun -np $NSLOTS pw.x -nk <span style="color:#ae81ff">4</span> -nb <span style="color:#ae81ff">2</span> &lt; pwscf.in &gt; pwscf.out
+
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -e <span style="color:#e6db74">&#34;CRASH&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    exit <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">fi</span>
+
+sed -i -e <span style="color:#e6db74">&#39;3 s/^.*$/done/&#39;</span> stat_job
+</code></pre></div><p>Change <code>pw.x</code> to appropriate path suitable for your environment.
 You can specify the input (<code>pwscf.in</code>) and output (<code>pwscf.out</code>) file names,
 but they must match the values of <code>qe_infile</code> and <code>qe_outfile</code> in <code>cryspy.in</code>.</p>
 <p>The job file is written in the same way as the one you usually use except for the last line.
@@ -1673,36 +1694,36 @@ For example, users can configure the following settings.
 In the first stage, only the ionic positions are relaxed, fixing the cell shape.
 Next, the ionic positions and cell shape are fully relaxed in the second stage.</p>
 <p><code>pwscf.in_1</code> is listed below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span> &amp;control
-</span></span><span style="display:flex;"><span>    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Si8&#39;</span>
-</span></span><span style="display:flex;"><span>    calculation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;relax&#39;</span>
-</span></span><span style="display:flex;"><span>    nstep <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
-</span></span><span style="display:flex;"><span>    restart_mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;from_scratch&#39;</span>,
-</span></span><span style="display:flex;"><span>    pseudo_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/&#39;</span>
-</span></span><span style="display:flex;"><span>    outdir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./out.d/&#39;</span>
-</span></span><span style="display:flex;"><span> <span style="color:#f92672">/</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> &amp;system
-</span></span><span style="display:flex;"><span>    ibrav <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>    nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
-</span></span><span style="display:flex;"><span>    ntyp <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    ecutwfc <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">4.0</span>
-</span></span><span style="display:flex;"><span>    occupations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;smearing&#39;</span>
-</span></span><span style="display:flex;"><span>    degauss <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.01</span>
-</span></span><span style="display:flex;"><span> <span style="color:#f92672">/</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> &amp;electrons
-</span></span><span style="display:flex;"><span> <span style="color:#f92672">/</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> &amp;ions
-</span></span><span style="display:flex;"><span> <span style="color:#f92672">/</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> &amp;cell
-</span></span><span style="display:flex;"><span> <span style="color:#f92672">/</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ATOMIC_SPECIES
-</span></span><span style="display:flex;"><span>  Si  <span style="color:#ae81ff">2</span><span style="color:#ae81ff">8.086</span>  Si.pbe<span style="color:#f92672">-</span>n<span style="color:#f92672">-</span>kjpaw_psl.<span style="color:#ae81ff">1.0</span>.<span style="color:#ae81ff">0.</span>UPF
-</span></span></code></pre></div><p>Change <code>pseudo_dir</code> to your suitable directory.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fortran" data-lang="fortran"> &amp;control
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Si8&#39;</span>
+    calculation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;relax&#39;</span>
+    nstep <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+    restart_mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;from_scratch&#39;</span>,
+    pseudo_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/&#39;</span>
+    outdir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./out.d/&#39;</span>
+ <span style="color:#f92672">/</span>
+
+ &amp;system
+    ibrav <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+    ntyp <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    ecutwfc <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">4.0</span>
+    occupations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;smearing&#39;</span>
+    degauss <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.01</span>
+ <span style="color:#f92672">/</span>
+
+ &amp;electrons
+ <span style="color:#f92672">/</span>
+
+ &amp;ions
+ <span style="color:#f92672">/</span>
+
+ &amp;cell
+ <span style="color:#f92672">/</span>
+
+ATOMIC_SPECIES
+  Si  <span style="color:#ae81ff">2</span><span style="color:#ae81ff">8.086</span>  Si.pbe<span style="color:#f92672">-</span>n<span style="color:#f92672">-</span>kjpaw_psl.<span style="color:#ae81ff">1.0</span>.<span style="color:#ae81ff">0.</span>UPF
+</code></pre></div><p>Change <code>pseudo_dir</code> to your suitable directory.
 Inputs for structure data and k-point such as <code>ATOMIC_POSITIONS</code> and <code>K_POINTS</code> are automatically appended by CrySPY with pymatgen.
 Users do not have to prepare them in <code>pwscf.in_x</code>.</p>
 <h2 id="running-cryspy">Running CrySPY</h2>
@@ -2649,6 +2670,22 @@ Users do not have to prepare them in <code>pwscf.in_x</code>.</p>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2674,19 +2711,19 @@ Users do not have to prepare them in <code>pwscf.in_x</code>.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CrySPY_doc/js/clipboard.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/jquery.sticky.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/featherlight.min.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/highlight.pack.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1652710705"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/learn.js?1650348903"></script>
-    <script src="/CrySPY_doc/js/hugo-learn.js?1650348903"></script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/learn.js?1652710705"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1652710705"></script>
     
         
-            <script src="/CrySPY_doc/mermaid/mermaid.js?1650348903"></script>
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1652710705"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
