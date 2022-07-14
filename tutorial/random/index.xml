@@ -12,10 +12,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/</guid>
-      <description>soiap  is Structure Optimization with InterAtomic Potential. It is suitable for testing CrySPY because of its fast structure optimization. See instructions  to install soiap.
+      <description>soiap is Structure Optimization with InterAtomic Potential. It is suitable for testing CrySPY because of its fast structure optimization. See instructions to install soiap.
 In this tutorial, we try to use CrySPY in your local PC (Mac or Linux). The target system is Si 8 atoms.
 Assumption Here, we assume the following conditions:
- CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job filename: job_cryspy soiap executable file: ~/local/soiap-0.3.0/src/soiap soiap input filename: soiap.</description>
+CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job filename: job_cryspy soiap executable file: ~/local/soiap-0.3.0/src/soiap soiap input filename: soiap.in soiap output filename: soiap.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@ Assumption Here, we assume the following conditions:
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/</guid>
       <description>In this tutorial, we try to use CrySPY in a machine with a job scheduler system such as PBS. Here we employ QUANTUM ESPRESSO. (QE). The target system is Si 8 atoms.
 Assumption Here, we assume the following conditions:
- CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job command: qsub CrySPY job filename: job_cryspy QE executable file: /usr/local/qe-6.5/bin/pw.x QE input filename: pwscf.in QE output filename: pwscf.out  Input files Move to your working directory, and copy input example files.</description>
+CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job command: qsub CrySPY job filename: job_cryspy QE executable file: /usr/local/qe-6.5/bin/pw.x QE input filename: pwscf.in QE output filename: pwscf.out Input files Move to your working directory, and copy input example files.</description>
     </item>
     
     <item>
@@ -57,6 +57,20 @@ Assumption Here, we assume the following conditions:
     </item>
     
     <item>
+      <title>External program</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/external/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/external/</guid>
+      <description>Available from CrySPY 0.11.0.
+If you use an external program not supported by CrySPY, the optimized energy and structure data can be loaded semi-manually in CrySPY. You have to prepare two files, ext_opt_struc_data.pkl and ext_energy_data.pkl.
+Assumption Here, we assume the following conditions:
+CrySPY main script: ~/CrySPY_root/CrySPY-0.11.0/cryspy.py (calc_in directory is not required.)
+Input files Move to your working directory, and copy input example files.
+$ cp -r ~/CrySPY_root/CrySPY-0.11.0/example/ext_Si8_RS . $ cd ext_Si8_RS $ tree .</description>
+    </item>
+    
+    <item>
       <title>Check cryspy.in</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -64,7 +78,7 @@ Assumption Here, we assume the following conditions:
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/</guid>
       <description>See Input file in detail.
 Let&amp;rsquo;s take a look at cryspy.in again. This may be slightly different depending on calc_code you chose.
-[basic] algo = RS calc_code = soiap tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] [basic] section  algo: Algorithm. Set RS for Random Search.</description>
+[basic] algo = RS calc_code = soiap tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] [basic] section algo: Algorithm. Set RS for Random Search.</description>
     </item>
     
     <item>
@@ -74,8 +88,8 @@ Let&amp;rsquo;s take a look at cryspy.in again. This may be slightly different d
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/script_to_run/</guid>
       <description>Assumption Here, we assume the following condition:
- CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py  Make script Let&amp;rsquo;s make a convenient shell script to avoid typing long commands over and over again. Here, we create the script, cryspy (any file name will do).
-$ emacs cryspy $ chmod 744 cryspy $ cat cryspy #!/bin/sh  python3 -u ~/CrySPY_root/CrySPY-0.9.0/cryspy.py 1&amp;gt;&amp;gt; log 2&amp;gt;&amp;gt; err -u option (unbuffered option) can be omitted.
+CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py Make script Let&amp;rsquo;s make a convenient shell script to avoid typing long commands over and over again. Here, we create the script, cryspy (any file name will do).
+$ emacs cryspy $ chmod 744 cryspy $ cat cryspy #!/bin/sh python3 -u ~/CrySPY_root/CrySPY-0.9.0/cryspy.py 1&amp;gt;&amp;gt; log 2&amp;gt;&amp;gt; err -u option (unbuffered option) can be omitted.
 You can put this script in your $PATH, or just use like bash .</description>
     </item>
     
@@ -86,11 +100,11 @@ You can put this script in your $PATH, or just use like bash .</description>
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/</guid>
       <description>Make sure you have the following in your working directory.
- calc_in/ (cryspy) cryspy.in  $ ls calc_in cryspy cryspy.in Then, run CyrSPY!
+calc_in/ (cryspy) cryspy.in $ ls calc_in cryspy cryspy.in Then, run CyrSPY!
 $ bash ./cryspy &amp;amp; or, if you move the cryspy script in your $PATH, just type
 $ cryspy &amp;amp; At the first run, CrySPY goes into structure generation mode. CrySPY stops after 5 structure generation.
 If it worked properly, log would look like this.
-2020/11/11 19:59:18 CrySPY 0.</description>
+2020/11/11 19:59:18 CrySPY 0.9.0 Start cryspy.</description>
     </item>
     
     <item>
@@ -102,7 +116,7 @@ If it worked properly, log would look like this.
       <description>Continue CrySPY continues the simulation if you have cryspy.stat file.
 Continue if you have crypy.stat
 Start from the beginning if you don&amp;rsquo;t have cryspy.stat
- Submit job Run CyrSPY again.
+Submit job Run CyrSPY again.
 $ cryspy &amp;amp; Check log file.
 2020/11/11 20:02:54 CrySPY 0.9.0 Restart cryspy.py # ---------- job status ID 0: submit job, Stage 1 ID 1: submit job, Stage 1 And also cryspy.stat file.
 ... (omit) ... [status] id_queueing = 2 3 4 id 0 = Stage 1 id 1 = Stage 1 CrySPY submitted two jobs for structure ID 0 and 1 as you set njob = 2 in cryspy.</description>
@@ -115,7 +129,7 @@ $ cryspy &amp;amp; Check log file.
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/</guid>
       <description>Move to data directory. There should be a few more files.
-$ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_data  cryspy_rslt: Result file. cryspy_rslt_energy_asc: Result file sorted in energy ascending order. init_POSCARS: Initial struture file in POSCAR format. opt_POSCARS: Optimized structure file in POSCAR format. pkl_data: Directory to save pickled data.  The results are written to text files, cryspy_rslt and cryspy_rslt_energy_asc (and also saved in pickle data in pkl_data directory).</description>
+$ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_data cryspy_rslt: Result file. cryspy_rslt_energy_asc: Result file sorted in energy ascending order. init_POSCARS: Initial struture file in POSCAR format. opt_POSCARS: Optimized structure file in POSCAR format. pkl_data: Directory to save pickled data. The results are written to text files, cryspy_rslt and cryspy_rslt_energy_asc (and also saved in pickle data in pkl_data directory).</description>
     </item>
     
     <item>
@@ -137,6 +151,20 @@ $ emacs cryspy.in $ cat cryspy.in [basic] algo = RS calc_code = soiap tot_struc 
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/</guid>
       <description>Download the data It is assumed here that you analyze and visualize CrySPY data in your local PC. If you use CrySPY in super computers or workstations, download the data in your local PC. You can delete the work directory if you do not need it because the file size could be very large.
 jupyter notebook Move to the data directory in results you just download. Then copy cryspy_analyzer_RS.ipynb from CrySPY utility .</description>
+    </item>
+    
+    <item>
+      <title>Load external data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ext_load_data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ext_load_data/</guid>
+      <description>Make sure you have the following in your working directory.
+(cryspy) cryspy.in If you need a script to run (cryspy), see Script to run .
+$ ls cryspy cryspy.in Then, run CyrSPY!
+$ bash ./cryspy &amp;amp; or, if you move the cryspy script in your $PATH, just type
+$ cryspy &amp;amp; At the first run, CrySPY goes into structure generation mode as usual. CrySPY stops after 5 structure generation.
+If it worked properly, log would look like this.</description>
     </item>
     
   </channel>

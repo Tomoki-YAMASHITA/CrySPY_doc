@@ -6,5 +6,26 @@
     <description>Recent content in Common data on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Initial and optimized structure data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/init_opt_struc_data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/init_opt_struc_data/</guid>
+      <description>Initial and optimized structure data are saved in init_struc_data.pkl and opt_struc_data.pkl, respectively. pymatgen library is required to analyze these data files.
+Data format type: dict key: structure ID value: structure data string form {0: Structure Summary &amp;hellip;,
+1: Structure Summary &amp;hellip;, &amp;hellip;} structure data format pymatgen.core.structure.Structure How to access import pickle with open(&amp;#39;init_struc_data.pkl&amp;#39;, &amp;#39;rb&amp;#39;) as f: init_struc_data = pickle.load(f) with open(&amp;#39;opt_struc_data.pkl&amp;#39;, &amp;#39;rb&amp;#39;) as f: opt_struc_data = pickle.load(f) # struc_step_data[ID] # # # ---------- structure step data of ID 0 cid = 0 # ID init_struc_data[cid] # to show initial structure of ID 0 Structure Summary Lattice abc : 5.</description>
+    </item>
+    
+    <item>
+      <title>Result data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/rslt_data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/rslt_data/</guid>
+      <description>Common result data such as space group, energies, etc. are saved in rslt_data.pkl. pandas library is required to analyze this data file.
+Data format type: pandas.core.frame.DataFrame row lable: structure ID string form see blow How to access import pickle with open(&amp;#39;rslt_data.pkl&amp;#39;, &amp;#39;rb&amp;#39;) as f: rslt_data = pickle.load(f) # ---------- sort by Energy # top 5 rslt_data.sort_values(by=[&amp;#39;E_eV_atom&amp;#39;]).head(5) Spg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom Magmom Opt 1 98 I4_122 12 C2/m -3.978441 NaN not_yet 3 36 Cmc2_1 36 Cmc2_1 -3.</description>
+    </item>
+    
   </channel>
 </rss>
