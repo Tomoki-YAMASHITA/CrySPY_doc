@@ -63,15 +63,24 @@ CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job filename: jo
     </item>
     
     <item>
+      <title>struc_mode = crystal</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/structure_generation/crystal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/structure_generation/crystal/</guid>
+      <description>under construction</description>
+    </item>
+    
+    <item>
       <title>システム要件</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/</guid>
       <description>使用予定のワークステーションやスパコンにおいて，(CrySPY + Python環境 + 構造最適化ソフト) が必要となる．
-Python CrySPY 0.10.4 Tested with Homebrew Python 3.9.x on Mac and Python 3.8.x on Linux.
-Python 3.x.x PyXtal 0.2.2 or later (PyXtal requires pymatgen) pymatgen 2022.x.x or later (optional, required if algo = BO) COMBO CrySPY 0.10.0 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
-Python 3.x.x COMBO PyXtal 0.2.2 or later (PyXtal requires pymatgen) pymatgen 2022.x.x or later CrySPY 0.</description>
+Python CrySPY 0.10.0 &amp;ndash; 0.10.3 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
+Python 3.x.x COMBO PyXtal 0.2.2 or later (PyXtal requires pymatgen) pymatgen 2022.x.x or later CrySPY 0.9.2 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
+Python 3.x.x COMBO pymatgen 2022.x.x or later PyXtal 0.2.2 or later [2021 July 15] PyXtal 0.</description>
     </item>
     
     <item>
@@ -139,6 +148,15 @@ $ python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3 Converted. The num
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/common_data/rslt_data/</guid>
       <description>Common result data such as space group, energies, etc. are saved in rslt_data.pkl. pandas library is required to analyze this data file.
 Data format type: pandas.core.frame.DataFrame row lable: structure ID string form see blow How to access import pickle with open(&amp;#39;rslt_data.pkl&amp;#39;, &amp;#39;rb&amp;#39;) as f: rslt_data = pickle.load(f) # ---------- sort by Energy # top 5 rslt_data.sort_values(by=[&amp;#39;E_eV_atom&amp;#39;]).head(5) Spg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom Magmom Opt 1 98 I4_122 12 C2/m -3.978441 NaN not_yet 3 36 Cmc2_1 36 Cmc2_1 -3.</description>
+    </item>
+    
+    <item>
+      <title>struc_mode = mol</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/structure_generation/mol/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/structure_generation/mol/</guid>
+      <description>under construction</description>
     </item>
     
     <item>
@@ -228,6 +246,16 @@ Data format type: dict key: structure ID value: list of force step data in each 
       <description>In this tutorial, we try to use CrySPY in a machine with a job scheduler system such as PBS. Here we employ QUANTUM ESPRESSO. (QE). The target system is Si 8 atoms.
 Assumption Here, we assume the following conditions:
 CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job command: qsub CrySPY job filename: job_cryspy QE executable file: /usr/local/qe-6.5/bin/pw.x QE input filename: pwscf.in QE output filename: pwscf.out Input files Move to your working directory, and copy input example files.</description>
+    </item>
+    
+    <item>
+      <title>struc_mode = mol_bs</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/structure_generation/mol_bs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/structure_generation/mol_bs/</guid>
+      <description>CrySPY uses pyxtal in normal molecular crystal structure generation mode (struc_mode = mol). The molecules are arranged to fit a point group at a selected Wykoff position in the space group to keep the symmetry. (Sometimes it takes a long time to generate.)
+In mol_bs mode (bs means break symmetry), dummy atoms are placed in Wykoff positions as in ordinary crystals, and then the dummy atoms are replaced by molecules without considering symmetry and rotated randomly.</description>
     </item>
     
     <item>

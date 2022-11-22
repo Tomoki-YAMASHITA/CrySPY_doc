@@ -122,6 +122,18 @@
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/"
                 />
   </url><url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/crystal/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/structure_generation/crystal/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/crystal/"
+                />
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/</loc>
     <xhtml:link
                 rel="alternate"
@@ -216,6 +228,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/"
+                />
+  </url><url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/mol/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/structure_generation/mol/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/mol/"
                 />
   </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/struc_step/</loc>
@@ -326,6 +350,18 @@
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/"
                 />
   </url><url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/mol_bs/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/structure_generation/mol_bs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/mol_bs/"
+                />
+  </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/</loc>
     <xhtml:link
                 rel="alternate"
@@ -336,6 +372,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/"
+                />
+  </url><url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/structure_generation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/"
                 />
   </url><url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/input/vasp_sec/</loc>
