@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.104.3" />
+    <meta name="generator" content="Hugo 0.107.0">
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>extract_struc.py :: CrySPY</title>
 
     
-    <link href="/CrySPY_doc/css/nucleus.css?1669088614" rel="stylesheet">
-    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1669088614" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hybrid.css?1669088614" rel="stylesheet">
-    <link href="/CrySPY_doc/css/featherlight.min.css?1669088614" rel="stylesheet">
-    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1669088614" rel="stylesheet">
-    <link href="/CrySPY_doc/css/auto-complete.css?1669088614" rel="stylesheet">
-    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1669088614" rel="stylesheet">
-    <link href="/CrySPY_doc/css/theme.css?1669088614" rel="stylesheet">
-    <link href="/CrySPY_doc/css/hugo-theme.css?1669088614" rel="stylesheet">
+    <link href="/CrySPY_doc/css/nucleus.css?1669890253" rel="stylesheet">
+    <link href="/CrySPY_doc/css/fontawesome-all.min.css?1669890253" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hybrid.css?1669890253" rel="stylesheet">
+    <link href="/CrySPY_doc/css/featherlight.min.css?1669890253" rel="stylesheet">
+    <link href="/CrySPY_doc/css/perfect-scrollbar.min.css?1669890253" rel="stylesheet">
+    <link href="/CrySPY_doc/css/auto-complete.css?1669890253" rel="stylesheet">
+    <link href="/CrySPY_doc/css/atom-one-dark-reasonable.css?1669890253" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme.css?1669890253" rel="stylesheet">
+    <link href="/CrySPY_doc/css/hugo-theme.css?1669890253" rel="stylesheet">
     
-    <link href="/CrySPY_doc/css/theme-green.css?1669088614" rel="stylesheet">
+    <link href="/CrySPY_doc/css/theme-green.css?1669890253" rel="stylesheet">
     
     
 
-    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1669088614"></script>
+    <script src="/CrySPY_doc/js/jquery-3.3.1.min.js?1669890253"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1669088614"></script>
-<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1669088614"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/lunr.min.js?1669890253"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/auto-complete.js?1669890253"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tomoki-yamashita.github.io\/CrySPY_doc\/ja";
     
 </script>
-<script type="text/javascript" src="/CrySPY_doc/js/search.js?1669088614"></script>
+<script type="text/javascript" src="/CrySPY_doc/js/search.js?1669890253"></script>
 
     
   </div>
@@ -1741,9 +1741,8 @@
     <li><a href="#例">例</a>
       <ul>
         <li><a href="#構造id指定">構造ID指定</a></li>
-        <li><a href="#対称性の情報あり">対称性の情報あり</a></li>
+        <li><a href="#エネルギーの低い構造">エネルギーの低い構造</a></li>
         <li><a href="#全構造">全構造</a></li>
-        <li><a href="#全構造対称性あり">全構造（対称性あり）</a></li>
       </ul>
     </li>
   </ul>
@@ -1771,35 +1770,59 @@
 
 
 <p><code>init_struc_data.pkl</code>や<code>opt_struc_data.pkl</code>から構造ごとにcifファイルを出力するスクリプト．</p>
-<p><code>-i</code>オプションでインデックス（構造ID)を（複数）指定できる．<code>-a</code>オプションの場合は全ての構造をcifファイルに出力する．数が多い場合はディレクトリを作成してそこに移動してから実行したほうが良い．<code>-s</code>オプションをつけると対称性（空間群）の情報を付けられる．ただし，セルや原子数が変わるので注意．</p>
+<p><code>-i</code>オプションでインデックス（構造ID)を（複数）指定できる．
+<code>-t</code>オプションでエネルギーが低い順番に指定した構造数のcifファイルを出力可能．
+<code>-a</code>オプションの場合は全ての構造をcifファイルに出力する．数が多い場合はディレクトリを作成してそこに移動してから実行したほうが良い．<code>-s</code>オプションをつけると対称性（空間群）の情報を付けられる．ただし，セルや原子数が変わるので注意．</p>
 <h2 id="使い方">使い方</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>usage: extract_struc.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-a<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-i <span style="color:#f92672">[</span>INDEX ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>-s<span style="color:#f92672">]</span> infile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>usage: extract_struc.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-a<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-i <span style="color:#f92672">[</span>INDEX ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>-t TOP<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-r<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-s<span style="color:#f92672">]</span> infile
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>positional arguments:
 </span></span><span style="display:flex;"><span>  infile                input file
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>optional arguments:
+</span></span><span style="display:flex;"><span>options:
 </span></span><span style="display:flex;"><span>  -h, --help            show this help message and exit
 </span></span><span style="display:flex;"><span>  -a, --all_id          flag <span style="color:#66d9ef">for</span> all structures
 </span></span><span style="display:flex;"><span>  -i <span style="color:#f92672">[</span>INDEX ...<span style="color:#f92672">]</span>, --index <span style="color:#f92672">[</span>INDEX ...<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>                        structure ID
+</span></span><span style="display:flex;"><span>  -t TOP, --top TOP     top k structures
+</span></span><span style="display:flex;"><span>  -r, --rank            flag <span style="color:#66d9ef">for</span> rank in file names
 </span></span><span style="display:flex;"><span>  -s, --symmetrized     flag <span style="color:#66d9ef">for</span> symmetrized structure
 </span></span></code></pre></div><h2 id="例">例</h2>
 <h3 id="構造id指定">構造ID指定</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 extract_struc.py init_struc_data.pkl -i <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">12</span>
 </span></span></code></pre></div><p>以下のファイルが出力される．</p>
 <p><code>7.cif</code>，<code>10.cif</code>，<code>12.cif</code></p>
-<h3 id="対称性の情報あり">対称性の情報あり</h3>
+<p>対称性の情報ありの場合は<code>-s</code>オプションをつける．</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 extract_struc.py init_struc_data.pkl -i <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">12</span> -s
+</span></span></code></pre></div><h3 id="エネルギーの低い構造">エネルギーの低い構造</h3>
+
+<div class="notices warning" ><p><code>rslt_data.pkl</code> がインプット（<code>init_struc_data.pkl</code>か<code>opt_struc_data.pkl</code>）と同じディレクトリに必要．</p>
+</div>
+
+<p>以下の<code>cryspy_rslt_energy_asc</code>を仮定すると</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    Spg_num     Spg_sym  Spg_num_opt Spg_sym_opt    E_eV_atom  Magmom      Opt
+</span></span><span style="display:flex;"><span>9       110      I4_1cd          110      I4_1cd -1284.708037     NaN  not_yet
+</span></span><span style="display:flex;"><span>16        4        P2_1            4        P2_1 -1284.693651     NaN     done
+</span></span><span style="display:flex;"><span>97       92    P4_12_12           91      P4_122 -1284.692494     NaN     done
+</span></span><span style="display:flex;"><span>8        57        Pbcm           57        Pbcm -1284.668504     NaN     done
+</span></span><span style="display:flex;"><span>81       19  P2_12_12_1           19  P2_12_12_1 -1284.635684     NaN     done
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>トップk (ここではk=3) の構造は下記コマンドで出力できる．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 extract_struc.py ./data/pkl_data/opt_struc_data.pkl -t <span style="color:#ae81ff">3</span>
+</span></span></code></pre></div><p>ここでは<code>rlst_data.pkl</code>は<code>./data/pkl_data/</code>の中に存在しなければならない.
+<code>9.cif</code>, <code>16.cif</code>, <code>97.cif</code>というファイルが出力される．</p>
+<p><code>-r</code>オプションを使うと，ファイル名に順位を含めることができる．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 extract_struc.py ./data/pkl_data/opt_struc_data.pkl -t <span style="color:#ae81ff">3</span> -r
+</span></span></code></pre></div><p>ファイル名は<code>1_9.cif</code>, <code>2_16.cif</code>, <code>3_97.cif</code>のようになる．</p>
+<p>対称化されたcifの場合は下記のようにする．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 extract_struc.py ./data/pkl_data/opt_struc_data.pkl -t <span style="color:#ae81ff">3</span> -rs
 </span></span></code></pre></div><h3 id="全構造">全構造</h3>
 <p>構造が多い場合はディレクトリを先に作った方が良い．</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ mkdir init_cifs
 </span></span><span style="display:flex;"><span>$ cd init_cifs
 </span></span><span style="display:flex;"><span>$ python3 extract_struc.py init_struc_data.pkl -a
-</span></span></code></pre></div><h3 id="全構造対称性あり">全構造（対称性あり）</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ mkdir init_cifs
-</span></span><span style="display:flex;"><span>$ cd init_cifs
-</span></span><span style="display:flex;"><span>$ python3 extract_struc.py init_struc_data.pkl -as
+</span></span></code></pre></div><p>対称化する場合，</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 extract_struc.py init_struc_data.pkl -as
 </span></span></code></pre></div>
 
 <footer class="footline">
@@ -2906,19 +2929,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CrySPY_doc/js/clipboard.min.js?1669088614"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1669088614"></script>
-    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1669088614"></script>
-    <script src="/CrySPY_doc/js/jquery.sticky.js?1669088614"></script>
-    <script src="/CrySPY_doc/js/featherlight.min.js?1669088614"></script>
-    <script src="/CrySPY_doc/js/highlight.pack.js?1669088614"></script>
+    <script src="/CrySPY_doc/js/clipboard.min.js?1669890253"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.min.js?1669890253"></script>
+    <script src="/CrySPY_doc/js/perfect-scrollbar.jquery.min.js?1669890253"></script>
+    <script src="/CrySPY_doc/js/jquery.sticky.js?1669890253"></script>
+    <script src="/CrySPY_doc/js/featherlight.min.js?1669890253"></script>
+    <script src="/CrySPY_doc/js/highlight.pack.js?1669890253"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1669088614"></script>
-    <script src="/CrySPY_doc/js/learn.js?1669088614"></script>
-    <script src="/CrySPY_doc/js/hugo-learn.js?1669088614"></script>
+    <script src="/CrySPY_doc/js/modernizr.custom-3.6.0.js?1669890253"></script>
+    <script src="/CrySPY_doc/js/learn.js?1669890253"></script>
+    <script src="/CrySPY_doc/js/hugo-learn.js?1669890253"></script>
     
         
-            <script src="/CrySPY_doc/mermaid/mermaid.js?1669088614"></script>
+            <script src="/CrySPY_doc/mermaid/mermaid.js?1669890253"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

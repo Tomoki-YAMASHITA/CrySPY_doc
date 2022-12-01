@@ -12,9 +12,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/extract_struc/</guid>
-      <description>Script to extract (a) structure(s) from init_struc_data.pkl and opt_struc_data.pkl, and output (a) cif file(s).
-One can specify structure ID(s) using -i option. -a option is for outputting all the structures. (note that many cif files will be output.) -s option adds symmetry information, but note that
-Usage usage: extract_struc.py [-h] [-a] [-i [INDEX ...]] [-s] infile positional arguments: infile input file optional arguments: -h, --help show this help message and exit -a, --all_id flag for all structures -i [INDEX .</description>
+      <description>Script to extract structures from init_struc_data.pkl or opt_struc_data.pkl. Output cif files.
+One can specify structure ID(s) using -i option. Top k structures (the k most stable structures) can be extracted using -t option. -a option is for outputting all the structures. (note that many cif files will be output.) Symmetrized cif files can be generated with -s option.
+Usage usage: extract_struc.py [-h] [-a] [-i [INDEX ...]] [-t TOP] [-r] [-s] infile positional arguments: infile input file options: -h, --help show this help message and exit -a, --all_id flag for all structures -i [INDEX .</description>
     </item>
     
     <item>
