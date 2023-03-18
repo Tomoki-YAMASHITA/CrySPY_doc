@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>機能 on CrySPY</title>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/</link>
+    <description>Recent content in 機能 on CrySPY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>バックアップ</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/backup/</guid>
+      <description>CrySPYはシンプルなバックアップ機能を備えている． バックアップの対象は以下のファイル：
+cryspy.in cryspy.stat log_cryspy err_cryspy calc_in/* data/* ext/* work/* は含まれいないので注意． また，バックアップは1世代分のみであり，それより古いものは削除されます．
+自動バックアップ 自動的にバックアップされるタイミングは次の通り:
+次の選択に移るとき(BO, LAQA)か世代交代を行うとき (EA) 構造を追加するとき 手動バックアップ 手動でバックアップを行いたい場合は，-b または --backup オプションをつけて次のようにcryspyを実行する:
+cryspy -b このコマンドは通常の実行とは異なり，バックアップだけを行います．</description>
+    </item>
+    
+    <item>
+      <title>クリーン</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/clean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/clean/</guid>
+      <description>CrySPYはシンプルなクリーン機能を備えている． 初めからやり直したい時に便利となる． 以下のファイルがクリーン（実際はファイルを移動するだけ）される．
+cryspy.stat log_cryspy err_cryspy lock_cryspy data/* work/* ext/* tmp_calc_FP/* tmp_gen_struc/* クリーンする場合は-c または --clean オプションをつけてcryspyを実行する:
+$ ls calc_in cryspy.in cryspy.stat data err_cryspy log_cryspy $ cryspy -c Are you sure you want to clean the data? &amp;#39;yes&amp;#39; or &amp;#39;no&amp;#39; [y/n]: y $ ls calc_in cryspy.in trash $ ls trash 20230318_100728 calc_in/* と cryspy.in 以外のファイルがtrashの中の日付と時間で名前づけられたディレクトリに移動します． 必要なければ手動で削除してください．</description>
+    </item>
+    
+    <item>
+      <title>ジョブファイルのCrySPY_ID</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/cryspy_id/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/cryspy_id/</guid>
+      <description>CrySPYのジョブファイルで，&amp;ldquo;CrySPY_ID&amp;quot;という文字列は自動的に構造IDに置換される． PBSやSLURMなどのジョブスケジューラーを使う時，ジョブ名に構造IDを使うと便利である． 例えばPBSでは， #PBS -N Si_CrySPY_IDが#PBS -N Si_10に置き換わる 大抵の場合，ジョブ名は数字から始められないことが多いので，Si_のように英字から始めておくと良い．
+#!/bin/sh #$ -cwd #$ -V -S /bin/bash ####$ -V -S /bin/zsh #$ -N Si8_CrySPY_ID #$ -pe smp 8 ####$ -q ibis1.q ####$ -q ibis2.q mpirun -np $NSLOTS pw.x -nk 4 -nb 2 &amp;lt; pwscf.in &amp;gt; pwscf.out if [ -e &amp;#34;CRASH&amp;#34; ]; then exit 1 fi sed -i -e &amp;#39;3 s/^.*$/done/&amp;#39; stat_job </description>
+    </item>
+    
+  </channel>
+</rss>

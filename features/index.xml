@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features on CrySPY</title>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/</link>
+    <description>Recent content in Features on CrySPY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backup</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/backup/</guid>
+      <description>CrySPY has a simple backup function. The following files are backed up:
+cryspy.in cryspy.stat log_cryspy err_cryspy calc_in/* data/* ext/* work/* are NOT included. Note that only one generation is backed up, and any earlier backups will be deleted.
+Auto backup The timing of the automatic backup is as follows:
+before going to next selection (BO, LAQA) or next generation (EA) append structures Manual backup To manually back up, run cryspy with -b or --backup option as:</description>
+    </item>
+    
+    <item>
+      <title>Clean</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/clean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/clean/</guid>
+      <description>CrySPY has a simple clean (just move files) function. It is useful when you want to start over from the beginning. The following files are cleaned up:
+cryspy.stat log_cryspy err_cryspy lock_cryspy data/* work/* ext/* tmp_calc_FP/* tmp_gen_struc/* To clean up, run cryspy with -c or --clean option as:
+$ ls calc_in cryspy.in cryspy.stat data err_cryspy log_cryspy $ cryspy -c Are you sure you want to clean the data? &amp;#39;yes&amp;#39; or &amp;#39;no&amp;#39; [y/n]: y $ ls calc_in cryspy.</description>
+    </item>
+    
+    <item>
+      <title>CrySPY_ID in job files</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/cryspy_id/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/cryspy_id/</guid>
+      <description>In the job file of CrySPY, the string &amp;ldquo;CrySPY_ID&amp;rdquo; is automatically replaced with the structure ID. When you use a job scheduler such as PBS and SLURM, it is useful to set the structure ID to the job name. For example, in the PBS system, #PBS -N Si_CrySPY_ID in ID 10 is replaced with #PBS -N Si_10. Note that starting with a number will result in an error. You should add a prefix like Si_.</description>
+    </item>
+    
+  </channel>
+</rss>

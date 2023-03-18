@@ -100,7 +100,7 @@ Name Value Default Description n_pop int Population from second generation. n_cr
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/bo/</guid>
       <description>[BO] section is required only if you use BO (algo = BO)
-Name Value Default Description nselect_bo int The number of structures to be selected at once. score TS, EI, PI Acquisition function. num_rand_basis int If 0, Gaussian process. The number of basis function. cdev float 0.001 Cutoff of deviation for standardization. dscrpt FP Descriptor for structures. fp_rmin float 0.5 Only used with dscrpt = FP. Minimum cutoff of r in fingerprint.</description>
+Name Value Default Description nselect_bo int The number of structures to be selected at once. score TS, EI, PI Acquisition function. num_rand_basis int If 0, Gaussian process. The number of basis function. cdev float 0.001 Cutoff of deviation for standardization. dscrpt FP Descriptor for structures. fppath str, None None Only used with dscrpt = FP. Path of cal_fingerprint. fp_rmin float 0.</description>
     </item>
     
     <item>

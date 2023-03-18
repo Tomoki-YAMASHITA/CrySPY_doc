@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CrySPY</title>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/</link>
+    <description>Recent content on CrySPY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CrySPY 1.0.0 or later</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/cryspy_1.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/cryspy_1.0/</guid>
+      <description>CrySPY CrySPY 1.0.0以降はpipを使ってインストール可能になった．
+pip install csp-cryspy pipでインストールすると，実行スクリプトのcryspyが自動的にPATHが通ったところにインストールされる． 下記コマンドでチェックできる．
+which cryspy cal_fingerprint (optional) cal_fingerprintプログラムは構造記述子を計算するためのもので，アルゴリズにベイズ最適化を使う場合は必須． CrySPY 1.0.0からはcal_fingerprintプログラムはCrySPY utilityに含まれている． コンパイルについてはこちらを参照：Instllation/CrySPY_utility/Compile cal_fingerprint ．
+実行ファイルcal_fingerprintをPATHが通ったところに置く，もしくは下記のようにcryspy.inで実行ファイルのpathを指定する．
+[BO] fppath = /xxx/xxx/xxx/cal_fingerprint </description>
+    </item>
+    
+    <item>
+      <title>CrySPY 0.10.3 or earlier</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/cryspy_0.10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/cryspy_0.10/</guid>
+      <description>CrySPYのインストールはシンプルで，ダウンロードするだけで良い．
+ダウンロード CrySPYは任意の場所に置いて良い．ここでは例として~/CrySPY_root/CrySPY-x.x.x (x.x.x はバージョン番号)にダウンロードすることにする． gitコマンドを使うか，リリースページから圧縮ファイルをダウンロードする．
+Git mkdir ~/CrySPY_root cd ~/CrySPY_root git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git CrySPY-x.x.x zip or tar.gz file zip または tar.gz ファイルをここからダウンロードする． GitHub release .
+ダウンロードして展開したソースを~/CrySPY_root/CrySPY-x.x.xに置く．
+ディレクトリ構成 ~/CrySPY_root/CrySPY-x.x.x/のディレクトリ構成:
+CrySPY-x.x.x ├── CHANGELOG.md ├── CrySPY/ │ ├── BO/ │ ├── EA/ │ ├── IO/ │ ├── LAQA/ │ ├── RS/ │ ├── __init__.py │ ├── calc_dscrpt/ │ ├── f-fingerprint/ │ ├── find_wy/ │ ├── gen_struc/ │ ├── interface/ │ ├── job/ │ └── start/ │ └── utility.</description>
+    </item>
+    
+  </channel>
+</rss>

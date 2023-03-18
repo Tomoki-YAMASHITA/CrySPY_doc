@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Version information on CrySPY</title>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/</link>
+    <description>Recent content in Version information on CrySPY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/version_info/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Version 1.0.0</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_1.0.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_1.0.0/</guid>
+      <description>Install and run CrySPY is now available in PyPI. You can install by
+pip install csp-cryspy The executable script, cryspy is automatically installed in your PATH. To run CrySPY, just type cryspy:
+cryspy &amp;amp; CrySPY stops once before going to next selection (BO, LAQA) or next generation (EA). For example, EA case:
+[old version]
+cryspy run check jobs (finish current generation?) structure generation by EA automatically starts [CrySPY 1.0.0]
+cryspy run check jobs (finish current generation?</description>
+    </item>
+    
+    <item>
+      <title>Version 0.10.3 or earlier</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_0.10.3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_0.10.3/</guid>
+      <description>Click to expand old news.
+[2022 May 17] version 0.10.3 released Bug fixed: LAMMPS IO. [2022 January 24] version 0.10.2 released Added nrot: maximum number of times to rotate molecules in mol_bs [2021 September 30] version 0.10.1 released Fixed the problem of numpy.random.seed in multiprocessing [2021 July 25] version 0.10.0 released Support PyXtal 0.2.9 or later LAQA can be used with QE Upper and lower limits of energy for EA and BO [2021 July 13] paper published Our paper on CrySPY software has been published in STAM:Methods [2021 March 18] version 0.</description>
+    </item>
+    
+  </channel>
+</rss>

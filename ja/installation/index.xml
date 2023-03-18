@@ -7,56 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>システム要件</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/</guid>
-      <description>使用予定のワークステーションやスパコンにおいて，(CrySPY + Python環境 + 構造最適化ソフト) が必要となる．
-Python CrySPY 0.10.0 &amp;ndash; 0.10.3 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
-Python 3.x.x COMBO PyXtal 0.2.2 or later (PyXtal requires pymatgen) pymatgen 2022.x.x or later CrySPY 0.9.2 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
-Python 3.x.x COMBO pymatgen 2022.x.x or later PyXtal 0.2.2 or later [2021 July 15] PyXtal 0.</description>
-    </item>
-    
-    <item>
-      <title>find_wy (オプション)</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/find_wy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/find_wy/</guid>
-      <description>CrySPYではこれまで，任意の空間群（対称性）持つ構造を生成するためにfind_wy を利用してきた．しかし，CrySPY 0.9.0からはデフォルトではPyXtal ライブラリを採用している． CrySPY 0.9.0 以上で構造生成にPyXtalを使う場合は，find_wyのインストールはスキップできる． 従来通りfind_wyを利用することももちろん可能である． CrySPY 0.8.0 以前のものでは，空間群を考慮した構造生成にはfind_wyのインストールが必要となる．
-CrySPY 0.9.0 以上ではfind_wyのインストールはスキップできる．
-find_wyのインストール m_tspace find_wyをコンパイルするためには，まずはm_tspace をコンパイルして，ライブラリを生成する必要がある．詳細は以下のm_tspaceのサイトを参照すること．
-m_tspace Wiki of m_tspace m_tspace のソースをgitでダウンロードしてくる．ダウンロード先は例えば
-$ mkdir -p ~/local $ cd ~/local $ git clone https://github.com/nim-hrkn/m_tspace.git m_tspace のコンパイルにはさらに二つのファイルが必要となる．
-TSPASE から下記ファイルを~/local/m_tspaceにダウンロードする:
-tsp98.f prmtsp.f $ cd m_tspace $ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/tsp98.f $ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/prmtsp.f makefileをコンパイラに合わせて編集して，makeする． コンパイラにifortを使う場合は，-check allオプションを消さないとうまく動かない．また-O2オプションを設定する．
-$ emacs makefile $ head -n 4 makefile #FC=gfortran #FFLAGS=-g -cpp -DUSE_GEN -ffixed-line-length-255 FC=ifort FFLAGS=-O2 -g -traceback -cpp -DUSE_GEN -132 $ make gfortranを使う場合は，以下のようなエラーに遭遇するかもしれない．</description>
-    </item>
-    
-    <item>
-      <title>CrySPY</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/</guid>
-      <description>CrySPYのインストールはシンプルで，ダウンロードするだけで良い．
-ダウンロード CrySPYは任意の場所に置いて良い．ここでは例として~/CrySPY_root/CrySPY-x.x.x (x.x.x はバージョン番号)にダウンロードすることにする． gitコマンドを使うか，リリースページから圧縮ファイルをダウンロードする．
-Git $ mkdir ~/CrySPY_root $ cd ~/CrySPY_root $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git CrySPY-x.x.x zip or tar.gz file zip または tar.gz ファイルをここからダウンロードする． GitHub release .
-ダウンロードして展開したソースを~/CrySPY_root/CrySPY-x.x.xに置く．
-ディレクトリ構成 ~/CrySPY_root/CrySPY-x.x.x/のディレクトリ構成:
-CrySPY-x.x.x ├── CHANGELOG.md ├── CrySPY/ │ ├── BO/ │ ├── EA/ │ ├── IO/ │ ├── LAQA/ │ ├── RS/ │ ├── __init__.py │ ├── calc_dscrpt/ │ ├── f-fingerprint/ │ ├── find_wy/ │ ├── gen_struc/ │ ├── interface/ │ ├── job/ │ └── start/ │ └── utility.</description>
-    </item>
-    
-    <item>
       <title>CrySPYユーティリティ (オプション)</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/utility/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/utility/</guid>
-      <description>ローカルPCのPython環境 ローカルPCにPython環境を構築しておくと，計算結果の解析および可視化を行うのに便利である． jupyter notebookやPythonスクリプトなどのユーティリティツールが利用できる．
+      <description>ローカルPCのPython環境 ローカルPCにPython環境を構築しておくと，計算結果の解析および可視化を行うのに便利である． jupyter notebookやPythonスクリプトなどのユーティリティツールが利用できる． 入力ファイルのexamplesもCrySPYユーティリティに含まれている．
 ユーティリティツールを使うには以下のライブラリ等が必要になる．
-jupyter NumPy pandas matplotlib pymatgen ユーティリティツールのダウンロード Git $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git zip CrySPY utility へ飛んで，緑のCodeと書かれたボタンをクリック，Download ZIPを選んでダウンロード.</description>
+jupyter NumPy pandas matplotlib pymatgen ユーティリティツールのダウンロード Git $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git zip CrySPY utility へ飛んで，緑のCodeと書かれたボタンをクリック，Download ZIPを選んでダウンロード.
+Compile cal_fingerprint ベイズ最適化を使うときは構造記述子を計算するためのcal_fingerpirntプログラムをコンパイルする． Fortranコンパイラが必要になる． ワークステーションやスパコンなどのCrySPYを用いる環境にインストールする．
+cd CrySPY_utility/f-fingerprint emacs Makefile make 実行ファイルの扱いに関してはInstallation/CrySPY も参照.</description>
     </item>
     
   </channel>
