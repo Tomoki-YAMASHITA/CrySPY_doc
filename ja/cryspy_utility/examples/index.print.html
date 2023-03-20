@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/index.html" rel="canonical" type="text/html" title="Examples :: CrySPY">
     <link href="../../../ja/cryspy_utility/examples/index.xml" rel="alternate" type="application/rss+xml" title="Examples :: CrySPY">
-    <link href="../../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <link href="../../../images/favicon.png?1679298714" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
-    <link href="../../../css/nucleus.css?1679295958" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
-    <link href="../../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
-    <link href="../../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
-    <link href="../../../css/theme.css?1679295958" rel="stylesheet">
-    <link href="../../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
-    <link href="../../../css/variant.css?1679295958" rel="stylesheet">
-    <link href="../../../css/print.css?1679295958" rel="stylesheet" media="print">
-    <link href="../../../css/format-print.css?1679295958" rel="stylesheet">
-    <link href="../../../css/ie.css?1679295958" rel="stylesheet">
-    <script src="../../../js/url.js?1679295958"></script>
-    <script src="../../../js/variant.js?1679295958"></script>
+    <link href="../../../css/fontawesome-all.min.css?1679298715" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1679298715" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1679298715" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1679298715" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1679298715" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1679298715" rel="stylesheet">
+    <link href="../../../css/fonts.css?1679298715" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1679298715" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1679298715" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1679298715" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1679298715" rel="stylesheet">
+    <link href="../../../css/print.css?1679298715" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1679298715" rel="stylesheet">
+    <link href="../../../css/ie.css?1679298715" rel="stylesheet">
+    <script src="../../../js/url.js?1679298715"></script>
+    <script src="../../../js/variant.js?1679298715"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -75,6 +75,8 @@
 <ul class="children children-li children-sort-">
 	
 <li><a href="../../../ja/cryspy_utility/examples/soiap_si8_rs/index.html">soiap_Si8_RS</a><ul>
+	</ul></li>
+<li><a href="../../../ja/cryspy_utility/examples/qe_si8_rs/index.html">qe_Si8_RS</a><ul>
 	</ul></li>
 </ul>
 
@@ -150,11 +152,128 @@ sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
             </footer>
           </article>
 
+          <article class="default">
+<h1 id="qe_si8_rs">qe_Si8_RS</h1>
+
+<h2 id="download">Download</h2>
+
+<span class="btn cstyle transparent">
+  <a href="../../../examples/qe_Si8_RS.tar.gz">
+    <i class="fa-fw fas fa-download"></i> 
+    qe_Si8_RS.tar.gz
+  </a>
+</span>
+<h2 id="cryspyin">cryspy.in</h2>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = QE
+tot_struc = 5
+nstage = 2
+njob = 1
+jobcmd = qsub
+jobfile = job_cryspy
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+
+[QE]
+qe_infile = pwscf.in
+qe_outfile = pwscf.out
+kppvol =  40  80
+
+[option]
+</code></pre><h2 id="calc_in">calc_in/</h2>
+<h3 id="pwscfin_1">pwscf.in_1</h3>
+<pre tabindex="0"><code> &amp;control
+    title = &#39;Si8&#39;
+    calculation = &#39;relax&#39;
+    nstep = 100
+    restart_mode = &#39;from_scratch&#39;,
+    pseudo_dir = &#39;/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/&#39;
+    outdir=&#39;./out.d/&#39;
+ /
+
+ &amp;system
+    ibrav = 0
+    nat = 8
+    ntyp = 1
+    ecutwfc = 44.0
+    occupations = &#39;smearing&#39;
+    degauss = 0.01
+ /
+
+ &amp;electrons
+ /
+
+ &amp;ions
+ /
+
+ &amp;cell
+ /
+
+ATOMIC_SPECIES
+  Si  28.086  Si.pbe-n-kjpaw_psl.1.0.0.UPF
+</code></pre><h3 id="pwscfin_2">pwscf.in_2</h3>
+<pre tabindex="0"><code> &amp;control
+    title = &#39;Si8&#39;
+    calculation = &#39;vc-relax&#39;
+    nstep = 200
+    restart_mode = &#39;from_scratch&#39;,
+    pseudo_dir = &#39;/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/&#39;
+    outdir=&#39;./out.d/&#39;
+ /
+
+ &amp;system
+    ibrav = 0
+    nat = 8
+    ntyp = 1
+    ecutwfc = 44.0
+    occupations = &#39;smearing&#39;
+    degauss = 0.01
+ /
+
+ &amp;electrons
+ /
+
+ &amp;ions
+ /
+
+ &amp;cell
+ /
+
+ATOMIC_SPECIES
+  Si  28.086  Si.pbe-n-kjpaw_psl.1.0.0.UPF
+</code></pre><h3 id="job_cryspy">job_cryspy</h3>
+<pre tabindex="0"><code>#!/bin/sh
+#$ -cwd
+#$ -V -S /bin/bash
+####$ -V -S /bin/zsh
+#$ -N Si8_CrySPY_ID
+#$ -pe smp 8
+####$ -q ibis1.q
+####$ -q ibis2.q
+
+mpirun -np $NSLOTS pw.x -nk 4 -nb 2 &lt; pwscf.in &gt; pwscf.out
+
+
+if [ -e &#34;CRASH&#34; ]; then
+    sed -i -e &#39;3 s/^.*$/skip/&#39; stat_job
+    exit 1
+fi
+
+sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
+</code></pre>
+            <footer class="footline">
+            </footer>
+          </article>
+
           </section>        </div>
       </main>
     </div>
-    <script src="../../../js/clipboard.min.js?1679295958" defer></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1679295958" defer></script>
-    <script src="../../../js/theme.js?1679295958" defer></script>
+    <script src="../../../js/clipboard.min.js?1679298715" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1679298715" defer></script>
+    <script src="../../../js/theme.js?1679298715" defer></script>
   </body>
 </html>

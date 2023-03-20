@@ -72,8 +72,8 @@
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.html</guid>
-      <description>CrySPY Utility ダウンロードに関してはこちらのページ： Installation/CrySPY utility．
-目次 Examples soiap_Si8_RS extract_struc.py pos2pkl.py kpt_check.py </description>
+      <description>CrySPY Utility ダウンロードに関してはこちらのページ： Installation/CrySPY utility． examplesはこのドキュメントサイトからもダウンロード可能です．
+目次 Examples soiap_Si8_RS qe_Si8_RS extract_struc.py pos2pkl.py kpt_check.py </description>
     </item>
   </channel>
 </rss>

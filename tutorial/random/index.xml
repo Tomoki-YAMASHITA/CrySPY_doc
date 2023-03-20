@@ -30,7 +30,7 @@ Assumption Here, we assume the following conditions:
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/index.html</guid>
       <description>In this tutorial, we try to use CrySPY in a machine with a job scheduler system such as PBS. Here we employ QUANTUM ESPRESSO. (QE). The target system is Si 8 atoms.
 Assumption Here, we assume the following conditions:
-(version 0.10.3 or earlier) CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job command: qsub CrySPY job filename: job_cryspy QE executable file: /usr/local/qe-6.5/bin/pw.x QE input filename: pwscf.in QE output filename: pwscf.out Input files Move to your working directory, and copy input example files.</description>
+(version 0.10.3 or earlier) CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job command: qsub CrySPY job filename: job_cryspy QE executable file: /usr/local/qe-6.5/bin/pw.x QE input filename: pwscf.in QE output filename: pwscf.out Input files Move to your working directory, and copy input example files by one of the following methods.</description>
     </item>
     <item>
       <title>OpenMX</title>
