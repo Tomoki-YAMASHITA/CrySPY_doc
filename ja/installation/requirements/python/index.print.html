@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>Python :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/python/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/python/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/python/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/python/index.html" rel="canonical" type="text/html" title="Python :: CrySPY">
+    <link href="../../../../ja/installation/requirements/python/index.xml" rel="alternate" type="application/rss+xml" title="Python :: CrySPY">
+    <link href="../../../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../../../js/url.js?1679295958"></script>
+    <script src="../../../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../../ja/index.search.js";
+      var root_url="../../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'クリップボードにコピー';
+      window.T_Copied_to_clipboard = 'クリップボードにコピー!';
+      window.T_Copy_link_to_clipboard = 'リンクをクリップボードにコピー';
+      window.T_Link_copied_to_clipboard = 'リンクをクリップボードにコピーしました!';
+      window.T_No_results_found = '\u0022{0}\u0022 の結果が見つかりません';
+      window.T_N_results_found = '\u0022{0}\u0022 で {1} 件の結果が見つかりました';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../../../ja/installation/requirements/python/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='メニュー (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/installation/index.html"><span itemprop="name">インストール</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/installation/requirements/index.html"><span itemprop="name">動作環境</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Python</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="python">Python</h1>
+
+<h2 id="python">Python</h2>
+<h3 id="cryspy-100-or-later">CrySPY 1.0.0 or later</h3>
+<ul>
+<li>Python &gt;= 3.8
+<ul>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i> (&gt;= 0.5.3)</li>
+<li>(optional, required if algo is BO) <a href="https://github.com/Tomoki-YAMASHITA/combo3" target="_blank">COMBO</a><i class="fas fa-external-link-alt"></i></li>
+</ul>
+</li>
+</ul>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>[2023 March 15]
+MacOSのarm64環境でのpyxtalのインストールが難しいので，Rosetta 2を使用してx86_64環境での利用が推奨．</p>
+  </div>
+</div>
+<h3 id="cryspy-0100----0103">CrySPY 0.10.0 &ndash; 0.10.3</h3>
+<p>Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.</p>
+<ul>
+<li>Python 3.x.x
+<ul>
+<li><a href="https://github.com/Tomoki-YAMASHITA/combo3" target="_blank">COMBO</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i> (&gt;= 0.2.2)</li>
+<li>(PyXtal requires pymatgen) <a href="https://pymatgen.org/" target="_blank">pymatgen</a><i class="fas fa-external-link-alt"></i> (&gt;= 2022.x.x)</li>
+</ul>
+</li>
+</ul>
+<h3 id="cryspy-092">CrySPY 0.9.2</h3>
+<p>Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.</p>
+<ul>
+<li>Python 3.x.x
+<ul>
+<li><a href="https://github.com/Tomoki-YAMASHITA/combo3" target="_blank">COMBO</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://pymatgen.org/" target="_blank">pymatgen</a><i class="fas fa-external-link-alt"></i> (&gt;= 2022.x.x)</li>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i> (&gt;= 0.2.2)</li>
+</ul>
+</li>
+</ul>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>[2021 July 15]
+PyXtal 0.2.9以上を使う場合は，CrySPYを0.10.0以上にアップデートすること．</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>[2021 March 18]
+pymatgen 2022.x.x.でbreaking changeがあって，importの書き方等が変わった． CrySPY 0.9.2とPyXtal 0.2.2はpymatgen 2022をサポート．</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>[2021 Feb. 5]
+PyXtalを使うにはnumbaが必要だが，numbaは現在のところPython 3.9に対応していないのでしばらくはPython 3.9ではなくPython 3.8を利用する．<br>
+[2021 March 18]
+numbaがPython 3.9.xをサポート．CrySPYもPython 3.9で動作可能</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>[2021 Feb. 7]
+PyXtalではSciPyが使われているが, 最新のSciPy(v1.6.0)ではdeepcopyを使うとバグが出る．
+SciPyはv1.5.4を利用する．<br>
+[2021 March 18] 上記バグはSciPy 1.6.1で修正された．</p>
+  </div>
+</div>
+<h3 id="cryspy-090----091">CrySPY 0.9.0 &ndash; 0.9.1</h3>
+<ul>
+<li>Python 3.8.x
+<ul>
+<li><a href="https://github.com/Tomoki-YAMASHITA/combo3" target="_blank">COMBO</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://pymatgen.org/" target="_blank">pymatgen</a><i class="fas fa-external-link-alt"></i> (&lt;= 2021.x.x)</li>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal 0.1.6 - 0.2.1</a><i class="fas fa-external-link-alt"></i></li>
+</ul>
+</li>
+</ul>
+<h3 id="cryspy-080-or-earlier">CrySPY 0.8.0 or earlier</h3>
+<p>CrySPY本体に同梱されている古いドキュメントを見ること．</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

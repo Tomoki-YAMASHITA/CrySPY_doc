@@ -2,66 +2,55 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Random Search (RS) on CrySPY</title>
-    <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/</link>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/index.html</link>
     <description>Recent content in Random Search (RS) on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>soiap in your local PC</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/index.html</guid>
       <description>soiap is Structure Optimization with InterAtomic Potential. It is suitable for testing CrySPY because of its fast structure optimization. See instructions to install soiap.
 In this tutorial, we try to use CrySPY in your local PC (Mac or Linux). The target system is Si 8 atoms.
 Assumption Here, we assume the following conditions:
 (version 0.10.3 or earlier) CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job filename: job_cryspy soiap executable file: ~/local/soiap-0.3.0/src/soiap soiap input filename: soiap.</description>
     </item>
-    
     <item>
       <title>VASP</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/index.html</guid>
       <description>Coming soon.</description>
     </item>
-    
     <item>
       <title>QE</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/index.html</guid>
       <description>In this tutorial, we try to use CrySPY in a machine with a job scheduler system such as PBS. Here we employ QUANTUM ESPRESSO. (QE). The target system is Si 8 atoms.
 Assumption Here, we assume the following conditions:
 (version 0.10.3 or earlier) CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job command: qsub CrySPY job filename: job_cryspy QE executable file: /usr/local/qe-6.5/bin/pw.x QE input filename: pwscf.in QE output filename: pwscf.out Input files Move to your working directory, and copy input example files.</description>
     </item>
-    
     <item>
       <title>OpenMX</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/index.html</guid>
       <description>Coming soon.</description>
     </item>
-    
     <item>
       <title>LAMMPS</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/index.html</guid>
       <description>Coming soon.</description>
     </item>
-    
     <item>
       <title>External program</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/external/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/external/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/external/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/external/index.html</guid>
       <description>Available from CrySPY 0.11.0.
 If you use an external program not supported by CrySPY, the optimized energy and structure data can be loaded semi-manually in CrySPY. You have to prepare two files, ext_opt_struc_data.pkl and ext_energy_data.pkl.
 Assumption Here, we assume the following conditions:
@@ -69,36 +58,30 @@ Assumption Here, we assume the following conditions:
 Input files Move to your working directory, and copy input example files.
 version 1.0.0 or later Copy from CrySPY utility version 0.</description>
     </item>
-    
     <item>
       <title>Check cryspy.in</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/index.html</guid>
       <description>See Input file in detail.
 Let&amp;rsquo;s take a look at cryspy.in again. This may be slightly different depending on calc_code you chose.
 [basic] algo = RS calc_code = soiap tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] [basic] section algo: Algorithm. Set RS for Random Search.</description>
     </item>
-    
     <item>
       <title>Script to run</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/script_to_run/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/script_to_run/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/script_to_run/</guid>
-      <description>For version 1.0.0 or later, skip this page. The executable script is automatically installed.
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/script_to_run/index.html</guid>
+      <description>Note For version 1.0.0 or later, skip this page. The executable script is automatically installed.
 Assumption Here, we assume the following condition:
 CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py Make script Let&amp;rsquo;s make a convenient shell script to avoid typing long commands over and over again. Here, we create the script, cryspy (any file name will do).
 $ emacs cryspy $ chmod 744 cryspy $ cat cryspy #!/bin/sh python3 -u ~/CrySPY_root/CrySPY-0.9.0/cryspy.py 1&amp;gt;&amp;gt; log 2&amp;gt;&amp;gt; err -u option (unbuffered option) can be omitted.</description>
     </item>
-    
     <item>
       <title>Firsrt run</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/index.html</guid>
       <description>Make sure you have the following in your working directory.
 calc_in/ (cryspy) cryspy.in $ ls calc_in/ cryspy.in Then, run CyrSPY!
 cryspy &amp;amp; If you use old version (0.10.3 or earlier):
@@ -106,65 +89,54 @@ bash ./cryspy &amp;amp; At the first run, CrySPY goes into structure generation 
 If it worked properly, log_cryspy (log in ver. 0.10.3 or earlier) would look like this.
 2023/03/18 20:35:46 CrySPY 1.0.0 Start cryspy.py Read input file, cryspy.</description>
     </item>
-    
     <item>
       <title>Submit job</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/submit_job/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/submit_job/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/submit_job/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/submit_job/index.html</guid>
       <description>Continue CrySPY continues the simulation if you have cryspy.stat file.
-Continue if you have crypy.stat
+Tip Continue if you have crypy.stat
 Start from the beginning if you don&amp;rsquo;t have cryspy.stat
 Submit job Run CyrSPY again.
 cryspy &amp;amp; Check log_cryspy file.
 2023/03/18 23:35:08 CrySPY 1.0.0 Restart cryspy.py # ---------- job status ID 0: submit job, Stage 1 ID 1: submit job, Stage 1 And also cryspy.stat file.
 ... (omit) ... [status] id_queueing = 2 3 4 id 0 = Stage 1 id 1 = Stage 1 CrySPY submitted two jobs for structure ID 0 and 1 as you set njob = 2 in cryspy.</description>
     </item>
-    
     <item>
       <title>Check results</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/index.html</guid>
       <description>Move to data directory. There should be a few more files.
 $ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_data/ cryspy_rslt: Result file. cryspy_rslt_energy_asc: Result file sorted in energy ascending order. init_POSCARS: Initial struture file in POSCAR format. opt_POSCARS: Optimized structure file in POSCAR format. pkl_data/: Directory to save pickled data. The results are written to text files, cryspy_rslt and cryspy_rslt_energy_asc (and also saved in pickle data in pkl_data directory).</description>
     </item>
-    
     <item>
       <title>Append structures</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/index.html</guid>
       <description>Of course only 5 structures are not enough to find stable structures. You can append structures whenever you want. Here let&amp;rsquo;s append more 5 structures.
 For Si-Si mindist, the default value of 1.11 Å is used in the first structure generation (see log_cryspy), which is a little too close. Let us try to set the mindist to 2.0 Å.
 Edit cryspy.in and change the value of tot_struc into 10, and add mindist_1 = 2.</description>
     </item>
-    
     <item>
       <title>Analysis and visualization</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/index.html</guid>
       <description>Download the data It is assumed here that you analyze and visualize CrySPY data in your local PC. If you use CrySPY in super computers or workstations, download the data in your local PC. You can delete the work directory if you do not need it because the file size could be very large.
-jupyter notebook Move to the data/ directory in results you just download. Then copy cryspy_analyzer_RS.ipynb from CrySPY utility .</description>
+jupyter notebook Move to the data/ directory in results you just download. Then copy cryspy_analyzer_RS.ipynb from CrySPY utility.</description>
     </item>
-    
     <item>
       <title>Load external data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ext_load_data/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ext_load_data/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ext_load_data/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ext_load_data/index.html</guid>
       <description>You need only cryspy.in.
 $ ls cryspy.in Then, run CyrSPY.
 cryspy &amp;amp; At the first run, CrySPY goes into structure generation mode as usual. CrySPY stops after 5 structure generation.
 If it worked properly, log_cryspy would look like this.
 2022/07/14 19:41:41 CrySPY 1.0.0 Start cryspy.py Read input file, cryspy.in Write input data in cryspy.out Save input data in cryspy.stat # --------- Generate initial structures # ------ mindist Si - Si 1.</description>
     </item>
-    
   </channel>
 </rss>

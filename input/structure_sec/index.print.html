@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>[structure] section :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/input/structure_sec/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/input/structure_sec/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/structure_sec/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/input/structure_sec/index.html" rel="canonical" type="text/html" title="[structure] section :: CrySPY">
+    <link href="../../input/structure_sec/index.xml" rel="alternate" type="application/rss+xml" title="[structure] section :: CrySPY">
+    <link href="../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../js/url.js?1679295958"></script>
+    <script src="../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../index.search.js";
+      var root_url="../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../input/structure_sec/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../input/index.html"><span itemprop="name">Input file</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">[structure] section</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="structure-section">[structure] section</h1>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>struc_mode</code></td>
+<td><code>crystal</code>, <code>mol</code>, <code>mol_bs</code></td>
+<td><code>crystal</code></td>
+<td>Structure generation mode</td>
+</tr>
+<tr>
+<td><code>natot</code></td>
+<td>int</td>
+<td></td>
+<td>The total number of atoms.</td>
+</tr>
+<tr>
+<td><code>atype</code></td>
+<td>atomic symbol [atomic symbol &hellip;]</td>
+<td></td>
+<td>Atom type. e.g. <code>atype = Na Cl</code>.</td>
+</tr>
+<tr>
+<td><code>nat</code></td>
+<td>int [int &hellip;]</td>
+<td></td>
+<td>The number of atoms in each atom type. e.g. <code>nat = 8 8</code>.</td>
+</tr>
+<tr>
+<td><code>mol_file</code></td>
+<td>str [str &hellip;], <code>None</code></td>
+<td><code>None</code></td>
+<td>Path of molecule files or molecule names.</td>
+</tr>
+<tr>
+<td><code>nmol</code></td>
+<td>int [int &hellip;], <code>None</code></td>
+<td><code>None</code></td>
+<td>The number of molecules.</td>
+</tr>
+<tr>
+<td><code>timeout_mol</code></td>
+<td>float</td>
+<td>120.0</td>
+<td>Time out for molecular structure generation.</td>
+</tr>
+<tr>
+<td><code>rot_mol</code></td>
+<td><code>random</code>, <code>random_mol</code>, <code>random_wyckoff</code></td>
+<td><code>random_wyckoff</code></td>
+<td>Mode for rotation of molecules.</td>
+</tr>
+<tr>
+<td><code>nrot</code></td>
+<td>int</td>
+<td>20</td>
+<td>Maximum number of trials to rotate molecules in <code>mol_bs</code></td>
+</tr>
+<tr>
+<td><code>vol_factor</code></td>
+<td>float float</td>
+<td>1.0 1.0</td>
+<td>Minimum and maximum values of volume factor.</td>
+</tr>
+<tr>
+<td><code>vol_mu</code></td>
+<td>float, <code>None</code></td>
+<td><code>None</code></td>
+<td>Mean of volume if you want specify the volume of cells.</td>
+</tr>
+<tr>
+<td><code>vol_sigma</code></td>
+<td>float, <code>None</code></td>
+<td><code>None</code></td>
+<td>Standard deviation of volume if you want specify the volume of cells.</td>
+</tr>
+<tr>
+<td><code>mindist</code> (<code>mindist_?</code>)</td>
+<td>float [float &hellip;], <code>None</code></td>
+<td><code>None</code></td>
+<td>Constraint on minimum interatomic distance [Å].</td>
+</tr>
+<tr>
+<td><code>mindist_factor</code></td>
+<td>float</td>
+<td>1.0</td>
+<td>Scaling factor for <code>mindist</code>.</td>
+</tr>
+<tr>
+<td><code>mindist_mol_bs</code> (<code>mindist_mol_bs_?</code>)</td>
+<td>float [float &hellip;], <code>None</code></td>
+<td><code>None</code></td>
+<td>Constraint on minimum intermolecular distance [Å].</td>
+</tr>
+<tr>
+<td><code>mindist_mol_bs_factor</code></td>
+<td>float</td>
+<td>1.0</td>
+<td>Scaling factor for <code>mindist_mol_bs</code>.</td>
+</tr>
+<tr>
+<td><code>symprec</code></td>
+<td>float,</td>
+<td>0.01</td>
+<td>Precision for symmetry finding.</td>
+</tr>
+<tr>
+<td><code>spgnum</code></td>
+<td><code>all</code>, space group number, 0</td>
+<td><code>all</code></td>
+<td>Constraint on space group. If <code>all</code>, 1&ndash;230. If 0, random structure without space group information (no symmetry).</td>
+</tr>
+<tr>
+<td><code>use_find_wy</code></td>
+<td>bool</td>
+<td><code>False</code></td>
+<td>Structure generation with find_wy.</td>
+</tr>
+<tr>
+<td><code>fwpath</code></td>
+<td>str, <code>None</code></td>
+<td><code>None</code></td>
+<td>Path of find_wy</td>
+</tr>
+<tr>
+<td><code>minlen</code></td>
+<td>float, <code>None</code></td>
+<td><code>None</code></td>
+<td>Only used with find_wy or <code>spgnum = 0</code>. Minimum length of lattice vector [Å].</td>
+</tr>
+<tr>
+<td><code>maxlen</code></td>
+<td>float, <code>None</code></td>
+<td><code>None</code></td>
+<td>Only used with find_wy or <code>spgnum = 0</code>. Maximum length of lattice vector [Å].</td>
+</tr>
+<tr>
+<td><code>dangle</code></td>
+<td>float, <code>None</code></td>
+<td><code>None</code></td>
+<td>Only used with find_wy or <code>spgnum = 0</code>. Delta angle for alpha, beta, and gamma in degree unit.</td>
+</tr>
+<tr>
+<td><code>maxcnt</code></td>
+<td>int</td>
+<td>50</td>
+<td>Only used with find_wy or <code>spgnum = 0</code>. Maximum number of trials to determine atom positions.</td>
+</tr>
+</tbody>
+</table>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

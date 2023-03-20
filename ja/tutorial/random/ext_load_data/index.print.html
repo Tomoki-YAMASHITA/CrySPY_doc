@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>Load external data :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ext_load_data/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ext_load_data/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/ext_load_data/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/ext_load_data/index.html" rel="canonical" type="text/html" title="Load external data :: CrySPY">
+    <link href="../../../../ja/tutorial/random/ext_load_data/index.xml" rel="alternate" type="application/rss+xml" title="Load external data :: CrySPY">
+    <link href="../../../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../../../js/url.js?1679295958"></script>
+    <script src="../../../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../../ja/index.search.js";
+      var root_url="../../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'クリップボードにコピー';
+      window.T_Copied_to_clipboard = 'クリップボードにコピー!';
+      window.T_Copy_link_to_clipboard = 'リンクをクリップボードにコピー';
+      window.T_Link_copied_to_clipboard = 'リンクをクリップボードにコピーしました!';
+      window.T_No_results_found = '\u0022{0}\u0022 の結果が見つかりません';
+      window.T_N_results_found = '\u0022{0}\u0022 で {1} 件の結果が見つかりました';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../../../ja/tutorial/random/ext_load_data/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='メニュー (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/tutorial/index.html"><span itemprop="name">チュートリアル</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/tutorial/random/index.html"><span itemprop="name">Random Search (RS)</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Load external data</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="load-external-data">Load external data</h1>
+
+<p>You need only <code>cryspy.in</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>cryspy.in
+</span></span></code></pre></div><p>Then, run CyrSPY.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+</span></span></code></pre></div><p>At the first run, CrySPY goes into structure generation mode as usual.
+CrySPY stops after 5 structure generation.</p>
+<p>If it worked properly, <code>log_cryspy</code> would look like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>2022/07/14 19:41:41
+</span></span><span style="display:flex;"><span>CrySPY 1.0.0
+</span></span><span style="display:flex;"><span>Start cryspy.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Read input file, cryspy.in
+</span></span><span style="display:flex;"><span>Write input data in cryspy.out
+</span></span><span style="display:flex;"><span>Save input data in cryspy.stat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># --------- Generate initial structures
+</span></span><span style="display:flex;"><span># ------ mindist
+</span></span><span style="display:flex;"><span>Si - Si 1.11
+</span></span><span style="display:flex;"><span>Structure ID      0 was generated. Space group:  88 --&gt; 141 I4_1/amd
+</span></span><span style="display:flex;"><span>Structure ID      1 was generated. Space group: 101 --&gt; 101 P4_2cm
+</span></span><span style="display:flex;"><span>Structure ID      2 was generated. Space group: 204 --&gt; 229 Im-3m
+</span></span><span style="display:flex;"><span>Structure ID      3 was generated. Space group: 199 --&gt; 199 I2_13
+</span></span><span style="display:flex;"><span>Structure ID      4 was generated. Space group:  12 --&gt;  12 C2/m
+</span></span></code></pre></div><p>Unlike normal use, a directory named <code>ext</code> was created.
+Only the <code>stat_job</code> file exists in <code>ext/</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat ext/stat_job
+</span></span><span style="display:flex;"><span>out
+</span></span></code></pre></div><p>If you run cryspy when &ldquo;out&rdquo; is written in the <code>stat_job</code> file, queueing structure files (cif format) are exported in <code>ext/queue</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ls ext/queue
+</span></span><span style="display:flex;"><span>0.cif  1.cif  2.cif  3.cif  4.cif
+</span></span></code></pre></div><p>The number in the file name is structure ID.
+The fist line of <code>stat_job</code> was automatically changed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat ext/stat_job
+</span></span><span style="display:flex;"><span>submitted
+</span></span></code></pre></div><p>Perform structure optimization and energy evaluation in an external program using the output cif files.
+Once that calculation is done, prepare the optimized structure and energy data in the pickle data format, <code>ext_opt_struc_data.pkl</code> and <code>ext_energy_data.pkl</code>.</p>
+<p>The data format of <code>ext_opt_struc_data.pkl</code> is the same as <code>init_struc_data.pkl</code> and <code>opt_struc_data.pkl</code>, see <a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/common_data/init_opt_struc_data/">Data format/Initial and optimized structure data</a>.</p>
+<p>The data format of <code>ext_energy_data.pkl</code> is similar to <code>ext_opt_struc_data.pkl</code>. Just change the value from the structure data into the energy.
+An example of the energy data (dict type) is shown below.</p>
+<ul>
+<li>key: structure ID</li>
+<li>value: energy</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>{0: -0.7139331910805997,
+</span></span><span style="display:flex;"><span> 1: -0.5643404689832622,
+</span></span><span style="display:flex;"><span> 2: -0.5832404287259171,
+</span></span><span style="display:flex;"><span> 3: -0.535037327286169,
+</span></span><span style="display:flex;"><span> 4: -0.6316663459586607}
+</span></span></code></pre></div><p>The <code>ext/calc_data</code> directory should be automatically generated, so put the two pickle files here.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ls ext/calc_data
+</span></span><span style="display:flex;"><span>ext_energy_data.pkl  ext_opt_struc_data.pkl
+</span></span></code></pre></div><p>When ready, replace the first line of the <code>stat_job</code> file with &ldquo;done&rdquo; and run CrySPY.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ emacs /ext/stat_job
+</span></span><span style="display:flex;"><span>$ cat /ext/stat_job
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+</span></span></code></pre></div><p>CrySPY collects the result data.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

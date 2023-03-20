@@ -2,51 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About CrySPY on CrySPY</title>
-    <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/</link>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/index.html</link>
     <description>Recent content in About CrySPY on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crystal structure prediction</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/</guid>
-      <description>
-Input Elements The number of atoms Output Stable structure (global minimum) </description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/index.html</guid>
+      <description> Input Elements The number of atoms Output Stable structure (global minimum) </description>
     </item>
-    
     <item>
       <title>Searching algorithms</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/index.html</guid>
       <description>The following searching algorithms are available in CrySPY:
 Random Search (RS) Evolutionary Algorithm (EA) Bayesian Optimization (BO) Look Ahead based on Quadratic Approximation (LAQA) In a nutshell Random Search (RS) Random.
-Evolutionary Algorithm (EA) EA for crystal structure prediction has been developed by Oganov&amp;#39;s group .
+Evolutionary Algorithm (EA) EA for crystal structure prediction has been developed by Oganov&#39;s group.
 We also employ EA in CrySPY, and support the following:
 Selection methods Tournament selection Roulette selection Elite selection Evolutionary operations Crossover Permutation Strain etc. Survival of the fittest Dedupe structures in survival of the fittest Bayesian Optimization (BO) One of the selection-type algorithms.</description>
     </item>
-    
     <item>
       <title>Interface</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/index.html</guid>
       <description>CrySPY is interfaced with several structure optimizers:
 First-principles calculation VASP Quantum Espresso OpenMX (CrySPY 0.9.0 or later) Interatomic potential soiap LAMMPS At least one optimizer is required.</description>
     </item>
-    
     <item>
       <title>Logo</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/index.html</guid>
       <description>PNG (transparent background) JPG </description>
     </item>
-    
   </channel>
 </rss>

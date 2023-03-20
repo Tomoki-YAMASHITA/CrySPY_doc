@@ -2,9 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data format on CrySPY</title>
-    <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/</link>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/index.html</link>
     <description>Recent content in Data format on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/data_format/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Common data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/index.html</guid>
+      <description>Table of contents Initial and optimized structure data Result data </description>
+    </item>
+    <item>
+      <title>Random Search (RS)</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/rs_data/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/rs_data/index.html</guid>
+      <description>Table of contents </description>
+    </item>
+    <item>
+      <title>Evolutionary algorithm (EA)</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/ea_data/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/ea_data/index.html</guid>
+      <description>Table of contents </description>
+    </item>
+    <item>
+      <title>Bayesian Optimization (BO)</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/bo_data/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/bo_data/index.html</guid>
+      <description>Table of contents </description>
+    </item>
+    <item>
+      <title>LAQA</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/laqa_data/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/laqa_data/index.html</guid>
+      <description>Table of contents </description>
+    </item>
+    <item>
+      <title>Optional data</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/index.html</guid>
+      <description>Table of contents Energy step data Structure step data Force step data Stress step data </description>
+    </item>
   </channel>
 </rss>

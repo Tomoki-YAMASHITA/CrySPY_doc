@@ -2,33 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CrySPY</title>
-    <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/</link>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/index.html</link>
     <description>Recent content on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CrySPY 1.0.0 or later</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_1.0/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_1.0/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_1.0/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_1.0/index.html</guid>
       <description>CrySPY CrySPY 1.0.0 or later can be installed by pip.
 pip install csp-cryspy The executable script, cryspy, is automatically installed in your PATH. You can check by
 which cryspy cal_fingerprint (optional) cal_fingerprint is a program to calculate structure descriptors and is required if algo is BO. From CrySPY 1.0.0, the cal_fingerprint program is included in CrySPY utility. See Instllation/CrySPY_utility/Compile cal_fingerprint for compilation.
 Put the executable file of cal_fingerprint in your PATH.</description>
     </item>
-    
     <item>
       <title>CrySPY 0.10.3 or earlier</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_0.10/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_0.10/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_0.10/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_0.10/index.html</guid>
       <description>Installation of CrySPY is very simple. Just download it!
 Download You can put the source code of CrySPY in an arbitrary directory. For example, let us put the source code in ~/CrySPY_root/CrySPY-x.x.x (x.x.x means the version). Use git or download the compressed file.
 Git mkdir ~/CrySPY_root cd ~/CrySPY_root git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git CrySPY-x.x.x zip or tar.gz file Download the source as a zip or tar.gz file from GitHub release .
 Then put the source like ~/CrySPY_root/CrySPY-x.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>Append structures :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/append/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/append/index.html" rel="canonical" type="text/html" title="Append structures :: CrySPY">
+    <link href="../../../../ja/tutorial/random/append/index.xml" rel="alternate" type="application/rss+xml" title="Append structures :: CrySPY">
+    <link href="../../../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../../../js/url.js?1679295958"></script>
+    <script src="../../../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../../ja/index.search.js";
+      var root_url="../../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'クリップボードにコピー';
+      window.T_Copied_to_clipboard = 'クリップボードにコピー!';
+      window.T_Copy_link_to_clipboard = 'リンクをクリップボードにコピー';
+      window.T_Link_copied_to_clipboard = 'リンクをクリップボードにコピーしました!';
+      window.T_No_results_found = '\u0022{0}\u0022 の結果が見つかりません';
+      window.T_N_results_found = '\u0022{0}\u0022 で {1} 件の結果が見つかりました';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../../../ja/tutorial/random/append/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='メニュー (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/tutorial/index.html"><span itemprop="name">チュートリアル</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/tutorial/random/index.html"><span itemprop="name">Random Search (RS)</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Append structures</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="append-structures">Append structures</h1>
+
+<p>Of course only 5 structures are not enough to find stable structures.
+You can append structures whenever you want.
+Here let&rsquo;s append more 5 structures.</p>
+<p>For Si-Si <code>mindist</code>, the default value of 1.11 Å is used in the first structure generation (see <code>log_cryspy</code>), which is a little too close.
+Let us try to set the mindist to 2.0 Å.</p>
+<p>Edit <code>cryspy.in</code> and change the value of <code>tot_struc</code> into <code>10</code>, and add <code>mindist_1 = 2.0</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>emacs cryspy.in
+</span></span><span style="display:flex;"><span>cat cryspy.in
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>[basic]
+</span></span><span style="display:flex;"><span>algo = RS
+</span></span><span style="display:flex;"><span>calc_code = soiap
+</span></span><span style="display:flex;"><span>tot_struc = 10
+</span></span><span style="display:flex;"><span>nstage = 1
+</span></span><span style="display:flex;"><span>njob = 2
+</span></span><span style="display:flex;"><span>jobcmd = zsh
+</span></span><span style="display:flex;"><span>jobfile = job_cryspy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[structure]
+</span></span><span style="display:flex;"><span>natot = 8
+</span></span><span style="display:flex;"><span>atype = Si
+</span></span><span style="display:flex;"><span>nat = 8
+</span></span><span style="display:flex;"><span>mindist_1 = 2.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[soiap]
+</span></span><span style="display:flex;"><span>soiap_infile = soiap.in
+</span></span><span style="display:flex;"><span>soiap_outfile = soiap.out
+</span></span><span style="display:flex;"><span>soiap_cif = initial.cif
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[option]
+</span></span></code></pre></div><p>Then run cryspy, and check <code>log_cryspy</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+</span></span><span style="display:flex;"><span>cat log_cryspy
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>(omit)
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>2023/03/19 00:01:47
+</span></span><span style="display:flex;"><span>CrySPY 1.0.0
+</span></span><span style="display:flex;"><span>Restart cryspy.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Changed tot_struc from 5 to 10
+</span></span><span style="display:flex;"><span>Changed mindist from None to [[2.0]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Backup data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># ---------- Append structures
+</span></span><span style="display:flex;"><span># ------ mindist
+</span></span><span style="display:flex;"><span>Si - Si 2.0
+</span></span><span style="display:flex;"><span>Structure ID      5 was generated. Space group: 218 --&gt; 221 Pm-3m
+</span></span><span style="display:flex;"><span>Structure ID      6 was generated. Space group:  86 --&gt; 129 P4/nmm
+</span></span><span style="display:flex;"><span>Structure ID      7 was generated. Space group: 129 --&gt; 129 P4/nmm
+</span></span><span style="display:flex;"><span>Structure ID      8 was generated. Space group: 191 --&gt; 191 P6/mmm
+</span></span><span style="display:flex;"><span>Structure ID      9 was generated. Space group:  31 --&gt;  31 Pmn2_1
+</span></span></code></pre></div><p>Remember that CrySPY goes into structure generation mode whenever you change the value of <code>tot_struc</code>.
+In this mode, CrySPY does not do any other action such as collecting data, submitting jobs, and so on.</p>
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> メモ</div>
+  <div class="box-content">
+<p>Structure generation mode whenever you change the value of <code>tot_struc</code>.<br>
+From version 1.0.0, CrySPY automatically backs up when adding structures.
+See <a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/backup/" target="_blank">features/backup</a>.</p>
+  </div>
+</div>
+<p>Repeat <code>cryspy &amp;</code> several times until all appended structures are done.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

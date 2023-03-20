@@ -2,52 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CrySPYについて on CrySPY</title>
-    <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/</link>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/index.html</link>
     <description>Recent content in CrySPYについて on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>結晶構造探索</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/csp/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/csp/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/csp/</guid>
-      <description>
-Input 元素 原子数 Output 最安定構造（グローバルミニマム） </description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/csp/index.html</guid>
+      <description> Input 元素 原子数 Output 最安定構造（グローバルミニマム） </description>
     </item>
-    
     <item>
       <title>探索アルゴリズム</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/algorithms/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/algorithms/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/algorithms/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/algorithms/index.html</guid>
       <description>CrySPYでは以下の探索アルゴリズムが使用可能．
 ランダムサーチ (RS) 進化的アルゴリズム (EA) ベイズ最適化 (BO) LAQA 概略 ランダムサーチ (RS) ランダム．
-進化的アルゴリズム (EA) 進化的アルゴリズムを用いた結晶構造探索手法はOganovグループ によって開発された．
+進化的アルゴリズム (EA) 進化的アルゴリズムを用いた結晶構造探索手法はOganovグループによって開発された．
 CrySPYでも効率的な探索が可能な進化的アルゴリズムを採用した．以下のようなことができる．
 親の選択方法 トーナメント選択 ルーレット選択 エリート選択 進化的操作 交叉 置換 ひずみ etc. 適者生存 適者生存の中で重複した構造の排除 ベイズ最適化 (BO) 選択型アルゴリズムの一種．
 LAQA 選択型アルゴリズムの一種．</description>
     </item>
-    
     <item>
       <title>インターフェース</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/interface/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/interface/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/interface/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/interface/index.html</guid>
       <description>CrySPYはエネルギー計算や構造最適化に外部のソフトウェアを利用する． 以下のソフトウェアを利用可能．
 第一原理計算 VASP Quantum Espresso OpenMX （CrySPY 0.9.0 以上） 原子間ポテンシャル soiap LAMMPS 少なくともどれか一つは必要．</description>
     </item>
-    
     <item>
       <title>ロゴ</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/logo/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/logo/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/logo/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/logo/index.html</guid>
       <description>PNG (背景透明) JPG </description>
     </item>
-    
   </channel>
 </rss>

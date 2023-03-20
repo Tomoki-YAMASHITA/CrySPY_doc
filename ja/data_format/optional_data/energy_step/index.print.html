@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>Energy step data :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/energy_step/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/energy_step/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/index.html" rel="canonical" type="text/html" title="Energy step data :: CrySPY">
+    <link href="../../../../ja/data_format/optional_data/energy_step/index.xml" rel="alternate" type="application/rss+xml" title="Energy step data :: CrySPY">
+    <link href="../../../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../../../js/url.js?1679295958"></script>
+    <script src="../../../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../../ja/index.search.js";
+      var root_url="../../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'クリップボードにコピー';
+      window.T_Copied_to_clipboard = 'クリップボードにコピー!';
+      window.T_Copy_link_to_clipboard = 'リンクをクリップボードにコピー';
+      window.T_Link_copied_to_clipboard = 'リンクをクリップボードにコピーしました!';
+      window.T_No_results_found = '\u0022{0}\u0022 の結果が見つかりません';
+      window.T_N_results_found = '\u0022{0}\u0022 で {1} 件の結果が見つかりました';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../../../ja/data_format/optional_data/energy_step/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='メニュー (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/data_format/index.html"><span itemprop="name">データフォーマット</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/data_format/optional_data/index.html"><span itemprop="name">オプションデータ</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Energy step data</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="energy-step-data">Energy step data</h1>
+
+<p>Energy step data is saved in <code>energy_step_data.pkl</code> if you set <code>energy_step_flag = True</code> in <code>[option]</code> section of <code>cryspy.in</code>. NumPy library is required to analyze this data file.</p>
+
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> 警告</div>
+  <div class="box-content">
+<p><code>energy_step_flag = True</code> is currently available only with VASP, QE, and soiap.</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>In soiap, <code>energy_step_data</code> is collected only if <code>loopa == 1</code>.
+This is because other data (struc, force, and stress) are output only when <code>loopa == 1</code>.
+See, <a href="https://github.com/nbsato/soiap/blob/master/doc/instructions.md" target="_blank">https://github.com/nbsato/soiap/blob/master/doc/instructions.md</a></p>
+  </div>
+</div>
+<h2 id="data-format">Data format</h2>
+<ul>
+<li>type: dict
+<ul>
+<li>key: structure ID</li>
+<li>value: list of energy step data in each stage</li>
+</ul>
+</li>
+<li>string form
+<ul>
+<li>{0: [array([-3.4439912 , -3.55040935, -3.66697038, ..]), array([-4.0613393 , -4.05445631, -4.06159641, &hellip;]), &hellip;],<br>
+1: [array([-2.68209823, -2.69012487, -2.68364907, ..]), array([-2.79140967, -2.79183827, -2.79206508, &hellip;]), &hellip;],<br>
+&hellip;}</li>
+</ul>
+</li>
+<li>unit of energy
+<ul>
+<li>eV/atom</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-to-access">How to access</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;energy_step_data.pkl&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    energy_step_data <span style="color:#f92672">=</span> pickle<span style="color:#f92672">.</span>load(f)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># energy_step_data[ID][stage][step]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># energy_step_data[ID][0] &lt;-- stage 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># energy_step_data[ID][1] &lt;-- stage 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># in LAQA</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># energy_step_data[ID][selection][step]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># energy_step_data[ID][0] &lt;-- 1st selection</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># energy_step_data[ID][1] &lt;-- 2nd selection</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- energy step data of ID 3, stage 1</span>
+</span></span><span style="display:flex;"><span>cid <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>      <span style="color:#75715e"># ID</span>
+</span></span><span style="display:flex;"><span>stage <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>    <span style="color:#75715e"># stage</span>
+</span></span><span style="display:flex;"><span>energy_step_data[cid][stage<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][:<span style="color:#ae81ff">10</span>]    <span style="color:#75715e"># show only 10 enegies in jupyter</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>array([-3.4439912 , -3.55040935, -3.66697038, -3.77192063, -3.84320717,
+</span></span><span style="display:flex;"><span>       -3.80679245, -3.84633935, -3.87374706, -3.89123193, -3.90422926])
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

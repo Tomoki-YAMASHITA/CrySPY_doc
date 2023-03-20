@@ -2,54 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>オプションデータ on CrySPY</title>
-    <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/</link>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/index.html</link>
     <description>Recent content in オプションデータ on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Energy step data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/energy_step/index.html</guid>
       <description>Energy step data is saved in energy_step_data.pkl if you set energy_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-energy_step_flag = True is currently available only with VASP, QE, and soiap.
-In soiap, energy_step_data is collected only if loopa == 1. This is because other data (struc, force, and stress) are output only when loopa == 1. See, https://github.com/nbsato/soiap/blob/master/doc/instructions.md Data format type: dict key: structure ID value: list of energy step data in each stage string form {0: [array([-3.</description>
+警告 energy_step_flag = True is currently available only with VASP, QE, and soiap.
+情報 In soiap, energy_step_data is collected only if loopa == 1. This is because other data (struc, force, and stress) are output only when loopa == 1. See, https://github.com/nbsato/soiap/blob/master/doc/instructions.md
+Data format type: dict key: structure ID value: list of energy step data in each stage string form {0: [array([-3.</description>
     </item>
-    
     <item>
       <title>Structure step data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/struc_step/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/struc_step/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/struc_step/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/struc_step/index.html</guid>
       <description>Structure step data is saved in struc_step_data.pkl if you set struc_step_flag = True in [option] section of cryspy.in. pymatgen library is required to analyze this data file.
-struc_step_flag = True is currently available only with VASP, QE, and soiap.
-struc_step_data includes initial structures. For example, struc_step_data[cid][0][0] is the initial structure of ID = cid.
+警告 struc_step_flag = True is currently available only with VASP, QE, and soiap.
+情報 struc_step_data includes initial structures. For example, struc_step_data[cid][0][0] is the initial structure of ID = cid.
 Data format type: dict key: structure ID value: list of structure step data in each stage string form {0: [[Structure Summary &amp;hellip;, Structure Summary, &amp;hellip;], [&amp;hellip;], &amp;hellip;],</description>
     </item>
-    
     <item>
       <title>Force step data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/force_step/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/force_step/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/force_step/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/force_step/index.html</guid>
       <description>Force step data is saved in force_step_data.pkl if you set force_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-force_step_flag = True is currently available only with VASP, QE, and soiap.
+警告 force_step_flag = True is currently available only with VASP, QE, and soiap.
 Data format type: dict key: structure ID value: list of force step data in each stage string form {0: [array([[ 0.26314927, -0.26314927, -0. ], [&amp;hellip;], &amp;hellip;[&amp;hellip;]]), array([[&amp;hellip;], &amp;hellip;, [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
     </item>
-    
     <item>
       <title>Stress step data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/stress_step/</link>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/stress_step/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/stress_step/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/stress_step/index.html</guid>
       <description>Stress step data is saved in stress_step_data.pkl if you set stress_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-stress_step_flag = True is currently available only with VASP, QE, and soiap.
+警告 stress_step_flag = True is currently available only with VASP, QE, and soiap.
 Data format type: dict key: structure ID value: list of stress step data in each stage string form {0: [array([[-0.16770062, 0. , 0. ], [&amp;hellip;], [&amp;hellip;]]), array([[&amp;hellip;], ]&amp;hellip;], [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
     </item>
-    
   </channel>
 </rss>

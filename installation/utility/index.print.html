@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>CrySPY utility (optional) :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/utility/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/index.html" rel="canonical" type="text/html" title="CrySPY utility (optional) :: CrySPY">
+    <link href="../../installation/utility/index.xml" rel="alternate" type="application/rss+xml" title="CrySPY utility (optional) :: CrySPY">
+    <link href="../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../js/url.js?1679295958"></script>
+    <script src="../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../index.search.js";
+      var root_url="../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../installation/utility/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../installation/index.html"><span itemprop="name">Installation</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">CrySPY utility (optional)</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="cryspy-utility-optional">CrySPY utility (optional)</h1>
+
+<h2 id="python-environment-in-local-pc">Python environment in local PC</h2>
+<p>Setting up Python environment in your local PC is useful to analyze CrySPY results.
+Utility tools (jupyter notebook and python scripts) are available for analysis and visualization.
+Input examples are also included in CrySPY utility.</p>
+<p>You need several Python libraries such as</p>
+<ul>
+<li><a href="https://jupyter.org/" target="_blank">jupyter</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://numpy.org/" target="_blank">NumPy</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://pandas.pydata.org/" target="_blank">pandas</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://matplotlib.org/" target="_blank">matplotlib</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://pymatgen.org/" target="_blank">pymatgen</a><i class="fas fa-external-link-alt"></i></li>
+</ul>
+<h2 id="download-cryspy-utility">Download CrySPY utility</h2>
+<h3 id="git">Git</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git
+</span></span></code></pre></div><h3 id="zip">zip</h3>
+<p>Go to <a href="https://github.com/Tomoki-YAMASHITA/CrySPY_utility" target="_blank">CrySPY utility</a><i class="fas fa-external-link-alt"></i> and click green <code>Code</code> button, then choose <code>Download ZIP</code>.</p>
+<h2 id="compile-cal_fingerprint">Compile cal_fingerprint</h2>
+<p>When you use Bayesian optimization, compile <code>cal_fingerpirnt</code> program which calculates structure descriptors.
+A Fortran compiler is needed.
+Install in the environment where CrySPY is used, such as a workstations and supercomputers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd CrySPY_utility/f-fingerprint
+</span></span><span style="display:flex;"><span>emacs Makefile
+</span></span><span style="display:flex;"><span>make
+</span></span></code></pre></div><p>See also <a href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/">Instllation/CrySPY</a>.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

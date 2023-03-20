@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>Molecular crystal structure prediction :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/mol/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/mol/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mol/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mol/index.html" rel="canonical" type="text/html" title="Molecular crystal structure prediction :: CrySPY">
+    <link href="../../../ja/tutorial/mol/index.xml" rel="alternate" type="application/rss+xml" title="Molecular crystal structure prediction :: CrySPY">
+    <link href="../../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../../js/url.js?1679295958"></script>
+    <script src="../../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../ja/index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'クリップボードにコピー';
+      window.T_Copied_to_clipboard = 'クリップボードにコピー!';
+      window.T_Copy_link_to_clipboard = 'リンクをクリップボードにコピー';
+      window.T_Link_copied_to_clipboard = 'リンクをクリップボードにコピーしました!';
+      window.T_No_results_found = '\u0022{0}\u0022 の結果が見つかりません';
+      window.T_N_results_found = '\u0022{0}\u0022 で {1} 件の結果が見つかりました';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../../ja/tutorial/mol/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='メニュー (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../ja/index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../ja/tutorial/index.html"><span itemprop="name">チュートリアル</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Molecular crystal structure prediction</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="molecular-crystal-structure-prediction">Molecular crystal structure prediction</h1>
+
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>First, see <a href="../../../ja/tutorial/random/">Random Search (RS)</a> for basic usage of CrySPY.</p>
+  </div>
+</div>
+<p>In this section, we give a tutorial on the molecular structure generation part only.
+Since version 0.9.0, CrySPY has been able to generate random molecular crystal structures using <a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i>.</p>
+<p>You need to use a pre-defined molecular by PyXtal&rsquo;s database (see, <a href="https://pyxtal.readthedocs.io/en/latest/Others.html#working-with-molecules" target="_blank">https://pyxtal.readthedocs.io/en/latest/Others.html#working-with-molecules</a><i class="fas fa-external-link-alt"></i>)
+or create molecule files that define molecular structures.</p>
+<h2 id="pre-defined-molecule">Pre-defined molecule</h2>
+<p>PyXtal currently supports <code>C60</code>, <code>H2O</code>, <code>CH4</code>, <code>NH3</code>, <code>benzene</code>, <code>naphthalene</code>, <code>anthracene</code>, <code>tetracene</code>, <code>pentacene</code>, <code>coumarin</code>, <code>resorcinol</code>, <code>benzamide</code>, <code>aspirin</code>, <code>ddt</code>, <code>lindane</code>, <code>glycine</code>, <code>glucose</code>, and <code>ROY</code>.</p>
+<p>Let us generate molecular crystal structures that consist of 2 benzenes.</p>
+<p>Move to your working directory, and copy input example files.</p>
+<ul>
+<li>version 1.0.0 or later
+<ul>
+<li>Copy from CrySPY utility</li>
+</ul>
+</li>
+<li>version 0.10.3 or earlier
+<ul>
+<li><code>cp -r ~/CrySPY_root/CrySPY-0.9.0/example/QE_benzene_2_RS_mol .</code></li>
+</ul>
+</li>
+</ul>
+<p>Take a look at <code>cryspy.in</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat cryspy.in
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>basic<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>algo <span style="color:#f92672">=</span> RS
+</span></span><span style="display:flex;"><span>calc_code <span style="color:#f92672">=</span> QE
+</span></span><span style="display:flex;"><span>tot_struc <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>nstage <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>njob <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>jobcmd <span style="color:#f92672">=</span> qsub
+</span></span><span style="display:flex;"><span>jobfile <span style="color:#f92672">=</span> job_cryspy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>structure<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>struc_mode <span style="color:#f92672">=</span> mol
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> H C
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>mol_file <span style="color:#f92672">=</span> benzene
+</span></span><span style="display:flex;"><span>nmol <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>QE<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>qe_infile <span style="color:#f92672">=</span> pwscf.in
+</span></span><span style="display:flex;"><span>qe_outfile <span style="color:#f92672">=</span> pwscf.out
+</span></span><span style="display:flex;"><span>kppvol <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span>  <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>option<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>In generating molecular crystal structures, you have to set <code>struc_mode = mol</code> in the <code>[structure]</code> section.
+Molecule file(s) and the number of molecule(s) are specified as:</p>
+<ul>
+<li>mol_file = benzene</li>
+<li>nmol = 2</li>
+</ul>
+<p>Run CrySPY and see the initial structures (<code>./data/init_POSCARS</code>).</p>
+<h2 id="user-defined-molecule">User-defined molecule</h2>
+<p>Move to your working directory, and copy input example files for 2 formula units of Li3PS4.</p>
+<ul>
+<li>version 1.0.0 or later
+<ul>
+<li>Copy from CrySPY utility</li>
+</ul>
+</li>
+<li>version 0.10.3 or earlier
+<ul>
+<li><code>cp -r ~/CrySPY_root/CrySPY-0.9.0/example/QE_Li3PS4_2fu_RS_mol .</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cd QE_Li3PS4_2fu_RS_mol
+</span></span><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>Li.xyz  PS4.xyz  calc_in/  cryspy.in
+</span></span></code></pre></div><p>Molecule files of Li and PS4 are included. Supported formats in PyXtal are <code>.xyz</code>, <code>.gjf</code>, <code>.g03</code>, <code>.g09</code>, <code>.com</code>, <code>.inp</code>, <code>.out</code>, and pymatgen’s <code>JSON</code> serialized molecules.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat Li.xyz
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>New structure
+</span></span><span style="display:flex;"><span> Li  0.000  0.000  0.000
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat PS4.xyz
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>New structure
+</span></span><span style="display:flex;"><span> P    0.000000    0.000000    0.000000
+</span></span><span style="display:flex;"><span> S    1.200000    1.200000   -1.200000
+</span></span><span style="display:flex;"><span> S    1.200000   -1.200000    1.200000
+</span></span><span style="display:flex;"><span> S   -1.200000    1.200000    1.200000
+</span></span><span style="display:flex;"><span> S   -1.200000   -1.200000   -1.200000
+</span></span></code></pre></div><p>Check <code>cryspy.in</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat cryspy.in
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>basic<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>algo <span style="color:#f92672">=</span> RS
+</span></span><span style="display:flex;"><span>calc_code <span style="color:#f92672">=</span> QE
+</span></span><span style="display:flex;"><span>tot_struc <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>nstage <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>njob <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>jobcmd <span style="color:#f92672">=</span> qsub
+</span></span><span style="display:flex;"><span>jobfile <span style="color:#f92672">=</span> job_cryspy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>structure<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>struc_mode <span style="color:#f92672">=</span> mol
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> Li P S
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>mol_file <span style="color:#f92672">=</span> ./Li.xyz  ./PS4.xyz
+</span></span><span style="display:flex;"><span>nmol <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>QE<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>qe_infile <span style="color:#f92672">=</span> pwscf.in
+</span></span><span style="display:flex;"><span>qe_outfile <span style="color:#f92672">=</span> pwscf.out
+</span></span><span style="display:flex;"><span>kppvol <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span>  <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>option<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>A single atom (Li atom in this case)  is treated as a molecule in the molecular crystal structure generation mode.
+In this example, a random molecular structure is composed of six Li molecules (atoms) and two PS4 molecules specified as:</p>
+<ul>
+<li>mol_file = ./Li.xyz  ./PS4.xyz</li>
+<li>nmol = 6 2</li>
+</ul>
+<p>In <code>mol_file</code>, set relative path of molecule files from <code>cryspy.in</code>.
+Here the molecule files are placed in the same directory.</p>
+<p>Run CrySPY and see the initial structures (<code>./data/init_POSCARS</code>).</p>
+<h2 id="timeout_mol">timeout_mol</h2>
+<p>Molecular crystal structure generation can be time consuming because PyXtal calculates the molecule directions according to a specified space group.
+Sometimes molecular crystal structure generation gets stuck.
+So we set a time limit on the single structure generation.
+The time limit (<code>timeout_mol</code>) is set to 120 seconds by default.
+If the limit is insufficient, you have to increase it as (see last line):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>struc_mode <span style="color:#f92672">=</span> mol
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> Li P S
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>mol_file <span style="color:#f92672">=</span> ./Li.xyz  ./PS4.xyz
+</span></span><span style="display:flex;"><span>nmol <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>timeout_mol <span style="color:#f92672">=</span> 300.0
+</span></span></code></pre></div><h2 id="volume-of-unit-cell">Volume of unit cell</h2>
+<p>You can control the volume of unit cells by changing the value(s) of scaling factor, <code>vol_factor</code>, in <code>cryspy.in</code>.
+By default, <code>vol_factor</code> is set to <code>1.0</code>.
+It is also possible to specify a range of factors.
+Set minimum and maximum values as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>struc_mode <span style="color:#f92672">=</span> mol
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> Li P S
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>mol_file <span style="color:#f92672">=</span> ./Li.xyz  ./PS4.xyz
+</span></span><span style="display:flex;"><span>nmol <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>timeout_mol <span style="color:#f92672">=</span> 300.0
+</span></span><span style="display:flex;"><span>vol_factor <span style="color:#f92672">=</span> 0.8 1.5
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>kpt_check.py :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/kpt_check/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/index.html" rel="canonical" type="text/html" title="kpt_check.py :: CrySPY">
+    <link href="../../cryspy_utility/kpt_check/index.xml" rel="alternate" type="application/rss+xml" title="kpt_check.py :: CrySPY">
+    <link href="../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../js/url.js?1679295958"></script>
+    <script src="../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../index.search.js";
+      var root_url="../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../cryspy_utility/kpt_check/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../cryspy_utility/index.html"><span itemprop="name">CrySPY Utility</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">kpt_check.py</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="kpt_checkpy">kpt_check.py</h1>
+
+<p><code>kpt_check.py</code> can check a k-point mesh with a given <code>kppvol</code>.
+This script supports <code>POSCAR</code>, <code>CONTCAR</code>, and <code>init_struc_data.pkl</code>.
+pymatgen library is required.</p>
+<p>After generating initial structures, you can try to see how much the value of <code>kppvol</code> should be.</p>
+<h2 id="usage">Usage</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 kpt_check.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-w<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-n NSTRUC<span style="color:#f92672">]</span> infile kppvol
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>positional arguments:
+</span></span><span style="display:flex;"><span>  infile                input file: POSCAR or CONTCAR or init_struc_data.pkl
+</span></span><span style="display:flex;"><span>  kppvol                kppvol
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>optional arguments:
+</span></span><span style="display:flex;"><span>  -h, --help            show this help message and exit
+</span></span><span style="display:flex;"><span>  -w, --write           write KPOINTS
+</span></span><span style="display:flex;"><span>  -n NSTRUC, --nstruc NSTRUC
+</span></span><span style="display:flex;"><span>                        number of structure to check
+</span></span></code></pre></div><h2 id="example">Example</h2>
+<h3 id="poscar-with-a-given-kppvol">POSCAR with a given kppvol</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ python3 kpt_check.py POSCAR <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> 10.689217
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> 10.689217
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> 10.730846
+</span></span><span style="display:flex;"><span>    Lattice vector
+</span></span><span style="display:flex;"><span>10.689217 0.000000 0.000000
+</span></span><span style="display:flex;"><span>0.000000 10.689217 0.000000
+</span></span><span style="display:flex;"><span>0.000000 0.000000 10.730846
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kppvol:  <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>k-points:  <span style="color:#f92672">[</span>2, 2, 2<span style="color:#f92672">]</span>
+</span></span></code></pre></div><h3 id="write-kpoints-file">Write KPOINTS file</h3>
+<p>You can generate a <code>KPOINTS</code> file using <code>-w</code> option.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ python3 kpt_check.py -w POSCAR <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>$ cat KPOINTS
+</span></span><span style="display:flex;"><span>pymatgen 4.7.6+ generated KPOINTS with grid density <span style="color:#f92672">=</span> <span style="color:#ae81ff">607</span> / atom
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Monkhorst
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><h3 id="check-k-point-meshes-for-init_struc_datapkl">Check k-point meshes for init_struc_data.pkl</h3>
+<p>In checking k-point meshes for <code>init_struc_data.pkl</code>, first five structures are automatically checked in the default setting.
+You can change the number of structures using <code>-n</code> option.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ python3 kpt_check.py -n <span style="color:#ae81ff">3</span> init_struc_data.pkl <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- 0th structure</span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> 8.0343076893
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> 8.03430768936
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> 9.1723323373
+</span></span><span style="display:flex;"><span>    Lattice vector
+</span></span><span style="display:flex;"><span>8.034308 0.000000 0.000000
+</span></span><span style="display:flex;"><span>-4.017154 6.957915 0.000000
+</span></span><span style="display:flex;"><span>0.000000 0.000000 9.172332
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kppvol:  <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>k-points:  <span style="color:#f92672">[</span>3, 3, 3<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- 1th structure</span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> 9.8451944096
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> 9.84519440959
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> 6.8764313585
+</span></span><span style="display:flex;"><span>    Lattice vector
+</span></span><span style="display:flex;"><span>9.845194 0.000000 0.000000
+</span></span><span style="display:flex;"><span>-4.922597 8.526188 0.000000
+</span></span><span style="display:flex;"><span>0.000000 0.000000 6.876431
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kppvol:  <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>k-points:  <span style="color:#f92672">[</span>3, 3, 4<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- 2th structure</span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> 7.5760383679
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> 7.57603836797
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> 6.6507478296
+</span></span><span style="display:flex;"><span>    Lattice vector
+</span></span><span style="display:flex;"><span>7.576038 0.000000 0.000000
+</span></span><span style="display:flex;"><span>-3.788019 6.561042 0.000000
+</span></span><span style="display:flex;"><span>0.000000 0.000000 6.650748
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kppvol:  <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>k-points:  <span style="color:#f92672">[</span>4, 4, 4<span style="color:#f92672">]</span>
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

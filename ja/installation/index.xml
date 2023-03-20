@@ -2,22 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>インストール on CrySPY</title>
-    <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/</link>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/index.html</link>
     <description>Recent content in インストール on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CrySPYユーティリティ (オプション)</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/utility/</link>
+      <title>動作環境</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/utility/</guid>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/index.html</guid>
+      <description>動作環境 実際に構造最適化を行うワークステーションやスーパーコンピュータなどに下記環境をインストールする必要がある．
+CrySPY Python環境 構造最適化ソフト 目次 Python 構造最適化ソフト find_wy (オプション) </description>
+    </item>
+    <item>
+      <title>CrySPY</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/index.html</guid>
+      <description>CrySPY CrySPY (&amp;gt;= 1.0.0) is available in PyPI. You can install by pip.
+Table of contents CrySPY 1.0.0 or later CrySPY 0.10.3 or earlier </description>
+    </item>
+    <item>
+      <title>CrySPYユーティリティ (オプション)</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/utility/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/utility/index.html</guid>
       <description>ローカルPCのPython環境 ローカルPCにPython環境を構築しておくと，計算結果の解析および可視化を行うのに便利である． jupyter notebookやPythonスクリプトなどのユーティリティツールが利用できる． 入力ファイルのexamplesもCrySPYユーティリティに含まれている．
 ユーティリティツールを使うには以下のライブラリ等が必要になる．
-jupyter NumPy pandas matplotlib pymatgen ユーティリティツールのダウンロード Git $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git zip CrySPY utility へ飛んで，緑のCodeと書かれたボタンをクリック，Download ZIPを選んでダウンロード.
+jupyter NumPy pandas matplotlib pymatgen ユーティリティツールのダウンロード Git $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git zip CrySPY utilityへ飛んで，緑のCodeと書かれたボタンをクリック，Download ZIPを選んでダウンロード.
 Compile cal_fingerprint ベイズ最適化を使うときは構造記述子を計算するためのcal_fingerpirntプログラムをコンパイルする． Fortranコンパイラが必要になる． ワークステーションやスパコンなどのCrySPYを用いる環境にインストールする．
-cd CrySPY_utility/f-fingerprint emacs Makefile make 実行ファイルの扱いに関してはInstallation/CrySPY も参照.</description>
+cd CrySPY_utility/f-fingerprint emacs Makefile make 実行ファイルの扱いに関してはInstallation/CrySPYも参照.</description>
     </item>
-    
   </channel>
 </rss>

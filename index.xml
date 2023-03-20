@@ -2,625 +2,78 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CrySPY</title>
-    <link>https://tomoki-yamashita.github.io/CrySPY_doc/</link>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/index.html</link>
     <description>Recent content on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>extract_struc.py</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/extract_struc/</link>
+      <title>About CrySPY</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/extract_struc/</guid>
-      <description>Script to extract structures from init_struc_data.pkl or opt_struc_data.pkl. Output cif files.
-One can specify structure ID(s) using -i option. Top k structures (the k most stable structures) can be extracted using -t option. -a option is for outputting all the structures. (note that many cif files will be output.) Symmetrized cif files can be generated with -s option.
-Usage usage: extract_struc.py [-h] [-a] [-i [INDEX ...]] [-t TOP] [-r] [-s] infile positional arguments: infile input file options: -h, --help show this help message and exit -a, --all_id flag for all structures -i [INDEX .</description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/index.html</guid>
+      <description>About CrySPY CrySPY is a crystal structure prediction tool written in Python, distributed under the MIT License.
+Table of contents Crystal structure prediction Searching algorithms Interface Logo </description>
     </item>
-    
     <item>
-      <title>Backup</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/backup/</link>
+      <title>Version information</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/backup/</guid>
-      <description>CrySPY has a simple backup function. The following files are backed up:
-cryspy.in cryspy.stat log_cryspy err_cryspy calc_in/* data/* ext/* work/* are NOT included. Note that only one generation is backed up, and any earlier backups will be deleted.
-Auto backup The timing of the automatic backup is as follows:
-before going to next selection (BO, LAQA) or next generation (EA) append structures Manual backup To manually back up, run cryspy with -b or --backup option as:</description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/index.html</guid>
+      <description>Version information Table of contents Version 1.0.0 Version 0.10.3 or earlier </description>
     </item>
-    
     <item>
-      <title>Crystal structure prediction</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/</link>
+      <title>Installation</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/csp/</guid>
-      <description>
-Input Elements The number of atoms Output Stable structure (global minimum) </description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/index.html</guid>
+      <description>Installation Note You need (CrySPY + Python environment + structure optimizer) in your workstation, super computer, etc.
+Table of contents System requirements Python Structure optimizer find_wy (optional) CrySPY CrySPY 1.0.0 or later CrySPY 0.10.3 or earlier CrySPY utility (optional) </description>
     </item>
-    
     <item>
-      <title>Energy step data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/energy_step/</link>
+      <title>Tutorial</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/energy_step/</guid>
-      <description>Energy step data is saved in energy_step_data.pkl if you set energy_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-energy_step_flag = True is currently available only with VASP, QE, and soiap.
-In soiap, energy_step_data is collected only if loopa == 1. This is because other data (struc, force, and stress) are output only when loopa == 1. See, https://github.com/nbsato/soiap/blob/master/doc/instructions.md Data format type: dict key: structure ID value: list of energy step data in each stage string form {0: [array([-3.</description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/index.html</guid>
+      <description>Tutorial Table of contents Random Search (RS) soiap in your local PC VASP QE OpenMX LAMMPS External program Check cryspy.in Script to run Firsrt run Submit job Check results Append structures Analysis and visualization Load external data Evolutionary Algorithm (EA) Bayesian Optimization (BO) LAQA Restriction on interatomic distances Molecular crystal structure prediction </description>
     </item>
-    
     <item>
-      <title>File format</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/format/</link>
+      <title>Structure generation</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/format/</guid>
-      <description>CrySPY uses the configparser module to read input file, cryspy.in . cryspy.in consists of sections, led by a [section] header and followed by name = value or name : value entries. Section names and values are case sensitive, but names are not. Lines beginning with # or ; are ignored and may be used to provide comments. Accepted bool values are 1, yes, true, and on, which cause this method to return True, and 0, no, false, and off, which cause it to return False.</description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/index.html</guid>
+      <description>Structure generation CrySPY currently has three random structure generation modes: crystal (default), mol, and mol_bs. PyXtal (or find_wy) is used for the structure generation.
+Table of contents struc_mode = crystal struc_mode = mol struc_mode = mol_bs </description>
     </item>
-    
     <item>
-      <title>Initial and optimized structure data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/init_opt_struc_data/</link>
+      <title>Features</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/init_opt_struc_data/</guid>
-      <description>Initial and optimized structure data are saved in init_struc_data.pkl and opt_struc_data.pkl, respectively. pymatgen library is required to analyze these data files.
-Data format type: dict key: structure ID value: structure data string form {0: Structure Summary &amp;hellip;,
-1: Structure Summary &amp;hellip;, &amp;hellip;} structure data format pymatgen.core.structure.Structure How to access import pickle with open(&amp;#39;init_struc_data.pkl&amp;#39;, &amp;#39;rb&amp;#39;) as f: init_struc_data = pickle.load(f) with open(&amp;#39;opt_struc_data.pkl&amp;#39;, &amp;#39;rb&amp;#39;) as f: opt_struc_data = pickle.load(f) # struc_step_data[ID] # # # ---------- structure step data of ID 0 cid = 0 # ID init_struc_data[cid] # to show initial structure of ID 0 Structure Summary Lattice abc : 5.</description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/index.html</guid>
+      <description>Features Table of contents Backup Clean CrySPY_ID in job files </description>
     </item>
-    
     <item>
-      <title>Python</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/python/</link>
+      <title>Input file</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/python/</guid>
-      <description>Python CrySPY 1.0.0 or later Python &amp;gt;= 3.8 PyXtal (&amp;gt;= 0.5.3) (optional, required if algo is BO) COMBO [2023 March 15] On MacOS, it is difficult to install pyxtal in the arm64 environment, so it is recommended to use the x86_64 environment with Rosetta 2.
-CrySPY 0.10.0 &amp;ndash; 0.10.3 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
-Python 3.x.x COMBO PyXtal (&amp;gt;= 0.2.2) (PyXtal requires pymatgen) pymatgen (&amp;gt;= 2022.</description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/index.html</guid>
+      <description>Input file Description of the input file, cryspy.in.
+Table of contents File format [basic] section [structure] section [VASP] section [QE] section [OMX] section [soaip] section [LAMMPS] section [EA] section [BO] section [LAQA] section [option] section </description>
     </item>
-    
     <item>
-      <title>soiap in your local PC</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/</link>
+      <title>Data format</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/</guid>
-      <description>soiap is Structure Optimization with InterAtomic Potential. It is suitable for testing CrySPY because of its fast structure optimization. See instructions to install soiap.
-In this tutorial, we try to use CrySPY in your local PC (Mac or Linux). The target system is Si 8 atoms.
-Assumption Here, we assume the following conditions:
-(version 0.10.3 or earlier) CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job filename: job_cryspy soiap executable file: ~/local/soiap-0.3.0/src/soiap soiap input filename: soiap.</description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/index.html</guid>
+      <description>Data format All pickle data are stored in the ./data/pkl_data/ directory.
+Table of contents Common data Initial and optimized structure data Result data Random Search (RS) Evolutionary algorithm (EA) Bayesian Optimization (BO) LAQA Optional data Energy step data Structure step data Force step data Stress step data </description>
     </item>
-    
     <item>
-      <title>struc_mode = crystal</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/crystal/</link>
+      <title>CrySPY Utility</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/crystal/</guid>
-      <description>under construction</description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/index.html</guid>
+      <description>CrySPY Utility See Installation/CrySPY utility to download.
+Table of contents Examples soiap_Si8_RS extract_struc.py pos2pkl.py kpt_check.py </description>
     </item>
-    
-    <item>
-      <title>[basic] section</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/basic_sec/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/basic_sec/</guid>
-      <description> Name Value Default Description algo RS, EA, BO, LAQA Algorithm calc_code VASP, QE, OMX, soiap, LAMMPS Caluculation code for structure optimization tot_struc int The total number of structures nstage int The number of stages njob int The number of jobs running at the same time. jobcmd str Command to submit jobs such as qsub and sbatch. jobfile str File name of the job file. </description>
-    </item>
-    
-    <item>
-      <title>Clean</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/clean/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/clean/</guid>
-      <description>CrySPY has a simple clean (just move files) function. It is useful when you want to start over from the beginning. The following files are cleaned up:
-cryspy.stat log_cryspy err_cryspy lock_cryspy data/* work/* ext/* tmp_calc_FP/* tmp_gen_struc/* To clean up, run cryspy with -c or --clean option as:
-$ ls calc_in cryspy.in cryspy.stat data err_cryspy log_cryspy $ cryspy -c Are you sure you want to clean the data? &amp;#39;yes&amp;#39; or &amp;#39;no&amp;#39; [y/n]: y $ ls calc_in cryspy.</description>
-    </item>
-    
-    <item>
-      <title>CrySPY 1.0.0 or later</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_1.0/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_1.0/</guid>
-      <description>CrySPY CrySPY 1.0.0 or later can be installed by pip.
-pip install csp-cryspy The executable script, cryspy, is automatically installed in your PATH. You can check by
-which cryspy cal_fingerprint (optional) cal_fingerprint is a program to calculate structure descriptors and is required if algo is BO. From CrySPY 1.0.0, the cal_fingerprint program is included in CrySPY utility. See Instllation/CrySPY_utility/Compile cal_fingerprint for compilation.
-Put the executable file of cal_fingerprint in your PATH.</description>
-    </item>
-    
-    <item>
-      <title>Evolutionary Algorithm (EA)</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/ea/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/ea/</guid>
-      <description>EA</description>
-    </item>
-    
-    <item>
-      <title>pos2pkl.py</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/pos2pkl/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/pos2pkl/</guid>
-      <description>Script to convert structre data into init_struc_data.pkl. The default input format is init_POSCARS. Single structure data such as POSCAR and cif files can be optionally converted. Output is init_struc_data.pkl. Structure data can be added to an already existing init_struc_data.pkl. The structure ID is not taken into account and is newly assigned. If the number of atoms is different, an error is generated.
-init_struc_data.pkl can be loaded at the start of the simulation in CrySPY.</description>
-    </item>
-    
-    <item>
-      <title>Result data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/rslt_data/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/rslt_data/</guid>
-      <description>Common result data such as space group, energies, etc. are saved in rslt_data.pkl. pandas library is required to analyze this data file.
-Data format type: pandas.core.frame.DataFrame row lable: structure ID string form see blow How to access import pickle with open(&amp;#39;rslt_data.pkl&amp;#39;, &amp;#39;rb&amp;#39;) as f: rslt_data = pickle.load(f) # ---------- sort by Energy # top 5 rslt_data.sort_values(by=[&amp;#39;E_eV_atom&amp;#39;]).head(5) Spg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom Magmom Opt 1 98 I4_122 12 C2/m -3.978441 NaN not_yet 3 36 Cmc2_1 36 Cmc2_1 -3.</description>
-    </item>
-    
-    <item>
-      <title>Searching algorithms</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/</guid>
-      <description>The following searching algorithms are available in CrySPY:
-Random Search (RS) Evolutionary Algorithm (EA) Bayesian Optimization (BO) Look Ahead based on Quadratic Approximation (LAQA) In a nutshell Random Search (RS) Random.
-Evolutionary Algorithm (EA) EA for crystal structure prediction has been developed by Oganov&amp;#39;s group .
-We also employ EA in CrySPY, and support the following:
-Selection methods Tournament selection Roulette selection Elite selection Evolutionary operations Crossover Permutation Strain etc. Survival of the fittest Dedupe structures in survival of the fittest Bayesian Optimization (BO) One of the selection-type algorithms.</description>
-    </item>
-    
-    <item>
-      <title>struc_mode = mol</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/mol/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/mol/</guid>
-      <description>under construction</description>
-    </item>
-    
-    <item>
-      <title>Structure optimizer</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/struc_opt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/struc_opt/</guid>
-      <description>Structure optimizer At least one optimizer is required.
-First-principles calculation VASP QUANTUM ESPRESSO OpenMX (CrySPY 0.9.0 or later) Interatomic potential soiap LAMMPS </description>
-    </item>
-    
-    <item>
-      <title>Structure step data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/struc_step/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/struc_step/</guid>
-      <description>Structure step data is saved in struc_step_data.pkl if you set struc_step_flag = True in [option] section of cryspy.in. pymatgen library is required to analyze this data file.
-struc_step_flag = True is currently available only with VASP, QE, and soiap.
-struc_step_data includes initial structures. For example, struc_step_data[cid][0][0] is the initial structure of ID = cid.
-Data format type: dict key: structure ID value: list of structure step data in each stage string form {0: [[Structure Summary &amp;hellip;, Structure Summary, &amp;hellip;], [&amp;hellip;], &amp;hellip;],</description>
-    </item>
-    
-    <item>
-      <title>VASP</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/vasp/</guid>
-      <description>Coming soon.</description>
-    </item>
-    
-    <item>
-      <title>[structure] section</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/structure_sec/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/structure_sec/</guid>
-      <description>Name Value Default Description struc_mode crystal, mol, mol_bs crystal Structure generation mode natot int The total number of atoms. atype atomic symbol [atomic symbol &amp;hellip;] Atom type. e.g. atype = Na Cl. nat int [int &amp;hellip;] The number of atoms in each atom type. e.g. nat = 8 8. mol_file str [str &amp;hellip;], None None Path of molecule files or molecule names. nmol int [int &amp;hellip;], None None The number of molecules.</description>
-    </item>
-    
-    <item>
-      <title>Bayesian Optimization (BO)</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/bo/</guid>
-      <description>BO</description>
-    </item>
-    
-    <item>
-      <title>CrySPY 0.10.3 or earlier</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_0.10/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_0.10/</guid>
-      <description>Installation of CrySPY is very simple. Just download it!
-Download You can put the source code of CrySPY in an arbitrary directory. For example, let us put the source code in ~/CrySPY_root/CrySPY-x.x.x (x.x.x means the version). Use git or download the compressed file.
-Git mkdir ~/CrySPY_root cd ~/CrySPY_root git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git CrySPY-x.x.x zip or tar.gz file Download the source as a zip or tar.gz file from GitHub release .
-Then put the source like ~/CrySPY_root/CrySPY-x.</description>
-    </item>
-    
-    <item>
-      <title>find_wy (optional)</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/find_wy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/find_wy/</guid>
-      <description>CrySPY have utilized find_wy to generate a random structure for a given space group (symmetry). However, CrySPY employs PyXtal library for structure generation as default since version 0.9.0. You can skip to install find_wy in CrySPY 0.9.0 or later, but you may use find_wy. For CrySPY 0.8.x or earlier, find_wy is required to generate a random structure for a given space group.
-You can skip to install find_wy in CrySPY 0.</description>
-    </item>
-    
-    <item>
-      <title>Force step data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/force_step/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/force_step/</guid>
-      <description>Force step data is saved in force_step_data.pkl if you set force_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-force_step_flag = True is currently available only with VASP, QE, and soiap.
-Data format type: dict key: structure ID value: list of force step data in each stage string form {0: [array([[ 0.26314927, -0.26314927, -0. ], [&amp;hellip;], &amp;hellip;[&amp;hellip;]]), array([[&amp;hellip;], &amp;hellip;, [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
-    </item>
-    
-    <item>
-      <title>Interface</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/interface/</guid>
-      <description>CrySPY is interfaced with several structure optimizers:
-First-principles calculation VASP Quantum Espresso OpenMX (CrySPY 0.9.0 or later) Interatomic potential soiap LAMMPS At least one optimizer is required.</description>
-    </item>
-    
-    <item>
-      <title>QE</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/qe/</guid>
-      <description>In this tutorial, we try to use CrySPY in a machine with a job scheduler system such as PBS. Here we employ QUANTUM ESPRESSO. (QE). The target system is Si 8 atoms.
-Assumption Here, we assume the following conditions:
-(version 0.10.3 or earlier) CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py CrySPY job command: qsub CrySPY job filename: job_cryspy QE executable file: /usr/local/qe-6.5/bin/pw.x QE input filename: pwscf.in QE output filename: pwscf.out Input files Move to your working directory, and copy input example files.</description>
-    </item>
-    
-    <item>
-      <title>struc_mode = mol_bs</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/mol_bs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/structure_generation/mol_bs/</guid>
-      <description>CrySPY uses pyxtal in normal molecular crystal structure generation mode (struc_mode = mol). The molecules are arranged to fit a point group at a selected Wykoff position in the space group to keep the symmetry. (Sometimes it takes a long time to generate.)
-In mol_bs mode (bs means break symmetry), dummy atoms are placed in Wykoff positions as in ordinary crystals, and then the dummy atoms are replaced by molecules without considering symmetry and rotated randomly.</description>
-    </item>
-    
-    <item>
-      <title>[VASP] section</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/vasp_sec/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/vasp_sec/</guid>
-      <description>[VASP] section is required only if you use VASP (calc_code = VASP)
-Name Value Default Description kppvol int [int &amp;hellip;] Grid density per Å**(-3) of reciprocal cell in each stage force_gamma bool False If true, force gamma-centered mesh. </description>
-    </item>
-    
-    <item>
-      <title>CrySPY utility (optional)</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/</guid>
-      <description>Python environment in local PC Setting up Python environment in your local PC is useful to analyze CrySPY results. Utility tools (jupyter notebook and python scripts) are available for analysis and visualization. Input examples are also included in CrySPY utility.
-You need several Python libraries such as
-jupyter NumPy pandas matplotlib pymatgen Download CrySPY utility Git $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git zip Go to CrySPY utility and click green Code button, then choose Download ZIP.</description>
-    </item>
-    
-    <item>
-      <title>LAQA</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/laqa/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/laqa/</guid>
-      <description>LAQA</description>
-    </item>
-    
-    <item>
-      <title>Logo</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/about/logo/</guid>
-      <description>PNG (transparent background) JPG </description>
-    </item>
-    
-    <item>
-      <title>OpenMX</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/omx/</guid>
-      <description>Coming soon.</description>
-    </item>
-    
-    <item>
-      <title>Stress step data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/stress_step/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/stress_step/</guid>
-      <description>Stress step data is saved in stress_step_data.pkl if you set stress_step_flag = True in [option] section of cryspy.in. NumPy library is required to analyze this data file.
-stress_step_flag = True is currently available only with VASP, QE, and soiap.
-Data format type: dict key: structure ID value: list of stress step data in each stage string form {0: [array([[-0.16770062, 0. , 0. ], [&amp;hellip;], [&amp;hellip;]]), array([[&amp;hellip;], ]&amp;hellip;], [&amp;hellip;]]), &amp;hellip;], 1: [array([[ 0.</description>
-    </item>
-    
-    <item>
-      <title>[QE] section</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/qe_sec/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/qe_sec/</guid>
-      <description>[QE] section is required only if you use QE (calc_code = QE)
-Name Value Default Description kppvol int [int &amp;hellip;] Grid density per Å**(-3) of reciprocal cell in each stage qe_infile str File name of QE input file. qe_outfile str File name of QE output file. </description>
-    </item>
-    
-    <item>
-      <title>LAMMPS</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/lammps/</guid>
-      <description>Coming soon.</description>
-    </item>
-    
-    <item>
-      <title>[OMX] section</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/omx_sec/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/omx_sec/</guid>
-      <description>[OMX] section is required only if you use OpenMX (calc_code = OMX)
-Name Value Default Description kppvol int [int &amp;hellip;] Grid density per Å**(-3) of reciprocal cell in each stage OMX_infile str File name of OpenMX input file. OMX_outfile str File name of OpenMX output file. ValenceElectrons str float float [str float float &amp;hellip;] The number of initial charges for up and down spin states. ValenceElectrons e.g. in NaCl: ValenceElectrons = Na 4.</description>
-    </item>
-    
-    <item>
-      <title>Restriction on interatomic distances</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/restrict_dist/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/restrict_dist/</guid>
-      <description>First, see Random Search (RS) for basic usage of CrySPY.
-You can restrict the interatomic distance in structure generation. Here is an example of [structure] section in the input file to limit minimum interatomic distance for a A-B binary system.
-[structure] natot = 8 atype = A B nat = 4 4 mindist_1 = 2.0 1.8 mindist_2 = 1.8 1.5 This means that minimum interatomic distances of A-A, A-B, and B-B are limited to 2.</description>
-    </item>
-    
-    <item>
-      <title>[soaip] section</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/soiap_sec/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/soiap_sec/</guid>
-      <description>[soiap] section is required only if you use soiap (calc_code = soiap)
-Name Value Default Description soiap_infile str File name of soiap input file. soiap_outfile str File name of soiap output file. soiap_cif str File name of soiap CIF-formatted initial structure. </description>
-    </item>
-    
-    <item>
-      <title>kpt_check.py</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/</guid>
-      <description>kpt_check.py can check a k-point mesh with a given kppvol. This script supports POSCAR, CONTCAR, and init_struc_data.pkl. pymatgen library is required.
-After generating initial structures, you can try to see how much the value of kppvol should be.
-Usage python3 kpt_check.py [-h] [-w] [-n NSTRUC] infile kppvol positional arguments: infile input file: POSCAR or CONTCAR or init_struc_data.pkl kppvol kppvol optional arguments: -h, --help show this help message and exit -w, --write write KPOINTS -n NSTRUC, --nstruc NSTRUC number of structure to check Example POSCAR with a given kppvol $ python3 kpt_check.</description>
-    </item>
-    
-    <item>
-      <title>[LAMMPS] section</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/lammps_sec/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/lammps_sec/</guid>
-      <description>[LAMMPS] section is required only if you use LAMMPS (calc_code = LAMMPS)
-Name Value Default Description lammps_infile str File name of LAMMPS input file. lammps_outfile str File name of LAMMPS output file. lammps_potential str [str &amp;hellip;], None None Potential. lammps_data str File name of LAMMPS data file. </description>
-    </item>
-    
-    <item>
-      <title>Molecular crystal structure prediction</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/mol/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/mol/</guid>
-      <description>First, see Random Search (RS) for basic usage of CrySPY.
-In this section, we give a tutorial on the molecular structure generation part only. Since version 0.9.0, CrySPY has been able to generate random molecular crystal structures using PyXtal .
-You need to use a pre-defined molecular by PyXtal&amp;rsquo;s database (see, https://pyxtal.readthedocs.io/en/latest/Others.html#working-with-molecules ) or create molecule files that define molecular structures.
-Pre-defined molecule PyXtal currently supports C60, H2O, CH4, NH3, benzene, naphthalene, anthracene, tetracene, pentacene, coumarin, resorcinol, benzamide, aspirin, ddt, lindane, glycine, glucose, and ROY.</description>
-    </item>
-    
-    <item>
-      <title>[EA] section</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/ea/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/ea/</guid>
-      <description>[EA] section is required only if you use EA (algo = EA)
-Name Value Default Description n_pop int Population from second generation. n_crsov int The number of structures generated by crossover. n_perm int The number of structures generated by permutation. n_strain int The number of structures generated by strain. n_rand int The number of structures generated randomly. n_elite int The number of elite structures. fit_reverse bool False If False, minimal search.</description>
-    </item>
-    
-    <item>
-      <title>External program</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/external/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/external/</guid>
-      <description>Available from CrySPY 0.11.0.
-If you use an external program not supported by CrySPY, the optimized energy and structure data can be loaded semi-manually in CrySPY. You have to prepare two files, ext_opt_struc_data.pkl and ext_energy_data.pkl.
-Assumption Here, we assume the following conditions:
-(version 0.10.3 or earlier) CrySPY main script: ~/CrySPY_root/CrySPY-0.11.0/cryspy.py (calc_in directory is not required.)
-Input files Move to your working directory, and copy input example files.
-version 1.0.0 or later Copy from CrySPY utility version 0.</description>
-    </item>
-    
-    <item>
-      <title>[BO] section</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/bo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/bo/</guid>
-      <description>[BO] section is required only if you use BO (algo = BO)
-Name Value Default Description nselect_bo int The number of structures to be selected at once. score TS, EI, PI Acquisition function. num_rand_basis int If 0, Gaussian process. The number of basis function. cdev float 0.001 Cutoff of deviation for standardization. dscrpt FP Descriptor for structures. fppath str, None None Only used with dscrpt = FP. Path of cal_fingerprint. fp_rmin float 0.</description>
-    </item>
-    
-    <item>
-      <title>Check cryspy.in</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/cryspy_in/</guid>
-      <description>See Input file in detail.
-Let&amp;rsquo;s take a look at cryspy.in again. This may be slightly different depending on calc_code you chose.
-[basic] algo = RS calc_code = soiap tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] [basic] section algo: Algorithm. Set RS for Random Search.</description>
-    </item>
-    
-    <item>
-      <title>CrySPY_ID in job files</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/cryspy_id/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/cryspy_id/</guid>
-      <description>In the job file of CrySPY, the string &amp;ldquo;CrySPY_ID&amp;rdquo; is automatically replaced with the structure ID. When you use a job scheduler such as PBS and SLURM, it is useful to set the structure ID to the job name. For example, in the PBS system, #PBS -N Si_CrySPY_ID in ID 10 is replaced with #PBS -N Si_10. Note that starting with a number will result in an error. You should add a prefix like Si_.</description>
-    </item>
-    
-    <item>
-      <title>[LAQA] section</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/laqa/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/laqa/</guid>
-      <description>[LAQA] section is required only if you use LAQA (algo = LAQA)
-Name Value Default Description nselect_laqa int The number of structures to be selected at once. weight_laqa float 1.0 Weight of bias in the score. </description>
-    </item>
-    
-    <item>
-      <title>Script to run</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/script_to_run/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/script_to_run/</guid>
-      <description>For version 1.0.0 or later, skip this page. The executable script is automatically installed.
-Assumption Here, we assume the following condition:
-CrySPY main script: ~/CrySPY_root/CrySPY-0.9.0/cryspy.py Make script Let&amp;rsquo;s make a convenient shell script to avoid typing long commands over and over again. Here, we create the script, cryspy (any file name will do).
-$ emacs cryspy $ chmod 744 cryspy $ cat cryspy #!/bin/sh python3 -u ~/CrySPY_root/CrySPY-0.9.0/cryspy.py 1&amp;gt;&amp;gt; log 2&amp;gt;&amp;gt; err -u option (unbuffered option) can be omitted.</description>
-    </item>
-    
-    <item>
-      <title>Firsrt run</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/</guid>
-      <description>Make sure you have the following in your working directory.
-calc_in/ (cryspy) cryspy.in $ ls calc_in/ cryspy.in Then, run CyrSPY!
-cryspy &amp;amp; If you use old version (0.10.3 or earlier):
-bash ./cryspy &amp;amp; At the first run, CrySPY goes into structure generation mode. CrySPY stops after 5 structure generation.
-If it worked properly, log_cryspy (log in ver. 0.10.3 or earlier) would look like this.
-2023/03/18 20:35:46 CrySPY 1.0.0 Start cryspy.py Read input file, cryspy.</description>
-    </item>
-    
-    <item>
-      <title>Submit job</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/submit_job/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/submit_job/</guid>
-      <description>Continue CrySPY continues the simulation if you have cryspy.stat file.
-Continue if you have crypy.stat
-Start from the beginning if you don&amp;rsquo;t have cryspy.stat
-Submit job Run CyrSPY again.
-cryspy &amp;amp; Check log_cryspy file.
-2023/03/18 23:35:08 CrySPY 1.0.0 Restart cryspy.py # ---------- job status ID 0: submit job, Stage 1 ID 1: submit job, Stage 1 And also cryspy.stat file.
-... (omit) ... [status] id_queueing = 2 3 4 id 0 = Stage 1 id 1 = Stage 1 CrySPY submitted two jobs for structure ID 0 and 1 as you set njob = 2 in cryspy.</description>
-    </item>
-    
-    <item>
-      <title>Check results</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/result/</guid>
-      <description>Move to data directory. There should be a few more files.
-$ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_data/ cryspy_rslt: Result file. cryspy_rslt_energy_asc: Result file sorted in energy ascending order. init_POSCARS: Initial struture file in POSCAR format. opt_POSCARS: Optimized structure file in POSCAR format. pkl_data/: Directory to save pickled data. The results are written to text files, cryspy_rslt and cryspy_rslt_energy_asc (and also saved in pickle data in pkl_data directory).</description>
-    </item>
-    
-    <item>
-      <title>Append structures</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/</guid>
-      <description>Of course only 5 structures are not enough to find stable structures. You can append structures whenever you want. Here let&amp;rsquo;s append more 5 structures.
-For Si-Si mindist, the default value of 1.11 Å is used in the first structure generation (see log_cryspy), which is a little too close. Let us try to set the mindist to 2.0 Å.
-Edit cryspy.in and change the value of tot_struc into 10, and add mindist_1 = 2.</description>
-    </item>
-    
-    <item>
-      <title>Analysis and visualization</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/analysis_visualization/</guid>
-      <description>Download the data It is assumed here that you analyze and visualize CrySPY data in your local PC. If you use CrySPY in super computers or workstations, download the data in your local PC. You can delete the work directory if you do not need it because the file size could be very large.
-jupyter notebook Move to the data/ directory in results you just download. Then copy cryspy_analyzer_RS.ipynb from CrySPY utility .</description>
-    </item>
-    
-    <item>
-      <title>[option] section</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/input/option/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/option/</guid>
-      <description>Name Value Default Description stop_chkpt int 0 CrySPY stops at a specified check point. load_struc_flag bool False If True, load initial structures from ./data/pkl_data/init_struc_data.pkl. stop_next_struc bool False If True, CrySPY does not submit jobs for next structures, but jobs for next stage are submitted. recalc int [int &amp;hellip;] (empty list) Specify structure IDs if you want to recalculate or continue optimization. append_struc_ea bool False If True, append structures by EA.</description>
-    </item>
-    
-    <item>
-      <title>Load external data</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ext_load_data/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ext_load_data/</guid>
-      <description>You need only cryspy.in.
-$ ls cryspy.in Then, run CyrSPY.
-cryspy &amp;amp; At the first run, CrySPY goes into structure generation mode as usual. CrySPY stops after 5 structure generation.
-If it worked properly, log_cryspy would look like this.
-2022/07/14 19:41:41 CrySPY 1.0.0 Start cryspy.py Read input file, cryspy.in Write input data in cryspy.out Save input data in cryspy.stat # --------- Generate initial structures # ------ mindist Si - Si 1.</description>
-    </item>
-    
-    <item>
-      <title>Version 1.0.0</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_1.0.0/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_1.0.0/</guid>
-      <description>Install and run CrySPY is now available in PyPI. You can install by
-pip install csp-cryspy The executable script, cryspy is automatically installed in your PATH. To run CrySPY, just type cryspy:
-cryspy &amp;amp; CrySPY stops once before going to next selection (BO, LAQA) or next generation (EA). For example, EA case:
-[old version]
-cryspy run check jobs (finish current generation?) structure generation by EA automatically starts [CrySPY 1.0.0]
-cryspy run check jobs (finish current generation?</description>
-    </item>
-    
-    <item>
-      <title>Version 0.10.3 or earlier</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_0.10.3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_0.10.3/</guid>
-      <description>Click to expand old news.
-[2022 May 17] version 0.10.3 released Bug fixed: LAMMPS IO. [2022 January 24] version 0.10.2 released Added nrot: maximum number of times to rotate molecules in mol_bs [2021 September 30] version 0.10.1 released Fixed the problem of numpy.random.seed in multiprocessing [2021 July 25] version 0.10.0 released Support PyXtal 0.2.9 or later LAQA can be used with QE Upper and lower limits of energy for EA and BO [2021 July 13] paper published Our paper on CrySPY software has been published in STAM:Methods [2021 March 18] version 0.</description>
-    </item>
-    
   </channel>
 </rss>

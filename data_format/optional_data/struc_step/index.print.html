@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>Structure step data :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/struc_step/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/struc_step/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/data_format/optional_data/struc_step/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/data_format/optional_data/struc_step/index.html" rel="canonical" type="text/html" title="Structure step data :: CrySPY">
+    <link href="../../../data_format/optional_data/struc_step/index.xml" rel="alternate" type="application/rss+xml" title="Structure step data :: CrySPY">
+    <link href="../../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../../js/url.js?1679295958"></script>
+    <script src="../../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../../data_format/optional_data/struc_step/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../data_format/index.html"><span itemprop="name">Data format</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../data_format/optional_data/index.html"><span itemprop="name">Optional data</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Structure step data</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="structure-step-data">Structure step data</h1>
+
+<p>Structure step data is saved in <code>struc_step_data.pkl</code> if you set <code>struc_step_flag = True</code> in <code>[option]</code> section of <code>cryspy.in</code>. <a href="https://pymatgen.org/" target="_blank">pymatgen</a><i class="fas fa-external-link-alt"></i> library is required to analyze this data file.</p>
+
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+<p><code>struc_step_flag = True</code> is currently available only with VASP, QE, and soiap.</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p><code>struc_step_data</code> includes initial structures.
+For example, <code>struc_step_data[cid][0][0]</code> is the initial structure of ID = cid.</p>
+  </div>
+</div>
+<h2 id="data-format">Data format</h2>
+<ul>
+<li>type: dict
+<ul>
+<li>key: structure ID</li>
+<li>value: list of structure step data in each stage</li>
+</ul>
+</li>
+<li>string form
+<ul>
+<li>{0: [[Structure Summary &hellip;, Structure Summary, &hellip;], [&hellip;], &hellip;],<br>
+1:  [[Structure Summary &hellip;, Structure Summary, &hellip;], [&hellip;], &hellip;], <br>
+&hellip;}</li>
+</ul>
+</li>
+<li>structure data format
+<ul>
+<li><a href="https://pymatgen.org/pymatgen.core.structure.html#pymatgen.core.structure.Structure" target="_blank">pymatgen.core.structure.Structure</a><i class="fas fa-external-link-alt"></i></li>
+</ul>
+</li>
+</ul>
+<h2 id="how-to-access">How to access</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;struc_step_data.pkl&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    struc_step_data <span style="color:#f92672">=</span> pickle<span style="color:#f92672">.</span>load(f)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][stage][step]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][0] &lt;-- stage 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][1] &lt;-- stage 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># in LAQA</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][selection][step]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][0] &lt;-- 1st selection</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># struc_step_data[ID][1] &lt;-- 2nd selection</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- structure step data of ID 3, stage 1, step 4</span>
+</span></span><span style="display:flex;"><span>cid <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>      <span style="color:#75715e"># ID</span>
+</span></span><span style="display:flex;"><span>stage <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>    <span style="color:#75715e"># stage</span>
+</span></span><span style="display:flex;"><span>step <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>     <span style="color:#75715e"># step index (start from 0)</span>
+</span></span><span style="display:flex;"><span>struc_step_data[cid][stage<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][step]    <span style="color:#75715e"># to show initial structure of ID 0 at stage 1 in jupyter</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Structure Summary
+</span></span><span style="display:flex;"><span>Lattice
+</span></span><span style="display:flex;"><span>    abc : 5.727301 5.727301 4.405757
+</span></span><span style="display:flex;"><span> angles : 90.0 90.0 90.0
+</span></span><span style="display:flex;"><span> volume : 144.5175386563631
+</span></span><span style="display:flex;"><span>      A : 5.727301 0.0 0.0
+</span></span><span style="display:flex;"><span>      B : 0.0 5.727301 0.0
+</span></span><span style="display:flex;"><span>      C : 0.0 0.0 4.405757
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (0.2506, 5.4767, 1.1014) [0.0438, 0.9562, 0.2500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (2.6130, 3.1143, 1.1014) [0.4562, 0.5438, 0.2500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (3.1143, 0.2506, 1.1014) [0.5438, 0.0438, 0.2500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (5.4767, 2.6130, 1.1014) [0.9562, 0.4562, 0.2500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (5.4767, 0.2506, 3.3043) [0.9562, 0.0438, 0.7500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (3.1143, 2.6130, 3.3043) [0.5438, 0.4562, 0.7500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (2.6130, 5.4767, 3.3043) [0.4562, 0.9562, 0.7500]
+</span></span><span style="display:flex;"><span>PeriodicSite: Si (0.2506, 3.1143, 3.3043) [0.0438, 0.5438, 0.7500]
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

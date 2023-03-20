@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>動作環境 :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/index.html" rel="canonical" type="text/html" title="動作環境 :: CrySPY">
+    <link href="../../../ja/installation/requirements/index.xml" rel="alternate" type="application/rss+xml" title="動作環境 :: CrySPY">
+    <link href="../../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../../js/url.js?1679295958"></script>
+    <script src="../../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../ja/index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'クリップボードにコピー';
+      window.T_Copied_to_clipboard = 'クリップボードにコピー!';
+      window.T_Copy_link_to_clipboard = 'リンクをクリップボードにコピー';
+      window.T_Link_copied_to_clipboard = 'リンクをクリップボードにコピーしました!';
+      window.T_No_results_found = '\u0022{0}\u0022 の結果が見つかりません';
+      window.T_N_results_found = '\u0022{0}\u0022 で {1} 件の結果が見つかりました';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../../ja/installation/requirements/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='メニュー (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../ja/index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../ja/installation/index.html"><span itemprop="name">インストール</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">動作環境</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter deprecated">
+
+<h1 id="動作環境">動作環境</h1>
+<p>実際に構造最適化を行うワークステーションやスーパーコンピュータなどに下記環境をインストールする必要がある．</p>
+<ul>
+<li>CrySPY</li>
+<li>Python環境</li>
+<li>構造最適化ソフト</li>
+</ul>
+<h2 id="目次">目次</h2>
+
+<ul class="children children-li children-sort-">
+	
+<li><a href="../../../ja/installation/requirements/python/index.html">Python</a></li>
+<li><a href="../../../ja/installation/requirements/struc_opt/index.html">構造最適化ソフト</a></li>
+<li><a href="../../../ja/installation/requirements/find_wy/index.html">find_wy (オプション)</a></li>
+</ul>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">動作環境のサブセクション</h1>
+          <article class="default">
+<h1 id="python">Python</h1>
+
+<h2 id="python">Python</h2>
+<h3 id="cryspy-100-or-later">CrySPY 1.0.0 or later</h3>
+<ul>
+<li>Python &gt;= 3.8
+<ul>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i> (&gt;= 0.5.3)</li>
+<li>(optional, required if algo is BO) <a href="https://github.com/Tomoki-YAMASHITA/combo3" target="_blank">COMBO</a><i class="fas fa-external-link-alt"></i></li>
+</ul>
+</li>
+</ul>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>[2023 March 15]
+MacOSのarm64環境でのpyxtalのインストールが難しいので，Rosetta 2を使用してx86_64環境での利用が推奨．</p>
+  </div>
+</div>
+<h3 id="cryspy-0100----0103">CrySPY 0.10.0 &ndash; 0.10.3</h3>
+<p>Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.</p>
+<ul>
+<li>Python 3.x.x
+<ul>
+<li><a href="https://github.com/Tomoki-YAMASHITA/combo3" target="_blank">COMBO</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i> (&gt;= 0.2.2)</li>
+<li>(PyXtal requires pymatgen) <a href="https://pymatgen.org/" target="_blank">pymatgen</a><i class="fas fa-external-link-alt"></i> (&gt;= 2022.x.x)</li>
+</ul>
+</li>
+</ul>
+<h3 id="cryspy-092">CrySPY 0.9.2</h3>
+<p>Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.</p>
+<ul>
+<li>Python 3.x.x
+<ul>
+<li><a href="https://github.com/Tomoki-YAMASHITA/combo3" target="_blank">COMBO</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://pymatgen.org/" target="_blank">pymatgen</a><i class="fas fa-external-link-alt"></i> (&gt;= 2022.x.x)</li>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i> (&gt;= 0.2.2)</li>
+</ul>
+</li>
+</ul>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>[2021 July 15]
+PyXtal 0.2.9以上を使う場合は，CrySPYを0.10.0以上にアップデートすること．</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>[2021 March 18]
+pymatgen 2022.x.x.でbreaking changeがあって，importの書き方等が変わった． CrySPY 0.9.2とPyXtal 0.2.2はpymatgen 2022をサポート．</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>[2021 Feb. 5]
+PyXtalを使うにはnumbaが必要だが，numbaは現在のところPython 3.9に対応していないのでしばらくはPython 3.9ではなくPython 3.8を利用する．<br>
+[2021 March 18]
+numbaがPython 3.9.xをサポート．CrySPYもPython 3.9で動作可能</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>[2021 Feb. 7]
+PyXtalではSciPyが使われているが, 最新のSciPy(v1.6.0)ではdeepcopyを使うとバグが出る．
+SciPyはv1.5.4を利用する．<br>
+[2021 March 18] 上記バグはSciPy 1.6.1で修正された．</p>
+  </div>
+</div>
+<h3 id="cryspy-090----091">CrySPY 0.9.0 &ndash; 0.9.1</h3>
+<ul>
+<li>Python 3.8.x
+<ul>
+<li><a href="https://github.com/Tomoki-YAMASHITA/combo3" target="_blank">COMBO</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://pymatgen.org/" target="_blank">pymatgen</a><i class="fas fa-external-link-alt"></i> (&lt;= 2021.x.x)</li>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal 0.1.6 - 0.2.1</a><i class="fas fa-external-link-alt"></i></li>
+</ul>
+</li>
+</ul>
+<h3 id="cryspy-080-or-earlier">CrySPY 0.8.0 or earlier</h3>
+<p>CrySPY本体に同梱されている古いドキュメントを見ること．</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="構造最適化ソフト">構造最適化ソフト</h1>
+
+<h2 id="構造最適化ソフト">構造最適化ソフト</h2>
+<p>少なくとも１つは必要．</p>
+<ul>
+<li>第一原理計算
+<ul>
+<li><a href="https://www.vasp.at" target="_blank">VASP</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="http://www.quantum-espresso.org" target="_blank">QUANTUM ESPRESSO</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="http://www.openmx-square.org/" target="_blank">OpenMX</a><i class="fas fa-external-link-alt"></i> (CrySPY 0.9.0 以上)</li>
+</ul>
+</li>
+<li>原子間ポテンシャル
+<ul>
+<li><a href="https://github.com/nbsato/soiap" target="_blank">soiap</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="http://lammps.sandia.gov" target="_blank">LAMMPS</a><i class="fas fa-external-link-alt"></i></li>
+</ul>
+</li>
+</ul>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="find_wy-オプション">find_wy (オプション)</h1>
+
+<p>CrySPYではこれまで，任意の空間群（対称性）持つ構造を生成するために<a href="https://github.com/nim-hrkn/find_wy" target="_blank">find_wy</a><i class="fas fa-external-link-alt"></i>を利用してきた．しかし，CrySPY 0.9.0からはデフォルトでは<a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i>ライブラリを採用している．
+CrySPY 0.9.0 以上で構造生成にPyXtalを使う場合は，find_wyのインストールはスキップできる．
+従来通りfind_wyを利用することももちろん可能である．
+CrySPY 0.8.0 以前のものでは，空間群を考慮した構造生成にはfind_wyのインストールが必要となる．</p>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>CrySPY 0.9.0 以上ではfind_wyのインストールはスキップできる．</p>
+  </div>
+</div>
+<h2 id="find_wyのインストール">find_wyのインストール</h2>
+<h3 id="m_tspace">m_tspace</h3>
+<p>find_wyをコンパイルするためには，まずは<a href="https://github.com/nim-hrkn/m_tspace" target="_blank">m_tspace</a><i class="fas fa-external-link-alt"></i>をコンパイルして，ライブラリを生成する必要がある．詳細は以下のm_tspaceのサイトを参照すること．</p>
+<ul>
+<li><a href="https://github.com/nim-hrkn/m_tspace" target="_blank">m_tspace</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://github.com/nim-hrkn/m_tspace/wiki" target="_blank">Wiki of m_tspace</a><i class="fas fa-external-link-alt"></i></li>
+</ul>
+<p>m_tspace のソースをgitでダウンロードしてくる．ダウンロード先は例えば</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir -p ~/local
+</span></span><span style="display:flex;"><span>$ cd ~/local
+</span></span><span style="display:flex;"><span>$ git clone https://github.com/nim-hrkn/m_tspace.git
+</span></span></code></pre></div><p>m_tspace のコンパイルにはさらに二つのファイルが必要となる．</p>
+<p><a href="http://phoenix.mp.es.osaka-u.ac.jp/~tspace/" target="_blank">TSPASE</a><i class="fas fa-external-link-alt"></i>
+から下記ファイルを<code>~/local/m_tspace</code>にダウンロードする:</p>
+<ul>
+<li><i class="far fa-file-alt"></i> <a href="http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/tsp98.f" target="_blank">tsp98.f</a></li>
+<li><i class="far fa-file-alt"></i> <a href="http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/prmtsp.f" target="_blank">prmtsp.f</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd m_tspace
+</span></span><span style="display:flex;"><span>$ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/tsp98.f
+</span></span><span style="display:flex;"><span>$ wget http://phoenix.mp.es.osaka-u.ac.jp/~tspace/tspace_main/tsp07/prmtsp.f
+</span></span></code></pre></div><p>makefileをコンパイラに合わせて編集して，makeする．
+コンパイラに<code>ifort</code>を使う場合は，<code>-check all</code>オプションを消さないとうまく動かない．また<code>-O2</code>オプションを設定する．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ emacs makefile
+</span></span><span style="display:flex;"><span>$ head -n <span style="color:#ae81ff">4</span> makefile
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#FC=gfortran</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#FFLAGS=-g -cpp -DUSE_GEN -ffixed-line-length-255</span>
+</span></span><span style="display:flex;"><span>FC<span style="color:#f92672">=</span>ifort
+</span></span><span style="display:flex;"><span>FFLAGS<span style="color:#f92672">=</span>-O2 -g -traceback -cpp -DUSE_GEN -132
+</span></span><span style="display:flex;"><span>$ make
+</span></span></code></pre></div><p><code>gfortran</code>を使う場合は，以下のようなエラーに遭遇するかもしれない．</p>
+<pre tabindex="0"><code>tsp98.f:9839:32:
+
+       CALL SUBGRP(MG,JG,MGT,JGT,NTAB,IND)
+                                1
+Error: Actual argument contains too few elements for dummy argument &#39;ntab&#39; (12/48) at (1)
+make: *** [tsp98.o] Error 1
+</code></pre><p>その時は<code>tsp98.f</code>を以下のように書き換える(9925行目):</p>
+<p>Before:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span><span style="color:#ae81ff">9913</span>: C <span style="color:#66d9ef">SUBROUTINE</span> SUBGRP <span style="color:#f92672">====*====</span><span style="color:#ae81ff">3</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">4</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">5</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">6</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9914</span>: C
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9915</span>: C    <span style="color:#66d9ef">IF</span> (JG(I),I<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MG) <span style="color:#66d9ef">IS</span> A SUBGROUP OF (JGT(J),J<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MGT) <span style="color:#66d9ef">THEN</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9916</span>: C          TABLE (NTAB(I),I<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MG) <span style="color:#66d9ef">IS</span> MADE HERE AND IND<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9917</span>: C    <span style="color:#66d9ef">ELSE</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9918</span>: C          IND<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9919</span>: C
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9920</span>: C                 <span style="color:#ae81ff">1993</span><span style="color:#f92672">/</span><span style="color:#ae81ff">12</span><span style="color:#f92672">/</span><span style="color:#ae81ff">25</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9921</span>: C                   BY  S.TANAKA AND A. YANASE
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9922</span>: C<span style="color:#f92672">---*----</span><span style="color:#ae81ff">1</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">2</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">3</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">4</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">5</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">6</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9923</span>: C
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9924</span>:       <span style="color:#66d9ef">SUBROUTINE</span> SUBGRP(MG,JG,MGT,JGT,NTAB,IND)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9925</span>:       <span style="color:#66d9ef">DIMENSION</span> NTAB(<span style="color:#ae81ff">48</span>),JG(<span style="color:#ae81ff">48</span>),JGT(<span style="color:#ae81ff">48</span>)
+</span></span></code></pre></div><p>After:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span><span style="color:#ae81ff">9913</span>: C <span style="color:#66d9ef">SUBROUTINE</span> SUBGRP <span style="color:#f92672">====*====</span><span style="color:#ae81ff">3</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">4</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">5</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">6</span><span style="color:#f92672">====*====</span><span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9914</span>: C
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9915</span>: C    <span style="color:#66d9ef">IF</span> (JG(I),I<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MG) <span style="color:#66d9ef">IS</span> A SUBGROUP OF (JGT(J),J<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MGT) <span style="color:#66d9ef">THEN</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9916</span>: C          TABLE (NTAB(I),I<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,MG) <span style="color:#66d9ef">IS</span> MADE HERE AND IND<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9917</span>: C    <span style="color:#66d9ef">ELSE</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9918</span>: C          IND<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9919</span>: C
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9920</span>: C                 <span style="color:#ae81ff">1993</span><span style="color:#f92672">/</span><span style="color:#ae81ff">12</span><span style="color:#f92672">/</span><span style="color:#ae81ff">25</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9921</span>: C                   BY  S.TANAKA AND A. YANASE
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9922</span>: C<span style="color:#f92672">---*----</span><span style="color:#ae81ff">1</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">2</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">3</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">4</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">5</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">6</span><span style="color:#f92672">----*----</span><span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9923</span>: C
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9924</span>:       <span style="color:#66d9ef">SUBROUTINE</span> SUBGRP(MG,JG,MGT,JGT,NTAB,IND)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9925</span>:       <span style="color:#66d9ef">DIMENSION</span> NTAB(<span style="color:#ae81ff">12</span>),JG(<span style="color:#ae81ff">48</span>),JGT(<span style="color:#ae81ff">48</span>)
+</span></span></code></pre></div><p>コンパイルに成功すれば<code>m_tsp.a</code>というライブラリができる．</p>
+<h3 id="find_wy">find_wy</h3>
+<p>詳細はfind_wyのサイトをチェックすること:</p>
+<ul>
+<li><a href="https://github.com/nim-hrkn/find_wy" target="_blank">find_wy</a><i class="fas fa-external-link-alt"></i></li>
+<li><a href="https://github.com/nim-hrkn/find_wy/wiki" target="_blank">Wiki of find_wy</a><i class="fas fa-external-link-alt"></i></li>
+</ul>
+<p>find_wyのソースをgitでクローンしてくる．例えば:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir -p ~/local
+</span></span><span style="display:flex;"><span>$ cd ~/local
+</span></span><span style="display:flex;"><span>$ git clone https://github.com/nim-hrkn/find_wy.git
+</span></span></code></pre></div><p><code>make.inc</code>を編集して，先ほど用意した<code>m_tsp.a</code>のパスを設定する．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd find_wy
+</span></span><span style="display:flex;"><span>$ emacs make.inc
+</span></span><span style="display:flex;"><span>$ head -n <span style="color:#ae81ff">4</span> make.inc
+</span></span><span style="display:flex;"><span>TSPPATH<span style="color:#f92672">=</span>~/local/m_tspace
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#INCPATH = -I $(TSPPATH)</span>
+</span></span><span style="display:flex;"><span>TSP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>TSPPATH<span style="color:#66d9ef">)</span>/m_tsp.a
+</span></span></code></pre></div><p>ここでも<code>-check all</code>を削除して<code>-O2</code>オプションを付けた方が良い．
+準備できたら<code>make</code>する．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ make
+</span></span></code></pre></div><p>コンパイルできてfind_wyの実行ファイルが得られたら，実行してテストする．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ./find_wy input_sample/input_si4o8.txt
+</span></span></code></pre></div><p>問題なければ<code>POS_WY_SKEL_ALL.json</code>などのファイルが生成される．</p>
+<h2 id="find_wyの実行ファイル">find_wyの実行ファイル</h2>
+<h3 id="cryspy-100-or-later">CrySPY 1.0.0 or later</h3>
+<p>PATHが通ったところにfind_wyの実行ファイルを置く．もしくは下記のように<code>cryspy.in</code>で実行ファイルのpathを指定する.</p>
+<pre tabindex="0"><code>[structure]
+use_find_wy = True
+fwpath = /xxx/xxx/xxx/find_wy
+</code></pre><h3 id="cryspy-0103-or-earlier">CrySPY 0.10.3 or earlier</h3>
+<p>CrySPYでfind_wyを構造生成に用いる場合は所定の位置にfind_wyの実行ファイルを置いておく必要がるので，CrySPY本体をダウンロード後にfind_wyの実行ファイルをコピーしておく．CrySPYは任意のディレクトリに設置できるので，例えば<code>~/CrySPY_root/CrySPY-x.x.x/CrySPY/find_wy/find_wy</code>．</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          </section>        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

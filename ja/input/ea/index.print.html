@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>[EA] section :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/input/ea/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/input/ea/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/ea/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/ea/index.html" rel="canonical" type="text/html" title="[EA] section :: CrySPY">
+    <link href="../../../ja/input/ea/index.xml" rel="alternate" type="application/rss+xml" title="[EA] section :: CrySPY">
+    <link href="../../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../../js/url.js?1679295958"></script>
+    <script src="../../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../ja/index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'クリップボードにコピー';
+      window.T_Copied_to_clipboard = 'クリップボードにコピー!';
+      window.T_Copy_link_to_clipboard = 'リンクをクリップボードにコピー';
+      window.T_Link_copied_to_clipboard = 'リンクをクリップボードにコピーしました!';
+      window.T_No_results_found = '\u0022{0}\u0022 の結果が見つかりません';
+      window.T_N_results_found = '\u0022{0}\u0022 で {1} 件の結果が見つかりました';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../../ja/input/ea/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='メニュー (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../ja/index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../ja/input/index.html"><span itemprop="name">入力ファイル</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">[EA] section</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="ea-section">[EA] section</h1>
+
+<p>[EA] section is required only if you use EA (<code>algo = EA</code>)</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>n_pop</code></td>
+<td>int</td>
+<td></td>
+<td>Population from second generation.</td>
+</tr>
+<tr>
+<td><code>n_crsov</code></td>
+<td>int</td>
+<td></td>
+<td>The number of structures generated by crossover.</td>
+</tr>
+<tr>
+<td><code>n_perm</code></td>
+<td>int</td>
+<td></td>
+<td>The number of structures generated by permutation.</td>
+</tr>
+<tr>
+<td><code>n_strain</code></td>
+<td>int</td>
+<td></td>
+<td>The number of structures generated by strain.</td>
+</tr>
+<tr>
+<td><code>n_rand</code></td>
+<td>int</td>
+<td></td>
+<td>The number of structures generated randomly.</td>
+</tr>
+<tr>
+<td><code>n_elite</code></td>
+<td>int</td>
+<td></td>
+<td>The number of elite structures.</td>
+</tr>
+<tr>
+<td><code>fit_reverse</code></td>
+<td>bool</td>
+<td><code>False</code></td>
+<td>If <code>False</code>, minimal search.</td>
+</tr>
+<tr>
+<td><code>n_fittest</code></td>
+<td>int</td>
+<td><code>None</code></td>
+<td>The number of structures which can survive.</td>
+</tr>
+<tr>
+<td><code>slct_func</code></td>
+<td><code>TNM</code>, <code>RLT</code></td>
+<td></td>
+<td>Select function.</td>
+</tr>
+<tr>
+<td><code>t_size</code></td>
+<td>int</td>
+<td>3</td>
+<td>Only used with <code>slct_func = TNM</code>. Tournament size.</td>
+</tr>
+<tr>
+<td><code>a_rlt</code></td>
+<td>float</td>
+<td>10.0</td>
+<td>Only used with <code>slct_func = RLT</code>. Parameter for linear scaling.</td>
+</tr>
+<tr>
+<td><code>b_rlt</code></td>
+<td>float</td>
+<td>1.0</td>
+<td>Only used with <code>slct_func = RLT</code>. Parameter for linear scaling.</td>
+</tr>
+<tr>
+<td><code>crs_lat</code></td>
+<td><code>equal</code>, <code>random</code></td>
+<td><code>equal</code></td>
+<td>How to mix lattice vectors.</td>
+</tr>
+<tr>
+<td><code>nat_diff_tole</code></td>
+<td>int</td>
+<td>4</td>
+<td>Tolerance for difference in the number of atoms in crossover.</td>
+</tr>
+<tr>
+<td><code>ntimes</code></td>
+<td>int</td>
+<td>1</td>
+<td>The number of times in permutation.</td>
+</tr>
+<tr>
+<td><code>sigma_st</code></td>
+<td>float</td>
+<td>0.5</td>
+<td>Standard deviation for strain.</td>
+</tr>
+<tr>
+<td><code>maxcnt_ea</code></td>
+<td>int</td>
+<td>50</td>
+<td>Maximum number of trials in EA.</td>
+</tr>
+<tr>
+<td><code>maxgen_ea</code></td>
+<td>int</td>
+<td>0</td>
+<td>Maximum generation.</td>
+</tr>
+<tr>
+<td><code>emax_ea</code></td>
+<td>float</td>
+<td><code>None</code></td>
+<td>Upper limit of energy in selecting parents.</td>
+</tr>
+<tr>
+<td><code>emin_ea</code></td>
+<td>float</td>
+<td><code>None</code></td>
+<td>Lower limit of energy in selecting parents.</td>
+</tr>
+</tbody>
+</table>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

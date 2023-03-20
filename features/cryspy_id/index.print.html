@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>CrySPY_ID in job files :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/cryspy_id/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/cryspy_id/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/cryspy_id/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/cryspy_id/index.html" rel="canonical" type="text/html" title="CrySPY_ID in job files :: CrySPY">
+    <link href="../../features/cryspy_id/index.xml" rel="alternate" type="application/rss+xml" title="CrySPY_ID in job files :: CrySPY">
+    <link href="../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../js/url.js?1679295958"></script>
+    <script src="../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../index.search.js";
+      var root_url="../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../features/cryspy_id/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../features/index.html"><span itemprop="name">Features</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">CrySPY_ID in job files</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="cryspy_id-in-job-files">CrySPY_ID in job files</h1>
+
+<p>In the job file of CrySPY, the string &ldquo;CrySPY_ID&rdquo; is automatically replaced with the structure ID.
+When you use a job scheduler such as PBS and SLURM, it is useful to set the structure ID to the job name.
+For example, in the PBS system, <code>#PBS -N Si_CrySPY_ID</code> in ID 10 is replaced with <code>#PBS -N Si_10</code>.
+Note that starting with a number will result in an error.
+You should add a prefix like <code>Si_</code>.</p>
+<pre tabindex="0"><code>#!/bin/sh
+#$ -cwd
+#$ -V -S /bin/bash
+####$ -V -S /bin/zsh
+#$ -N Si8_CrySPY_ID
+#$ -pe smp 8
+####$ -q ibis1.q
+####$ -q ibis2.q
+
+mpirun -np $NSLOTS pw.x -nk 4 -nb 2 &lt; pwscf.in &gt; pwscf.out
+
+
+if [ -e &#34;CRASH&#34; ]; then
+    exit 1
+fi
+
+sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
+</code></pre>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

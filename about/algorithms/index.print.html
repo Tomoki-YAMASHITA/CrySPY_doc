@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>Searching algorithms :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/algorithms/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/about/algorithms/index.html" rel="canonical" type="text/html" title="Searching algorithms :: CrySPY">
+    <link href="../../about/algorithms/index.xml" rel="alternate" type="application/rss+xml" title="Searching algorithms :: CrySPY">
+    <link href="../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../js/url.js?1679295958"></script>
+    <script src="../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../index.search.js";
+      var root_url="../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../about/algorithms/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../about/index.html"><span itemprop="name">About CrySPY</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Searching algorithms</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="searching-algorithms">Searching algorithms</h1>
+
+<p>The following searching algorithms are available in CrySPY:</p>
+<ul>
+<li>Random Search (RS)</li>
+<li>Evolutionary Algorithm (EA)</li>
+<li>Bayesian Optimization (BO)</li>
+<li>Look Ahead based on Quadratic Approximation (LAQA)</li>
+</ul>
+<h2 id="in-a-nutshell">In a nutshell</h2>
+<h3 id="random-search-rs">Random Search (RS)</h3>
+<p>Random.</p>
+<h3 id="evolutionary-algorithm-ea">Evolutionary Algorithm (EA)</h3>
+<p>EA for crystal structure prediction has been developed by <a href="https://uspex-team.org/en/uspex/overview" target="_blank">Oganov's group</a><i class="fas fa-external-link-alt"></i>.<br>
+We also employ EA in CrySPY, and support the following:</p>
+<ul>
+<li>Selection methods
+<ul>
+<li>Tournament selection</li>
+<li>Roulette selection</li>
+<li>Elite selection</li>
+</ul>
+</li>
+<li>Evolutionary operations
+<ul>
+<li>Crossover</li>
+<li>Permutation</li>
+<li>Strain</li>
+</ul>
+</li>
+<li>etc.
+<ul>
+<li>Survival of the fittest</li>
+<li>Dedupe structures in survival of the fittest</li>
+</ul>
+</li>
+</ul>
+<h3 id="bayesian-optimization-bo">Bayesian Optimization (BO)</h3>
+<p>One of the selection-type algorithms.</p>
+<p>
+		
+<a href="#image-47b5fa2f545a6f45e62dd8913b8d92f6" class="lightbox-link">
+<img src="../../images/BO/BO.png?width=40vw" alt="fig_BO" style="height: auto; width: 40vw;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-47b5fa2f545a6f45e62dd8913b8d92f6">
+<img src="../../images/BO/BO.png?width=40vw" alt="fig_BO" class="lightbox-image" loading="lazy">
+</a></p>
+<h3 id="look-ahead-based-on-quadratic-approximation-laqa">Look Ahead based on Quadratic Approximation (LAQA)</h3>
+<p>One of the selection-type algorithms.</p>
+<p>
+		
+<a href="#image-a37f3d649595b7af58a1ac62dea6f397" class="lightbox-link">
+<img src="../../images/LAQA/laqa_concept.png?width=30vw" alt="fig_LAQA" style="height: auto; width: 30vw;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-a37f3d649595b7af58a1ac62dea6f397">
+<img src="../../images/LAQA/laqa_concept.png?width=30vw" alt="fig_LAQA" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+		
+<a href="#image-49f963f69f1ca5bb4ebd888526351063" class="lightbox-link">
+<img src="../../images/LAQA/LAQA.gif?width=40vw" alt="fig_LAQA" style="height: auto; width: 40vw;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-49f963f69f1ca5bb4ebd888526351063">
+<img src="../../images/LAQA/LAQA.gif?width=40vw" alt="fig_LAQA" class="lightbox-image" loading="lazy">
+</a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

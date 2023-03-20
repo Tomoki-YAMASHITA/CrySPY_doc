@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>Tutorial :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/index.html" rel="canonical" type="text/html" title="Tutorial :: CrySPY">
+    <link href="../tutorial/index.xml" rel="alternate" type="application/rss+xml" title="Tutorial :: CrySPY">
+    <link href="../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../js/url.js?1679295958"></script>
+    <script src="../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../index.search.js";
+      var root_url="../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../tutorial/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Tutorial</span><meta itemprop="position" content="2"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter deprecated">
+
+<h1 id="tutorial">Tutorial</h1>
+<h2 id="table-of-contents">Table of contents</h2>
+
+<ul class="children children-li children-sort-">
+	
+<li><a href="../tutorial/random/index.html">Random Search (RS)</a><ul>
+	
+<li><a href="../tutorial/random/soiap/index.html">soiap in your local PC</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/vasp/index.html">VASP</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/qe/index.html">QE</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/omx/index.html">OpenMX</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/lammps/index.html">LAMMPS</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/external/index.html">External program</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/cryspy_in/index.html">Check cryspy.in</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/script_to_run/index.html">Script to run</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/first_run/index.html">Firsrt run</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/submit_job/index.html">Submit job</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/result/index.html">Check results</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/append/index.html">Append structures</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/analysis_visualization/index.html">Analysis and visualization</a><ul>
+	</ul></li>
+<li><a href="../tutorial/random/ext_load_data/index.html">Load external data</a><ul>
+	</ul></li></ul></li>
+<li><a href="../tutorial/ea/index.html">Evolutionary Algorithm (EA)</a><ul>
+	</ul></li>
+<li><a href="../tutorial/bo/index.html">Bayesian Optimization (BO)</a><ul>
+	</ul></li>
+<li><a href="../tutorial/laqa/index.html">LAQA</a><ul>
+	</ul></li>
+<li><a href="../tutorial/restrict_dist/index.html">Restriction on interatomic distances</a><ul>
+	</ul></li>
+<li><a href="../tutorial/mol/index.html">Molecular crystal structure prediction</a><ul>
+	</ul></li>
+</ul>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Tutorial</h1>
+          <article class="default">
+<h1 id="random-search-rs">Random Search (RS)</h1>
+
+<h2 id="preparation-of-input-files">Preparation of input files</h2>
+<p>Follow any one of the examples and then go to &ldquo;Running CrySPY&rdquo; section.</p>
+<ul>
+<li><a href="../tutorial/random/soiap/">soiap in your local PC</a></li>
+<li><a href="../tutorial/random/vasp/">VASP</a></li>
+<li><a href="../tutorial/random/qe/">QE</a></li>
+<li><a href="../tutorial/random/omx/">OpenMX</a></li>
+<li><a href="../tutorial/random/lammps/">LAMMPS</a></li>
+<li><a href="../tutorial/random/external/">External program</a></li>
+</ul>
+<h2 id="running-cryspy">Running CrySPY</h2>
+<ol>
+<li><a href="../tutorial/random/cryspy_in/">Check cryspy.in</a></li>
+<li><a href="../tutorial/random/script_to_run/">(version 0.10.3 or earlier) Script to run</a></li>
+<li><a href="../tutorial/random/first_run/">First run</a></li>
+<li><a href="../tutorial/random/submit_job/">Submit job</a></li>
+<li><a href="../tutorial/random/result/">Check results</a></li>
+<li><a href="../tutorial/random/append/">Append structures</a></li>
+<li><a href="../tutorial/random/analysis_visualization/">Analysis and visualization</a></li>
+</ol>
+<h3 id="loading-external-data">Loading external data</h3>
+<p>Only if <code>calc_code == ext</code>.</p>
+<ul>
+<li><a href="../tutorial/random/ext_load_data/">Load external data</a></li>
+</ul>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Random Search (RS)</h1>
+          <article class="default">
+<h1 id="soiap-in-your-local-pc">soiap in your local PC</h1>
+
+<p><a href="https://github.com/nbsato/soiap" target="_blank">soiap</a><i class="fas fa-external-link-alt"></i> is Structure Optimization with InterAtomic Potential.
+It is suitable for testing CrySPY because of its fast structure optimization.
+See <a href="https://github.com/nbsato/soiap/blob/master/doc/instructions.md" target="_blank">instructions</a><i class="fas fa-external-link-alt"></i> to install soiap.</p>
+<p>In this tutorial, we try to use CrySPY in your local PC (Mac or Linux).
+The target system is Si 8 atoms.</p>
+<h2 id="assumption">Assumption</h2>
+<p>Here, we assume the following conditions:</p>
+<ul>
+<li>(version 0.10.3 or earlier) CrySPY main script: <code>~/CrySPY_root/CrySPY-0.9.0/cryspy.py</code></li>
+<li>CrySPY job filename: <code>job_cryspy</code></li>
+<li>soiap executable file: <code>~/local/soiap-0.3.0/src/soiap</code></li>
+<li>soiap input filename: <code>soiap.in</code></li>
+<li>soiap output filename: <code>soiap.out</code></li>
+<li>soiap input structure filename: <code>initial.cif</code></li>
+</ul>
+<h2 id="input-files">Input files</h2>
+<p>Move to your working directory, and copy input example files.</p>
+<ul>
+<li>version 1.0.0 or later
+<ul>
+<li>Copy from CrySPY utility</li>
+</ul>
+</li>
+<li>version 0.10.3 or earlier
+<ul>
+<li><code>cp -r ~/CrySPY_root/CrySPY-0.9.0/example/v0.9.0/soiap_RS_Si8 .</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cd soiap_RS_Si8
+</span></span><span style="display:flex;"><span>tree
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── calc_in
+</span></span><span style="display:flex;"><span>│   ├── job_cryspy
+</span></span><span style="display:flex;"><span>│   └── soiap.in_1
+</span></span><span style="display:flex;"><span>└── cryspy.in
+</span></span></code></pre></div><h3 id="cryspyin">cryspy.in</h3>
+<p><code>cryspy.in</code> is the input file of CrySPY.</p>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = soiap
+tot_struc = 5
+nstage = 1
+njob = 2
+jobcmd = zsh
+jobfile = job_cryspy
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+
+[soiap]
+soiap_infile = soiap.in
+soiap_outfile = soiap.out
+soiap_cif = initial.cif
+
+[option]
+</code></pre><p>In <code>[basic]</code> section, <code>jobcmd = zsh</code> can be changed to <code>jobcmd = sh</code> or <code>jobcmd = bash</code> in accordance with your environment.
+CrySPY runs <code>zsh job_cryspy</code> as a background job internally.</p>
+<p><code>[soiap]</code> section is required when you use soiap.</p>
+<p>You can name the following files whatever you want:</p>
+<ul>
+<li><code>jobfile</code></li>
+<li><code>soiap_infile</code></li>
+<li><code>soiap_outfile</code></li>
+<li><code>soiap_cif</code></li>
+</ul>
+<p>The other input variables are discussed later.</p>
+<h3 id="calc_in-directory">calc_in directory</h3>
+<p>The job file and input files for soiap are prepared in this directory.</p>
+<h4 id="job-file">Job file</h4>
+<p>The name of the job file must match the value of <code>jobfile</code> in <code>cryspy.in</code>.
+The example of job file (here, <code>job_cryspy</code>) is shown below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- soiap</span>
+</span></span><span style="display:flex;"><span>EXEPATH<span style="color:#f92672">=</span>/path/to/soiap
+</span></span><span style="display:flex;"><span>$EXEPATH/soiap soiap.in 2&gt;&amp;<span style="color:#ae81ff">1</span> &gt; soiap.out
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- CrySPY</span>
+</span></span><span style="display:flex;"><span>sed -i -e <span style="color:#e6db74">&#39;3 s/^.*$/done/&#39;</span> stat_job
+</span></span></code></pre></div><p>Change <code>/path/to/soiap</code> into right path suitable for your environment.
+You can specify the input (<code>soiap.in</code>) and output (<code>soiap.out</code>) file names,
+but they must match the values of <code>soiap_infile</code> and <code>soiap_outfile</code> in <code>cryspy.in</code>.
+The job file is written in the same way as the one you usually use except for the last line.
+You must add <code>sed -i -e '3 s/^.*$/done/' stat_job</code> at the end of the file in CrySPY.</p>
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+<p><code>sed -i -e '3 s/^.*$/done/' stat_job</code> is required at the end of the job file.</p>
+  </div>
+</div>
+
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+<p>In the job file of CrySPY, the string &ldquo;CrySPY_ID&rdquo; is automatically replaced with the structure ID.
+When you use a job scheduler such as PBS and SLURM, it is useful to set the structure ID to the job name.
+For example, in the PBS system, <code>#PBS -N Si_CrySPY_ID</code> in ID 10 is replaced with <code>#PBS -N Si_10</code>.
+Note that starting with a number will result in an error.
+You should add a prefix like <code>Si_</code>.</p>
+  </div>
+</div>
+<h4 id="input-for-soiap">Input for soiap</h4>
+<p>Input files based on the number of stages (<code>nstage</code> in <code>cryspy.in</code>) are required.
+Name the input file(s) with a suffix <code>_x</code>.
+Here <code>x</code> means the stage number.</p>
+<p>We are using <code>nstage = 1</code>, so we need only <code>soiap.in_1</code>.</p>
+<p><code>soiap.in_1</code> is listed below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span>crystal initial.cif <span style="color:#75715e">! CIF file for the initial structure
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>symmetry <span style="color:#ae81ff">1</span> <span style="color:#75715e">! 0: not symmetrize displacements of the atoms or 1: symmetrize
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>md_mode_cell <span style="color:#ae81ff">3</span> <span style="color:#75715e">! cell-relaxation method
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>               <span style="color:#75715e">! 0: FIRE, 2: quenched MD, or 3: RFC5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>number_max_relax_cell <span style="color:#ae81ff">100</span> <span style="color:#75715e">! max. number of the cell relaxation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>number_max_relax <span style="color:#ae81ff">1</span> <span style="color:#75715e">! max. number of the atom relaxation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>max_displacement <span style="color:#ae81ff">0.1</span> <span style="color:#75715e">! max. displacement of atoms in Bohr
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>external_stress_v <span style="color:#ae81ff">0.0</span> <span style="color:#ae81ff">0.0</span> <span style="color:#ae81ff">0.0</span> <span style="color:#75715e">! external pressure in GPa
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>th_force <span style="color:#ae81ff">5</span>d<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span> <span style="color:#75715e">! convergence threshold for the force in Hartree a.u.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>th_stress <span style="color:#ae81ff">5</span>d<span style="color:#f92672">-</span><span style="color:#ae81ff">7</span> <span style="color:#75715e">! convergence threshold for the stress in Hartree a.u.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>force_field <span style="color:#ae81ff">1</span> <span style="color:#75715e">! force field
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>              <span style="color:#75715e">! 1: Stillinger-Weber for Si, 2: Tsuneyuki potential for SiO2,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>              <span style="color:#75715e">! 3: ZRL for Si-O-N-H, 4: ADP for Nd-Fe-B, 5: Jmatgen, or
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>              <span style="color:#75715e">! 6: Lennard-Jones
+</span></span></span></code></pre></div><p>The input structure file is specified at the first line.
+Use the same name as the value of <code>soiap_cif</code> in <code>cryspy.in</code>.</p>
+<h2 id="running-cryspy">Running CrySPY</h2>
+<p>Go to <a href="../tutorial/random/#running-cryspy">Running CrySPY</a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="vasp">VASP</h1>
+
+<p>Coming soon.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="qe">QE</h1>
+
+<p>In this tutorial, we try to use CrySPY in a machine with a job scheduler system such as PBS.
+Here we employ QUANTUM ESPRESSO. (QE).
+The target system is Si 8 atoms.</p>
+<h2 id="assumption">Assumption</h2>
+<p>Here, we assume the following conditions:</p>
+<ul>
+<li>(version 0.10.3 or earlier) CrySPY main script: <code>~/CrySPY_root/CrySPY-0.9.0/cryspy.py</code></li>
+<li>CrySPY job command: <code>qsub</code></li>
+<li>CrySPY job filename: <code>job_cryspy</code></li>
+<li>QE executable file: <code>/usr/local/qe-6.5/bin/pw.x</code></li>
+<li>QE input filename: <code>pwscf.in</code></li>
+<li>QE output filename: <code>pwscf.out</code></li>
+</ul>
+<h2 id="input-files">Input files</h2>
+<p>Move to your working directory, and copy input example files.</p>
+<ul>
+<li>version 1.0.0 or later
+<ul>
+<li>Copy from CrySPY utility</li>
+</ul>
+</li>
+<li>version 0.10.3 or earlier
+<ul>
+<li><code>cp -r ~/CrySPY_root/CrySPY-0.9.0/example/v0.9.0/QE_Si8_RS .</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cd QE_RS_Si8
+</span></span><span style="display:flex;"><span>tree
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── calc_in
+</span></span><span style="display:flex;"><span>│   ├── job_cryspy
+</span></span><span style="display:flex;"><span>│   ├── pwscf.in_1
+</span></span><span style="display:flex;"><span>│   └── pwscf.in_2
+</span></span><span style="display:flex;"><span>└── cryspy.in
+</span></span></code></pre></div><h3 id="cryspyin">cryspy.in</h3>
+<p><code>cryspy.in</code> is the input file of CrySPY.</p>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = QE
+tot_struc = 5
+nstage = 2
+njob = 1
+jobcmd = qsub
+jobfile = job_cryspy
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+
+[QE]
+qe_infile = pwscf.in
+qe_outfile = pwscf.out
+kppvol =  40  80
+
+[option]
+</code></pre><p>In <code>[basic]</code> section, <code>jobcmd = qsub</code> can be changed in accordance with your environment.
+CrySPY runs <code>qsub job_cryspy</code> as a background job internally in this setting.</p>
+<p>We adopt a stage-based system for structure optimization calculations.
+Here, we use <code>nstage = 2</code>.
+For example, users can configure the following settings.
+In the first stage, only the ionic positions are relaxed, fixing the cell shape, with low k-point grid density.
+Next, the ionic positions and cell shape are fully relaxed with high accuracy in the second stage.</p>
+<p><code>[QE]</code> section is required when you use QE.
+You have to specify k-point grid density (Å^-3) for each stage in <code>kppvol</code>.</p>
+<p>You can name the following files whatever you want:</p>
+<ul>
+<li><code>jobfile</code></li>
+<li><code>qe_infile</code></li>
+<li><code>qe_outfile</code></li>
+</ul>
+<p>The other input variables are discussed later.</p>
+<h3 id="calc_in-directory">calc_in directory</h3>
+<p>The job file and input files for QE are prepared in this directory.</p>
+<h4 id="job-file">Job file</h4>
+<p>The name of the job file must match the value of <code>jobfile</code> in <code>cryspy.in</code>.
+The example of job file (here, <code>job_cryspy</code>) is shown below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#$ -cwd</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#$ -V -S /bin/bash</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####$ -V -S /bin/zsh</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#$ -N Si8_CrySPY_ID</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#$ -pe smp 8</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####$ -q ibis1.q</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####$ -q ibis2.q</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mpirun -np $NSLOTS pw.x -nk <span style="color:#ae81ff">4</span> -nb <span style="color:#ae81ff">2</span> &lt; pwscf.in &gt; pwscf.out
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -e <span style="color:#e6db74">&#34;CRASH&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    sed -i -e <span style="color:#e6db74">&#39;3 s/^.*$/done/&#39;</span> stat_job
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sed -i -e <span style="color:#e6db74">&#39;3 s/^.*$/done/&#39;</span> stat_job
+</span></span></code></pre></div><p>Change <code>pw.x</code> to appropriate path suitable for your environment.
+You can specify the input (<code>pwscf.in</code>) and output (<code>pwscf.out</code>) file names,
+but they must match the values of <code>qe_infile</code> and <code>qe_outfile</code> in <code>cryspy.in</code>.</p>
+<p>The job file is written in the same way as the one you usually use except for the last line.
+You must add <code>sed -i -e '3 s/^.*$/done/' stat_job</code> at the end of the file in CrySPY.</p>
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+<p><code>sed -i -e '3 s/^.*$/done/' stat_job</code> is required at the end of the job file.</p>
+  </div>
+</div>
+
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+<p>In the job file of CrySPY, the string &ldquo;CrySPY_ID&rdquo; is automatically replaced with the structure ID.
+When you use a job scheduler such as PBS and SLURM, it is useful to set the structure ID to the job name.
+For example, in the PBS system, <code>#PBS -N Si_CrySPY_ID</code> in ID 10 is replaced with <code>#PBS -N Si_10</code>.
+Note that starting with a number will result in an error.
+You should add a prefix like <code>Si_</code>.</p>
+  </div>
+</div>
+<h4 id="input-for-qe">Input for QE</h4>
+<p>Input files based on the number of stages (<code>nstage</code> in <code>cryspy.in</code>) are required.
+Name the input file(s) with a suffix <code>_x</code>.
+Here <code>x</code> means the stage number.</p>
+<p>We are using <code>nstage = 2</code>, so we need <code>pwscf.in_1</code> and <code>pwscf.in_2</code>.
+For example, users can configure the following settings.
+In the first stage, only the ionic positions are relaxed, fixing the cell shape.
+Next, the ionic positions and cell shape are fully relaxed in the second stage.</p>
+<p><code>pwscf.in_1</code> is listed below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span> &amp;control
+</span></span><span style="display:flex;"><span>    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Si8&#39;</span>
+</span></span><span style="display:flex;"><span>    calculation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;relax&#39;</span>
+</span></span><span style="display:flex;"><span>    nstep <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>    restart_mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;from_scratch&#39;</span>,
+</span></span><span style="display:flex;"><span>    pseudo_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/&#39;</span>
+</span></span><span style="display:flex;"><span>    outdir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./out.d/&#39;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;system
+</span></span><span style="display:flex;"><span>    ibrav <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>    ntyp <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    ecutwfc <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">4.0</span>
+</span></span><span style="display:flex;"><span>    occupations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;smearing&#39;</span>
+</span></span><span style="display:flex;"><span>    degauss <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.01</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;electrons
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;ions
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;cell
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ATOMIC_SPECIES
+</span></span><span style="display:flex;"><span>  Si  <span style="color:#ae81ff">2</span><span style="color:#ae81ff">8.086</span>  Si.pbe<span style="color:#f92672">-</span>n<span style="color:#f92672">-</span>kjpaw_psl.<span style="color:#ae81ff">1.0</span>.<span style="color:#ae81ff">0.</span>UPF
+</span></span></code></pre></div><p>Change <code>pseudo_dir</code> to your suitable directory.
+Inputs for structure data and k-point such as <code>ATOMIC_POSITIONS</code> and <code>K_POINTS</code> are automatically appended by CrySPY with pymatgen.
+Users do not have to prepare them in <code>pwscf.in_x</code>.</p>
+<h2 id="running-cryspy">Running CrySPY</h2>
+<p>Go to <a href="../tutorial/random/#running-cryspy">Running CrySPY</a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="openmx">OpenMX</h1>
+
+<p>Coming soon.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="lammps">LAMMPS</h1>
+
+<p>Coming soon.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="external-program">External program</h1>
+
+<p>Available from CrySPY 0.11.0.</p>
+<p>If you use an external program not supported by CrySPY, the optimized energy and structure data can be loaded semi-manually in CrySPY.
+You have to prepare two files, <code>ext_opt_struc_data.pkl</code> and <code>ext_energy_data.pkl</code>.</p>
+<h2 id="assumption">Assumption</h2>
+<p>Here, we assume the following conditions:</p>
+<ul>
+<li>(version 0.10.3 or earlier) CrySPY main script: <code>~/CrySPY_root/CrySPY-0.11.0/cryspy.py</code></li>
+</ul>
+<p>(<code>calc_in</code> directory is not required.)</p>
+<h2 id="input-files">Input files</h2>
+<p>Move to your working directory, and copy input example files.</p>
+<ul>
+<li>version 1.0.0 or later
+<ul>
+<li>Copy from CrySPY utility</li>
+</ul>
+</li>
+<li>version 0.10.3 or earlier
+<ul>
+<li><code>cp -r ~/CrySPY_root/CrySPY-0.9.0/example/ext_Si8_RS .</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cd ext_Si8_RS
+</span></span><span style="display:flex;"><span>tree
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>└── cryspy.in
+</span></span></code></pre></div><h3 id="cryspyin">cryspy.in</h3>
+<p><code>cryspy.in</code> is the input file of CrySPY.</p>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = ext
+tot_struc = 5
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+
+[option]
+</code></pre><p>If <code>calc_code == ext</code>, <code>nstage</code>, <code>njob</code>, <code>jobcmd</code>, and <code>jobfile</code> are ignored.</p>
+<h2 id="running-cryspy">Running CrySPY</h2>
+<p>This mode is different from the normal use of CrySPY.
+Go to <a href="../tutorial/random/ext_load_data/">Load external data</a>.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="check-cryspyin">Check cryspy.in</h1>
+
+<p>See <a href="https://tomoki-yamashita.github.io/CrySPY_doc/input/">Input file</a> in detail.</p>
+<p>Let&rsquo;s take a look at <code>cryspy.in</code> again.
+This may be slightly different depending on <code>calc_code</code> you chose.</p>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = soiap
+tot_struc = 5
+nstage = 1
+njob = 2
+jobcmd = zsh
+jobfile = job_cryspy
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+
+[soiap]
+soiap_infile = soiap.in
+soiap_outfile = soiap.out
+soiap_cif = initial.cif
+
+[option]
+</code></pre><h2 id="basic-section">[basic] section</h2>
+<ul>
+<li><code>algo</code>: Algorithm. Set <code>RS</code> for Random Search.</li>
+<li><code>calc_code</code>: Structure optimizer. Choose from <code>VASP</code>, <code>QE</code>, <code>OMX</code>, <code>soiap</code>, <code>LAMMPS</code></li>
+<li><code>tot_struc</code>: The total number of structures. In this case, 5 random structures are generated at 1st run.</li>
+<li><code>nstage</code>: The number of stages. It&rsquo;s up to you.</li>
+<li><code>njob</code>: The number of jobs running at the same time. In this example, CrySPY sets 2 slots for structure optimization, in other words, optimizes every 2 structures.</li>
+<li><code>jobcmd</code>: Command for jobs. Use <code>bash</code>, <code>zsh</code>, <code>qsub</code>, and so on.</li>
+<li><code>jobfile</code>: File name of the job file.</li>
+</ul>
+<h2 id="structure-section">[structure] section</h2>
+<ul>
+<li><code>natot</code>: The total number of atoms. e.g. for Na8Cl8: <code>natot = 16</code>.</li>
+<li><code>atype</code>: Atom type. e.g. for Na8Cl8: <code>atype = Na Cl</code>.</li>
+<li><code>nat</code>: The number of each atom. e.g. for Na8Cl8: <code>nat = 8 8</code></li>
+</ul>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="script-to-run">Script to run</h1>
+
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+<p>For version 1.0.0 or later, skip this page. The executable script is automatically installed.</p>
+  </div>
+</div>
+<h2 id="assumption">Assumption</h2>
+<p>Here, we assume the following condition:</p>
+<ul>
+<li>CrySPY main script: <code>~/CrySPY_root/CrySPY-0.9.0/cryspy.py</code></li>
+</ul>
+<h2 id="make-script">Make script</h2>
+<p>Let&rsquo;s make a convenient shell script to avoid typing long commands over and over again.
+Here, we create the script, <code>cryspy</code> (any file name will do).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ emacs cryspy
+</span></span><span style="display:flex;"><span>$ chmod <span style="color:#ae81ff">744</span> cryspy
+</span></span><span style="display:flex;"><span>$ cat cryspy
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>python3 -u ~/CrySPY_root/CrySPY-0.9.0/cryspy.py 1&gt;&gt; log 2&gt;&gt; err
+</span></span></code></pre></div><p><code>-u</code> option (unbuffered option) can be omitted.</p>
+<p>You can put this script in your $PATH, or just use like <code>bash ./cryspy</code>.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="firsrt-run">Firsrt run</h1>
+
+<p>Make sure you have the following in your working directory.</p>
+<ul>
+<li>calc_in/</li>
+<li>(cryspy)</li>
+<li>cryspy.in</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>calc_in/  cryspy.in
+</span></span></code></pre></div><p>Then, run CyrSPY!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+</span></span></code></pre></div><p>If you use old version (0.10.3 or earlier):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>bash ./cryspy &amp;
+</span></span></code></pre></div><p>At the first run, CrySPY goes into structure generation mode.
+CrySPY stops after 5 structure generation.</p>
+<p>If it worked properly, <code>log_cryspy</code> (<code>log</code> in ver. 0.10.3 or earlier) would look like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>2023/03/18 20:35:46
+</span></span><span style="display:flex;"><span>CrySPY 1.0.0
+</span></span><span style="display:flex;"><span>Start cryspy.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Read input file, cryspy.in
+</span></span><span style="display:flex;"><span>Save input data in cryspy.stat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># --------- Generate initial structures
+</span></span><span style="display:flex;"><span># ------ mindist
+</span></span><span style="display:flex;"><span>Si - Si 1.11
+</span></span><span style="display:flex;"><span>Structure ID      0 was generated. Space group:  54 --&gt;  54 Pcca
+</span></span><span style="display:flex;"><span>Structure ID      1 was generated. Space group: 175 --&gt; 191 P6/mmm
+</span></span><span style="display:flex;"><span>Structure ID      2 was generated. Space group: 114 --&gt; 129 P4/nmm
+</span></span><span style="display:flex;"><span>Structure ID      3 was generated. Space group: 108 --&gt; 108 I4cm
+</span></span><span style="display:flex;"><span>Structure ID      4 was generated. Space group: 155 --&gt; 155 R32
+</span></span></code></pre></div><p>Several output files are also generated.</p>
+<ul>
+<li>(<code>cryspy.out</code>): Short log. only version 0.10.3 or earlier.</li>
+<li><code>cryspy.stat</code>: Status file.</li>
+<li><code>data/init_POSCARS</code>: Initial struture file in POSCAR format.
+You can open this file using <a href="https://jp-minerals.org/vesta/en/" target="_blank">VESTA</a><i class="fas fa-external-link-alt"></i></li>
+<li><code>data/pkl_data</code>: Directory to save pickled data.</li>
+<li><code>log_cryspy</code>: Detail log. (<code>log</code> in version 0.10.3 or earlier)</li>
+<li><code>err_cryspy</code>: Error message. (<code>err</code> in version 0.10.3 or earlier)</li>
+</ul>
+<p>Let&rsquo;s take a look at <code>cryspy.stat</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>(omit)
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>[status]
+</span></span><span style="display:flex;"><span>id_queueing = 0 1 2 3 4
+</span></span></code></pre></div><p>Structure ID 0 &ndash; 4 are queueing because we just generated structures, and have not submitted yet.</p>
+
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+<p>Check the initial structures, if the distance between atoms is too close, you should set the <code>mindist</code> in <code>cryspy.in</code>.</p>
+  </div>
+</div>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="submit-job">Submit job</h1>
+
+<h2 id="continue">Continue</h2>
+<p>CrySPY continues the simulation if you have <code>cryspy.stat</code> file.</p>
+
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+<p>Continue if you have <code>crypy.stat</code><br>
+Start from the beginning if you don&rsquo;t have <code>cryspy.stat</code></p>
+  </div>
+</div>
+<h2 id="submit-job">Submit job</h2>
+<p>Run CyrSPY again.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+</span></span></code></pre></div><p>Check <code>log_cryspy</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>2023/03/18 23:35:08
+</span></span><span style="display:flex;"><span>CrySPY 1.0.0
+</span></span><span style="display:flex;"><span>Restart cryspy.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># ---------- job status
+</span></span><span style="display:flex;"><span>ID      0: submit job, Stage 1
+</span></span><span style="display:flex;"><span>ID      1: submit job, Stage 1
+</span></span></code></pre></div><p>And also <code>cryspy.stat</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>(omit)
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>[status]
+</span></span><span style="display:flex;"><span>id_queueing = 2 3 4
+</span></span><span style="display:flex;"><span>id      0 = Stage 1
+</span></span><span style="display:flex;"><span>id      1 = Stage 1
+</span></span></code></pre></div><p>CrySPY submitted two jobs for structure ID 0 and 1 as you set <code>njob = 2</code> in <code>cryspy.in</code>.
+Calculations are performed in the <code>work</code> directory.
+These directory names correspond to their structure ID.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>tree -d work
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>work
+</span></span><span style="display:flex;"><span>├── 000000
+</span></span><span style="display:flex;"><span>├── 000001
+</span></span><span style="display:flex;"><span>└── fin
+</span></span></code></pre></div><p>When the two jobs are done, run CrySPY again.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+</span></span></code></pre></div><p>If you set <code>nstage = 2</code> (more than 2), new jobs on stage 2 for ID 0 and 1 are submitted.
+If you set <code>nstage = 1</code>, CrySPY collects calculation data of ID 0 and 1, then submits next ID&rsquo;s jobs.
+Directories of the finished structure are moved to the <code>fin</code> directory.</p>
+<p>Repeat <code>cryspy &amp;</code> several times until all 5 structures are done.
+You can delete the <code>work</code> directory when the simulation is done if you do not need it.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="check-results">Check results</h1>
+
+<p>Move to <code>data</code> directory. There should be a few more files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cd data
+</span></span><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>cryspy_rslt  cryspy_rslt_energy_asc  init_POSCARS  opt_POSCARS  pkl_data/
+</span></span></code></pre></div><ul>
+<li><code>cryspy_rslt</code>: Result file.</li>
+<li><code>cryspy_rslt_energy_asc</code>: Result file sorted in energy ascending order.</li>
+<li><code>init_POSCARS</code>: Initial struture file in POSCAR format.</li>
+<li><code>opt_POSCARS</code>: Optimized structure file in POSCAR format.</li>
+<li><code>pkl_data/</code>: Directory to save pickled data.</li>
+</ul>
+<p>The results are written to text files, <code>cryspy_rslt</code> and <code>cryspy_rslt_energy_asc</code> (and also saved in pickle data in <code>pkl_data</code> directory).</p>
+<p>Each result appends to <code>cryspy_rslt</code> file in the order in which one finished earlier.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cat cryspy_rslt
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>   Spg_num Spg_sym  Spg_num_opt Spg_sym_opt  E_eV_atom  Magmom      Opt
+</span></span><span style="display:flex;"><span>0      139  I4/mmm          139      I4/mmm  -3.000850     NaN     done
+</span></span><span style="display:flex;"><span>1       98  I4_122           12        C2/m  -3.978441     NaN  not_yet
+</span></span><span style="display:flex;"><span>2       16    P222           16        P222  -3.348616     NaN  not_yet
+</span></span><span style="display:flex;"><span>3       36  Cmc2_1           36      Cmc2_1  -3.520306     NaN  not_yet
+</span></span><span style="display:flex;"><span>4       36  Cmc2_1            4        P2_1  -3.304168     NaN  not_yet
+</span></span></code></pre></div>
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>Not ID order in <code>cryspy_rslt</code></p>
+  </div>
+</div>
+<p>In <code>cryspy_rslt_energy_asc</code> file, the results are sorted in energy ascending order.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cat cryspy_rslt_energy_asc
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>   Spg_num Spg_sym  Spg_num_opt Spg_sym_opt  E_eV_atom  Magmom      Opt
+</span></span><span style="display:flex;"><span>1       98  I4_122           12        C2/m  -3.978441     NaN  not_yet
+</span></span><span style="display:flex;"><span>3       36  Cmc2_1           36      Cmc2_1  -3.520306     NaN  not_yet
+</span></span><span style="display:flex;"><span>2       16    P222           16        P222  -3.348616     NaN  not_yet
+</span></span><span style="display:flex;"><span>4       36  Cmc2_1            4        P2_1  -3.304168     NaN  not_yet
+</span></span><span style="display:flex;"><span>0      139  I4/mmm          139      I4/mmm  -3.000850     NaN     done
+</span></span></code></pre></div><p><code>Spg_num</code> and <code>Spg_sym</code> show space group information on initial structures.
+<code>Spg_num_opt</code> and <code>Spg_sym_opt</code> are those of optimized structures.
+The last column <code>Opt</code> indicates whether or not optimization reached required accuracy.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="append-structures">Append structures</h1>
+
+<p>Of course only 5 structures are not enough to find stable structures.
+You can append structures whenever you want.
+Here let&rsquo;s append more 5 structures.</p>
+<p>For Si-Si <code>mindist</code>, the default value of 1.11 Å is used in the first structure generation (see <code>log_cryspy</code>), which is a little too close.
+Let us try to set the mindist to 2.0 Å.</p>
+<p>Edit <code>cryspy.in</code> and change the value of <code>tot_struc</code> into <code>10</code>, and add <code>mindist_1 = 2.0</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>emacs cryspy.in
+</span></span><span style="display:flex;"><span>cat cryspy.in
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>[basic]
+</span></span><span style="display:flex;"><span>algo = RS
+</span></span><span style="display:flex;"><span>calc_code = soiap
+</span></span><span style="display:flex;"><span>tot_struc = 10
+</span></span><span style="display:flex;"><span>nstage = 1
+</span></span><span style="display:flex;"><span>njob = 2
+</span></span><span style="display:flex;"><span>jobcmd = zsh
+</span></span><span style="display:flex;"><span>jobfile = job_cryspy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[structure]
+</span></span><span style="display:flex;"><span>natot = 8
+</span></span><span style="display:flex;"><span>atype = Si
+</span></span><span style="display:flex;"><span>nat = 8
+</span></span><span style="display:flex;"><span>mindist_1 = 2.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[soiap]
+</span></span><span style="display:flex;"><span>soiap_infile = soiap.in
+</span></span><span style="display:flex;"><span>soiap_outfile = soiap.out
+</span></span><span style="display:flex;"><span>soiap_cif = initial.cif
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[option]
+</span></span></code></pre></div><p>Then run cryspy, and check <code>log_cryspy</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+</span></span><span style="display:flex;"><span>cat log_cryspy
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>(omit)
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>2023/03/19 00:01:47
+</span></span><span style="display:flex;"><span>CrySPY 1.0.0
+</span></span><span style="display:flex;"><span>Restart cryspy.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Changed tot_struc from 5 to 10
+</span></span><span style="display:flex;"><span>Changed mindist from None to [[2.0]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Backup data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># ---------- Append structures
+</span></span><span style="display:flex;"><span># ------ mindist
+</span></span><span style="display:flex;"><span>Si - Si 2.0
+</span></span><span style="display:flex;"><span>Structure ID      5 was generated. Space group: 218 --&gt; 221 Pm-3m
+</span></span><span style="display:flex;"><span>Structure ID      6 was generated. Space group:  86 --&gt; 129 P4/nmm
+</span></span><span style="display:flex;"><span>Structure ID      7 was generated. Space group: 129 --&gt; 129 P4/nmm
+</span></span><span style="display:flex;"><span>Structure ID      8 was generated. Space group: 191 --&gt; 191 P6/mmm
+</span></span><span style="display:flex;"><span>Structure ID      9 was generated. Space group:  31 --&gt;  31 Pmn2_1
+</span></span></code></pre></div><p>Remember that CrySPY goes into structure generation mode whenever you change the value of <code>tot_struc</code>.
+In this mode, CrySPY does not do any other action such as collecting data, submitting jobs, and so on.</p>
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+<p>Structure generation mode whenever you change the value of <code>tot_struc</code>.<br>
+From version 1.0.0, CrySPY automatically backs up when adding structures.
+See <a href="https://tomoki-yamashita.github.io/CrySPY_doc/features/backup/" target="_blank">features/backup</a>.</p>
+  </div>
+</div>
+<p>Repeat <code>cryspy &amp;</code> several times until all appended structures are done.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="analysis-and-visualization">Analysis and visualization</h1>
+
+<h2 id="download-the-data">Download the data</h2>
+<p>It is assumed here that you analyze and visualize CrySPY data in your local PC.
+If you use CrySPY in super computers or workstations, download the data in your local PC.
+You can delete the <code>work</code> directory if you do not need it because the file size could be very large.</p>
+<h2 id="jupyter-notebook">jupyter notebook</h2>
+<p>Move to the <code>data/</code> directory in results you just download.
+Then copy <code>cryspy_analyzer_RS.ipynb</code> from <a href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/">CrySPY utility</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>backup/ calc_in/ cryspy.in cryspy.stat  data/  err_cryspy  log_cryspy
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cd data
+</span></span><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>cryspy_rslt  cryspy_rslt_energy_asc  init_POSCARS  opt_CIFS.cif  opt_POSCARS  pkl_data/
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cp /path/to/CrySPY_utility/cryspy_analyzer_RS.ipynb .
+</span></span></code></pre></div><p>Run jupyter. (VScode, jupyter lab, jupyter notebook, and so on.)
+You can get the following figure by simply running the steps in order.</p>
+<p>
+		
+<a href="#image-b2c172aadfe70465dcf418ea6ce38088" class="lightbox-link">
+<img src="../images/tutorial/Si8_RS.png?width=40vw" alt="RS for Si8" style="height: auto; width: 40vw;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-b2c172aadfe70465dcf418ea6ce38088">
+<img src="../images/tutorial/Si8_RS.png?width=40vw" alt="RS for Si8" class="lightbox-image" loading="lazy">
+</a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="load-external-data">Load external data</h1>
+
+<p>You need only <code>cryspy.in</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>cryspy.in
+</span></span></code></pre></div><p>Then, run CyrSPY.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+</span></span></code></pre></div><p>At the first run, CrySPY goes into structure generation mode as usual.
+CrySPY stops after 5 structure generation.</p>
+<p>If it worked properly, <code>log_cryspy</code> would look like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>2022/07/14 19:41:41
+</span></span><span style="display:flex;"><span>CrySPY 1.0.0
+</span></span><span style="display:flex;"><span>Start cryspy.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Read input file, cryspy.in
+</span></span><span style="display:flex;"><span>Write input data in cryspy.out
+</span></span><span style="display:flex;"><span>Save input data in cryspy.stat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># --------- Generate initial structures
+</span></span><span style="display:flex;"><span># ------ mindist
+</span></span><span style="display:flex;"><span>Si - Si 1.11
+</span></span><span style="display:flex;"><span>Structure ID      0 was generated. Space group:  88 --&gt; 141 I4_1/amd
+</span></span><span style="display:flex;"><span>Structure ID      1 was generated. Space group: 101 --&gt; 101 P4_2cm
+</span></span><span style="display:flex;"><span>Structure ID      2 was generated. Space group: 204 --&gt; 229 Im-3m
+</span></span><span style="display:flex;"><span>Structure ID      3 was generated. Space group: 199 --&gt; 199 I2_13
+</span></span><span style="display:flex;"><span>Structure ID      4 was generated. Space group:  12 --&gt;  12 C2/m
+</span></span></code></pre></div><p>Unlike normal use, a directory named <code>ext</code> was created.
+Only the <code>stat_job</code> file exists in <code>ext/</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat ext/stat_job
+</span></span><span style="display:flex;"><span>out
+</span></span></code></pre></div><p>If you run cryspy when &ldquo;out&rdquo; is written in the <code>stat_job</code> file, queueing structure files (cif format) are exported in <code>ext/queue</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ls ext/queue
+</span></span><span style="display:flex;"><span>0.cif  1.cif  2.cif  3.cif  4.cif
+</span></span></code></pre></div><p>The number in the file name is structure ID.
+The fist line of <code>stat_job</code> was automatically changed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat ext/stat_job
+</span></span><span style="display:flex;"><span>submitted
+</span></span></code></pre></div><p>Perform structure optimization and energy evaluation in an external program using the output cif files.
+Once that calculation is done, prepare the optimized structure and energy data in the pickle data format, <code>ext_opt_struc_data.pkl</code> and <code>ext_energy_data.pkl</code>.</p>
+<p>The data format of <code>ext_opt_struc_data.pkl</code> is the same as <code>init_struc_data.pkl</code> and <code>opt_struc_data.pkl</code>, see <a href="https://tomoki-yamashita.github.io/CrySPY_doc/data_format/common_data/init_opt_struc_data/">Data format/Initial and optimized structure data</a>.</p>
+<p>The data format of <code>ext_energy_data.pkl</code> is similar to <code>ext_opt_struc_data.pkl</code>. Just change the value from the structure data into the energy.
+An example of the energy data (dict type) is shown below.</p>
+<ul>
+<li>key: structure ID</li>
+<li>value: energy</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>{0: -0.7139331910805997,
+</span></span><span style="display:flex;"><span> 1: -0.5643404689832622,
+</span></span><span style="display:flex;"><span> 2: -0.5832404287259171,
+</span></span><span style="display:flex;"><span> 3: -0.535037327286169,
+</span></span><span style="display:flex;"><span> 4: -0.6316663459586607}
+</span></span></code></pre></div><p>The <code>ext/calc_data</code> directory should be automatically generated, so put the two pickle files here.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ls ext/calc_data
+</span></span><span style="display:flex;"><span>ext_energy_data.pkl  ext_opt_struc_data.pkl
+</span></span></code></pre></div><p>When ready, replace the first line of the <code>stat_job</code> file with &ldquo;done&rdquo; and run CrySPY.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ emacs /ext/stat_job
+</span></span><span style="display:flex;"><span>$ cat /ext/stat_job
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+</span></span></code></pre></div><p>CrySPY collects the result data.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          </section>
+          <article class="default">
+<h1 id="evolutionary-algorithm-ea">Evolutionary Algorithm (EA)</h1>
+
+<p>EA</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="bayesian-optimization-bo">Bayesian Optimization (BO)</h1>
+
+<p>BO</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="laqa">LAQA</h1>
+
+<p>LAQA</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="restriction-on-interatomic-distances">Restriction on interatomic distances</h1>
+
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>First, see <a href="../tutorial/random/">Random Search (RS)</a> for basic usage of CrySPY.</p>
+  </div>
+</div>
+<p>You can restrict the interatomic distance in structure generation.
+Here is an example of [structure] section in the input file to limit minimum interatomic distance for a A-B binary system.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#f92672">[</span>structure<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> A B
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>mindist_1 <span style="color:#f92672">=</span> 2.0 1.8
+</span></span><span style="display:flex;"><span>mindist_2 <span style="color:#f92672">=</span> 1.8 1.5
+</span></span></code></pre></div><p>This means that minimum interatomic distances of A-A, A-B, and B-B are limited to 2.0, 1.8, and 1.5 Å, respectively.
+Structures with interatomic distances shorter than these values are automatically eliminated.</p>
+<p>For ternary systems, you will need <code>mindist_1</code>, <code>mindist_2</code>, and <code>mindist_3</code>.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="molecular-crystal-structure-prediction">Molecular crystal structure prediction</h1>
+
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>First, see <a href="../tutorial/random/">Random Search (RS)</a> for basic usage of CrySPY.</p>
+  </div>
+</div>
+<p>In this section, we give a tutorial on the molecular structure generation part only.
+Since version 0.9.0, CrySPY has been able to generate random molecular crystal structures using <a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i>.</p>
+<p>You need to use a pre-defined molecular by PyXtal&rsquo;s database (see, <a href="https://pyxtal.readthedocs.io/en/latest/Others.html#working-with-molecules" target="_blank">https://pyxtal.readthedocs.io/en/latest/Others.html#working-with-molecules</a><i class="fas fa-external-link-alt"></i>)
+or create molecule files that define molecular structures.</p>
+<h2 id="pre-defined-molecule">Pre-defined molecule</h2>
+<p>PyXtal currently supports <code>C60</code>, <code>H2O</code>, <code>CH4</code>, <code>NH3</code>, <code>benzene</code>, <code>naphthalene</code>, <code>anthracene</code>, <code>tetracene</code>, <code>pentacene</code>, <code>coumarin</code>, <code>resorcinol</code>, <code>benzamide</code>, <code>aspirin</code>, <code>ddt</code>, <code>lindane</code>, <code>glycine</code>, <code>glucose</code>, and <code>ROY</code>.</p>
+<p>Let us generate molecular crystal structures that consist of 2 benzenes.</p>
+<p>Move to your working directory, and copy input example files.</p>
+<ul>
+<li>version 1.0.0 or later
+<ul>
+<li>Copy from CrySPY utility</li>
+</ul>
+</li>
+<li>version 0.10.3 or earlier
+<ul>
+<li><code>cp -r ~/CrySPY_root/CrySPY-0.9.0/example/QE_benzene_2_RS_mol .</code></li>
+</ul>
+</li>
+</ul>
+<p>Take a look at <code>cryspy.in</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat cryspy.in
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>basic<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>algo <span style="color:#f92672">=</span> RS
+</span></span><span style="display:flex;"><span>calc_code <span style="color:#f92672">=</span> QE
+</span></span><span style="display:flex;"><span>tot_struc <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>nstage <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>njob <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>jobcmd <span style="color:#f92672">=</span> qsub
+</span></span><span style="display:flex;"><span>jobfile <span style="color:#f92672">=</span> job_cryspy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>structure<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>struc_mode <span style="color:#f92672">=</span> mol
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> H C
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>mol_file <span style="color:#f92672">=</span> benzene
+</span></span><span style="display:flex;"><span>nmol <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>QE<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>qe_infile <span style="color:#f92672">=</span> pwscf.in
+</span></span><span style="display:flex;"><span>qe_outfile <span style="color:#f92672">=</span> pwscf.out
+</span></span><span style="display:flex;"><span>kppvol <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span>  <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>option<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>In generating molecular crystal structures, you have to set <code>struc_mode = mol</code> in the <code>[structure]</code> section.
+Molecule file(s) and the number of molecule(s) are specified as:</p>
+<ul>
+<li>mol_file = benzene</li>
+<li>nmol = 2</li>
+</ul>
+<p>Run CrySPY and see the initial structures (<code>./data/init_POSCARS</code>).</p>
+<h2 id="user-defined-molecule">User-defined molecule</h2>
+<p>Move to your working directory, and copy input example files for 2 formula units of Li3PS4.</p>
+<ul>
+<li>version 1.0.0 or later
+<ul>
+<li>Copy from CrySPY utility</li>
+</ul>
+</li>
+<li>version 0.10.3 or earlier
+<ul>
+<li><code>cp -r ~/CrySPY_root/CrySPY-0.9.0/example/QE_Li3PS4_2fu_RS_mol .</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cd QE_Li3PS4_2fu_RS_mol
+</span></span><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>Li.xyz  PS4.xyz  calc_in/  cryspy.in
+</span></span></code></pre></div><p>Molecule files of Li and PS4 are included. Supported formats in PyXtal are <code>.xyz</code>, <code>.gjf</code>, <code>.g03</code>, <code>.g09</code>, <code>.com</code>, <code>.inp</code>, <code>.out</code>, and pymatgen’s <code>JSON</code> serialized molecules.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat Li.xyz
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>New structure
+</span></span><span style="display:flex;"><span> Li  0.000  0.000  0.000
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat PS4.xyz
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>New structure
+</span></span><span style="display:flex;"><span> P    0.000000    0.000000    0.000000
+</span></span><span style="display:flex;"><span> S    1.200000    1.200000   -1.200000
+</span></span><span style="display:flex;"><span> S    1.200000   -1.200000    1.200000
+</span></span><span style="display:flex;"><span> S   -1.200000    1.200000    1.200000
+</span></span><span style="display:flex;"><span> S   -1.200000   -1.200000   -1.200000
+</span></span></code></pre></div><p>Check <code>cryspy.in</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat cryspy.in
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>basic<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>algo <span style="color:#f92672">=</span> RS
+</span></span><span style="display:flex;"><span>calc_code <span style="color:#f92672">=</span> QE
+</span></span><span style="display:flex;"><span>tot_struc <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>nstage <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>njob <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>jobcmd <span style="color:#f92672">=</span> qsub
+</span></span><span style="display:flex;"><span>jobfile <span style="color:#f92672">=</span> job_cryspy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>structure<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>struc_mode <span style="color:#f92672">=</span> mol
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> Li P S
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>mol_file <span style="color:#f92672">=</span> ./Li.xyz  ./PS4.xyz
+</span></span><span style="display:flex;"><span>nmol <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>QE<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>qe_infile <span style="color:#f92672">=</span> pwscf.in
+</span></span><span style="display:flex;"><span>qe_outfile <span style="color:#f92672">=</span> pwscf.out
+</span></span><span style="display:flex;"><span>kppvol <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span>  <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>option<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>A single atom (Li atom in this case)  is treated as a molecule in the molecular crystal structure generation mode.
+In this example, a random molecular structure is composed of six Li molecules (atoms) and two PS4 molecules specified as:</p>
+<ul>
+<li>mol_file = ./Li.xyz  ./PS4.xyz</li>
+<li>nmol = 6 2</li>
+</ul>
+<p>In <code>mol_file</code>, set relative path of molecule files from <code>cryspy.in</code>.
+Here the molecule files are placed in the same directory.</p>
+<p>Run CrySPY and see the initial structures (<code>./data/init_POSCARS</code>).</p>
+<h2 id="timeout_mol">timeout_mol</h2>
+<p>Molecular crystal structure generation can be time consuming because PyXtal calculates the molecule directions according to a specified space group.
+Sometimes molecular crystal structure generation gets stuck.
+So we set a time limit on the single structure generation.
+The time limit (<code>timeout_mol</code>) is set to 120 seconds by default.
+If the limit is insufficient, you have to increase it as (see last line):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>struc_mode <span style="color:#f92672">=</span> mol
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> Li P S
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>mol_file <span style="color:#f92672">=</span> ./Li.xyz  ./PS4.xyz
+</span></span><span style="display:flex;"><span>nmol <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>timeout_mol <span style="color:#f92672">=</span> 300.0
+</span></span></code></pre></div><h2 id="volume-of-unit-cell">Volume of unit cell</h2>
+<p>You can control the volume of unit cells by changing the value(s) of scaling factor, <code>vol_factor</code>, in <code>cryspy.in</code>.
+By default, <code>vol_factor</code> is set to <code>1.0</code>.
+It is also possible to specify a range of factors.
+Set minimum and maximum values as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>struc_mode <span style="color:#f92672">=</span> mol
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> Li P S
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>mol_file <span style="color:#f92672">=</span> ./Li.xyz  ./PS4.xyz
+</span></span><span style="display:flex;"><span>nmol <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>timeout_mol <span style="color:#f92672">=</span> 300.0
+</span></span><span style="display:flex;"><span>vol_factor <span style="color:#f92672">=</span> 0.8 1.5
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+          </section>        </div>
+      </main>
+    </div>
+    <script src="../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../js/theme.js?1679295958" defer></script>
+  </body>
+</html>

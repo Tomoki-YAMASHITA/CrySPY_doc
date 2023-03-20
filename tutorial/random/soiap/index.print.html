@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>soiap in your local PC :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/soiap/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/index.html" rel="canonical" type="text/html" title="soiap in your local PC :: CrySPY">
+    <link href="../../../tutorial/random/soiap/index.xml" rel="alternate" type="application/rss+xml" title="soiap in your local PC :: CrySPY">
+    <link href="../../../images/favicon.png?1679295958" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1679295958" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1679295958" rel="stylesheet">
+    <link href="../../../css/fonts.css?1679295958" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1679295958" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1679295958" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1679295958" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1679295958" rel="stylesheet">
+    <link href="../../../css/print.css?1679295958" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1679295958" rel="stylesheet">
+    <link href="../../../css/ie.css?1679295958" rel="stylesheet">
+    <script src="../../../js/url.js?1679295958"></script>
+    <script src="../../../js/variant.js?1679295958"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../../tutorial/random/soiap/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../tutorial/index.html"><span itemprop="name">Tutorial</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../tutorial/random/index.html"><span itemprop="name">Random Search (RS)</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">soiap in your local PC</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="soiap-in-your-local-pc">soiap in your local PC</h1>
+
+<p><a href="https://github.com/nbsato/soiap" target="_blank">soiap</a><i class="fas fa-external-link-alt"></i> is Structure Optimization with InterAtomic Potential.
+It is suitable for testing CrySPY because of its fast structure optimization.
+See <a href="https://github.com/nbsato/soiap/blob/master/doc/instructions.md" target="_blank">instructions</a><i class="fas fa-external-link-alt"></i> to install soiap.</p>
+<p>In this tutorial, we try to use CrySPY in your local PC (Mac or Linux).
+The target system is Si 8 atoms.</p>
+<h2 id="assumption">Assumption</h2>
+<p>Here, we assume the following conditions:</p>
+<ul>
+<li>(version 0.10.3 or earlier) CrySPY main script: <code>~/CrySPY_root/CrySPY-0.9.0/cryspy.py</code></li>
+<li>CrySPY job filename: <code>job_cryspy</code></li>
+<li>soiap executable file: <code>~/local/soiap-0.3.0/src/soiap</code></li>
+<li>soiap input filename: <code>soiap.in</code></li>
+<li>soiap output filename: <code>soiap.out</code></li>
+<li>soiap input structure filename: <code>initial.cif</code></li>
+</ul>
+<h2 id="input-files">Input files</h2>
+<p>Move to your working directory, and copy input example files.</p>
+<ul>
+<li>version 1.0.0 or later
+<ul>
+<li>Copy from CrySPY utility</li>
+</ul>
+</li>
+<li>version 0.10.3 or earlier
+<ul>
+<li><code>cp -r ~/CrySPY_root/CrySPY-0.9.0/example/v0.9.0/soiap_RS_Si8 .</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cd soiap_RS_Si8
+</span></span><span style="display:flex;"><span>tree
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── calc_in
+</span></span><span style="display:flex;"><span>│   ├── job_cryspy
+</span></span><span style="display:flex;"><span>│   └── soiap.in_1
+</span></span><span style="display:flex;"><span>└── cryspy.in
+</span></span></code></pre></div><h3 id="cryspyin">cryspy.in</h3>
+<p><code>cryspy.in</code> is the input file of CrySPY.</p>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = soiap
+tot_struc = 5
+nstage = 1
+njob = 2
+jobcmd = zsh
+jobfile = job_cryspy
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+
+[soiap]
+soiap_infile = soiap.in
+soiap_outfile = soiap.out
+soiap_cif = initial.cif
+
+[option]
+</code></pre><p>In <code>[basic]</code> section, <code>jobcmd = zsh</code> can be changed to <code>jobcmd = sh</code> or <code>jobcmd = bash</code> in accordance with your environment.
+CrySPY runs <code>zsh job_cryspy</code> as a background job internally.</p>
+<p><code>[soiap]</code> section is required when you use soiap.</p>
+<p>You can name the following files whatever you want:</p>
+<ul>
+<li><code>jobfile</code></li>
+<li><code>soiap_infile</code></li>
+<li><code>soiap_outfile</code></li>
+<li><code>soiap_cif</code></li>
+</ul>
+<p>The other input variables are discussed later.</p>
+<h3 id="calc_in-directory">calc_in directory</h3>
+<p>The job file and input files for soiap are prepared in this directory.</p>
+<h4 id="job-file">Job file</h4>
+<p>The name of the job file must match the value of <code>jobfile</code> in <code>cryspy.in</code>.
+The example of job file (here, <code>job_cryspy</code>) is shown below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- soiap</span>
+</span></span><span style="display:flex;"><span>EXEPATH<span style="color:#f92672">=</span>/path/to/soiap
+</span></span><span style="display:flex;"><span>$EXEPATH/soiap soiap.in 2&gt;&amp;<span style="color:#ae81ff">1</span> &gt; soiap.out
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- CrySPY</span>
+</span></span><span style="display:flex;"><span>sed -i -e <span style="color:#e6db74">&#39;3 s/^.*$/done/&#39;</span> stat_job
+</span></span></code></pre></div><p>Change <code>/path/to/soiap</code> into right path suitable for your environment.
+You can specify the input (<code>soiap.in</code>) and output (<code>soiap.out</code>) file names,
+but they must match the values of <code>soiap_infile</code> and <code>soiap_outfile</code> in <code>cryspy.in</code>.
+The job file is written in the same way as the one you usually use except for the last line.
+You must add <code>sed -i -e '3 s/^.*$/done/' stat_job</code> at the end of the file in CrySPY.</p>
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+<p><code>sed -i -e '3 s/^.*$/done/' stat_job</code> is required at the end of the job file.</p>
+  </div>
+</div>
+
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+<p>In the job file of CrySPY, the string &ldquo;CrySPY_ID&rdquo; is automatically replaced with the structure ID.
+When you use a job scheduler such as PBS and SLURM, it is useful to set the structure ID to the job name.
+For example, in the PBS system, <code>#PBS -N Si_CrySPY_ID</code> in ID 10 is replaced with <code>#PBS -N Si_10</code>.
+Note that starting with a number will result in an error.
+You should add a prefix like <code>Si_</code>.</p>
+  </div>
+</div>
+<h4 id="input-for-soiap">Input for soiap</h4>
+<p>Input files based on the number of stages (<code>nstage</code> in <code>cryspy.in</code>) are required.
+Name the input file(s) with a suffix <code>_x</code>.
+Here <code>x</code> means the stage number.</p>
+<p>We are using <code>nstage = 1</code>, so we need only <code>soiap.in_1</code>.</p>
+<p><code>soiap.in_1</code> is listed below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span>crystal initial.cif <span style="color:#75715e">! CIF file for the initial structure
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>symmetry <span style="color:#ae81ff">1</span> <span style="color:#75715e">! 0: not symmetrize displacements of the atoms or 1: symmetrize
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>md_mode_cell <span style="color:#ae81ff">3</span> <span style="color:#75715e">! cell-relaxation method
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>               <span style="color:#75715e">! 0: FIRE, 2: quenched MD, or 3: RFC5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>number_max_relax_cell <span style="color:#ae81ff">100</span> <span style="color:#75715e">! max. number of the cell relaxation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>number_max_relax <span style="color:#ae81ff">1</span> <span style="color:#75715e">! max. number of the atom relaxation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>max_displacement <span style="color:#ae81ff">0.1</span> <span style="color:#75715e">! max. displacement of atoms in Bohr
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>external_stress_v <span style="color:#ae81ff">0.0</span> <span style="color:#ae81ff">0.0</span> <span style="color:#ae81ff">0.0</span> <span style="color:#75715e">! external pressure in GPa
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>th_force <span style="color:#ae81ff">5</span>d<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span> <span style="color:#75715e">! convergence threshold for the force in Hartree a.u.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>th_stress <span style="color:#ae81ff">5</span>d<span style="color:#f92672">-</span><span style="color:#ae81ff">7</span> <span style="color:#75715e">! convergence threshold for the stress in Hartree a.u.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>force_field <span style="color:#ae81ff">1</span> <span style="color:#75715e">! force field
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>              <span style="color:#75715e">! 1: Stillinger-Weber for Si, 2: Tsuneyuki potential for SiO2,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>              <span style="color:#75715e">! 3: ZRL for Si-O-N-H, 4: ADP for Nd-Fe-B, 5: Jmatgen, or
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>              <span style="color:#75715e">! 6: Lennard-Jones
+</span></span></span></code></pre></div><p>The input structure file is specified at the first line.
+Use the same name as the value of <code>soiap_cif</code> in <code>cryspy.in</code>.</p>
+<h2 id="running-cryspy">Running CrySPY</h2>
+<p>Go to <a href="../../../tutorial/random/#running-cryspy">Running CrySPY</a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js?1679295958" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1679295958" defer></script>
+    <script src="../../../js/theme.js?1679295958" defer></script>
+  </body>
+</html>
