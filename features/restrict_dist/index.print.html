@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>Restriction on interatomic distances :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/restrict_dist/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/restrict_dist/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/restrict_dist/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/restrict_dist/index.html" rel="canonical" type="text/html" title="Restriction on interatomic distances :: CrySPY">
+    <link href="../../features/restrict_dist/index.xml" rel="alternate" type="application/rss+xml" title="Restriction on interatomic distances :: CrySPY">
+    <link href="../../images/favicon.png?1679387791" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css?1679387791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1679387791" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1679387791" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1679387791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1679387791" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1679387791" rel="stylesheet">
+    <link href="../../css/fonts.css?1679387791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1679387791" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1679387791" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1679387791" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1679387791" rel="stylesheet">
+    <link href="../../css/print.css?1679387791" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1679387791" rel="stylesheet">
+    <link href="../../css/ie.css?1679387791" rel="stylesheet">
+    <script src="../../js/url.js?1679387791"></script>
+    <script src="../../js/variant.js?1679387791"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../index.search.js";
+      var root_url="../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../features/restrict_dist/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../features/index.html"><span itemprop="name">Features</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Restriction on interatomic distances</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="restriction-on-interatomic-distances">Restriction on interatomic distances</h1>
+
+<p>You can restrict the interatomic distance in structure generation.
+Here is an example of [structure] section in the input file to limit minimum interatomic distance for a A-B binary system.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#f92672">[</span>structure<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> A B
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>mindist_1 <span style="color:#f92672">=</span> 2.0 1.8
+</span></span><span style="display:flex;"><span>mindist_2 <span style="color:#f92672">=</span> 1.8 1.5
+</span></span></code></pre></div><p>This means that minimum interatomic distances of A-A, A-B, and B-B are limited to 2.0, 1.8, and 1.5 Å, respectively.
+Structures with interatomic distances shorter than these values are automatically eliminated.</p>
+<p>For ternary systems, you will need <code>mindist_1</code>, <code>mindist_2</code>, and <code>mindist_3</code>.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js?1679387791" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1679387791" defer></script>
+    <script src="../../js/theme.js?1679387791" defer></script>
+  </body>
+</html>

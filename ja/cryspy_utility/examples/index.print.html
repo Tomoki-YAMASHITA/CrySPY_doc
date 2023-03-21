@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/index.html" rel="canonical" type="text/html" title="Examples :: CrySPY">
     <link href="../../../ja/cryspy_utility/examples/index.xml" rel="alternate" type="application/rss+xml" title="Examples :: CrySPY">
-    <link href="../../../images/favicon.png?1679298714" rel="icon" type="image/png">
+    <link href="../../../images/favicon.png?1679387792" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../../css/fontawesome-all.min.css?1679298715" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1679298715" rel="stylesheet"></noscript>
-    <link href="../../../css/nucleus.css?1679298715" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1679298715" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1679298715" rel="stylesheet"></noscript>
-    <link href="../../../css/perfect-scrollbar.min.css?1679298715" rel="stylesheet">
-    <link href="../../../css/fonts.css?1679298715" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1679298715" rel="stylesheet"></noscript>
-    <link href="../../../css/theme.css?1679298715" rel="stylesheet">
-    <link href="../../../css/theme-relearn-light.css?1679298715" rel="stylesheet" id="variant-style">
-    <link href="../../../css/variant.css?1679298715" rel="stylesheet">
-    <link href="../../../css/print.css?1679298715" rel="stylesheet" media="print">
-    <link href="../../../css/format-print.css?1679298715" rel="stylesheet">
-    <link href="../../../css/ie.css?1679298715" rel="stylesheet">
-    <script src="../../../js/url.js?1679298715"></script>
-    <script src="../../../js/variant.js?1679298715"></script>
+    <link href="../../../css/fontawesome-all.min.css?1679387792" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1679387792" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1679387792" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1679387792" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1679387792" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1679387792" rel="stylesheet">
+    <link href="../../../css/fonts.css?1679387792" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1679387792" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1679387792" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1679387792" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1679387792" rel="stylesheet">
+    <link href="../../../css/print.css?1679387792" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1679387792" rel="stylesheet">
+    <link href="../../../css/ie.css?1679387792" rel="stylesheet">
+    <script src="../../../js/url.js?1679387792"></script>
+    <script src="../../../js/variant.js?1679387792"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -76,7 +76,11 @@
 	
 <li><a href="../../../ja/cryspy_utility/examples/soiap_si8_rs/index.html">soiap_Si8_RS</a><ul>
 	</ul></li>
+<li><a href="../../../ja/cryspy_utility/examples/soiap_si8_rs_mindist/index.html">soiap_Si8_RS_mindist</a><ul>
+	</ul></li>
 <li><a href="../../../ja/cryspy_utility/examples/qe_si8_rs/index.html">qe_Si8_RS</a><ul>
+	</ul></li>
+<li><a href="../../../ja/cryspy_utility/examples/qe_benzene_2_rs_mol/index.html">qe_benzene_2_RS_mol</a><ul>
 	</ul></li>
 </ul>
 
@@ -111,6 +115,80 @@ jobfile = job_cryspy
 natot = 8
 atype = Si
 nat = 8
+
+[soiap]
+soiap_infile = soiap.in
+soiap_outfile = soiap.out
+soiap_cif = initial.cif
+
+[option]
+</code></pre><h2 id="calc_in">calc_in/</h2>
+<h3 id="soiapin_1">soiap.in_1</h3>
+<pre tabindex="0"><code>crystal initial.cif ! CIF file for the initial structure
+symmetry 1 ! 0: not symmetrize displacements of the atoms or 1: symmetrize
+
+md_mode_cell 3 ! cell-relaxation method
+               ! 0: FIRE, 2: quenched MD, or 3: RFC5
+number_max_relax_cell 1000 ! max. number of the cell relaxation
+number_max_relax 1 ! max. number of the atom relaxation
+max_displacement 0.1 ! max. displacement of atoms in Bohr
+
+external_stress_v 0.0 0.0 0.0 ! external pressure in GPa
+
+th_force 5d-5 ! convergence threshold for the force in Hartree a.u.
+th_stress 5d-7 ! convergence threshold for the stress in Hartree a.u.
+
+force_field 1 ! force field
+              ! 1: Stillinger-Weber for Si, 2: Tsuneyuki potential for SiO2,
+              ! 3: ZRL for Si-O-N-H, 4: ADP for Nd-Fe-B, 5: Jmatgen, or
+              ! 6: Lennard-Jones
+</code></pre><h3 id="job_cryspy">job_cryspy</h3>
+<pre tabindex="0"><code>#!/bin/sh
+
+# ---------- soiap
+EXEPATH=/path/to/soiap
+$EXEPATH/soiap soiap.in &gt; soiap.out 2&gt;&amp;1
+
+# ---------- CrySPY
+sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
+</code></pre>
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="soiap_si8_rs_mindist">soiap_Si8_RS_mindist</h1>
+
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>For <code>mindist</code>, see also <a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/restrict_dist/" target="_blank">Features &gt; Restriction on interatomic distances</a>.</p>
+  </div>
+</div>
+<h2 id="download">Download</h2>
+
+<span class="btn cstyle transparent">
+  <a href="../../../examples/soiap_Si8_RS_mindist.tar.gz">
+    <i class="fa-fw fas fa-download"></i> 
+    soiap_Si8_RS_mindist.tar.gz
+  </a>
+</span>
+<h2 id="cryspyin">cryspy.in</h2>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = soiap
+tot_struc = 5
+nstage = 1
+njob = 2
+jobcmd = zsh
+jobfile = job_cryspy
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+mindist_1 = 2.0
 
 [soiap]
 soiap_infile = soiap.in
@@ -269,11 +347,133 @@ sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
             </footer>
           </article>
 
+          <article class="default">
+<h1 id="qe_benzene_2_rs_mol">qe_benzene_2_RS_mol</h1>
+
+<h2 id="download">Download</h2>
+
+<span class="btn cstyle transparent">
+  <a href="../../../examples/qe_benzene_2_RS_mol.tar.gz">
+    <i class="fa-fw fas fa-download"></i> 
+    qe_benzene_2_RS_mol.tar.gz
+  </a>
+</span>
+<h2 id="cryspyin">cryspy.in</h2>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = QE
+tot_struc = 6
+nstage = 2
+njob = 2
+jobcmd = qsub
+jobfile = job_cryspy
+
+[structure]
+struc_mode = mol
+natot = 24
+atype = H C
+nat = 12 12
+mol_file = benzene
+nmol = 2
+
+[QE]
+qe_infile = pwscf.in
+qe_outfile = pwscf.out
+kppvol = 40  60
+
+[option]
+</code></pre><h2 id="calc_in">calc_in/</h2>
+<h3 id="pwscfin_1">pwscf.in_1</h3>
+<pre tabindex="0"><code> &amp;control
+    title = &#39;2 benzene&#39;
+    calculation = &#39;relax&#39;
+    nstep = 30
+    restart_mode = &#39;from_scratch&#39;,
+    pseudo_dir = &#39;/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/&#39;
+    outdir=&#39;./outdir/&#39;
+ /
+
+ &amp;system
+    ibrav = 0
+    nat = 24
+    ntyp = 2
+    ecutwfc = 35.00
+    ecutrho = 300.00
+    occupations = &#39;smearing&#39;
+    degauss = 0.01
+ /
+
+ &amp;electrons
+ /
+
+ &amp;ions
+ /
+
+ &amp;cell
+ /
+
+ATOMIC_SPECIES
+   H  1.008  H.pbe-kjpaw_psl.1.0.0.UPF
+   C  12.01  C.pbe-n-kjpaw_psl.1.0.0.UPF
+</code></pre><h3 id="pwscfin_2">pwscf.in_2</h3>
+<pre tabindex="0"><code> &amp;control
+    title = &#39;2 benzene&#39;
+    calculation = &#39;vc-relax&#39;
+    nstep = 200
+    restart_mode = &#39;from_scratch&#39;,
+    pseudo_dir = &#39;/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/&#39;
+    outdir=&#39;./outdir/&#39;
+ /
+
+ &amp;system
+    ibrav = 0
+    nat = 24
+    ntyp = 2
+    ecutwfc = 46.00
+    ecutrho = 326.00
+    occupations = &#39;smearing&#39;
+    degauss = 0.01
+ /
+
+ &amp;electrons
+ /
+
+ &amp;ions
+ /
+
+ &amp;cell
+ /
+
+ATOMIC_SPECIES
+   H  1.008  H.pbe-kjpaw_psl.1.0.0.UPF
+   C  12.01  C.pbe-n-kjpaw_psl.1.0.0.UPF
+</code></pre><h3 id="job_cryspy">job_cryspy</h3>
+<pre tabindex="0"><code>#!/bin/sh
+#$ -cwd
+#$ -V -S /bin/bash
+####$ -V -S /bin/zsh
+#$ -N bz_CrySPY_ID
+#$ -pe smp 8
+
+mpirun -np $NSLOTS pw.x -nk 4 -nb 2 &lt; pwscf.in &gt; pwscf.out
+
+# for QE
+if [ -e &#34;CRASH&#34; ]; then
+    sed -i -e &#39;3 s/^.*$/skip/&#39; stat_job
+    exit 1
+fi
+
+sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
+</code></pre>
+            <footer class="footline">
+            </footer>
+          </article>
+
           </section>        </div>
       </main>
     </div>
-    <script src="../../../js/clipboard.min.js?1679298715" defer></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1679298715" defer></script>
-    <script src="../../../js/theme.js?1679298715" defer></script>
+    <script src="../../../js/clipboard.min.js?1679387792" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1679387792" defer></script>
+    <script src="../../../js/theme.js?1679387792" defer></script>
   </body>
 </html>

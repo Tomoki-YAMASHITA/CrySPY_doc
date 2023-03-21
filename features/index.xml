@@ -26,6 +26,14 @@ cryspy.stat log_cryspy err_cryspy lock_cryspy data/* work/* ext/* tmp_calc_FP/* 
 $ ls calc_in cryspy.in cryspy.stat data err_cryspy log_cryspy $ cryspy -c Are you sure you want to clean the data? &amp;#39;yes&amp;#39; or &amp;#39;no&amp;#39; [y/n]: y $ ls calc_in cryspy.</description>
     </item>
     <item>
+      <title>Restriction on interatomic distances</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/restrict_dist/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/restrict_dist/index.html</guid>
+      <description>You can restrict the interatomic distance in structure generation. Here is an example of [structure] section in the input file to limit minimum interatomic distance for a A-B binary system.
+[structure] natot = 8 atype = A B nat = 4 4 mindist_1 = 2.0 1.8 mindist_2 = 1.8 1.5 This means that minimum interatomic distances of A-A, A-B, and B-B are limited to 2.0, 1.8, and 1.5 Å, respectively. Structures with interatomic distances shorter than these values are automatically eliminated.</description>
+    </item>
+    <item>
       <title>CrySPY_ID in job files</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/cryspy_id/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.html" rel="canonical" type="text/html" title="機能 :: CrySPY">
     <link href="../../ja/features/index.xml" rel="alternate" type="application/rss+xml" title="機能 :: CrySPY">
-    <link href="../../images/favicon.png?1679298714" rel="icon" type="image/png">
+    <link href="../../images/favicon.png?1679387792" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../css/fontawesome-all.min.css?1679298715" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1679298715" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1679298715" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1679298715" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1679298715" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1679298715" rel="stylesheet">
-    <link href="../../css/fonts.css?1679298715" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1679298715" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1679298715" rel="stylesheet">
-    <link href="../../css/theme-relearn-light.css?1679298715" rel="stylesheet" id="variant-style">
-    <link href="../../css/variant.css?1679298715" rel="stylesheet">
-    <link href="../../css/print.css?1679298715" rel="stylesheet" media="print">
-    <link href="../../css/format-print.css?1679298715" rel="stylesheet">
-    <link href="../../css/ie.css?1679298715" rel="stylesheet">
-    <script src="../../js/url.js?1679298715"></script>
-    <script src="../../js/variant.js?1679298715"></script>
+    <link href="../../css/fontawesome-all.min.css?1679387792" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1679387792" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1679387792" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1679387792" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1679387792" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1679387792" rel="stylesheet">
+    <link href="../../css/fonts.css?1679387792" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1679387792" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1679387792" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1679387792" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1679387792" rel="stylesheet">
+    <link href="../../css/print.css?1679387792" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1679387792" rel="stylesheet">
+    <link href="../../css/ie.css?1679387792" rel="stylesheet">
+    <script src="../../js/url.js?1679387792"></script>
+    <script src="../../js/variant.js?1679387792"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -76,6 +76,8 @@
 <li><a href="../../ja/features/backup/index.html">バックアップ</a><ul>
 	</ul></li>
 <li><a href="../../ja/features/clean/index.html">クリーン</a><ul>
+	</ul></li>
+<li><a href="../../ja/features/restrict_dist/index.html">Restriction on interatomic distances</a><ul>
 	</ul></li>
 <li><a href="../../ja/features/cryspy_id/index.html">ジョブファイルのCrySPY_ID</a><ul>
 	</ul></li>
@@ -152,6 +154,25 @@
           </article>
 
           <article class="default">
+<h1 id="restriction-on-interatomic-distances">Restriction on interatomic distances</h1>
+
+<p>You can restrict the interatomic distance in structure generation.
+Here is an example of [structure] section in the input file to limit minimum interatomic distance for a A-B binary system.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#f92672">[</span>structure<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> A B
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>mindist_1 <span style="color:#f92672">=</span> 2.0 1.8
+</span></span><span style="display:flex;"><span>mindist_2 <span style="color:#f92672">=</span> 1.8 1.5
+</span></span></code></pre></div><p>This means that minimum interatomic distances of A-A, A-B, and B-B are limited to 2.0, 1.8, and 1.5 Å, respectively.
+Structures with interatomic distances shorter than these values are automatically eliminated.</p>
+<p>For ternary systems, you will need <code>mindist_1</code>, <code>mindist_2</code>, and <code>mindist_3</code>.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
 <h1 id="ジョブファイルのcryspy_id">ジョブファイルのCrySPY_ID</h1>
 
 <p>CrySPYのジョブファイルで，&ldquo;CrySPY_ID&quot;という文字列は自動的に構造IDに置換される．
@@ -183,8 +204,8 @@ sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
           </section>        </div>
       </main>
     </div>
-    <script src="../../js/clipboard.min.js?1679298715" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1679298715" defer></script>
-    <script src="../../js/theme.js?1679298715" defer></script>
+    <script src="../../js/clipboard.min.js?1679387792" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1679387792" defer></script>
+    <script src="../../js/theme.js?1679387792" defer></script>
   </body>
 </html>

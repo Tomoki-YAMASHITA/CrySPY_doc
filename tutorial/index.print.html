@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/index.html" rel="canonical" type="text/html" title="Tutorial :: CrySPY">
     <link href="../tutorial/index.xml" rel="alternate" type="application/rss+xml" title="Tutorial :: CrySPY">
-    <link href="../images/favicon.png?1679298714" rel="icon" type="image/png">
+    <link href="../images/favicon.png?1679387791" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../css/fontawesome-all.min.css?1679298714" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1679298714" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1679298714" rel="stylesheet">
-    <link href="../css/auto-complete.css?1679298714" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1679298714" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1679298714" rel="stylesheet">
-    <link href="../css/fonts.css?1679298714" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1679298714" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1679298714" rel="stylesheet">
-    <link href="../css/theme-relearn-light.css?1679298714" rel="stylesheet" id="variant-style">
-    <link href="../css/variant.css?1679298714" rel="stylesheet">
-    <link href="../css/print.css?1679298714" rel="stylesheet" media="print">
-    <link href="../css/format-print.css?1679298714" rel="stylesheet">
-    <link href="../css/ie.css?1679298714" rel="stylesheet">
-    <script src="../js/url.js?1679298714"></script>
-    <script src="../js/variant.js?1679298714"></script>
+    <link href="../css/fontawesome-all.min.css?1679387791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1679387791" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1679387791" rel="stylesheet">
+    <link href="../css/auto-complete.css?1679387791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1679387791" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1679387791" rel="stylesheet">
+    <link href="../css/fonts.css?1679387791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1679387791" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1679387791" rel="stylesheet">
+    <link href="../css/theme-relearn-light.css?1679387791" rel="stylesheet" id="variant-style">
+    <link href="../css/variant.css?1679387791" rel="stylesheet">
+    <link href="../css/print.css?1679387791" rel="stylesheet" media="print">
+    <link href="../css/format-print.css?1679387791" rel="stylesheet">
+    <link href="../css/ie.css?1679387791" rel="stylesheet">
+    <script src="../js/url.js?1679387791"></script>
+    <script src="../js/variant.js?1679387791"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -69,6 +69,13 @@
           <article class="chapter deprecated">
 
 <h1 id="tutorial">Tutorial</h1>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>You can find examaple files in <a href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/" target="_blank">cryspy_utility/examples</a>.</p>
+  </div>
+</div>
 <h2 id="table-of-contents">Table of contents</h2>
 
 <ul class="children children-li children-sort-">
@@ -108,8 +115,6 @@
 <li><a href="../tutorial/bo/index.html">Bayesian Optimization (BO)</a><ul>
 	</ul></li>
 <li><a href="../tutorial/laqa/index.html">LAQA</a><ul>
-	</ul></li>
-<li><a href="../tutorial/restrict_dist/index.html">Restriction on interatomic distances</a><ul>
 	</ul></li>
 <li><a href="../tutorial/mol/index.html">Molecular crystal structure prediction</a><ul>
 	</ul></li>
@@ -866,10 +871,10 @@ Then copy <code>cryspy_analyzer_RS.ipynb</code> from <a href="https://tomoki-yam
 You can get the following figure by simply running the steps in order.</p>
 <p>
 		
-<a href="#image-f2b6103847a4d7b45e24944b9fa34a5c" class="lightbox-link">
+<a href="#image-08b88995e1a034b0e381321b8e16e219" class="lightbox-link">
 <img src="../images/tutorial/Si8_RS.png?width=40vw" alt="RS for Si8" style="height: auto; width: 40vw;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f2b6103847a4d7b45e24944b9fa34a5c">
+<a href="javascript:history.back();" class="lightbox" id="image-08b88995e1a034b0e381321b8e16e219">
 <img src="../images/tutorial/Si8_RS.png?width=40vw" alt="RS for Si8" class="lightbox-image" loading="lazy">
 </a></p>
 
@@ -973,60 +978,27 @@ An example of the energy data (dict type) is shown below.</p>
           </article>
 
           <article class="default">
-<h1 id="restriction-on-interatomic-distances">Restriction on interatomic distances</h1>
-
-
-<div class="box notices cstyle info">
-  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
-  <div class="box-content">
-<p>First, see <a href="../tutorial/random/">Random Search (RS)</a> for basic usage of CrySPY.</p>
-  </div>
-</div>
-<p>You can restrict the interatomic distance in structure generation.
-Here is an example of [structure] section in the input file to limit minimum interatomic distance for a A-B binary system.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#f92672">[</span>structure<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
-</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> A B
-</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">4</span>
-</span></span><span style="display:flex;"><span>mindist_1 <span style="color:#f92672">=</span> 2.0 1.8
-</span></span><span style="display:flex;"><span>mindist_2 <span style="color:#f92672">=</span> 1.8 1.5
-</span></span></code></pre></div><p>This means that minimum interatomic distances of A-A, A-B, and B-B are limited to 2.0, 1.8, and 1.5 Å, respectively.
-Structures with interatomic distances shorter than these values are automatically eliminated.</p>
-<p>For ternary systems, you will need <code>mindist_1</code>, <code>mindist_2</code>, and <code>mindist_3</code>.</p>
-
-            <footer class="footline">
-            </footer>
-          </article>
-
-          <article class="default">
 <h1 id="molecular-crystal-structure-prediction">Molecular crystal structure prediction</h1>
 
 
 <div class="box notices cstyle info">
   <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
   <div class="box-content">
-<p>First, see <a href="../tutorial/random/">Random Search (RS)</a> for basic usage of CrySPY.</p>
+<p>First, see <a href="../tutorial/random/">Tutorial &gt; Random Search (RS)</a> for basic usage of CrySPY.</p>
   </div>
 </div>
 <p>In this section, we give a tutorial on the molecular structure generation part only.
 Since version 0.9.0, CrySPY has been able to generate random molecular crystal structures using <a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i>.</p>
-<p>You need to use a pre-defined molecular by PyXtal&rsquo;s database (see, <a href="https://pyxtal.readthedocs.io/en/latest/Others.html#working-with-molecules" target="_blank">https://pyxtal.readthedocs.io/en/latest/Others.html#working-with-molecules</a><i class="fas fa-external-link-alt"></i>)
+<p>You need to use a pre-defined molecular by PyXtal&rsquo;s database (see, <a href="https://pyxtal.readthedocs.io/en/latest/Usage.html?highlight=benzene#pyxtal-molecule-pyxtal-molecule" target="_blank">https://pyxtal.readthedocs.io/en/latest/Usage.html?highlight=benzene#pyxtal-molecule-pyxtal-molecule</a>)<i class="fas fa-external-link-alt"></i>)
 or create molecule files that define molecular structures.</p>
 <h2 id="pre-defined-molecule">Pre-defined molecule</h2>
 <p>PyXtal currently supports <code>C60</code>, <code>H2O</code>, <code>CH4</code>, <code>NH3</code>, <code>benzene</code>, <code>naphthalene</code>, <code>anthracene</code>, <code>tetracene</code>, <code>pentacene</code>, <code>coumarin</code>, <code>resorcinol</code>, <code>benzamide</code>, <code>aspirin</code>, <code>ddt</code>, <code>lindane</code>, <code>glycine</code>, <code>glucose</code>, and <code>ROY</code>.</p>
 <p>Let us generate molecular crystal structures that consist of 2 benzenes.</p>
-<p>Move to your working directory, and copy input example files.</p>
+<p>Move to your working directory, and copy input example files by one of the following methods.</p>
 <ul>
-<li>version 1.0.0 or later
-<ul>
-<li>Copy from CrySPY utility</li>
-</ul>
-</li>
-<li>version 0.10.3 or earlier
-<ul>
-<li><code>cp -r ~/CrySPY_root/CrySPY-0.9.0/example/QE_benzene_2_RS_mol .</code></li>
-</ul>
-</li>
+<li>Download from <a href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/qe_benzene_2_rs_mol/">CrySPY Utility &gt; Examples &gt; qe_benzene_2_RS_mol</a></li>
+<li>Copy from CrySPY utility that you installed</li>
+<li>(only version 0.10.3 or earlier) <code>cp -r ~/CrySPY_root/CrySPY-0.9.0/example/QE_benzene_2_RS_mol .</code></li>
 </ul>
 <p>Take a look at <code>cryspy.in</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cat cryspy.in
@@ -1158,8 +1130,8 @@ Set minimum and maximum values as follows:</p>
           </section>        </div>
       </main>
     </div>
-    <script src="../js/clipboard.min.js?1679298714" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1679298714" defer></script>
-    <script src="../js/theme.js?1679298714" defer></script>
+    <script src="../js/clipboard.min.js?1679387792" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1679387792" defer></script>
+    <script src="../js/theme.js?1679387792" defer></script>
   </body>
 </html>
