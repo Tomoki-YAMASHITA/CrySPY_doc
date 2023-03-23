@@ -117,7 +117,7 @@ $ cd data $ ls cryspy_rslt cryspy_rslt_energy_asc init_POSCARS opt_POSCARS pkl_d
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/append/index.html</guid>
       <description>Of course only 5 structures are not enough to find stable structures. You can append structures whenever you want. Here let&amp;rsquo;s append more 5 structures.
 For Si-Si mindist, the default value of 1.11 Å is used in the first structure generation (see log_cryspy), which is a little too close. Let us try to set the mindist to 2.0 Å.
-Edit cryspy.in and change the value of tot_struc into 10, and add mindist_1 = 2.</description>
+Info For mindist, see also Features &amp;gt; Restriction on interatomic distances.</description>
     </item>
     <item>
       <title>Analysis and visualization</title>
