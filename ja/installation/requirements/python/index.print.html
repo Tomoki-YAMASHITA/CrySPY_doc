@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/python/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/python/index.html" rel="canonical" type="text/html" title="Python :: CrySPY">
     <link href="../../../../ja/installation/requirements/python/index.xml" rel="alternate" type="application/rss+xml" title="Python :: CrySPY">
-    <link href="../../../../images/favicon.png?1679566222" rel="icon" type="image/png">
+    <link href="../../../../images/favicon.png?1684225127" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../../../css/fontawesome-all.min.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fontawesome-all.min.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../../../css/nucleus.css?1679566223" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/auto-complete.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../../../css/perfect-scrollbar.min.css?1679566223" rel="stylesheet">
-    <link href="../../../../css/fonts.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fonts.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../../../css/theme.css?1679566223" rel="stylesheet">
-    <link href="../../../../css/theme-relearn-light.css?1679566223" rel="stylesheet" id="variant-style">
-    <link href="../../../../css/variant.css?1679566223" rel="stylesheet">
-    <link href="../../../../css/print.css?1679566223" rel="stylesheet" media="print">
-    <link href="../../../../css/format-print.css?1679566223" rel="stylesheet">
-    <link href="../../../../css/ie.css?1679566223" rel="stylesheet">
-    <script src="../../../../js/url.js?1679566223"></script>
-    <script src="../../../../js/variant.js?1679566223"></script>
+    <link href="../../../../css/fontawesome-all.min.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fontawesome-all.min.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../../css/nucleus.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/auto-complete.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../../css/perfect-scrollbar.min.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/fonts.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fonts.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../../css/theme.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/theme-relearn-light.css?1684225127" rel="stylesheet" id="variant-style">
+    <link href="../../../../css/variant.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/print.css?1684225127" rel="stylesheet" media="print">
+    <link href="../../../../css/format-print.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/ie.css?1684225127" rel="stylesheet">
+    <script src="../../../../js/url.js?1684225127"></script>
+    <script src="../../../../js/variant.js?1684225127"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -72,7 +72,17 @@
 <h1 id="python">Python</h1>
 
 <h2 id="python">Python</h2>
-<h3 id="cryspy-100-or-later">CrySPY 1.0.0 or later</h3>
+<h3 id="cryspy-110-or-later">CrySPY 1.1.0 or later</h3>
+<ul>
+<li>Python &gt;= 3.8
+<ul>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i> (&gt;= 0.5.3)</li>
+<li>(optional) mpi4py</li>
+<li>(optional, required if algo is BO) <a href="https://github.com/Tomoki-YAMASHITA/combo3" target="_blank">COMBO</a><i class="fas fa-external-link-alt"></i></li>
+</ul>
+</li>
+</ul>
+<h3 id="cryspy-100">CrySPY 1.0.0</h3>
 <ul>
 <li>Python &gt;= 3.8
 <ul>
@@ -85,7 +95,8 @@
 <div class="box notices cstyle info">
   <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
   <div class="box-content">
-<p>[2023 March 15]
+<p>[2023 April 22] PyXtal (pyshtools)をarm64のMacOSにインストールする方法がわかった．<a href="#arm64-on-macos-without-rosseta-2">Arm64 on MacOS (without Rosseta 2)</a>を参照．<br>
+[2023 March 15]
 MacOSのarm64環境でのpyxtalのインストールが難しいので，Rosetta 2を使用してx86_64環境での利用が推奨．</p>
   </div>
 </div>
@@ -159,15 +170,30 @@ SciPyはv1.5.4を利用する．<br>
 </ul>
 <h3 id="cryspy-080-or-earlier">CrySPY 0.8.0 or earlier</h3>
 <p>CrySPY本体に同梱されている古いドキュメントを見ること．</p>
-
+<h2 id="arm64-on-macos-without-rosseta-2">Arm64 on MacOS (without Rosseta 2)</h2>
+<ol>
+<li><a href="https://github.com/conda-forge/miniforge" target="_blank">miniforge3</a><i class="fas fa-external-link-alt"></i>をインストール（homebrew pythonでpyshtoolsをインストールする方法が今のところ不明）</li>
+<li>condaでpymatgen (numpyもインストールされる), fftwをインストール</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda install pymatgen
+</span></span><span style="display:flex;"><span>conda install fftw
+</span></span></code></pre></div><ol start="3">
+<li>pyshtoolsをソースからビルドする．pyshtoolsはPyXtalのインストールに必要．</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip3 install pyshtools --no-binary pyshtools
+</span></span></code></pre></div><ol start="4">
+<li>CrySPYをインストール</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip3 install csp-cryspy
+</span></span></code></pre></div>
             <footer class="footline">
             </footer>
           </article>
         </div>
       </main>
     </div>
-    <script src="../../../../js/clipboard.min.js?1679566223" defer></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1679566223" defer></script>
-    <script src="../../../../js/theme.js?1679566223" defer></script>
+    <script src="../../../../js/clipboard.min.js?1684225127" defer></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1684225127" defer></script>
+    <script src="../../../../js/theme.js?1684225127" defer></script>
   </body>
 </html>

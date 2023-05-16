@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/index.html" rel="canonical" type="text/html" title="Tutorial :: CrySPY">
     <link href="../tutorial/index.xml" rel="alternate" type="application/rss+xml" title="Tutorial :: CrySPY">
-    <link href="../images/favicon.png?1679566222" rel="icon" type="image/png">
+    <link href="../images/favicon.png?1684225126" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../css/fontawesome-all.min.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1679566222" rel="stylesheet">
-    <link href="../css/auto-complete.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1679566222" rel="stylesheet">
-    <link href="../css/fonts.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1679566222" rel="stylesheet">
-    <link href="../css/theme-relearn-light.css?1679566222" rel="stylesheet" id="variant-style">
-    <link href="../css/variant.css?1679566222" rel="stylesheet">
-    <link href="../css/print.css?1679566222" rel="stylesheet" media="print">
-    <link href="../css/format-print.css?1679566222" rel="stylesheet">
-    <link href="../css/ie.css?1679566222" rel="stylesheet">
-    <script src="../js/url.js?1679566222"></script>
-    <script src="../js/variant.js?1679566222"></script>
+    <link href="../css/fontawesome-all.min.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1684225126" rel="stylesheet">
+    <link href="../css/auto-complete.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1684225126" rel="stylesheet">
+    <link href="../css/fonts.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1684225126" rel="stylesheet">
+    <link href="../css/theme-relearn-light.css?1684225126" rel="stylesheet" id="variant-style">
+    <link href="../css/variant.css?1684225126" rel="stylesheet">
+    <link href="../css/print.css?1684225126" rel="stylesheet" media="print">
+    <link href="../css/format-print.css?1684225126" rel="stylesheet">
+    <link href="../css/ie.css?1684225126" rel="stylesheet">
+    <script src="../js/url.js?1684225126"></script>
+    <script src="../js/variant.js?1684225126"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -117,6 +117,8 @@
 <li><a href="../tutorial/laqa/index.html">LAQA</a><ul>
 	</ul></li>
 <li><a href="../tutorial/mol/index.html">Molecular crystal structure prediction</a><ul>
+	</ul></li>
+<li><a href="../tutorial/mpi/index.html">Random structure generation with MPI</a><ul>
 	</ul></li>
 </ul>
 
@@ -864,12 +866,12 @@ See <a href="https://tomoki-yamashita.github.io/CrySPY_doc/features/backup/" tar
 <h2 id="download-the-data">Download the data</h2>
 <p>It is assumed here that you analyze and visualize CrySPY data in your local PC.
 If you use CrySPY in super computers or workstations, download the data in your local PC.
-You can delete the <code>work</code> directory if you do not need it because the file size could be very large.</p>
+You can delete the <code>work</code> and <code>backup</code> directory if you do not need it because the file size could be very large.</p>
 <h2 id="jupyter-notebook">jupyter notebook</h2>
 <p>Move to the <code>data/</code> directory in results you just download.
 Then copy <code>cryspy_analyzer_RS.ipynb</code> from <a href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/">CrySPY utility</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ls
-</span></span><span style="display:flex;"><span>backup/ calc_in/ cryspy.in cryspy.stat  data/  err_cryspy  log_cryspy
+</span></span><span style="display:flex;"><span>calc_in/ cryspy.in cryspy.stat  data/  err_cryspy  log_cryspy
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cd data
 </span></span><span style="display:flex;"><span>$ ls
 </span></span><span style="display:flex;"><span>cryspy_rslt  cryspy_rslt_energy_asc  init_POSCARS  opt_CIFS.cif  opt_POSCARS  pkl_data/
@@ -878,10 +880,10 @@ Then copy <code>cryspy_analyzer_RS.ipynb</code> from <a href="https://tomoki-yam
 You can get the following figure by simply running the steps in order.</p>
 <p>
 		
-<a href="#image-4b1ba03ba452279a329511fcdb6e3c83" class="lightbox-link">
+<a href="#image-6b0baad96ba977ec0a88044018352cac" class="lightbox-link">
 <img src="../images/tutorial/Si8_RS.png?width=40vw" alt="RS for Si8" style="height: auto; width: 40vw;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-4b1ba03ba452279a329511fcdb6e3c83">
+<a href="javascript:history.back();" class="lightbox" id="image-6b0baad96ba977ec0a88044018352cac">
 <img src="../images/tutorial/Si8_RS.png?width=40vw" alt="RS for Si8" class="lightbox-image" loading="lazy">
 </a></p>
 
@@ -978,8 +980,270 @@ An example of the energy data (dict type) is shown below.</p>
           <article class="default">
 <h1 id="laqa">LAQA</h1>
 
-<p>LAQA</p>
+<p>May 15th, 2023</p>
 
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>First, see <a href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/" target="_blank">Tutorial &gt; Random Search (RS)</a> for basic usage of CrySPY.<br>
+Here, we assume CrySPY 1.1.0 or later.</p>
+  </div>
+</div>
+<p>The example files used here can be downloaded from <a href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/qe_si16_laqa/">CrySPY Utility &gt; Examples &gt; qe_Si16_LAQA</a>.
+In this tutorial, only 50 initial structures are generated, but originally, LAQA is designed to select candidates from many more structures.</p>
+<h2 id="input">Input</h2>
+<h3 id="cryspyin">cryspy.in</h3>
+<p>Here is an example of <code>cryspy.in</code>.</p>
+<pre tabindex="0"><code>[basic]
+algo = LAQA
+calc_code = QE
+tot_struc = 50
+nstage = 1
+njob = 10
+jobcmd = qsub
+jobfile = job_cryspy
+
+[structure]
+natot = 16
+atype = Si
+nat = 16
+mindist_1 = 1.5
+
+[QE]
+qe_infile = pwscf.in
+qe_outfile = pwscf.out
+kppvol =  80
+
+[LAQA]
+nselect_laqa = 4
+
+[option]
+</code></pre><ul>
+<li><code>nstage</code> must be 1 in LAQA</li>
+<li>You have to write <code>nselect_laqa</code> in [LAQA] section. <code>nselect_laqa</code> is the number of candidates you select at one time.</li>
+</ul>
+<p>If you want to change the value of the weight for LAQA score, edit <code>wf</code> and <code>ws</code> as below.
+If omitted, the default values are used (0.1 and 10.0, respectively).
+See, <a href="https://tomoki-yamashita.github.io/CrySPY_doc/searching_algo/laqa/">Searching algorithms &gt; LAQA</a> for the score.</p>
+<pre tabindex="0"><code>[LAQA]
+nselect_laqa = 4
+wf = 0.1
+ws = 10.0
+</code></pre><h3 id="calc_inpwscfin_1">calc_in/pwscf.in_1</h3>
+<pre tabindex="0"><code>&amp;control
+    calculation = &#39;vc-relax&#39;
+    pseudo_dir = &#39;/usr/local/gbrv/all_pbe_UPF_v1.5/&#39;
+    outdir=&#39;./outdir/&#39;
+    nstep = 10
+/
+
+&amp;system
+    ibrav = 0
+    nat = 16
+    ntyp = 1
+    ecutwfc = 40
+    ecutrho = 200
+    occupations = &#39;smearing&#39;
+    degauss = 0.01
+/
+
+&amp;electrons
+/
+
+&amp;ions
+/
+
+&amp;cell
+/
+
+ATOMIC_SPECIES
+  Si -1.0 si_pbe_v1.uspp.F.UPF
+</code></pre><ul>
+<li><code>nstep</code> controls how many steps of structure optimization can proceed in one selection. (<code>NSW</code> for VASP)</li>
+</ul>
+<h3 id="calc_injob_cryspy">calc_in/job_cryspy</h3>
+<pre tabindex="0"><code>#!/bin/sh
+#$ -cwd
+#$ -V -S /bin/bash
+####$ -V -S /bin/zsh
+#$ -N Si_CrySPY_ID
+#$ -pe smp 20
+####$ -q ibis1.q
+####$ -q ibis2.q
+
+mpirun -np $NSLOTS pw.x -nk 4 &lt; pwscf.in &gt; pwscf.out
+
+if [ -e &#34;CRASH&#34; ]; then
+    sed -i -e &#39;3 s/^.*$/skip/&#39; stat_job
+    exit 1
+fi
+
+sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
+</code></pre><ul>
+<li>The job file is the same as the usual way.</li>
+</ul>
+<h2 id="run">Run</h2>
+
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+<p>An automatic script is also available. See the bottom of this page.</p>
+  </div>
+</div>
+<p>Just type <code>cryspy</code> for the 1st run.</p>
+<pre tabindex="0"><code>cryspy &amp;
+</code></pre><p>Check <code>log_cryspy</code>.
+50 random structures are generated.</p>
+<pre tabindex="0"><code>2023/05/13 13:02:07
+CrySPY 1.1.0
+Start cryspy.py
+Number of MPI processes: 1
+
+Read input file, cryspy.in
+Save input data in cryspy.stat
+
+# --------- Generate initial structures
+# ------ mindist
+Si - Si 1.5
+Structure ID      0 was generated. Space group: 165 --&gt; 165 P-3c1
+Structure ID      1 was generated. Space group:  66 --&gt;  66 Cccm
+Structure ID      2 was generated. Space group: 146 --&gt; 146 R3
+Structure ID      3 was generated. Space group:  82 --&gt;  82 I-4
+Structure ID      4 was generated. Space group: 162 --&gt; 162 P-31m
+...
+...
+...
+Structure ID     47 was generated. Space group:  90 --&gt;  90 P42_12
+Structure ID     48 was generated. Space group: 214 --&gt; 214 I4_132
+Structure ID     49 was generated. Space group:  23 --&gt;  23 I222
+
+Elapsed time for structure generation: 0:00:10.929030
+
+
+# ---------- Initialize LAQA
+# ---------- Selection 0
+selected_id: 50 IDs
+</code></pre><p>In LAQA, jobs of structure optimization for all structures are submitted once at the beginning.
+Note that only 10 steps are proceeded here since we set <code>nstep = 10</code>.
+Repeat <code>cryspy</code> command until all of these (10 steps) are completed.
+If necessary, you can also submit all jobs at once by increasing the value of <code>njob</code>.</p>
+<p>After all the initial optimizations, <code>LAQA is ready</code> is displayed at the end of <code>log_cryspy</code>.</p>
+<pre tabindex="0"><code>2023/05/13 13:23:31
+CrySPY 1.1.0
+Restart cryspy.py
+Number of MPI processes: 1
+
+
+
+# ---------- job status
+ID     41: Stage 1 Done!
+
+LAQA is ready
+</code></pre><p>Next cryspy run will make the first selection.</p>
+<pre tabindex="0"><code>2023/05/13 13:23:33
+CrySPY 1.1.0
+Restart cryspy.py
+Number of MPI processes: 1
+
+
+
+# ---------- job status
+
+Backup data
+
+# ---------- Selection 1
+selected_id: 37 8 10 48
+</code></pre><p>Here, only the number set in <code>nselect_laqa</code> will be selected.
+Type <code>cryspy</code> to submit the jobs (next 10 steps).</p>
+<pre tabindex="0"><code>cryspy &amp;
+</code></pre><pre tabindex="0"><code>2023/05/13 13:23:36
+CrySPY 1.1.0
+Restart cryspy.py
+Number of MPI processes: 1
+
+
+
+# ---------- job status
+ID     37: submit job, Stage 1
+ID      8: submit job, Stage 1
+ID     10: submit job, Stage 1
+ID     48: submit job, Stage 1
+</code></pre><p>Then, by repeating this over and over again, the optimization of the structure selected according to the score advances by 10 steps each time.
+Proceed until several structures are completed, and finish (stop) when you like.</p>
+<h2 id="status">Status</h2>
+<p>If you want to check the LAQA score during the simulation, you can look at the status file:</p>
+<ul>
+<li>./data/LAQA_status</li>
+</ul>
+<p>Other files for LAQA will be output:</p>
+<ul>
+<li>./data_LAQA_bias</li>
+<li>./data_LAQA_energy</li>
+<li>./data_LAQA_score</li>
+<li>./data_LAQA_selected_id</li>
+<li>./data_LAQA_step</li>
+</ul>
+<h2 id="analysis-and-visualization">Analysis and visualization</h2>
+<p>It is assumed here that you analyze and visualize CrySPY data in your local PC.
+If you use CrySPY in super computers or workstations, download the data in your local PC.
+You can delete the <code>work</code> and <code>backup</code> directory if you do not need it because the file size could be very large.
+You may gzip the pkl data to decrease the file size.</p>
+<h3 id="jupyter-notebook">jupyter notebook</h3>
+<p>Move to the data/ directory in results you just downloaded.
+Then copy <code>cryspy_analyzer_LAQA.ipynb</code> from <a href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/">CrySPY utility</a>.</p>
+<p>You can obtain the graph and animation with the notebook.
+In the gif below, all of the optimizations were completed. This is just for animation.
+(When all of the optimizations are completed, the computational cost is the same as random search.)</p>
+<p>
+		
+<a href="#image-43c4f8593b716b2e94a28cc915f0df00" class="lightbox-link">
+<img src="../images/LAQA/LAQA.gif?width=40vw" alt="fig_LAQA" style="height: auto; width: 40vw;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-43c4f8593b716b2e94a28cc915f0df00">
+<img src="../images/LAQA/LAQA.gif?width=40vw" alt="fig_LAQA" class="lightbox-image" loading="lazy">
+</a></p>
+<p>This graph shows the energy as a function of optimization step.
+The red lines indicate three structures with the lowest energy.
+The most stable one reached diamond structure.
+The structures that eventually become stable were selected at an early stage.</p>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>If algo = LAQA, the followings are automatically set in the [option] section.</p>
+<ul>
+<li>force_step_flag = True</li>
+<li>stress_step_flag = True</li>
+</ul>
+<p>Force and stress data are collected step by step.
+Energy and structure data are NOT. They are collected for each selection.
+In other words, in this case, energy and structure data are saved once every 10 steps.
+If you want to collect energy and structure data step by step, manually set up as follows:</p>
+<pre tabindex="0"><code>[option]
+energy_step_flag = True
+struc_step_flag = True
+</code></pre>  </div>
+</div>
+<h2 id="auto-script">Auto script</h2>
+<p>You may find it tedious to run cryspy over and over again.
+This auto script could help you.</p>
+<pre tabindex="0"><code>#!/bin/bash -e
+while :
+do
+    cryspy
+    LOG_LASTLINE=`tail -n 1 log_cryspy`
+    if  [ &#34;$LOG_LASTLINE&#34; = &#34;Done all structures!&#34; ]
+    then
+        exit 0
+    elif [ &#34;$LOG_LASTLINE&#34; = &#34;LAQA is ready&#34; ]
+    then
+        # ---------- for LAQA
+        cryspy    # selection
+        cryspy    # submit jobs
+    fi
+    sleep 2m
+done
+</code></pre>
             <footer class="footline">
             </footer>
           </article>
@@ -1134,11 +1398,176 @@ Set minimum and maximum values as follows:</p>
             </footer>
           </article>
 
+          <article class="default">
+<h1 id="random-structure-generation-with-mpi">Random structure generation with MPI</h1>
+
+<p>May 15th, 2023</p>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>First, see <a href="../tutorial/random/">Tutorial &gt; Random Search (RS)</a> for basic usage of CrySPY.</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>Requirements:</p>
+<ul>
+<li>CrySPY 1.1.0 or later</li>
+<li>mpi4py</li>
+<li>MPI library (Open MPI, Intel MPI, MPICH, etc.)</li>
+</ul>
+  </div>
+</div>
+<h2 id="mpi4py">mpi4py</h2>
+<p>Install mpi4py if it is not already installed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install mpi4py
+</span></span></code></pre></div><h2 id="input">Input</h2>
+<p><code>cryspy.in</code> is the same as normal usage and does not need to be changed.
+Here we try structure generation with MPI using the following settings:</p>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = soiap
+tot_struc = 100
+nstage = 1
+njob = 2
+jobcmd = zsh
+jobfile = job_cryspy
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+
+[soiap]
+soiap_infile = soiap.in
+soiap_outfile = soiap.out
+soiap_cif = initial.cif
+
+[option]
+</code></pre><p>All except <code>tot_struc</code>, <code>natot</code>, <code>atype</code>, and <code>nat</code> are irrelevant for structure generation and can be ignored here.</p>
+<h2 id="run">Run</h2>
+<p>If you want to generate structures with 4 MPI processes, just use <code>mpiexec -n</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mpiexec -n <span style="color:#ae81ff">4</span> cryspy
+</span></span></code></pre></div><p>If you submit the job with a job scheduler system, make the job file. Here is an example:</p>
+<pre tabindex="0"><code>#!/bin/sh
+#$ -cwd
+#$ -V -S /bin/bash
+#$ -N n_nproc
+#$ -pe smp 4
+
+
+mpirun -np $NSLOTS ~/.local/bin/cryspy
+</code></pre><p>Please edit the location of the executable script <code>cryspy</code>.</p>
+<h2 id="result">Result</h2>
+<p>CrySPY simply divides the task (number of structures) by the number of processes:</p>
+<ul>
+<li>Rank 0: IDs 0 &ndash; 24</li>
+<li>Rank 1: IDs 25 &ndash; 49</li>
+<li>Rank 2: IDs 50 &ndash; 74</li>
+<li>Rank 3: IDs 75 &ndash; 99</li>
+</ul>
+<p>CrySPY outputs the log in the order they are generated as follows:</p>
+<pre tabindex="0"><code>2023/04/24 22:47:51
+CrySPY 1.1.0
+Start cryspy.py
+Number of MPI processes: 4
+
+Read input file, cryspy.in
+Save input data in cryspy.stat
+
+# --------- Generate initial structures
+# ------ mindist
+Si - Si 1.11
+Structure ID     25 was generated. Space group: 138 --&gt; 123 P4/mmm
+Structure ID     75 was generated. Space group:  99 --&gt;  99 P4mm
+Structure ID      0 was generated. Space group: 127 --&gt; 123 P4/mmm
+Structure ID      1 was generated. Space group:  61 --&gt;  61 Pbca
+Structure ID     50 was generated. Space group:  38 --&gt;  38 Amm2
+Structure ID     51 was generated. Space group: 134 --&gt; 123 P4/mmm
+Structure ID     26 was generated. Space group: 111 --&gt; 123 P4/mmm
+Structure ID      2 was generated. Space group:   9 --&gt;   9 Cc
+Structure ID      3 was generated. Space group:  80 --&gt;  80 I4_1
+Structure ID      4 was generated. Space group: 107 --&gt; 107 I4mm
+Structure ID      5 was generated. Space group:  75 --&gt;  75 P4
+Structure ID     76 was generated. Space group: 108 --&gt; 108 I4cm
+Structure ID     77 was generated. Space group: 100 --&gt; 100 P4bm
+Structure ID     27 was generated. Space group: 207 --&gt; 221 Pm-3m
+</code></pre><p>However, the order in <code>init_POSCARS</code> is by structure ID since CrySPY outputs after all structures have been generated.</p>
+<pre tabindex="0"><code>ID_0
+1.0
+   2.9636956737951818    0.0000000000000002    0.0000000000000002
+   0.0000000000000000    2.9636956737951818    0.0000000000000002
+   0.0000000000000000    0.0000000000000000    6.2634106638053080
+Si
+8
+direct
+  -0.1602734164607877   -0.1602734164607877   -0.0000000000000000 Si
+   0.1602734164607877    0.1602734164607877    0.5000000000000000 Si
+   0.6602734164607877    0.3397265835392123    0.7500000000000000 Si
+   0.3397265835392122    0.6602734164607877    0.2500000000000000 Si
+   0.4469739273741755    0.4469739273741755   -0.0000000000000000 Si
+   0.5530260726258245    0.5530260726258244    0.5000000000000000 Si
+   0.0530260726258245    0.9469739273741754    0.7500000000000000 Si
+   0.9469739273741754    0.0530260726258245    0.2500000000000000 Si
+ID_1
+1.0
+   7.2751506682509657    0.0000000000000004    0.0000000000000004
+   0.0000000000000000    7.2751506682509657    0.0000000000000004
+   0.0000000000000000    0.0000000000000000    5.1777634169924873
+Si
+8
+direct
+  -0.3845341807505553   -0.3845341807505553    0.4999999999999999 Si
+   0.3845341807505553    0.3845341807505553    0.5000000000000000 Si
+   0.3845341807505553   -0.3845341807505553    0.0000000000000000 Si
+  -0.3845341807505553    0.3845341807505553   -0.0000000000000000 Si
+   0.0000000000000000    0.5000000000000000    0.2500000000000000 Si
+   0.5000000000000000    0.0000000000000000    0.7500000000000000 Si
+   0.0000000000000000    0.5000000000000000    0.7500000000000000 Si
+   0.5000000000000000    0.0000000000000000    0.2500000000000000 Si
+ID_2
+1.0
+  -4.3660398676292269   -4.3660398676292269    0.0000000000000000
+  -4.3660398676292269   -0.0000000000000003   -4.3660398676292269
+   0.0000000000000000   -4.3660398676292269   -4.3660398676292269
+Si
+8
+direct
+   0.8700001548800920    0.8700001548800920    0.1299998451199080 Si
+   0.1299998451199080    0.1299998451199080    0.8700001548800920 Si
+   0.8700001548800920    0.1299998451199080    0.8700001548800920 Si
+   0.1299998451199080    0.8700001548800920    0.1299998451199080 Si
+   0.1299998451199080    0.8700001548800920    0.8700001548800920 Si
+   0.8700001548800920    0.1299998451199080    0.1299998451199080 Si
+   0.7500000000000000    0.7500000000000000    0.7500000000000000 Si
+   0.2500000000000000    0.2500000000000000    0.2500000000000000 Si
+</code></pre>
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+<p>Except for the random structure generation part, there is no point in using MPI because it is not parallelized.</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>See also <a href="https://tomoki-yamashita.github.io/CrySPY_doc/features/mpi/" target="_blank">Features &gt; Structure generation with MPI parallelization</a></p>
+  </div>
+</div>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
           </section>        </div>
       </main>
     </div>
-    <script src="../js/clipboard.min.js?1679566222" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1679566222" defer></script>
-    <script src="../js/theme.js?1679566222" defer></script>
+    <script src="../js/clipboard.min.js?1684225127" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1684225127" defer></script>
+    <script src="../js/theme.js?1684225127" defer></script>
   </body>
 </html>

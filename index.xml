@@ -19,7 +19,7 @@ Table of contents Crystal structure prediction Searching algorithms Interface Lo
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/index.html</guid>
-      <description>Version information Table of contents Version 1.0.0 Version 0.10.3 or earlier </description>
+      <description>Version information Table of contents Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier </description>
     </item>
     <item>
       <title>Installation</title>
@@ -35,7 +35,14 @@ Table of contents System requirements Python Structure optimizer find_wy (option
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/index.html</guid>
       <description>Tutorial Info You can find examaple files in cryspy_utility/examples.
-Table of contents Random Search (RS) soiap in your local PC VASP QE OpenMX LAMMPS External program Check cryspy.in Script to run Firsrt run Submit job Check results Append structures Analysis and visualization Load external data Evolutionary Algorithm (EA) Bayesian Optimization (BO) LAQA Molecular crystal structure prediction </description>
+Table of contents Random Search (RS) soiap in your local PC VASP QE OpenMX LAMMPS External program Check cryspy.in Script to run Firsrt run Submit job Check results Append structures Analysis and visualization Load external data Evolutionary Algorithm (EA) Bayesian Optimization (BO) LAQA Molecular crystal structure prediction Random structure generation with MPI </description>
+    </item>
+    <item>
+      <title>Seaching algorithms</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/searching_algo/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/searching_algo/index.html</guid>
+      <description>Searching algorithms Table of contents Random search (RS) Evolutionary algorithm (EA) Bayesian optimizaion (BO) LAQA </description>
     </item>
     <item>
       <title>Structure generation</title>
@@ -50,7 +57,7 @@ Table of contents struc_mode = crystal struc_mode = mol struc_mode = mol_bs </de
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/index.html</guid>
-      <description>Features Table of contents Backup Clean Restriction on interatomic distances CrySPY_ID in job files </description>
+      <description>Features Table of contents Backup Clean Restriction on interatomic distances CrySPY_ID in job files Structure generation with MPI parallelization </description>
     </item>
     <item>
       <title>Input file</title>
@@ -74,7 +81,7 @@ Table of contents Common data Initial and optimized structure data Result data R
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/index.html</guid>
       <description>CrySPY Utility See Installation/CrySPY utility to download. The examples can also be downloaded from this document site.
-Table of contents Examples soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol extract_struc.py pos2pkl.py kpt_check.py </description>
+Table of contents Examples soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA extract_struc.py pos2pkl.py kpt_check.py </description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>探索アルゴリズム on CrySPY</title>
+    <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/searching_algo/index.html</link>
+    <description>Recent content in 探索アルゴリズム on CrySPY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/searching_algo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LAQA</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/searching_algo/laqa/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/searching_algo/laqa/index.html</guid>
+      <description>Score $ L $ $$ L = -E + w_F \frac{F^2}{2\Delta F} + w_S S. $$ Symbol Note $$ E $$ エネルギー（eV/atom） $$ w_F $$ 力の項の重み. Default: $ w_F = 0.1$ $$ F $$ 原子に働く力の平均ノルム（eV/Å） $$ \Delta F $$ 一つ前のステップからの $ F $の差の絶対値．はじめのステップでは $ \Delta F = 1$． $ \Delta F = 10^{-6}$ if $ \Delta F \le 10^{-6} $. $$ w_S $$ ストレス項の重み．Default: $ w_S = 10.0$ $$ S $$ ストレステンソルにおける成分の絶対値平均（eV/Å^3）． Reference K.</description>
+    </item>
+  </channel>
+</rss>

@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.html" rel="canonical" type="text/html" title="機能 :: CrySPY">
     <link href="../../ja/features/index.xml" rel="alternate" type="application/rss+xml" title="機能 :: CrySPY">
-    <link href="../../images/favicon.png?1679566222" rel="icon" type="image/png">
+    <link href="../../images/favicon.png?1684225127" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../css/fontawesome-all.min.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1679566223" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1679566223" rel="stylesheet">
-    <link href="../../css/fonts.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1679566223" rel="stylesheet">
-    <link href="../../css/theme-relearn-light.css?1679566223" rel="stylesheet" id="variant-style">
-    <link href="../../css/variant.css?1679566223" rel="stylesheet">
-    <link href="../../css/print.css?1679566223" rel="stylesheet" media="print">
-    <link href="../../css/format-print.css?1679566223" rel="stylesheet">
-    <link href="../../css/ie.css?1679566223" rel="stylesheet">
-    <script src="../../js/url.js?1679566223"></script>
-    <script src="../../js/variant.js?1679566223"></script>
+    <link href="../../css/fontawesome-all.min.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1684225127" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1684225127" rel="stylesheet">
+    <link href="../../css/fonts.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1684225127" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1684225127" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1684225127" rel="stylesheet">
+    <link href="../../css/print.css?1684225127" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1684225127" rel="stylesheet">
+    <link href="../../css/ie.css?1684225127" rel="stylesheet">
+    <script src="../../js/url.js?1684225127"></script>
+    <script src="../../js/variant.js?1684225127"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -81,6 +81,8 @@
 	</ul></li>
 <li><a href="../../ja/features/cryspy_id/index.html">ジョブファイルのCrySPY_ID</a><ul>
 	</ul></li>
+<li><a href="../../ja/features/mpi/index.html">MPI並列化を用いた構造生成</a><ul>
+	</ul></li>
 </ul>
 
             <footer class="footline">
@@ -103,8 +105,11 @@
 <li>data/*</li>
 <li>ext/*</li>
 </ul>
-<p>work/* は含まれいないので注意．
-また，バックアップは1世代分のみであり，それより古いものは削除されます．</p>
+<p>work/* は含まれいないので注意．</p>
+<ul>
+<li>(v1.1.0以降) 上記ファイルが日付と時間で名前づけられたディレクトリにコピーされる．以前のバックアップは自動的には削除されない．</li>
+<li>(v1.0.0) バックアップは1世代分のみであり，それより古いものは削除される．</li>
+</ul>
 <h2 id="自動バックアップ">自動バックアップ</h2>
 <p>自動的にバックアップされるタイミングは次の通り:</p>
 <ul>
@@ -201,11 +206,58 @@ sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
             </footer>
           </article>
 
+          <article class="default">
+<h1 id="mpi並列化を用いた構造生成">MPI並列化を用いた構造生成</h1>
+
+<p>CrySPYのバージョン1.1.0からは，MPIを用いたランダム構造生成が可能になった．
+MPIを使うにはPython環境にmpi4pyをインストールする必要がある．
+当然，計算に利用するワークステーション等にMPIライブラリ（Open MPI，Intel MPI，MPICHなど）も必要である．</p>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>MPIを使うのに下記が必要</p>
+<ul>
+<li>CrySPY 1.1.0 or later</li>
+<li>mpi4py</li>
+<li>MPI library (Open MPI, Intel MPI, MPICH, etc.)</li>
+</ul>
+  </div>
+</div>
+<p>下の図にSi8原子1000構造をランダムに生成するのにかかった時間とMPIプロセス数の関係を示す．下記のセッティングを使った．</p>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = soiap
+tot_struc = 1000
+nstage = 1
+njob = 2
+jobcmd = zsh
+jobfile = job_cryspy
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+mindist_1 = 2.2
+</code></pre><p><code>mindset_1 = 2.2</code>のように厳し目に設定して，わざと時間がかかるようにしてある．
+それぞれのプロセス数において10回ずつ実行して，平均を線で結んでいる．</p>
+<p>
+<a href="#image-e964a297cd77556cc28181f374da093b" class="lightbox-link">
+<img src="../../images/MPI/elapsed_time_ibis.png" alt="fig_MPI" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-e964a297cd77556cc28181f374da093b">
+<img src="../../images/MPI/elapsed_time_ibis.png" alt="fig_MPI" class="lightbox-image" loading="lazy">
+</a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
           </section>        </div>
       </main>
     </div>
-    <script src="../../js/clipboard.min.js?1679566223" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1679566223" defer></script>
-    <script src="../../js/theme.js?1679566223" defer></script>
+    <script src="../../js/clipboard.min.js?1684225127" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1684225127" defer></script>
+    <script src="../../js/theme.js?1684225127" defer></script>
   </body>
 </html>

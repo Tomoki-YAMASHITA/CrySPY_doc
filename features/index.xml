@@ -12,9 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/backup/index.html</guid>
       <description>CrySPY has a simple backup function. The following files are backed up:
-cryspy.in cryspy.stat log_cryspy err_cryspy calc_in/* data/* ext/* work/* are NOT included. Note that only one generation is backed up, and any earlier backups will be deleted.
-Auto backup The timing of the automatic backup is as follows:
-before going to next selection (BO, LAQA) or next generation (EA) append structures Manual backup To manually back up, run cryspy with -b or --backup option as:</description>
+cryspy.in cryspy.stat log_cryspy err_cryspy calc_in/* data/* ext/* work/* are NOT included.
+(v1.1.0 or later) above files are copied to a directory named by date and time in &amp;ldquo;backup&amp;rdquo; directory. Previous backups are NOT automatically deleted. (v1.0.0) only one generation is backed up, and previous backups will be deleted. Auto backup The timing of the automatic backup is as follows:</description>
     </item>
     <item>
       <title>Clean</title>
@@ -39,6 +38,15 @@ $ ls calc_in cryspy.in cryspy.stat data err_cryspy log_cryspy $ cryspy -c Are yo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/cryspy_id/index.html</guid>
       <description>In the job file of CrySPY, the string &amp;ldquo;CrySPY_ID&amp;rdquo; is automatically replaced with the structure ID. When you use a job scheduler such as PBS and SLURM, it is useful to set the structure ID to the job name. For example, in the PBS system, #PBS -N Si_CrySPY_ID in ID 10 is replaced with #PBS -N Si_10. Note that starting with a number will result in an error. You should add a prefix like Si_.</description>
+    </item>
+    <item>
+      <title>Structure generation with MPI parallelization</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/mpi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/mpi/index.html</guid>
+      <description>Random structure generation using MPI has been available since version 1.1.0. You need to install mpi4py in your Python environment for MPI parallelization. Of course, an MPI library such as Open MPI, Intel MPI, and MPICH is required for your workstation.
+Info Requirements:
+CrySPY 1.1.0 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) The figure below shows the relationship between elapsed time and the number of processes for 1000 structures of Si8 with the following setting:</description>
     </item>
   </channel>
 </rss>

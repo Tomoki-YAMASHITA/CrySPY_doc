@@ -19,7 +19,7 @@
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/version_info/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/version_info/index.html</guid>
-      <description>バージョン情報 目次 Version 1.0.0 Version 0.10.3 or earlier </description>
+      <description>バージョン情報 目次 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier </description>
     </item>
     <item>
       <title>インストール</title>
@@ -35,7 +35,14 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/index.html</guid>
       <description>チュートリアル 情報 Exampleファイルはこちら &amp;ndash;&amp;gt; cryspy_utility/examples.
-目次 Random Search (RS) soiap in your local PC VASP QE OpenMX LAMMPS External program Check cryspy.in Script to run Firsrt run Submit job Check results Append structures Analysis and visualization Load external data Evolutionary Algorithm (EA) Bayesian Optimization (BO) LAQA Molecular crystal structure prediction </description>
+目次 Random Search (RS) soiap in your local PC VASP QE OpenMX LAMMPS External program Check cryspy.in Script to run Firsrt run Submit job Check results Append structures Analysis and visualization Load external data Evolutionary Algorithm (EA) Bayesian Optimization (BO) LAQA Molecular crystal structure prediction Random structure generation with MPI </description>
+    </item>
+    <item>
+      <title>探索アルゴリズム</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/searching_algo/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/searching_algo/index.html</guid>
+      <description>探索アルゴリズム 目次 LAQA </description>
     </item>
     <item>
       <title>構造生成</title>
@@ -50,7 +57,7 @@
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.html</guid>
-      <description>機能 目次 バックアップ クリーン Restriction on interatomic distances ジョブファイルのCrySPY_ID </description>
+      <description>機能 目次 バックアップ クリーン Restriction on interatomic distances ジョブファイルのCrySPY_ID MPI並列化を用いた構造生成 </description>
     </item>
     <item>
       <title>入力ファイル</title>
@@ -74,7 +81,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.html</guid>
       <description>CrySPY Utility ダウンロードに関してはこちらのページ： Installation/CrySPY utility． examplesはこのドキュメントサイトからもダウンロード可能です．
-目次 Examples soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol extract_struc.py pos2pkl.py kpt_check.py </description>
+目次 Examples soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA extract_struc.py pos2pkl.py kpt_check.py </description>
     </item>
   </channel>
 </rss>

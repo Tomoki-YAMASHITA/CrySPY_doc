@@ -7,6 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/version_info/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Version 1.1.0</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/version_info/ver_1.1.0/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/version_info/ver_1.1.0/index.html</guid>
+      <description>MPI並列 MPIを用いたランダム構造生成が利用可能．
+詳細は下記を参照．
+Tutorial &amp;gt; Random structure generation with MPI Features &amp;gt; Structure generation with MPI parallelization LAQA ストレス項を考慮に入れたスコアが利用できるように更新 (T. Yamashita and H. Sekine, Sci. Technol. Adv. Mater. Meth. 2, 84 (2022).)．
+詳細は下記を参照．
+Tutorial &amp;gt; LAQA Input file &amp;gt; [LAQA] section CrySPY Utility &amp;gt; Examples &amp;gt; qe_Si16_LAQA Backup 日付でディレクトリを作ることでバックアップの履歴が残るように変更． 詳細はfeatures/backup．</description>
+    </item>
+    <item>
       <title>Version 1.0.0</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/version_info/ver_1.0.0/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

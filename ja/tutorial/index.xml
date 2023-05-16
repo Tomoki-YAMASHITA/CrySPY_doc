@@ -34,7 +34,12 @@ Load external data </description>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/laqa/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/laqa/index.html</guid>
-      <description>LAQA</description>
+      <description>May 15th, 2023
+情報 CrySPYの基本的な使い方に関してははじめにTutorial &amp;gt; Random Search (RS)を見ること．
+ここではCrySPY 1.1.0以上を想定している．
+ここで利用しているファイルはCrySPY Utility &amp;gt; Examples &amp;gt; qe_Si16_LAQAからダウンロードできる． このチュートリアルでは，50個だけ初期構造を生成しているが，本来LAQAでは，もっと多くの構造を生成しておいてそこから良い候補を選択することでシミュレーションを進める．
+Input cryspy.in cryspy.inの例．
+[basic] algo = LAQA calc_code = QE tot_struc = 50 nstage = 1 njob = 10 jobcmd = qsub jobfile = job_cryspy [structure] natot = 16 atype = Si nat = 16 mindist_1 = 1.5 [QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 80 [LAQA] nselect_laqa = 4 [option] LAQAではnstageは1にする必要がある． [LAQA]セクションのnselect_laqaだけ新しく設定する必要がある． nselect_laqaは一回の選択で選ばれる候補の数． 下記のようにwfやwsを指定すれば，LAQAのスコアにおける重みも変えられる． 省略した場合，デフォルトでは0.</description>
     </item>
     <item>
       <title>Molecular crystal structure prediction</title>
@@ -45,6 +50,18 @@ Load external data </description>
 In this section, we give a tutorial on the molecular structure generation part only. Since version 0.9.0, CrySPY has been able to generate random molecular crystal structures using PyXtal.
 You need to use a pre-defined molecular by PyXtal&amp;rsquo;s database (see, https://pyxtal.readthedocs.io/en/latest/Usage.html?highlight=benzene#pyxtal-molecule-pyxtal-molecule)) or create molecule files that define molecular structures.
 Pre-defined molecule PyXtal currently supports C60, H2O, CH4, NH3, benzene, naphthalene, anthracene, tetracene, pentacene, coumarin, resorcinol, benzamide, aspirin, ddt, lindane, glycine, glucose, and ROY.</description>
+    </item>
+    <item>
+      <title>Random structure generation with MPI</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mpi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mpi/index.html</guid>
+      <description>2023年5月15日
+情報 CrySPYの基本的な使い方に関してはチュートリアル &amp;gt; Random Search (RS)を見ること．
+情報 動作環境:
+CrySPY 1.1.0 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) mpi4py mpi4pyのインストールがまだであればインストールする．
+pip install mpi4py 入力ファイル cryspy.inはいつもと同じで変更する必要はない．ここでは下記の設定でMPIを使った構造生成を行う．
+[basic] algo = RS calc_code = soiap tot_struc = 100 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.</description>
     </item>
   </channel>
 </rss>

@@ -7,6 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/version_info/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Version 1.1.0</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_1.1.0/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_1.1.0/index.html</guid>
+      <description>Parallelization with MPI Random structure generation using MPI has been available.
+See also
+Tutorial &amp;gt; Random structure generation with MPI Features &amp;gt; Structure generation with MPI parallelization LAQA Updated score formula to take into account the stress term (T. Yamashita and H. Sekine, Sci. Technol. Adv. Mater. Meth. 2, 84 (2022).).
+See also
+Tutorial &amp;gt; LAQA Input file &amp;gt; [LAQA] section CrySPY Utility &amp;gt; Examples &amp;gt; qe_Si16_LAQA Backup Files are copied to the directory named by the date and time in &amp;ldquo;backup&amp;rdquo; directory.</description>
+    </item>
+    <item>
       <title>Version 1.0.0</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_1.0.0/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

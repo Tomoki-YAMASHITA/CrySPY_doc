@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>Random structure generation with MPI :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/mpi/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/mpi/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mpi/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/mpi/index.html" rel="canonical" type="text/html" title="Random structure generation with MPI :: CrySPY">
+    <link href="../../tutorial/mpi/index.xml" rel="alternate" type="application/rss+xml" title="Random structure generation with MPI :: CrySPY">
+    <link href="../../images/favicon.png?1684225126" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1684225126" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1684225126" rel="stylesheet">
+    <link href="../../css/fonts.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1684225126" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1684225126" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1684225126" rel="stylesheet">
+    <link href="../../css/print.css?1684225126" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1684225126" rel="stylesheet">
+    <link href="../../css/ie.css?1684225126" rel="stylesheet">
+    <script src="../../js/url.js?1684225126"></script>
+    <script src="../../js/variant.js?1684225126"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../index.search.js";
+      var root_url="../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../tutorial/mpi/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../tutorial/index.html"><span itemprop="name">Tutorial</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Random structure generation with MPI</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="random-structure-generation-with-mpi">Random structure generation with MPI</h1>
+
+<p>May 15th, 2023</p>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>First, see <a href="../../tutorial/random/">Tutorial &gt; Random Search (RS)</a> for basic usage of CrySPY.</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>Requirements:</p>
+<ul>
+<li>CrySPY 1.1.0 or later</li>
+<li>mpi4py</li>
+<li>MPI library (Open MPI, Intel MPI, MPICH, etc.)</li>
+</ul>
+  </div>
+</div>
+<h2 id="mpi4py">mpi4py</h2>
+<p>Install mpi4py if it is not already installed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install mpi4py
+</span></span></code></pre></div><h2 id="input">Input</h2>
+<p><code>cryspy.in</code> is the same as normal usage and does not need to be changed.
+Here we try structure generation with MPI using the following settings:</p>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = soiap
+tot_struc = 100
+nstage = 1
+njob = 2
+jobcmd = zsh
+jobfile = job_cryspy
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+
+[soiap]
+soiap_infile = soiap.in
+soiap_outfile = soiap.out
+soiap_cif = initial.cif
+
+[option]
+</code></pre><p>All except <code>tot_struc</code>, <code>natot</code>, <code>atype</code>, and <code>nat</code> are irrelevant for structure generation and can be ignored here.</p>
+<h2 id="run">Run</h2>
+<p>If you want to generate structures with 4 MPI processes, just use <code>mpiexec -n</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mpiexec -n <span style="color:#ae81ff">4</span> cryspy
+</span></span></code></pre></div><p>If you submit the job with a job scheduler system, make the job file. Here is an example:</p>
+<pre tabindex="0"><code>#!/bin/sh
+#$ -cwd
+#$ -V -S /bin/bash
+#$ -N n_nproc
+#$ -pe smp 4
+
+
+mpirun -np $NSLOTS ~/.local/bin/cryspy
+</code></pre><p>Please edit the location of the executable script <code>cryspy</code>.</p>
+<h2 id="result">Result</h2>
+<p>CrySPY simply divides the task (number of structures) by the number of processes:</p>
+<ul>
+<li>Rank 0: IDs 0 &ndash; 24</li>
+<li>Rank 1: IDs 25 &ndash; 49</li>
+<li>Rank 2: IDs 50 &ndash; 74</li>
+<li>Rank 3: IDs 75 &ndash; 99</li>
+</ul>
+<p>CrySPY outputs the log in the order they are generated as follows:</p>
+<pre tabindex="0"><code>2023/04/24 22:47:51
+CrySPY 1.1.0
+Start cryspy.py
+Number of MPI processes: 4
+
+Read input file, cryspy.in
+Save input data in cryspy.stat
+
+# --------- Generate initial structures
+# ------ mindist
+Si - Si 1.11
+Structure ID     25 was generated. Space group: 138 --&gt; 123 P4/mmm
+Structure ID     75 was generated. Space group:  99 --&gt;  99 P4mm
+Structure ID      0 was generated. Space group: 127 --&gt; 123 P4/mmm
+Structure ID      1 was generated. Space group:  61 --&gt;  61 Pbca
+Structure ID     50 was generated. Space group:  38 --&gt;  38 Amm2
+Structure ID     51 was generated. Space group: 134 --&gt; 123 P4/mmm
+Structure ID     26 was generated. Space group: 111 --&gt; 123 P4/mmm
+Structure ID      2 was generated. Space group:   9 --&gt;   9 Cc
+Structure ID      3 was generated. Space group:  80 --&gt;  80 I4_1
+Structure ID      4 was generated. Space group: 107 --&gt; 107 I4mm
+Structure ID      5 was generated. Space group:  75 --&gt;  75 P4
+Structure ID     76 was generated. Space group: 108 --&gt; 108 I4cm
+Structure ID     77 was generated. Space group: 100 --&gt; 100 P4bm
+Structure ID     27 was generated. Space group: 207 --&gt; 221 Pm-3m
+</code></pre><p>However, the order in <code>init_POSCARS</code> is by structure ID since CrySPY outputs after all structures have been generated.</p>
+<pre tabindex="0"><code>ID_0
+1.0
+   2.9636956737951818    0.0000000000000002    0.0000000000000002
+   0.0000000000000000    2.9636956737951818    0.0000000000000002
+   0.0000000000000000    0.0000000000000000    6.2634106638053080
+Si
+8
+direct
+  -0.1602734164607877   -0.1602734164607877   -0.0000000000000000 Si
+   0.1602734164607877    0.1602734164607877    0.5000000000000000 Si
+   0.6602734164607877    0.3397265835392123    0.7500000000000000 Si
+   0.3397265835392122    0.6602734164607877    0.2500000000000000 Si
+   0.4469739273741755    0.4469739273741755   -0.0000000000000000 Si
+   0.5530260726258245    0.5530260726258244    0.5000000000000000 Si
+   0.0530260726258245    0.9469739273741754    0.7500000000000000 Si
+   0.9469739273741754    0.0530260726258245    0.2500000000000000 Si
+ID_1
+1.0
+   7.2751506682509657    0.0000000000000004    0.0000000000000004
+   0.0000000000000000    7.2751506682509657    0.0000000000000004
+   0.0000000000000000    0.0000000000000000    5.1777634169924873
+Si
+8
+direct
+  -0.3845341807505553   -0.3845341807505553    0.4999999999999999 Si
+   0.3845341807505553    0.3845341807505553    0.5000000000000000 Si
+   0.3845341807505553   -0.3845341807505553    0.0000000000000000 Si
+  -0.3845341807505553    0.3845341807505553   -0.0000000000000000 Si
+   0.0000000000000000    0.5000000000000000    0.2500000000000000 Si
+   0.5000000000000000    0.0000000000000000    0.7500000000000000 Si
+   0.0000000000000000    0.5000000000000000    0.7500000000000000 Si
+   0.5000000000000000    0.0000000000000000    0.2500000000000000 Si
+ID_2
+1.0
+  -4.3660398676292269   -4.3660398676292269    0.0000000000000000
+  -4.3660398676292269   -0.0000000000000003   -4.3660398676292269
+   0.0000000000000000   -4.3660398676292269   -4.3660398676292269
+Si
+8
+direct
+   0.8700001548800920    0.8700001548800920    0.1299998451199080 Si
+   0.1299998451199080    0.1299998451199080    0.8700001548800920 Si
+   0.8700001548800920    0.1299998451199080    0.8700001548800920 Si
+   0.1299998451199080    0.8700001548800920    0.1299998451199080 Si
+   0.1299998451199080    0.8700001548800920    0.8700001548800920 Si
+   0.8700001548800920    0.1299998451199080    0.1299998451199080 Si
+   0.7500000000000000    0.7500000000000000    0.7500000000000000 Si
+   0.2500000000000000    0.2500000000000000    0.2500000000000000 Si
+</code></pre>
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+<p>Except for the random structure generation part, there is no point in using MPI because it is not parallelized.</p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>See also <a href="https://tomoki-yamashita.github.io/CrySPY_doc/features/mpi/" target="_blank">Features &gt; Structure generation with MPI parallelization</a></p>
+  </div>
+</div>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js?1684225127" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1684225127" defer></script>
+    <script src="../../js/theme.js?1684225127" defer></script>
+  </body>
+</html>

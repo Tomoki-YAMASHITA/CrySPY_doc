@@ -89,7 +89,9 @@ Name Value Default Description nselect_bo int The number of structures to be sel
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/input/laqa/index.html</guid>
       <description>[LAQA] section is required only if you use LAQA (algo = LAQA)
-Name Value Default Description nselect_laqa int The number of structures to be selected at once. weight_laqa float 1.0 Weight of bias in the score. </description>
+Name Value Default Description nselect_laqa int The number of structures to be selected at once. wf float 0.1 Weight of the force term. ws float 10.0 Weight of the stress term. Info See also Searching algorithms &amp;gt; LAQA
+Info If algo = LAQA, the followings are automatically set in the [option] section.
+force_step_flag = True stress_step_flag = True Force and stress data are collected step by step.</description>
     </item>
     <item>
       <title>[option] section</title>

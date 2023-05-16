@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/cryspy_1.0/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/cryspy_1.0/index.html" rel="canonical" type="text/html" title="CrySPY 1.0.0 or later :: CrySPY">
     <link href="../../../../ja/installation/cryspy/cryspy_1.0/index.xml" rel="alternate" type="application/rss+xml" title="CrySPY 1.0.0 or later :: CrySPY">
-    <link href="../../../../images/favicon.png?1679566222" rel="icon" type="image/png">
+    <link href="../../../../images/favicon.png?1684225127" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../../../css/fontawesome-all.min.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fontawesome-all.min.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../../../css/nucleus.css?1679566223" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/auto-complete.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../../../css/perfect-scrollbar.min.css?1679566223" rel="stylesheet">
-    <link href="../../../../css/fonts.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fonts.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../../../css/theme.css?1679566223" rel="stylesheet">
-    <link href="../../../../css/theme-relearn-light.css?1679566223" rel="stylesheet" id="variant-style">
-    <link href="../../../../css/variant.css?1679566223" rel="stylesheet">
-    <link href="../../../../css/print.css?1679566223" rel="stylesheet" media="print">
-    <link href="../../../../css/format-print.css?1679566223" rel="stylesheet">
-    <link href="../../../../css/ie.css?1679566223" rel="stylesheet">
-    <script src="../../../../js/url.js?1679566223"></script>
-    <script src="../../../../js/variant.js?1679566223"></script>
+    <link href="../../../../css/fontawesome-all.min.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fontawesome-all.min.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../../css/nucleus.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/auto-complete.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../../css/perfect-scrollbar.min.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/fonts.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fonts.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../../css/theme.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/theme-relearn-light.css?1684225127" rel="stylesheet" id="variant-style">
+    <link href="../../../../css/variant.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/print.css?1684225127" rel="stylesheet" media="print">
+    <link href="../../../../css/format-print.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/ie.css?1684225127" rel="stylesheet">
+    <script src="../../../../js/url.js?1684225127"></script>
+    <script src="../../../../js/variant.js?1684225127"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -77,7 +77,12 @@
 </span></span></code></pre></div><p>pipでインストールすると，実行スクリプトの<code>cryspy</code>が自動的にPATHが通ったところにインストールされる．
 下記コマンドでチェックできる．</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>which cryspy
-</span></span></code></pre></div><h2 id="cal_fingerprint-optional">cal_fingerprint (optional)</h2>
+</span></span></code></pre></div><h3 id="編集可能モード">編集可能モード</h3>
+<p>CrySPYのソースコードを編集したい時は，pipの編集可能モード（-e オプション）を使うのが便利．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git
+</span></span><span style="display:flex;"><span>pip install -e ./CrySPY
+</span></span></code></pre></div><p>git cloneの代わりに，<a href="https://github.com/Tomoki-YAMASHITA/CrySPY/releases" target="_blank">release page</a><i class="fas fa-external-link-alt"></i>から圧縮ファイルをダウンロードしてもよい．</p>
+<h2 id="cal_fingerprint-optional">cal_fingerprint (optional)</h2>
 <p>cal_fingerprintプログラムは構造記述子を計算するためのもので，アルゴリズにベイズ最適化を使う場合は必須．
 CrySPY 1.0.0からはcal_fingerprintプログラムはCrySPY utilityに含まれている．
 コンパイルについてはこちらを参照：<a href="../../../../ja/installation/utility/#compile-cal_fingerprint">Instllation/CrySPY_utility/Compile cal_fingerprint</a>．</p>
@@ -91,8 +96,8 @@ fppath = /xxx/xxx/xxx/cal_fingerprint
         </div>
       </main>
     </div>
-    <script src="../../../../js/clipboard.min.js?1679566223" defer></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1679566223" defer></script>
-    <script src="../../../../js/theme.js?1679566223" defer></script>
+    <script src="../../../../js/clipboard.min.js?1684225127" defer></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1684225127" defer></script>
+    <script src="../../../../js/theme.js?1684225127" defer></script>
   </body>
 </html>

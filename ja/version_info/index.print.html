@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/version_info/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/version_info/index.html" rel="canonical" type="text/html" title="バージョン情報 :: CrySPY">
     <link href="../../ja/version_info/index.xml" rel="alternate" type="application/rss+xml" title="バージョン情報 :: CrySPY">
-    <link href="../../images/favicon.png?1679566222" rel="icon" type="image/png">
+    <link href="../../images/favicon.png?1684225127" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../css/fontawesome-all.min.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1679566223" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1679566223" rel="stylesheet">
-    <link href="../../css/fonts.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1679566223" rel="stylesheet">
-    <link href="../../css/theme-relearn-light.css?1679566223" rel="stylesheet" id="variant-style">
-    <link href="../../css/variant.css?1679566223" rel="stylesheet">
-    <link href="../../css/print.css?1679566223" rel="stylesheet" media="print">
-    <link href="../../css/format-print.css?1679566223" rel="stylesheet">
-    <link href="../../css/ie.css?1679566223" rel="stylesheet">
-    <script src="../../js/url.js?1679566223"></script>
-    <script src="../../js/variant.js?1679566223"></script>
+    <link href="../../css/fontawesome-all.min.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1684225127" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1684225127" rel="stylesheet">
+    <link href="../../css/fonts.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1684225127" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1684225127" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1684225127" rel="stylesheet">
+    <link href="../../css/print.css?1684225127" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1684225127" rel="stylesheet">
+    <link href="../../css/ie.css?1684225127" rel="stylesheet">
+    <script src="../../js/url.js?1684225127"></script>
+    <script src="../../js/variant.js?1684225127"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -73,6 +73,8 @@
 
 <ul class="children children-li children-sort-">
 	
+<li><a href="../../ja/version_info/ver_1.1.0/index.html">Version 1.1.0</a><ul>
+	</ul></li>
 <li><a href="../../ja/version_info/ver_1.0.0/index.html">Version 1.0.0</a><ul>
 	</ul></li>
 <li><a href="../../ja/version_info/ver_0.10.3/index.html">Version 0.10.3 or earlier</a><ul>
@@ -85,6 +87,32 @@
 
           <section>
             <h1 class="a11y-only">バージョン情報のサブセクション</h1>
+          <article class="default">
+<h1 id="version-110">Version 1.1.0</h1>
+
+<h2 id="mpi並列">MPI並列</h2>
+<p>MPIを用いたランダム構造生成が利用可能．</p>
+<p>詳細は下記を参照．</p>
+<ul>
+<li><a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mpi/">Tutorial &gt; Random structure generation with MPI</a></li>
+<li><a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/mpi/">Features &gt; Structure generation with MPI parallelization</a></li>
+</ul>
+<h2 id="laqa">LAQA</h2>
+<p>ストレス項を考慮に入れたスコアが利用できるように更新 (T. Yamashita and H. Sekine, Sci. Technol. Adv. Mater. Meth. 2, 84 (2022).)．</p>
+<p>詳細は下記を参照．</p>
+<ul>
+<li><a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/laqa/">Tutorial &gt; LAQA</a></li>
+<li><a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/laqa/">Input file &gt; [LAQA] section </a></li>
+<li><a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/qe_si16_laqa/">CrySPY Utility &gt; Examples &gt; qe_Si16_LAQA</a></li>
+</ul>
+<h2 id="backup">Backup</h2>
+<p>日付でディレクトリを作ることでバックアップの履歴が残るように変更．
+詳細は<a href="../../ja/features/backup/">features/backup</a>．</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
           <article class="default">
 <h1 id="version-100">Version 1.0.0</h1>
 
@@ -278,8 +306,8 @@ If you do not use Bayesian optimizaion, you do not need to install it.</p>
           </section>        </div>
       </main>
     </div>
-    <script src="../../js/clipboard.min.js?1679566223" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1679566223" defer></script>
-    <script src="../../js/theme.js?1679566223" defer></script>
+    <script src="../../js/clipboard.min.js?1684225127" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1684225127" defer></script>
+    <script src="../../js/theme.js?1684225127" defer></script>
   </body>
 </html>

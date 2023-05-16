@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/index.html" rel="canonical" type="text/html" title="Random Search (RS) :: CrySPY">
     <link href="../../tutorial/random/index.xml" rel="alternate" type="application/rss+xml" title="Random Search (RS) :: CrySPY">
-    <link href="../../images/favicon.png?1679566222" rel="icon" type="image/png">
+    <link href="../../images/favicon.png?1684225126" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../css/fontawesome-all.min.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1679566222" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1679566222" rel="stylesheet">
-    <link href="../../css/fonts.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1679566222" rel="stylesheet">
-    <link href="../../css/theme-relearn-light.css?1679566222" rel="stylesheet" id="variant-style">
-    <link href="../../css/variant.css?1679566222" rel="stylesheet">
-    <link href="../../css/print.css?1679566222" rel="stylesheet" media="print">
-    <link href="../../css/format-print.css?1679566222" rel="stylesheet">
-    <link href="../../css/ie.css?1679566222" rel="stylesheet">
-    <script src="../../js/url.js?1679566222"></script>
-    <script src="../../js/variant.js?1679566222"></script>
+    <link href="../../css/fontawesome-all.min.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1684225126" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1684225126" rel="stylesheet">
+    <link href="../../css/fonts.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1684225126" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1684225126" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1684225126" rel="stylesheet">
+    <link href="../../css/print.css?1684225126" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1684225126" rel="stylesheet">
+    <link href="../../css/ie.css?1684225126" rel="stylesheet">
+    <script src="../../js/url.js?1684225126"></script>
+    <script src="../../js/variant.js?1684225126"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -805,12 +805,12 @@ See <a href="https://tomoki-yamashita.github.io/CrySPY_doc/features/backup/" tar
 <h2 id="download-the-data">Download the data</h2>
 <p>It is assumed here that you analyze and visualize CrySPY data in your local PC.
 If you use CrySPY in super computers or workstations, download the data in your local PC.
-You can delete the <code>work</code> directory if you do not need it because the file size could be very large.</p>
+You can delete the <code>work</code> and <code>backup</code> directory if you do not need it because the file size could be very large.</p>
 <h2 id="jupyter-notebook">jupyter notebook</h2>
 <p>Move to the <code>data/</code> directory in results you just download.
 Then copy <code>cryspy_analyzer_RS.ipynb</code> from <a href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/utility/">CrySPY utility</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ls
-</span></span><span style="display:flex;"><span>backup/ calc_in/ cryspy.in cryspy.stat  data/  err_cryspy  log_cryspy
+</span></span><span style="display:flex;"><span>calc_in/ cryspy.in cryspy.stat  data/  err_cryspy  log_cryspy
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ cd data
 </span></span><span style="display:flex;"><span>$ ls
 </span></span><span style="display:flex;"><span>cryspy_rslt  cryspy_rslt_energy_asc  init_POSCARS  opt_CIFS.cif  opt_POSCARS  pkl_data/
@@ -819,10 +819,10 @@ Then copy <code>cryspy_analyzer_RS.ipynb</code> from <a href="https://tomoki-yam
 You can get the following figure by simply running the steps in order.</p>
 <p>
 		
-<a href="#image-4b1ba03ba452279a329511fcdb6e3c83" class="lightbox-link">
+<a href="#image-6b0baad96ba977ec0a88044018352cac" class="lightbox-link">
 <img src="../../images/tutorial/Si8_RS.png?width=40vw" alt="RS for Si8" style="height: auto; width: 40vw;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-4b1ba03ba452279a329511fcdb6e3c83">
+<a href="javascript:history.back();" class="lightbox" id="image-6b0baad96ba977ec0a88044018352cac">
 <img src="../../images/tutorial/Si8_RS.png?width=40vw" alt="RS for Si8" class="lightbox-image" loading="lazy">
 </a></p>
 
@@ -900,8 +900,8 @@ An example of the energy data (dict type) is shown below.</p>
           </section>        </div>
       </main>
     </div>
-    <script src="../../js/clipboard.min.js?1679566222" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1679566222" defer></script>
-    <script src="../../js/theme.js?1679566222" defer></script>
+    <script src="../../js/clipboard.min.js?1684225127" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1684225127" defer></script>
+    <script src="../../js/theme.js?1684225127" defer></script>
   </body>
 </html>

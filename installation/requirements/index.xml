@@ -11,9 +11,8 @@
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/python/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/requirements/python/index.html</guid>
-      <description>Python CrySPY 1.0.0 or later Python &amp;gt;= 3.8 PyXtal (&amp;gt;= 0.5.3) (optional, required if algo is BO) COMBO Info [2023 March 15] On MacOS, it is difficult to install pyxtal in the arm64 environment, so it is recommended to use the x86_64 environment with Rosetta 2.
-CrySPY 0.10.0 &amp;ndash; 0.10.3 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
-Python 3.x.x COMBO PyXtal (&amp;gt;= 0.2.2) (PyXtal requires pymatgen) pymatgen (&amp;gt;= 2022.</description>
+      <description>Python CrySPY 1.1.0 or later Python &amp;gt;= 3.8 PyXtal (&amp;gt;= 0.5.3) (optional) mpi4py (optional, required if algo is BO) COMBO CrySPY 1.0.0 Python &amp;gt;= 3.8 PyXtal (&amp;gt;= 0.5.3) (optional, required if algo is BO) COMBO Info [2023 April 22] How to instlal PyXtal (pyshtools) on arm64 MacOS is figured out. See Arm64 on MacOS (without Rosseta 2)
+[2023 March 15] On MacOS, it is difficult to install PyXtal in the arm64 environment, so it is recommended to use the x86_64 environment with Rosetta 2.</description>
     </item>
     <item>
       <title>Structure optimizer</title>

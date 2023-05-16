@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/input/index.html" rel="canonical" type="text/html" title="Input file :: CrySPY">
     <link href="../input/index.xml" rel="alternate" type="application/rss+xml" title="Input file :: CrySPY">
-    <link href="../images/favicon.png?1679566222" rel="icon" type="image/png">
+    <link href="../images/favicon.png?1684225126" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../css/fontawesome-all.min.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1679566222" rel="stylesheet">
-    <link href="../css/auto-complete.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1679566222" rel="stylesheet">
-    <link href="../css/fonts.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1679566222" rel="stylesheet">
-    <link href="../css/theme-relearn-light.css?1679566222" rel="stylesheet" id="variant-style">
-    <link href="../css/variant.css?1679566222" rel="stylesheet">
-    <link href="../css/print.css?1679566222" rel="stylesheet" media="print">
-    <link href="../css/format-print.css?1679566222" rel="stylesheet">
-    <link href="../css/ie.css?1679566222" rel="stylesheet">
-    <script src="../js/url.js?1679566222"></script>
-    <script src="../js/variant.js?1679566222"></script>
+    <link href="../css/fontawesome-all.min.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1684225126" rel="stylesheet">
+    <link href="../css/auto-complete.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1684225126" rel="stylesheet">
+    <link href="../css/fonts.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1684225126" rel="stylesheet">
+    <link href="../css/theme-relearn-light.css?1684225126" rel="stylesheet" id="variant-style">
+    <link href="../css/variant.css?1684225126" rel="stylesheet">
+    <link href="../css/print.css?1684225126" rel="stylesheet" media="print">
+    <link href="../css/format-print.css?1684225126" rel="stylesheet">
+    <link href="../css/ie.css?1684225126" rel="stylesheet">
+    <script src="../js/url.js?1684225126"></script>
+    <script src="../js/variant.js?1684225126"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -834,13 +834,44 @@ value: case sensitive except for bool</p>
 <td>The number of structures to be selected at once.</td>
 </tr>
 <tr>
-<td><code>weight_laqa</code></td>
+<td><code>wf</code></td>
 <td>float</td>
-<td>1.0</td>
-<td>Weight of bias in the score.</td>
+<td>0.1</td>
+<td>Weight of the force term.</td>
+</tr>
+<tr>
+<td><code>ws</code></td>
+<td>float</td>
+<td>10.0</td>
+<td>Weight of the stress term.</td>
 </tr>
 </tbody>
 </table>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>See also <a href="https://tomoki-yamashita.github.io/CrySPY_doc/searching_algo/laqa/" target="_blank">Searching algorithms &gt; LAQA</a></p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>If algo = LAQA, the followings are automatically set in the [option] section.</p>
+<ul>
+<li>force_step_flag = True</li>
+<li>stress_step_flag = True</li>
+</ul>
+<p>Force and stress data are collected step by step.
+Energy and structure data are NOT. They are collected for each selection.
+In other words, in this case, energy and structure data are saved once every 10 steps.
+If you want to collect energy and structure data step by step, manually set up as follows:</p>
+<pre tabindex="0"><code>[option]
+energy_step_flag = True
+struc_step_flag = True
+</code></pre>  </div>
+</div>
 
             <footer class="footline">
             </footer>
@@ -923,8 +954,8 @@ value: case sensitive except for bool</p>
           </section>        </div>
       </main>
     </div>
-    <script src="../js/clipboard.min.js?1679566222" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1679566222" defer></script>
-    <script src="../js/theme.js?1679566222" defer></script>
+    <script src="../js/clipboard.min.js?1684225127" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1684225127" defer></script>
+    <script src="../js/theme.js?1684225127" defer></script>
   </body>
 </html>

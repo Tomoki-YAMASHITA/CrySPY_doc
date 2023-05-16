@@ -12,8 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/backup/index.html</guid>
       <description>CrySPYはシンプルなバックアップ機能を備えている． バックアップの対象は以下のファイル：
-cryspy.in cryspy.stat log_cryspy err_cryspy calc_in/* data/* ext/* work/* は含まれいないので注意． また，バックアップは1世代分のみであり，それより古いものは削除されます．
-自動バックアップ 自動的にバックアップされるタイミングは次の通り:
+cryspy.in cryspy.stat log_cryspy err_cryspy calc_in/* data/* ext/* work/* は含まれいないので注意．
+(v1.1.0以降) 上記ファイルが日付と時間で名前づけられたディレクトリにコピーされる．以前のバックアップは自動的には削除されない． (v1.0.0) バックアップは1世代分のみであり，それより古いものは削除される． 自動バックアップ 自動的にバックアップされるタイミングは次の通り:
 次の選択に移るとき(BO, LAQA)か世代交代を行うとき (EA) 構造を追加するとき 手動バックアップ 手動でバックアップを行いたい場合は，-b または --backup オプションをつけて次のようにcryspyを実行する:
 cryspy -b このコマンドは通常の実行とは異なり，バックアップだけを行います．</description>
     </item>
@@ -41,6 +41,16 @@ $ ls calc_in cryspy.in cryspy.stat data err_cryspy log_cryspy $ cryspy -c Are yo
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/cryspy_id/index.html</guid>
       <description>CrySPYのジョブファイルで，&amp;ldquo;CrySPY_ID&amp;quot;という文字列は自動的に構造IDに置換される． PBSやSLURMなどのジョブスケジューラーを使う時，ジョブ名に構造IDを使うと便利である． 例えばPBSでは， #PBS -N Si_CrySPY_IDが#PBS -N Si_10に置き換わる 大抵の場合，ジョブ名は数字から始められないことが多いので，Si_のように英字から始めておくと良い．
 #!/bin/sh #$ -cwd #$ -V -S /bin/bash ####$ -V -S /bin/zsh #$ -N Si8_CrySPY_ID #$ -pe smp 8 ####$ -q ibis1.q ####$ -q ibis2.q mpirun -np $NSLOTS pw.x -nk 4 -nb 2 &amp;lt; pwscf.in &amp;gt; pwscf.out if [ -e &amp;#34;CRASH&amp;#34; ]; then exit 1 fi sed -i -e &amp;#39;3 s/^.*$/done/&amp;#39; stat_job </description>
+    </item>
+    <item>
+      <title>MPI並列化を用いた構造生成</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/mpi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/mpi/index.html</guid>
+      <description>CrySPYのバージョン1.1.0からは，MPIを用いたランダム構造生成が可能になった． MPIを使うにはPython環境にmpi4pyをインストールする必要がある． 当然，計算に利用するワークステーション等にMPIライブラリ（Open MPI，Intel MPI，MPICHなど）も必要である．
+情報 MPIを使うのに下記が必要
+CrySPY 1.1.0 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) 下の図にSi8原子1000構造をランダムに生成するのにかかった時間とMPIプロセス数の関係を示す．下記のセッティングを使った．
+[basic] algo = RS calc_code = soiap tot_struc = 1000 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 mindist_1 = 2.2 mindset_1 = 2.2のように厳し目に設定して，わざと時間がかかるようにしてある． それぞれのプロセス数において10回ずつ実行して，平均を線で結んでいる．</description>
     </item>
   </channel>
 </rss>

@@ -88,8 +88,11 @@ Name Value Default Description nselect_bo int The number of structures to be sel
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/laqa/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/laqa/index.html</guid>
-      <description>[LAQA] section is required only if you use LAQA (algo = LAQA)
-Name Value Default Description nselect_laqa int The number of structures to be selected at once. weight_laqa float 1.0 Weight of bias in the score. </description>
+      <description>LAQA (algo = LAQA)を使う場合，[LAQA]セクションが必要．
+Name Value Default Description nselect_laqa int 1度の選択で選ばれる構造の数． wf float 0.1 力の項の重み． ws float 10.0 ストレス項の重み． 情報 See also Searching algorithms &amp;gt; LAQA
+情報 algo = LAQAでは[option]セクションの下記の二つは自動的にTrueになる．
+force_step_flag = True stress_step_flag = True 原子に働く力とストレスのデータは1ステップごとに収集される． エネルギーと構造データは1ステップごとではなく，選択ごとに収集される． つまり，この場合は10ステップおきにエネルギーと構造データは保存される． もし1ステップごとのデータが欲しいのであれば，手動で下記の設定を追加すること．
+[option] energy_step_flag = True struc_step_flag = True </description>
     </item>
     <item>
       <title>[option] section</title>

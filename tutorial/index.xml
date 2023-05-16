@@ -34,7 +34,12 @@ Load external data </description>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/laqa/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/laqa/index.html</guid>
-      <description>LAQA</description>
+      <description>May 15th, 2023
+Info First, see Tutorial &amp;gt; Random Search (RS) for basic usage of CrySPY.
+Here, we assume CrySPY 1.1.0 or later.
+The example files used here can be downloaded from CrySPY Utility &amp;gt; Examples &amp;gt; qe_Si16_LAQA. In this tutorial, only 50 initial structures are generated, but originally, LAQA is designed to select candidates from many more structures.
+Input cryspy.in Here is an example of cryspy.in.
+[basic] algo = LAQA calc_code = QE tot_struc = 50 nstage = 1 njob = 10 jobcmd = qsub jobfile = job_cryspy [structure] natot = 16 atype = Si nat = 16 mindist_1 = 1.</description>
     </item>
     <item>
       <title>Molecular crystal structure prediction</title>
@@ -45,6 +50,18 @@ Load external data </description>
 In this section, we give a tutorial on the molecular structure generation part only. Since version 0.9.0, CrySPY has been able to generate random molecular crystal structures using PyXtal.
 You need to use a pre-defined molecular by PyXtal&amp;rsquo;s database (see, https://pyxtal.readthedocs.io/en/latest/Usage.html?highlight=benzene#pyxtal-molecule-pyxtal-molecule)) or create molecule files that define molecular structures.
 Pre-defined molecule PyXtal currently supports C60, H2O, CH4, NH3, benzene, naphthalene, anthracene, tetracene, pentacene, coumarin, resorcinol, benzamide, aspirin, ddt, lindane, glycine, glucose, and ROY.</description>
+    </item>
+    <item>
+      <title>Random structure generation with MPI</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/mpi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/mpi/index.html</guid>
+      <description>May 15th, 2023
+Info First, see Tutorial &amp;gt; Random Search (RS) for basic usage of CrySPY.
+Info Requirements:
+CrySPY 1.1.0 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) mpi4py Install mpi4py if it is not already installed.
+pip install mpi4py Input cryspy.in is the same as normal usage and does not need to be changed. Here we try structure generation with MPI using the following settings:
+[basic] algo = RS calc_code = soiap tot_struc = 100 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.</description>
     </item>
   </channel>
 </rss>

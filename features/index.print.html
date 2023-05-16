@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/index.html" rel="canonical" type="text/html" title="Features :: CrySPY">
     <link href="../features/index.xml" rel="alternate" type="application/rss+xml" title="Features :: CrySPY">
-    <link href="../images/favicon.png?1679566222" rel="icon" type="image/png">
+    <link href="../images/favicon.png?1684225126" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../css/fontawesome-all.min.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1679566222" rel="stylesheet">
-    <link href="../css/auto-complete.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1679566222" rel="stylesheet">
-    <link href="../css/fonts.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1679566222" rel="stylesheet">
-    <link href="../css/theme-relearn-light.css?1679566222" rel="stylesheet" id="variant-style">
-    <link href="../css/variant.css?1679566222" rel="stylesheet">
-    <link href="../css/print.css?1679566222" rel="stylesheet" media="print">
-    <link href="../css/format-print.css?1679566222" rel="stylesheet">
-    <link href="../css/ie.css?1679566222" rel="stylesheet">
-    <script src="../js/url.js?1679566222"></script>
-    <script src="../js/variant.js?1679566222"></script>
+    <link href="../css/fontawesome-all.min.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1684225126" rel="stylesheet">
+    <link href="../css/auto-complete.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1684225126" rel="stylesheet">
+    <link href="../css/fonts.css?1684225126" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1684225126" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1684225126" rel="stylesheet">
+    <link href="../css/theme-relearn-light.css?1684225126" rel="stylesheet" id="variant-style">
+    <link href="../css/variant.css?1684225126" rel="stylesheet">
+    <link href="../css/print.css?1684225126" rel="stylesheet" media="print">
+    <link href="../css/format-print.css?1684225126" rel="stylesheet">
+    <link href="../css/ie.css?1684225126" rel="stylesheet">
+    <script src="../js/url.js?1684225126"></script>
+    <script src="../js/variant.js?1684225126"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -81,6 +81,8 @@
 	</ul></li>
 <li><a href="../features/cryspy_id/index.html">CrySPY_ID in job files</a><ul>
 	</ul></li>
+<li><a href="../features/mpi/index.html">Structure generation with MPI parallelization</a><ul>
+	</ul></li>
 </ul>
 
             <footer class="footline">
@@ -103,7 +105,11 @@ The following files are backed up:</p>
 <li>data/*</li>
 <li>ext/*</li>
 </ul>
-<p>work/* are NOT included. Note that only one generation is backed up, and any earlier backups will be deleted.</p>
+<p>work/* are NOT included.</p>
+<ul>
+<li>(v1.1.0 or later) above files are copied to a directory named by date and time in &ldquo;backup&rdquo; directory. Previous backups are NOT automatically deleted.</li>
+<li>(v1.0.0) only one generation is backed up, and previous backups will be deleted.</li>
+</ul>
 <h2 id="auto-backup">Auto backup</h2>
 <p>The timing of the automatic backup is as follows:</p>
 <ul>
@@ -201,11 +207,58 @@ sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
             </footer>
           </article>
 
+          <article class="default">
+<h1 id="structure-generation-with-mpi-parallelization">Structure generation with MPI parallelization</h1>
+
+<p>Random structure generation using MPI has been available since version 1.1.0.
+You need to install mpi4py in your Python environment for MPI parallelization.
+Of course, an MPI library such as Open MPI, Intel MPI, and MPICH is required for your workstation.</p>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>Requirements:</p>
+<ul>
+<li>CrySPY 1.1.0 or later</li>
+<li>mpi4py</li>
+<li>MPI library (Open MPI, Intel MPI, MPICH, etc.)</li>
+</ul>
+  </div>
+</div>
+<p>The figure below shows the relationship between elapsed time and the number of processes for 1000 structures of Si8 with the following setting:</p>
+<pre tabindex="0"><code>[basic]
+algo = RS
+calc_code = soiap
+tot_struc = 1000
+nstage = 1
+njob = 2
+jobcmd = zsh
+jobfile = job_cryspy
+
+[structure]
+natot = 8
+atype = Si
+nat = 8
+mindist_1 = 2.2
+</code></pre><p>The structure generation is taking a long time because of a slightly stricter setting like <code>mindset_1 = 2.2</code>.
+The structure generation was performed 10 times for each number of processes.</p>
+<p>
+<a href="#image-5fd2aaa6bae9bcc0c528c53f25430542" class="lightbox-link">
+<img src="../images/MPI/elapsed_time_ibis.png" alt="fig_MPI" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-5fd2aaa6bae9bcc0c528c53f25430542">
+<img src="../images/MPI/elapsed_time_ibis.png" alt="fig_MPI" class="lightbox-image" loading="lazy">
+</a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
           </section>        </div>
       </main>
     </div>
-    <script src="../js/clipboard.min.js?1679566222" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1679566222" defer></script>
-    <script src="../js/theme.js?1679566222" defer></script>
+    <script src="../js/clipboard.min.js?1684225127" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1684225127" defer></script>
+    <script src="../js/theme.js?1684225127" defer></script>
   </body>
 </html>

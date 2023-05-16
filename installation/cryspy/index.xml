@@ -13,8 +13,8 @@
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_1.0/index.html</guid>
       <description>CrySPY CrySPY 1.0.0 or later can be installed by pip.
 pip install csp-cryspy The executable script, cryspy, is automatically installed in your PATH. You can check by
-which cryspy cal_fingerprint (optional) cal_fingerprint is a program to calculate structure descriptors and is required if algo is BO. From CrySPY 1.0.0, the cal_fingerprint program is included in CrySPY utility. See Instllation/CrySPY_utility/Compile cal_fingerprint for compilation.
-Put the executable file of cal_fingerprint in your PATH.</description>
+which cryspy Editable mode If you want to change the source code of CrySPY, you can use pip&amp;rsquo;s editable mode (-e option).
+git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git pip install -e ./CrySPY Instead of git clone, you can download the compressed file from the release page</description>
     </item>
     <item>
       <title>CrySPY 0.10.3 or earlier</title>

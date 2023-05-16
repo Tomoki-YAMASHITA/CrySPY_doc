@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/laqa/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/laqa/index.html" rel="canonical" type="text/html" title="[LAQA] section :: CrySPY">
     <link href="../../../ja/input/laqa/index.xml" rel="alternate" type="application/rss+xml" title="[LAQA] section :: CrySPY">
-    <link href="../../../images/favicon.png?1679566222" rel="icon" type="image/png">
+    <link href="../../../images/favicon.png?1684225127" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../../css/fontawesome-all.min.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../../css/nucleus.css?1679566223" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../../css/perfect-scrollbar.min.css?1679566223" rel="stylesheet">
-    <link href="../../../css/fonts.css?1679566223" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1679566223" rel="stylesheet"></noscript>
-    <link href="../../../css/theme.css?1679566223" rel="stylesheet">
-    <link href="../../../css/theme-relearn-light.css?1679566223" rel="stylesheet" id="variant-style">
-    <link href="../../../css/variant.css?1679566223" rel="stylesheet">
-    <link href="../../../css/print.css?1679566223" rel="stylesheet" media="print">
-    <link href="../../../css/format-print.css?1679566223" rel="stylesheet">
-    <link href="../../../css/ie.css?1679566223" rel="stylesheet">
-    <script src="../../../js/url.js?1679566223"></script>
-    <script src="../../../js/variant.js?1679566223"></script>
+    <link href="../../../css/fontawesome-all.min.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1684225127" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1684225127" rel="stylesheet">
+    <link href="../../../css/fonts.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1684225127" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1684225127" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1684225127" rel="stylesheet">
+    <link href="../../../css/print.css?1684225127" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1684225127" rel="stylesheet">
+    <link href="../../../css/ie.css?1684225127" rel="stylesheet">
+    <script src="../../../js/url.js?1684225127"></script>
+    <script src="../../../js/variant.js?1684225127"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -70,7 +70,7 @@
           <article class="default">
 <h1 id="laqa-section">[LAQA] section</h1>
 
-<p>[LAQA] section is required only if you use LAQA (<code>algo = LAQA</code>)</p>
+<p>LAQA (<code>algo = LAQA</code>)を使う場合，[LAQA]セクションが必要．</p>
 <table>
 <thead>
 <tr>
@@ -85,16 +85,47 @@
 <td><code>nselect_laqa</code></td>
 <td>int</td>
 <td></td>
-<td>The number of structures to be selected at once.</td>
+<td>1度の選択で選ばれる構造の数．</td>
 </tr>
 <tr>
-<td><code>weight_laqa</code></td>
+<td><code>wf</code></td>
 <td>float</td>
-<td>1.0</td>
-<td>Weight of bias in the score.</td>
+<td>0.1</td>
+<td>力の項の重み．</td>
+</tr>
+<tr>
+<td><code>ws</code></td>
+<td>float</td>
+<td>10.0</td>
+<td>ストレス項の重み．</td>
 </tr>
 </tbody>
 </table>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>See also <a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/searching_algo/laqa/" target="_blank">Searching algorithms &gt; LAQA</a></p>
+  </div>
+</div>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
+  <div class="box-content">
+<p>algo = LAQAでは[option]セクションの下記の二つは自動的にTrueになる．</p>
+<ul>
+<li>force_step_flag = True</li>
+<li>stress_step_flag = True</li>
+</ul>
+<p>原子に働く力とストレスのデータは1ステップごとに収集される．
+エネルギーと構造データは1ステップごとではなく，選択ごとに収集される．
+つまり，この場合は10ステップおきにエネルギーと構造データは保存される．
+もし1ステップごとのデータが欲しいのであれば，手動で下記の設定を追加すること．</p>
+<pre tabindex="0"><code>[option]
+energy_step_flag = True
+struc_step_flag = True
+</code></pre>  </div>
+</div>
 
             <footer class="footline">
             </footer>
@@ -102,8 +133,8 @@
         </div>
       </main>
     </div>
-    <script src="../../../js/clipboard.min.js?1679566223" defer></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1679566223" defer></script>
-    <script src="../../../js/theme.js?1679566223" defer></script>
+    <script src="../../../js/clipboard.min.js?1684225127" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1684225127" defer></script>
+    <script src="../../../js/theme.js?1684225127" defer></script>
   </body>
 </html>

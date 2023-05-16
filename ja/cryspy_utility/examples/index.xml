@@ -35,5 +35,12 @@ Download soiap_Si8_RS_mindist.tar.gz cryspy.in [basic] algo = RS calc_code = soi
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/qe_benzene_2_rs_mol/index.html</guid>
       <description>Download qe_benzene_2_RS_mol.tar.gz cryspy.in [basic] algo = RS calc_code = QE tot_struc = 6 nstage = 2 njob = 2 jobcmd = qsub jobfile = job_cryspy [structure] struc_mode = mol natot = 24 atype = H C nat = 12 12 mol_file = benzene nmol = 2 [QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 40 60 [option] calc_in/ pwscf.in_1 &amp;amp;control title = &amp;#39;2 benzene&amp;#39; calculation = &amp;#39;relax&amp;#39; nstep = 30 restart_mode = &amp;#39;from_scratch&amp;#39;, pseudo_dir = &amp;#39;/usr/local/pslibrary.</description>
     </item>
+    <item>
+      <title>qe_Si16_LAQA</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/qe_si16_laqa/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/qe_si16_laqa/index.html</guid>
+      <description>Download qe_Si16_LAQA.tar.gz cryspy.in [basic] algo = LAQA calc_code = QE tot_struc = 50 nstage = 1 njob = 10 jobcmd = qsub jobfile = job_cryspy [structure] natot = 16 atype = Si nat = 16 mindist_1 = 1.5 [QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 80 [LAQA] nselect_laqa = 4 [option] calc_in/ pwscf.in_1 &amp;amp;control calculation = &amp;#39;vc-relax&amp;#39; pseudo_dir = &amp;#39;/usr/local/gbrv/all_pbe_UPF_v1.5/&amp;#39; outdir=&amp;#39;./outdir/&amp;#39; nstep = 10 / &amp;amp;system ibrav = 0 nat = 16 ntyp = 1 ecutwfc = 40 ecutrho = 200 occupations = &amp;#39;smearing&amp;#39; degauss = 0.</description>
+    </item>
   </channel>
 </rss>

@@ -12,20 +12,20 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/python/index.html" rel="alternate" hreflang="ja">
     <link href="../../../../ja/installation/requirements/python/index.xml" rel="alternate" type="application/rss+xml" title="Python :: CrySPY">
     <link href="../../../../ja/installation/requirements/python/index.print.html" rel="alternate" type="text/html" title="Python :: CrySPY">
-    <link href="../../../../images/favicon.png?1679566222" rel="icon" type="image/png">
+    <link href="../../../../images/favicon.png?1684225127" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../../../css/fontawesome-all.min.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fontawesome-all.min.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../../../../css/nucleus.css?1679566222" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/auto-complete.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../../../../css/perfect-scrollbar.min.css?1679566222" rel="stylesheet">
-    <link href="../../../../css/fonts.css?1679566222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fonts.css?1679566222" rel="stylesheet"></noscript>
-    <link href="../../../../css/theme.css?1679566222" rel="stylesheet">
-    <link href="../../../../css/theme-relearn-light.css?1679566222" rel="stylesheet" id="variant-style">
-    <link href="../../../../css/variant.css?1679566222" rel="stylesheet">
-    <link href="../../../../css/print.css?1679566222" rel="stylesheet" media="print">
-    <link href="../../../../css/ie.css?1679566222" rel="stylesheet">
-    <script src="../../../../js/url.js?1679566222"></script>
-    <script src="../../../../js/variant.js?1679566222"></script>
+    <link href="../../../../css/fontawesome-all.min.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fontawesome-all.min.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../../css/nucleus.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/auto-complete.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../../css/perfect-scrollbar.min.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/fonts.css?1684225127" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fonts.css?1684225127" rel="stylesheet"></noscript>
+    <link href="../../../../css/theme.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/theme-relearn-light.css?1684225127" rel="stylesheet" id="variant-style">
+    <link href="../../../../css/variant.css?1684225127" rel="stylesheet">
+    <link href="../../../../css/print.css?1684225127" rel="stylesheet" media="print">
+    <link href="../../../../css/ie.css?1684225127" rel="stylesheet">
+    <script src="../../../../js/url.js?1684225127"></script>
+    <script src="../../../../js/variant.js?1684225127"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -78,13 +78,15 @@
   <ul>
     <li><a href="#python">Python</a>
       <ul>
-        <li><a href="#cryspy-100-or-later">CrySPY 1.0.0 or later</a></li>
+        <li><a href="#cryspy-110-or-later">CrySPY 1.1.0 or later</a></li>
+        <li><a href="#cryspy-100">CrySPY 1.0.0</a></li>
         <li><a href="#cryspy-0100----0103">CrySPY 0.10.0 &ndash; 0.10.3</a></li>
         <li><a href="#cryspy-092">CrySPY 0.9.2</a></li>
         <li><a href="#cryspy-090----091">CrySPY 0.9.0 &ndash; 0.9.1</a></li>
         <li><a href="#cryspy-080-or-earlier">CrySPY 0.8.0 or earlier</a></li>
       </ul>
     </li>
+    <li><a href="#arm64-on-macos-without-rosseta-2">Arm64 on MacOS (without Rosseta 2)</a></li>
   </ul>
 </nav>
             </div>
@@ -99,7 +101,17 @@
 <h1 id="python">Python</h1>
 
 <h2 id="python">Python</h2>
-<h3 id="cryspy-100-or-later">CrySPY 1.0.0 or later</h3>
+<h3 id="cryspy-110-or-later">CrySPY 1.1.0 or later</h3>
+<ul>
+<li>Python &gt;= 3.8
+<ul>
+<li><a href="https://github.com/qzhu2017/PyXtal" target="_blank">PyXtal</a><i class="fas fa-external-link-alt"></i> (&gt;= 0.5.3)</li>
+<li>(optional) mpi4py</li>
+<li>(optional, required if algo is BO) <a href="https://github.com/Tomoki-YAMASHITA/combo3" target="_blank">COMBO</a><i class="fas fa-external-link-alt"></i></li>
+</ul>
+</li>
+</ul>
+<h3 id="cryspy-100">CrySPY 1.0.0</h3>
 <ul>
 <li>Python &gt;= 3.8
 <ul>
@@ -112,7 +124,8 @@
 <div class="box notices cstyle info">
   <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
   <div class="box-content">
-<p>[2023 March 15]
+<p>[2023 April 22] PyXtal (pyshtools)をarm64のMacOSにインストールする方法がわかった．<a href="#arm64-on-macos-without-rosseta-2">Arm64 on MacOS (without Rosseta 2)</a>を参照．<br>
+[2023 March 15]
 MacOSのarm64環境でのpyxtalのインストールが難しいので，Rosetta 2を使用してx86_64環境での利用が推奨．</p>
   </div>
 </div>
@@ -186,7 +199,22 @@ SciPyはv1.5.4を利用する．<br>
 </ul>
 <h3 id="cryspy-080-or-earlier">CrySPY 0.8.0 or earlier</h3>
 <p>CrySPY本体に同梱されている古いドキュメントを見ること．</p>
-
+<h2 id="arm64-on-macos-without-rosseta-2">Arm64 on MacOS (without Rosseta 2)</h2>
+<ol>
+<li><a href="https://github.com/conda-forge/miniforge" target="_blank">miniforge3</a><i class="fas fa-external-link-alt"></i>をインストール（homebrew pythonでpyshtoolsをインストールする方法が今のところ不明）</li>
+<li>condaでpymatgen (numpyもインストールされる), fftwをインストール</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda install pymatgen
+</span></span><span style="display:flex;"><span>conda install fftw
+</span></span></code></pre></div><ol start="3">
+<li>pyshtoolsをソースからビルドする．pyshtoolsはPyXtalのインストールに必要．</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip3 install pyshtools --no-binary pyshtools
+</span></span></code></pre></div><ol start="4">
+<li>CrySPYをインストール</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip3 install csp-cryspy
+</span></span></code></pre></div>
             <footer class="footline">
             </footer>
           </article>
@@ -208,13 +236,13 @@ SciPyはv1.5.4を利用する．<br>
         <script>
           var contentLangs=['ja'];
         </script>
-        <script src="../../../../js/auto-complete.js?1679566223" defer></script>
-        <script src="../../../../js/lunr/lunr.min.js?1679566223" defer></script>
-        <script src="../../../../js/lunr/lunr.stemmer.support.min.js?1679566223" defer></script>
-        <script src="../../../../js/lunr/lunr.multi.min.js?1679566223" defer></script>
-        <script src="../../../../js/lunr/tinyseg.js?1679566223" defer></script>
-        <script src="../../../../js/lunr/lunr.ja.min.js?1679566223" defer></script>
-        <script src="../../../../js/search.js?1679566223" defer></script>
+        <script src="../../../../js/auto-complete.js?1684225127" defer></script>
+        <script src="../../../../js/lunr/lunr.min.js?1684225127" defer></script>
+        <script src="../../../../js/lunr/lunr.stemmer.support.min.js?1684225127" defer></script>
+        <script src="../../../../js/lunr/lunr.multi.min.js?1684225127" defer></script>
+        <script src="../../../../js/lunr/tinyseg.js?1684225127" defer></script>
+        <script src="../../../../js/lunr/lunr.ja.min.js?1684225127" defer></script>
+        <script src="../../../../js/search.js?1684225127" defer></script>
       </div>
       <div id="homelinks" class="default-animation">
         <ul>
@@ -229,6 +257,7 @@ SciPyはv1.5.4を利用する．<br>
           <li data-nav-id="/ja/about/interface/index.html" class=""><a class="padding" href="../../../../ja/about/interface/index.html">インターフェース</a></li>
           <li data-nav-id="/ja/about/logo/index.html" class=""><a class="padding" href="../../../../ja/about/logo/index.html">ロゴ</a></li></ul></li>
           <li data-nav-id="/ja/version_info/index.html" class=""><a class="padding" href="../../../../ja/version_info/index.html">バージョン情報</a><ul id="subsections-cc2122324d3f15a47981f4f84ede85b0" class="morespace">
+          <li data-nav-id="/ja/version_info/ver_1.1.0/index.html" class=""><a class="padding" href="../../../../ja/version_info/ver_1.1.0/index.html">Version 1.1.0</a></li>
           <li data-nav-id="/ja/version_info/ver_1.0.0/index.html" class=""><a class="padding" href="../../../../ja/version_info/ver_1.0.0/index.html">Version 1.0.0</a></li>
           <li data-nav-id="/ja/version_info/ver_0.10.3/index.html" class=""><a class="padding" href="../../../../ja/version_info/ver_0.10.3/index.html">Version 0.10.3 or earlier</a></li></ul></li>
           <li data-nav-id="/ja/installation/index.html" class="parent "><a class="padding" href="../../../../ja/installation/index.html">インストール</a><ul id="subsections-6fe501c69271d0f181416b779fe677bc" class="morespace">
@@ -259,7 +288,10 @@ SciPyはv1.5.4を利用する．<br>
           <li data-nav-id="/ja/tutorial/ea/index.html" class=""><a class="padding" href="../../../../ja/tutorial/ea/index.html">Evolutionary Algorithm (EA)</a></li>
           <li data-nav-id="/ja/tutorial/bo/index.html" class=""><a class="padding" href="../../../../ja/tutorial/bo/index.html">Bayesian Optimization (BO)</a></li>
           <li data-nav-id="/ja/tutorial/laqa/index.html" class=""><a class="padding" href="../../../../ja/tutorial/laqa/index.html">LAQA</a></li>
-          <li data-nav-id="/ja/tutorial/mol/index.html" class=""><a class="padding" href="../../../../ja/tutorial/mol/index.html">Molecular crystal structure prediction</a></li></ul></li>
+          <li data-nav-id="/ja/tutorial/mol/index.html" class=""><a class="padding" href="../../../../ja/tutorial/mol/index.html">Molecular crystal structure prediction</a></li>
+          <li data-nav-id="/ja/tutorial/mpi/index.html" class=""><a class="padding" href="../../../../ja/tutorial/mpi/index.html">Random structure generation with MPI</a></li></ul></li>
+          <li data-nav-id="/ja/searching_algo/index.html" class=""><a class="padding" href="../../../../ja/searching_algo/index.html">探索アルゴリズム</a><ul id="subsections-7f66e59b7de2082b43f9daaef0832447" class="morespace">
+          <li data-nav-id="/ja/searching_algo/laqa/index.html" class=""><a class="padding" href="../../../../ja/searching_algo/laqa/index.html">LAQA</a></li></ul></li>
           <li data-nav-id="/ja/structure_generation/index.html" class=""><a class="padding" href="../../../../ja/structure_generation/index.html">構造生成</a><ul id="subsections-4a154a0b50434fcbbd5575922e7ce9aa" class="morespace">
           <li data-nav-id="/ja/structure_generation/crystal/index.html" class=""><a class="padding" href="../../../../ja/structure_generation/crystal/index.html">struc_mode = crystal</a></li>
           <li data-nav-id="/ja/structure_generation/mol/index.html" class=""><a class="padding" href="../../../../ja/structure_generation/mol/index.html">struc_mode = mol</a></li>
@@ -268,7 +300,8 @@ SciPyはv1.5.4を利用する．<br>
           <li data-nav-id="/ja/features/backup/index.html" class=""><a class="padding" href="../../../../ja/features/backup/index.html">バックアップ</a></li>
           <li data-nav-id="/ja/features/clean/index.html" class=""><a class="padding" href="../../../../ja/features/clean/index.html">クリーン</a></li>
           <li data-nav-id="/ja/features/restrict_dist/index.html" class=""><a class="padding" href="../../../../ja/features/restrict_dist/index.html">Restriction on interatomic distances</a></li>
-          <li data-nav-id="/ja/features/cryspy_id/index.html" class=""><a class="padding" href="../../../../ja/features/cryspy_id/index.html">ジョブファイルのCrySPY_ID</a></li></ul></li>
+          <li data-nav-id="/ja/features/cryspy_id/index.html" class=""><a class="padding" href="../../../../ja/features/cryspy_id/index.html">ジョブファイルのCrySPY_ID</a></li>
+          <li data-nav-id="/ja/features/mpi/index.html" class=""><a class="padding" href="../../../../ja/features/mpi/index.html">MPI並列化を用いた構造生成</a></li></ul></li>
           <li data-nav-id="/ja/input/index.html" class=""><a class="padding" href="../../../../ja/input/index.html">入力ファイル</a><ul id="subsections-8e81ce6f93621dea8116cd5c2ce14b72" class="morespace">
           <li data-nav-id="/ja/input/format/index.html" class=""><a class="padding" href="../../../../ja/input/format/index.html">File format</a></li>
           <li data-nav-id="/ja/input/basic_sec/index.html" class=""><a class="padding" href="../../../../ja/input/basic_sec/index.html">[basic] section</a></li>
@@ -300,7 +333,8 @@ SciPyはv1.5.4を利用する．<br>
           <li data-nav-id="/ja/cryspy_utility/examples/soiap_si8_rs/index.html" class=""><a class="padding" href="../../../../ja/cryspy_utility/examples/soiap_si8_rs/index.html">soiap_Si8_RS</a></li>
           <li data-nav-id="/ja/cryspy_utility/examples/soiap_si8_rs_mindist/index.html" class=""><a class="padding" href="../../../../ja/cryspy_utility/examples/soiap_si8_rs_mindist/index.html">soiap_Si8_RS_mindist</a></li>
           <li data-nav-id="/ja/cryspy_utility/examples/qe_si8_rs/index.html" class=""><a class="padding" href="../../../../ja/cryspy_utility/examples/qe_si8_rs/index.html">qe_Si8_RS</a></li>
-          <li data-nav-id="/ja/cryspy_utility/examples/qe_benzene_2_rs_mol/index.html" class=""><a class="padding" href="../../../../ja/cryspy_utility/examples/qe_benzene_2_rs_mol/index.html">qe_benzene_2_RS_mol</a></li></ul></li>
+          <li data-nav-id="/ja/cryspy_utility/examples/qe_benzene_2_rs_mol/index.html" class=""><a class="padding" href="../../../../ja/cryspy_utility/examples/qe_benzene_2_rs_mol/index.html">qe_benzene_2_RS_mol</a></li>
+          <li data-nav-id="/ja/cryspy_utility/examples/qe_si16_laqa/index.html" class=""><a class="padding" href="../../../../ja/cryspy_utility/examples/qe_si16_laqa/index.html">qe_Si16_LAQA</a></li></ul></li>
           <li data-nav-id="/ja/cryspy_utility/extract_struc/index.html" class=""><a class="padding" href="../../../../ja/cryspy_utility/extract_struc/index.html">extract_struc.py</a></li>
           <li data-nav-id="/ja/cryspy_utility/pos2pkl/index.html" class=""><a class="padding" href="../../../../ja/cryspy_utility/pos2pkl/index.html">pos2pkl.py</a></li>
           <li data-nav-id="/ja/cryspy_utility/kpt_check/index.html" class=""><a class="padding" href="../../../../ja/cryspy_utility/kpt_check/index.html">kpt_check.py</a></li></ul></li>
@@ -353,8 +387,8 @@ SciPyはv1.5.4を利用する．<br>
         </div>
       </div>
     </aside>
-    <script src="../../../../js/clipboard.min.js?1679566223" defer></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1679566223" defer></script>
-    <script src="../../../../js/theme.js?1679566223" defer></script>
+    <script src="../../../../js/clipboard.min.js?1684225127" defer></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1684225127" defer></script>
+    <script src="../../../../js/theme.js?1684225127" defer></script>
   </body>
 </html>
