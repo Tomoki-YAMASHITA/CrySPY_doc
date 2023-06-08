@@ -399,7 +399,7 @@ var relearn_search_index = [
     "uri": "/ja/input/omx_sec/index.html"
   },
   {
-    "content": "CrySPY Utility ダウンロードに関してはこちらのページ： Installation/CrySPY utility． examplesはこのドキュメントサイトからもダウンロード可能です．\n目次 Examples soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA extract_struc.py pos2pkl.py kpt_check.py ",
+    "content": "CrySPY Utility ダウンロードに関してはこちらのページ： Installation/CrySPY utility． 一部のexamplesはこのドキュメントサイトからもダウンロード可能．\n目次 Examples soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA extract_struc.py pos2pkl.py kpt_check.py ",
     "description": "",
     "tags": null,
     "title": "CrySPY Utility",

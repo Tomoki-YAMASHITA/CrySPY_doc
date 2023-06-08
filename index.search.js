@@ -420,7 +420,7 @@ var relearn_search_index = [
     "uri": "/searching_algo/bo/index.html"
   },
   {
-    "content": "CrySPY Utility See Installation/CrySPY utility to download. The examples can also be downloaded from this document site.\nTable of contents Examples soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA extract_struc.py pos2pkl.py kpt_check.py ",
+    "content": "CrySPY Utility See Installation/CrySPY utility to download. Some (but not all) examples can also be downloaded from this document site.\nTable of contents Examples soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA extract_struc.py pos2pkl.py kpt_check.py ",
     "description": "",
     "tags": null,
     "title": "CrySPY Utility",
