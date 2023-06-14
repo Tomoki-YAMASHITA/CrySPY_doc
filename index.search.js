@@ -21,7 +21,7 @@ var relearn_search_index = [
     "uri": "/cryspy_utility/extract_struc/index.html"
   },
   {
-    "content": "Version information Table of contents Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
+    "content": "Version information Table of contents Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
     "description": "",
     "tags": null,
     "title": "Version information",
@@ -607,6 +607,13 @@ var relearn_search_index = [
     "tags": null,
     "title": "Load external data",
     "uri": "/tutorial/random/ext_load_data/index.html"
+  },
+  {
+    "content": "Bug fix for spg_error In random structure generation, when a structure cannot be generated for a certain space group, the space group number is recorded in the variable sgp_error, and the number is skipped thereafter, but a bug was found in which the number was registered incorrectly in rare cases. Therefore, this spg_error function has been removed.\n",
+    "description": "",
+    "tags": null,
+    "title": "Version 1.1.1",
+    "uri": "/version_info/ver_1.1.1/index.html"
   },
   {
     "content": "Parallelization with MPI Random structure generation using MPI has been available.\nSee also\nTutorial \u003e Random structure generation with MPI Features \u003e Structure generation with MPI parallelization LAQA Updated score formula to take into account the stress term (T. Yamashita and H. Sekine, Sci. Technol. Adv. Mater. Meth. 2, 84 (2022).).\nSee also\nTutorial \u003e LAQA Input file \u003e [LAQA] section CrySPY Utility \u003e Examples \u003e qe_Si16_LAQA Backup Files are copied to the directory named by the date and time in “backup” directory.\nSee features/backup in detail.\n",

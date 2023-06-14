@@ -21,7 +21,7 @@ var relearn_search_index = [
     "uri": "/ja/cryspy_utility/extract_struc/index.html"
   },
   {
-    "content": "バージョン情報 目次 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
+    "content": "バージョン情報 目次 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
     "description": "",
     "tags": null,
     "title": "バージョン情報",
@@ -586,6 +586,13 @@ var relearn_search_index = [
     "tags": null,
     "title": "Load external data",
     "uri": "/ja/tutorial/random/ext_load_data/index.html"
+  },
+  {
+    "content": "spg_errorのバグ修正 ランダム構造生成時，ある空間群で構造生成ができない時にsgp_errorという変数にその空間群番号を記録し，以降その番号はスキップするようにしていたが，ごく稀に間違って登録されてしまうバグが見つかった．よってこのspg_errorという機能は削除した．\n",
+    "description": "",
+    "tags": null,
+    "title": "Version 1.1.1",
+    "uri": "/ja/version_info/ver_1.1.1/index.html"
   },
   {
     "content": "MPI並列 MPIを用いたランダム構造生成が利用可能．\n詳細は下記を参照．\nTutorial \u003e Random structure generation with MPI Features \u003e Structure generation with MPI parallelization LAQA ストレス項を考慮に入れたスコアが利用できるように更新 (T. Yamashita and H. Sekine, Sci. Technol. Adv. Mater. Meth. 2, 84 (2022).)．\n詳細は下記を参照．\nTutorial \u003e LAQA Input file \u003e [LAQA] section CrySPY Utility \u003e Examples \u003e qe_Si16_LAQA Backup 日付でディレクトリを作ることでバックアップの履歴が残るように変更． 詳細はfeatures/backup．\n",
