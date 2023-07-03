@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/cryspy/cryspy_1.0/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_1.0/index.html" rel="canonical" type="text/html" title="CrySPY 1.0.0 or later :: CrySPY">
     <link href="../../../installation/cryspy/cryspy_1.0/index.xml" rel="alternate" type="application/rss+xml" title="CrySPY 1.0.0 or later :: CrySPY">
-    <link href="../../../images/favicon.png?1686753740" rel="icon" type="image/png">
+    <link href="../../../images/favicon.png?1688383261" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../../css/fontawesome-all.min.css?1686753741" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1686753741" rel="stylesheet"></noscript>
-    <link href="../../../css/nucleus.css?1686753741" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1686753741" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1686753741" rel="stylesheet"></noscript>
-    <link href="../../../css/perfect-scrollbar.min.css?1686753741" rel="stylesheet">
-    <link href="../../../css/fonts.css?1686753741" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1686753741" rel="stylesheet"></noscript>
-    <link href="../../../css/theme.css?1686753741" rel="stylesheet">
-    <link href="../../../css/theme-relearn-light.css?1686753741" rel="stylesheet" id="variant-style">
-    <link href="../../../css/variant.css?1686753741" rel="stylesheet">
-    <link href="../../../css/print.css?1686753741" rel="stylesheet" media="print">
-    <link href="../../../css/format-print.css?1686753741" rel="stylesheet">
-    <link href="../../../css/ie.css?1686753741" rel="stylesheet">
-    <script src="../../../js/url.js?1686753741"></script>
-    <script src="../../../js/variant.js?1686753741"></script>
+    <link href="../../../css/fontawesome-all.min.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1688383261" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1688383261" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1688383261" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1688383261" rel="stylesheet">
+    <link href="../../../css/fonts.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1688383261" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1688383261" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1688383261" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1688383261" rel="stylesheet">
+    <link href="../../../css/print.css?1688383261" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1688383261" rel="stylesheet">
+    <link href="../../../css/ie.css?1688383261" rel="stylesheet">
+    <script src="../../../js/url.js?1688383261"></script>
+    <script src="../../../js/variant.js?1688383261"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -72,6 +72,7 @@
 <h1 id="cryspy-100-or-later">CrySPY 1.0.0 or later</h1>
 
 <h2 id="cryspy">CrySPY</h2>
+<h3 id="pip">pip</h3>
 <p>CrySPY 1.0.0 or later can be installed by pip.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install csp-cryspy
 </span></span></code></pre></div><p>The executable script, <code>cryspy</code>, is automatically installed in your PATH. You can check by</p>
@@ -88,15 +89,30 @@ See <a href="../../../installation/utility/#compile-cal_fingerprint">Instllation
 <p>Put the executable file of <code>cal_fingerprint</code> in your PATH. Or, specify the path of the executable file in <code>cryspy.in</code> as follows:</p>
 <pre tabindex="0"><code>[BO]
 fppath = /xxx/xxx/xxx/cal_fingerprint
-</code></pre>
+</code></pre><h2 id="arm64-on-macos-without-rosseta-2">Arm64 on MacOS (without Rosseta 2)</h2>
+<ol>
+<li>Install <a href="https://github.com/conda-forge/miniforge" target="_blank">miniforge3</a><i class="fas fa-external-link-alt"></i> (We do not know how to install pyshtools with homebrew python.)</li>
+<li>Install pymatgen (numpy is also installed), fftw by conda</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda install pymatgen
+</span></span><span style="display:flex;"><span>conda install fftw
+</span></span></code></pre></div><ol start="3">
+<li>Build pyshtools from the source code. PyXtal needs pyshtools.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip3 install pyshtools --no-binary pyshtools
+</span></span></code></pre></div><ol start="4">
+<li>Install CrySPY</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip3 install csp-cryspy
+</span></span></code></pre></div>
             <footer class="footline">
             </footer>
           </article>
         </div>
       </main>
     </div>
-    <script src="../../../js/clipboard.min.js?1686753741" defer></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1686753741" defer></script>
-    <script src="../../../js/theme.js?1686753741" defer></script>
+    <script src="../../../js/clipboard.min.js?1688383261" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1688383261" defer></script>
+    <script src="../../../js/theme.js?1688383261" defer></script>
   </body>
 </html>

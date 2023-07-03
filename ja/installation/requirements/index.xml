@@ -11,10 +11,8 @@
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/python/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/requirements/python/index.html</guid>
-      <description>Python CrySPY 1.1.0 or later Python &amp;gt;= 3.8 PyXtal (&amp;gt;= 0.5.3) (optional) mpi4py (optional, required if algo is BO) COMBO CrySPY 1.0.0 Python &amp;gt;= 3.8 PyXtal (&amp;gt;= 0.5.3) (optional, required if algo is BO) COMBO 情報 [2023 April 22] PyXtal (pyshtools)をarm64のMacOSにインストールする方法がわかった．Arm64 on MacOS (without Rosseta 2)を参照．
-[2023 March 15] MacOSのarm64環境でのpyxtalのインストールが難しいので，Rosetta 2を使用してx86_64環境での利用が推奨．
-CrySPY 0.10.0 &amp;ndash; 0.10.3 Tested with Homebrew Python 3.8.x and 3.9.x on Mac and Python 3.8.x on Linux.
-Python 3.</description>
+      <description>Python CrySPY 1.1.0 or later Python &amp;gt;= 3.8 PyXtal (&amp;gt;= 0.5.3) (optional) mpi4py (optional, required if algo is BO) COMBO If you install cryspy with pip, necessary libraries such as PyXtal will be installed automatically. Go to Installation &amp;gt; CrySPY. Manual installation of COMBO is required when using Bayesian optimization.
+CrySPY 1.0.0 Python &amp;gt;= 3.8 PyXtal (&amp;gt;= 0.5.3) (optional, required if algo is BO) COMBO 情報 [2023 April 22] PyXtal (pyshtools)をarm64のMacOSにインストールする方法がわかった．Arm64 on MacOS (without Rosseta 2)を参照．</description>
     </item>
     <item>
       <title>構造最適化ソフト</title>

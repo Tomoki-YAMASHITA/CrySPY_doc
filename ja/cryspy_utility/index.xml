@@ -42,5 +42,13 @@ $ python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3 Converted. The num
 初期構造を生成後に，kppvolの値をどれくらいにしたら良いか色々試すことができる．（下記の最後の例を参照）
 使い方 python3 kpt_check.py [-h] [-w] [-n NSTRUC] infile kppvol positional arguments: infile input file: POSCAR or CONTCAR or init_struc_data.pkl kppvol kppvol optional arguments: -h, --help show this help message and exit -w, --write write KPOINTS -n NSTRUC, --nstruc NSTRUC number of structure to check 例 POSCARとkppvol $ python3 kpt_check.py POSCAR 100 a = 10.689217 b = 10.689217 c = 10.730846 Lattice vector 10.689217 0.000000 0.000000 0.000000 10.</description>
     </item>
+    <item>
+      <title>repeat_cryspy</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/repeat/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/repeat/index.html</guid>
+      <description>cryspyを何度も実行するのが面倒な時は，下記の自動スクリプトが便利． これは2分間に1回cryspyを実行する例．
+#!/bin/bash set -e while : do cryspy LOG_LASTLINE=`tail -n 1 log_cryspy` if [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;Done all structures!&amp;#34; ] then exit 0 elif [ &amp;#34;${LOG_LASTLINE:0:21}&amp;#34; = &amp;#34;Reached max_select_bo&amp;#34; ] then exit 0 elif [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;LAQA is ready&amp;#34; ] then # ---------- for LAQA cryspy # selection cryspy # submit jobs fi sleep 2m done </description>
+    </item>
   </channel>
 </rss>

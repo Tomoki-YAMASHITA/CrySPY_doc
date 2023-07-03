@@ -424,6 +424,12 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/external/index.html" />
   </url>
   <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/repeat/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/repeat/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/repeat/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/repeat/index.html" />
+  </url>
+  <url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/input/bo/index.html</loc>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tomoki-yamashita.github.io/CrySPY_doc/input/bo/index.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://tomoki-yamashita.github.io/CrySPY_doc/input/bo/index.html" />

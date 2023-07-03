@@ -12,20 +12,20 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/laqa/index.html" rel="alternate" hreflang="ja">
     <link href="../../../ja/tutorial/laqa/index.xml" rel="alternate" type="application/rss+xml" title="LAQA :: CrySPY">
     <link href="../../../ja/tutorial/laqa/index.print.html" rel="alternate" type="text/html" title="LAQA :: CrySPY">
-    <link href="../../../images/favicon.png?1686753741" rel="icon" type="image/png">
+    <link href="../../../images/favicon.png?1688383262" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../../css/fontawesome-all.min.css?1686753741" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1686753741" rel="stylesheet"></noscript>
-    <link href="../../../css/nucleus.css?1686753741" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1686753741" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1686753741" rel="stylesheet"></noscript>
-    <link href="../../../css/perfect-scrollbar.min.css?1686753741" rel="stylesheet">
-    <link href="../../../css/fonts.css?1686753741" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1686753741" rel="stylesheet"></noscript>
-    <link href="../../../css/theme.css?1686753741" rel="stylesheet">
-    <link href="../../../css/theme-relearn-light.css?1686753741" rel="stylesheet" id="variant-style">
-    <link href="../../../css/variant.css?1686753741" rel="stylesheet">
-    <link href="../../../css/print.css?1686753741" rel="stylesheet" media="print">
-    <link href="../../../css/ie.css?1686753741" rel="stylesheet">
-    <script src="../../../js/url.js?1686753741"></script>
-    <script src="../../../js/variant.js?1686753741"></script>
+    <link href="../../../css/fontawesome-all.min.css?1688383262" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1688383262" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1688383262" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1688383262" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1688383262" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1688383262" rel="stylesheet">
+    <link href="../../../css/fonts.css?1688383262" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1688383262" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1688383262" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1688383262" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1688383262" rel="stylesheet">
+    <link href="../../../css/print.css?1688383262" rel="stylesheet" media="print">
+    <link href="../../../css/ie.css?1688383262" rel="stylesheet">
+    <script src="../../../js/url.js?1688383262"></script>
+    <script src="../../../js/variant.js?1688383262"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -317,10 +317,10 @@ pklデータはgzipしておくとファイルサイズを減らすことがで�
 （全て最適化を完了させるとランダムサーチと計算量が変わらないのでLAQAの優位性はない）</p>
 <p>
 		
-<a href="#image-6787e5f0ba0b652d25c9923261f36a22" class="lightbox-link">
+<a href="#image-09ea2d32ba648ecc97b49497a8c55862" class="lightbox-link">
 <img src="../../../images/LAQA/LAQA.gif?width=40vw" alt="fig_LAQA" style="height: auto; width: 40vw;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-6787e5f0ba0b652d25c9923261f36a22">
+<a href="javascript:history.back();" class="lightbox" id="image-09ea2d32ba648ecc97b49497a8c55862">
 <img src="../../../images/LAQA/LAQA.gif?width=40vw" alt="fig_LAQA" class="lightbox-image" loading="lazy">
 </a></p>
 <p>このグラフはエネルギーを最適化ステップの関数として示している．
@@ -347,23 +347,8 @@ struc_step_flag = True
 <h2 id="auto-script">Auto script</h2>
 <p>何度も繰り返しcryspyを実行するのは面倒に感じたかもしれない．
 下記のようなスクリプトを使えば自動化できる．</p>
-<pre tabindex="0"><code>#!/bin/bash -e
-while :
-do
-    cryspy
-    LOG_LASTLINE=`tail -n 1 log_cryspy`
-    if  [ &#34;$LOG_LASTLINE&#34; = &#34;Done all structures!&#34; ]
-    then
-        exit 0
-    elif [ &#34;$LOG_LASTLINE&#34; = &#34;LAQA is ready&#34; ]
-    then
-        # ---------- for LAQA
-        cryspy    # selection
-        cryspy    # submit jobs
-    fi
-    sleep 2m
-done
-</code></pre>
+<p><a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/repeat/">repeat_cryspy</a></p>
+
             <footer class="footline">
             </footer>
           </article>
@@ -385,13 +370,13 @@ done
         <script>
           var contentLangs=['ja'];
         </script>
-        <script src="../../../js/auto-complete.js?1686753741" defer></script>
-        <script src="../../../js/lunr/lunr.min.js?1686753741" defer></script>
-        <script src="../../../js/lunr/lunr.stemmer.support.min.js?1686753741" defer></script>
-        <script src="../../../js/lunr/lunr.multi.min.js?1686753741" defer></script>
-        <script src="../../../js/lunr/tinyseg.js?1686753741" defer></script>
-        <script src="../../../js/lunr/lunr.ja.min.js?1686753741" defer></script>
-        <script src="../../../js/search.js?1686753741" defer></script>
+        <script src="../../../js/auto-complete.js?1688383262" defer></script>
+        <script src="../../../js/lunr/lunr.min.js?1688383262" defer></script>
+        <script src="../../../js/lunr/lunr.stemmer.support.min.js?1688383262" defer></script>
+        <script src="../../../js/lunr/lunr.multi.min.js?1688383262" defer></script>
+        <script src="../../../js/lunr/tinyseg.js?1688383262" defer></script>
+        <script src="../../../js/lunr/lunr.ja.min.js?1688383262" defer></script>
+        <script src="../../../js/search.js?1688383262" defer></script>
       </div>
       <div id="homelinks" class="default-animation">
         <ul>
@@ -487,7 +472,8 @@ done
           <li data-nav-id="/ja/cryspy_utility/examples/qe_si16_laqa/index.html" class=""><a class="padding" href="../../../ja/cryspy_utility/examples/qe_si16_laqa/index.html">qe_Si16_LAQA</a></li></ul></li>
           <li data-nav-id="/ja/cryspy_utility/extract_struc/index.html" class=""><a class="padding" href="../../../ja/cryspy_utility/extract_struc/index.html">extract_struc.py</a></li>
           <li data-nav-id="/ja/cryspy_utility/pos2pkl/index.html" class=""><a class="padding" href="../../../ja/cryspy_utility/pos2pkl/index.html">pos2pkl.py</a></li>
-          <li data-nav-id="/ja/cryspy_utility/kpt_check/index.html" class=""><a class="padding" href="../../../ja/cryspy_utility/kpt_check/index.html">kpt_check.py</a></li></ul></li>
+          <li data-nav-id="/ja/cryspy_utility/kpt_check/index.html" class=""><a class="padding" href="../../../ja/cryspy_utility/kpt_check/index.html">kpt_check.py</a></li>
+          <li data-nav-id="/ja/cryspy_utility/repeat/index.html" class=""><a class="padding" href="../../../ja/cryspy_utility/repeat/index.html">repeat_cryspy</a></li></ul></li>
         </ul>
         <div id="shortcuts">
           <div class="nav-title padding">リンク</div>
@@ -537,8 +523,8 @@ done
         </div>
       </div>
     </aside>
-    <script src="../../../js/clipboard.min.js?1686753741" defer></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1686753741" defer></script>
-    <script src="../../../js/theme.js?1686753741" defer></script>
+    <script src="../../../js/clipboard.min.js?1688383262" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1688383262" defer></script>
+    <script src="../../../js/theme.js?1688383262" defer></script>
   </body>
 </html>

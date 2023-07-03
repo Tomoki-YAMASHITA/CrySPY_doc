@@ -11,7 +11,7 @@
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_1.0/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/installation/cryspy/cryspy_1.0/index.html</guid>
-      <description>CrySPY CrySPY 1.0.0 or later can be installed by pip.
+      <description>CrySPY pip CrySPY 1.0.0 or later can be installed by pip.
 pip install csp-cryspy The executable script, cryspy, is automatically installed in your PATH. You can check by
 which cryspy Editable mode If you want to change the source code of CrySPY, you can use pip&amp;rsquo;s editable mode (-e option).
 git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git pip install -e ./CrySPY Instead of git clone, you can download the compressed file from the release page</description>
