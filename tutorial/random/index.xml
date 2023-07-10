@@ -7,6 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ASE in your local PC</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ase/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ase/index.html</guid>
+      <description>2023 July 10
+ASE provides interfaces to different codes. ASE also includes Pure Python EMT calculator, which is suitable for testing CrySPY because of its fast and easy structure optimization.
+In this tutorial, we try to use CrySPY in your local PC (Mac or Linux). The target system is Cu 8 atoms.
+Assumption Here, we assume the following conditions:
+CrySPY 1.2.0 or later in your local PC CrySPY job filename: job_cryspy ase input filename: ase_in.</description>
+    </item>
+    <item>
       <title>soiap in your local PC</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/soiap/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -82,25 +93,26 @@ $ emacs cryspy $ chmod 744 cryspy $ cat cryspy #!/bin/sh python3 -u ~/CrySPY_roo
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/first_run/index.html</guid>
-      <description>Make sure you have the following in your working directory.
+      <description>2023 July 10, update
+Make sure you have the following in your working directory.
 calc_in/ (cryspy) cryspy.in $ ls calc_in/ cryspy.in Then, run CyrSPY!
-cryspy &amp;amp; If you use old version (0.10.3 or earlier):
-bash ./cryspy &amp;amp; At the first run, CrySPY goes into structure generation mode. CrySPY stops after 5 structure generation.
-If it worked properly, log_cryspy (log in ver. 0.10.3 or earlier) would look like this.
-2023/03/18 20:35:46 CrySPY 1.0.0 Start cryspy.py Read input file, cryspy.</description>
+cryspy If you use old version (0.10.3 or earlier):
+bash ./cryspy At the first run, CrySPY goes into structure generation mode. CrySPY stops after 5 structure generation.
+If it worked properly, the following output appears on the screen:
+[2023-07-10 18:40:54,389][cryspy_init][INFO] Start CrySPY 1.2.0 [2023-07-10 18:40:54,389][cryspy_init][INFO] # ---------- Read input file, cryspy.</description>
     </item>
     <item>
       <title>Submit job</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/submit_job/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/submit_job/index.html</guid>
-      <description>Continue CrySPY continues the simulation if you have cryspy.stat file.
+      <description>2023 July 10, update
+Continue CrySPY continues the simulation if you have cryspy.stat file.
 Tip Continue if you have crypy.stat
 Start from the beginning if you don&amp;rsquo;t have cryspy.stat
 Submit job Run CyrSPY again.
-cryspy &amp;amp; Check log_cryspy file.
-2023/03/18 23:35:08 CrySPY 1.0.0 Restart cryspy.py # ---------- job status ID 0: submit job, Stage 1 ID 1: submit job, Stage 1 And also cryspy.stat file.
-... (omit) ... [status] id_queueing = 2 3 4 id 0 = Stage 1 id 1 = Stage 1 CrySPY submitted two jobs for structure ID 0 and 1 as you set njob = 2 in cryspy.</description>
+cryspy Check the screen or log_cryspy file.
+[2023-07-10 18:52:51,859][cryspy_restart][INFO] Restart CrySPY 1.2.0 [2023-07-10 18:52:51,869][ctrl_job][INFO] # ---------- job status [2023-07-10 18:52:51,904][ctrl_job][INFO] ID 0: submit job, Stage 1 [2023-07-10 18:52:51,931][ctrl_job][INFO] ID 1: submit job, Stage 1 And also cryspy.</description>
     </item>
     <item>
       <title>Check results</title>

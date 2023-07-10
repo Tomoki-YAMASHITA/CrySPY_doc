@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>ASE in your local PC :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ase/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ase/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/ase/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ase/index.html" rel="canonical" type="text/html" title="ASE in your local PC :: CrySPY">
+    <link href="../../../tutorial/random/ase/index.xml" rel="alternate" type="application/rss+xml" title="ASE in your local PC :: CrySPY">
+    <link href="../../../images/favicon.png?1688985125" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1688985125" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1688985125" rel="stylesheet">
+    <link href="../../../css/fonts.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1688985125" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1688985125" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1688985125" rel="stylesheet">
+    <link href="../../../css/print.css?1688985125" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1688985125" rel="stylesheet">
+    <link href="../../../css/ie.css?1688985125" rel="stylesheet">
+    <script src="../../../js/url.js?1688985125"></script>
+    <script src="../../../js/variant.js?1688985125"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../../tutorial/random/ase/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../tutorial/index.html"><span itemprop="name">Tutorial</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../tutorial/random/index.html"><span itemprop="name">Random Search (RS)</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ASE in your local PC</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="ase-in-your-local-pc">ASE in your local PC</h1>
+
+<p>2023 July 10</p>
+<p><a href="https://wiki.fysik.dtu.dk/ase/" target="_blank">ASE</a><i class="fas fa-external-link-alt"></i> provides interfaces to different codes.
+ASE also includes <a href="https://wiki.fysik.dtu.dk/ase/ase/calculators/emt.html#ase.calculators.emt.EMT" target="_blank">Pure Python EMT calculator</a><i class="fas fa-external-link-alt"></i>, which is suitable for testing CrySPY because of its fast and easy structure optimization.</p>
+<p>In this tutorial, we try to use CrySPY in your local PC (Mac or Linux).
+The target system is Cu 8 atoms.</p>
+<h2 id="assumption">Assumption</h2>
+<p>Here, we assume the following conditions:</p>
+<ul>
+<li>CrySPY 1.2.0 or later in your local PC</li>
+<li>CrySPY job filename: <code>job_cryspy</code></li>
+<li>ase input filename: <code>ase_in.py</code></li>
+</ul>
+<h2 id="input-files">Input files</h2>
+<p>Move to your working directory, and copy the example files by one of the following methods.</p>
+<ul>
+<li>Download from <a href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/ase_cu8_rs/">cryspy_utility/examples/ase_Cu8_RS</a></li>
+<li>Copy from CrySPY utility that you installed</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cd ase_Cu8_RS
+</span></span><span style="display:flex;"><span>tree
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── calc_in
+</span></span><span style="display:flex;"><span>│   ├── ase_in.py_1
+</span></span><span style="display:flex;"><span>│   └── job_cryspy
+</span></span><span style="display:flex;"><span>└── cryspy.in
+</span></span></code></pre></div><h3 id="cryspyin">cryspy.in</h3>
+<p><code>cryspy.in</code> is the input file of CrySPY.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[basic]
+</span></span><span style="display:flex;"><span>algo <span style="color:#f92672">=</span> RS
+</span></span><span style="display:flex;"><span>calc_code <span style="color:#f92672">=</span> ASE
+</span></span><span style="display:flex;"><span>tot_struc <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>nstage <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>njob <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>jobcmd <span style="color:#f92672">=</span> zsh
+</span></span><span style="display:flex;"><span>jobfile <span style="color:#f92672">=</span> job_cryspy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[structure]
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> Cu
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[ASE]
+</span></span><span style="display:flex;"><span>ase_python <span style="color:#f92672">=</span> ase_in<span style="color:#f92672">.</span>py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[option]
+</span></span></code></pre></div><p>In <code>[basic]</code> section, <code>jobcmd = zsh</code> can be changed to <code>jobcmd = sh</code> or <code>jobcmd = bash</code> in accordance with your environment.
+CrySPY runs <code>zsh job_cryspy</code> as a background job internally.</p>
+<p><code>[ASE]</code> section is required when you use ASE.</p>
+<p>You can name the following files whatever you want:</p>
+<ul>
+<li><code>jobfile</code>: <code>job_cryspy</code></li>
+<li><code>ase_python</code>: <code>ase_in.py</code></li>
+</ul>
+<p>The other input variables are discussed later.</p>
+<h3 id="calc_in-directory">calc_in directory</h3>
+<p>The job file and input files for ASE are prepared in this directory.</p>
+<h4 id="job-file">Job file</h4>
+<p>The name of the job file must match the value of <code>jobfile</code> in <code>cryspy.in</code>.
+The example of job file (here, <code>job_cryspy</code>) is shown below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- ASE</span>
+</span></span><span style="display:flex;"><span>python3 ase_in.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- CrySPY</span>
+</span></span><span style="display:flex;"><span>sed -i -e <span style="color:#e6db74">&#39;3 s/^.*$/done/&#39;</span> stat_job
+</span></span></code></pre></div><p>You can specify the input (<code>ase_in.py</code>) file names,
+but it must match the values of <code>ase_python</code> in <code>cryspy.in</code>.
+You must add <code>sed -i -e '3 s/^.*$/done/' stat_job</code> at the end of the file in CrySPY.</p>
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+<p><code>sed -i -e '3 s/^.*$/done/' stat_job</code> is required at the end of the job file.</p>
+  </div>
+</div>
+
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+  <div class="box-content">
+<p>In the job file of CrySPY, the string <code>CrySPY_ID</code> is automatically replaced with the structure ID.
+When you use a job scheduler such as PBS and SLURM, it is useful to set the structure ID to the job name.
+For example, in the PBS system, <code>#PBS -N Si_CrySPY_ID</code> in ID 10 is replaced with <code>#PBS -N Si_10</code>.
+Note that starting with a number will result in an error.
+You should add a prefix like <code>Si_</code>.</p>
+  </div>
+</div>
+<h4 id="input-for-ase">Input for ASE</h4>
+<p>Input files based on the number of stages (<code>nstage</code> in <code>cryspy.in</code>) are required.
+Name the input file(s) with a suffix <code>_x</code>.
+Here <code>x</code> means the stage number.</p>
+<p>We are using <code>nstage = 1</code> in this ASE tutorial, so we need only <code>ase_in.py_1</code>.
+<code>ase_in.py_1</code> is listed below.
+Refer to the ASE documentation for details.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> ase.constraints <span style="color:#f92672">import</span> ExpCellFilter, StrainFilter
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ase.calculators.emt <span style="color:#f92672">import</span> EMT
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ase.calculators.lj <span style="color:#f92672">import</span> LennardJones
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ase.optimize.sciopt <span style="color:#f92672">import</span> SciPyFminCG
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ase.optimize <span style="color:#f92672">import</span> BFGS
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ase.spacegroup.symmetrize <span style="color:#f92672">import</span> FixSymmetry
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ase.io <span style="color:#f92672">import</span> read, write
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- input structure</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># CrySPY outputs &#39;POSCAR&#39; as an input file in work/xxxxxx directory</span>
+</span></span><span style="display:flex;"><span>atoms <span style="color:#f92672">=</span> read(<span style="color:#e6db74">&#39;POSCAR&#39;</span>, format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vasp&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- setting and run</span>
+</span></span><span style="display:flex;"><span>atoms<span style="color:#f92672">.</span>calc <span style="color:#f92672">=</span> EMT()
+</span></span><span style="display:flex;"><span>atoms<span style="color:#f92672">.</span>set_constraint([FixSymmetry(atoms)])
+</span></span><span style="display:flex;"><span>atoms <span style="color:#f92672">=</span> ExpCellFilter(atoms, hydrostatic_strain<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>opt <span style="color:#f92672">=</span> BFGS(atoms)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#opt=SciPyFminCG(atoms)</span>
+</span></span><span style="display:flex;"><span>opt<span style="color:#f92672">.</span>run()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- opt. structure and energy</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># [rule in ASE interface]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output file for energy: &#39;log.tote&#39; in eV/cell</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                         CrySPY reads the last line of &#39;log.tote&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output file for structure: &#39;CONTCAR&#39; in vasp format</span>
+</span></span><span style="display:flex;"><span>e <span style="color:#f92672">=</span> atoms<span style="color:#f92672">.</span>atoms<span style="color:#f92672">.</span>get_total_energy()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;log.tote&#39;</span>, mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    f<span style="color:#f92672">.</span>write(str(e))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>write(<span style="color:#e6db74">&#39;CONTCAR&#39;</span>, atoms<span style="color:#f92672">.</span>atoms, format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vasp&#39;</span>)
+</span></span></code></pre></div><p>Unlike VASP and QE, the ASE input (python script) is more flexible.
+CrySPY has two rules:</p>
+<ol>
+<li>Energy is output in units of eV/cell to <code>log.tote</code> file. CrySPY reads the last line of it.</li>
+<li>Optimized structure is output to `CONTCAR`` file in the VASP format.</li>
+</ol>
+<h2 id="running-cryspy">Running CrySPY</h2>
+<p>Go to <a href="../../../tutorial/random/#running-cryspy">Running CrySPY</a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js?1688985125" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1688985125" defer></script>
+    <script src="../../../js/theme.js?1688985125" defer></script>
+  </body>
+</html>

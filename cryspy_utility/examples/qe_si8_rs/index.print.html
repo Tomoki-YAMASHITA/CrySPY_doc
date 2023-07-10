@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/qe_si8_rs/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/qe_si8_rs/index.html" rel="canonical" type="text/html" title="qe_Si8_RS :: CrySPY">
     <link href="../../../cryspy_utility/examples/qe_si8_rs/index.xml" rel="alternate" type="application/rss+xml" title="qe_Si8_RS :: CrySPY">
-    <link href="../../../images/favicon.png?1688383261" rel="icon" type="image/png">
+    <link href="../../../images/favicon.png?1688985125" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../../css/fontawesome-all.min.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1688383261" rel="stylesheet"></noscript>
-    <link href="../../../css/nucleus.css?1688383261" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1688383261" rel="stylesheet"></noscript>
-    <link href="../../../css/perfect-scrollbar.min.css?1688383261" rel="stylesheet">
-    <link href="../../../css/fonts.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1688383261" rel="stylesheet"></noscript>
-    <link href="../../../css/theme.css?1688383261" rel="stylesheet">
-    <link href="../../../css/theme-relearn-light.css?1688383261" rel="stylesheet" id="variant-style">
-    <link href="../../../css/variant.css?1688383261" rel="stylesheet">
-    <link href="../../../css/print.css?1688383261" rel="stylesheet" media="print">
-    <link href="../../../css/format-print.css?1688383261" rel="stylesheet">
-    <link href="../../../css/ie.css?1688383261" rel="stylesheet">
-    <script src="../../../js/url.js?1688383261"></script>
-    <script src="../../../js/variant.js?1688383261"></script>
+    <link href="../../../css/fontawesome-all.min.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1688985125" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1688985125" rel="stylesheet">
+    <link href="../../../css/fonts.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1688985125" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1688985125" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1688985125" rel="stylesheet">
+    <link href="../../../css/print.css?1688985125" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1688985125" rel="stylesheet">
+    <link href="../../../css/ie.css?1688985125" rel="stylesheet">
+    <script src="../../../js/url.js?1688985125"></script>
+    <script src="../../../js/variant.js?1688985125"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -80,115 +80,115 @@
   </a>
 </span>
 <h2 id="cryspyin">cryspy.in</h2>
-<pre tabindex="0"><code>[basic]
-algo = RS
-calc_code = QE
-tot_struc = 5
-nstage = 2
-njob = 1
-jobcmd = qsub
-jobfile = job_cryspy
-
-[structure]
-natot = 8
-atype = Si
-nat = 8
-
-[QE]
-qe_infile = pwscf.in
-qe_outfile = pwscf.out
-kppvol =  40  80
-
-[option]
-</code></pre><h2 id="calc_in">calc_in/</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[basic]
+</span></span><span style="display:flex;"><span>algo <span style="color:#f92672">=</span> RS
+</span></span><span style="display:flex;"><span>calc_code <span style="color:#f92672">=</span> QE
+</span></span><span style="display:flex;"><span>tot_struc <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>nstage <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>njob <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>jobcmd <span style="color:#f92672">=</span> qsub
+</span></span><span style="display:flex;"><span>jobfile <span style="color:#f92672">=</span> job_cryspy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[structure]
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> Si
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[QE]
+</span></span><span style="display:flex;"><span>qe_infile <span style="color:#f92672">=</span> pwscf<span style="color:#f92672">.</span><span style="color:#f92672">in</span>
+</span></span><span style="display:flex;"><span>qe_outfile <span style="color:#f92672">=</span> pwscf<span style="color:#f92672">.</span>out
+</span></span><span style="display:flex;"><span>kppvol <span style="color:#f92672">=</span>  <span style="color:#ae81ff">40</span>  <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[option]
+</span></span></code></pre></div><h2 id="calc_in">calc_in/</h2>
 <h3 id="pwscfin_1">pwscf.in_1</h3>
-<pre tabindex="0"><code> &amp;control
-    title = &#39;Si8&#39;
-    calculation = &#39;relax&#39;
-    nstep = 100
-    restart_mode = &#39;from_scratch&#39;,
-    pseudo_dir = &#39;/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/&#39;
-    outdir=&#39;./out.d/&#39;
- /
-
- &amp;system
-    ibrav = 0
-    nat = 8
-    ntyp = 1
-    ecutwfc = 44.0
-    occupations = &#39;smearing&#39;
-    degauss = 0.01
- /
-
- &amp;electrons
- /
-
- &amp;ions
- /
-
- &amp;cell
- /
-
-ATOMIC_SPECIES
-  Si  28.086  Si.pbe-n-kjpaw_psl.1.0.0.UPF
-</code></pre><h3 id="pwscfin_2">pwscf.in_2</h3>
-<pre tabindex="0"><code> &amp;control
-    title = &#39;Si8&#39;
-    calculation = &#39;vc-relax&#39;
-    nstep = 200
-    restart_mode = &#39;from_scratch&#39;,
-    pseudo_dir = &#39;/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/&#39;
-    outdir=&#39;./out.d/&#39;
- /
-
- &amp;system
-    ibrav = 0
-    nat = 8
-    ntyp = 1
-    ecutwfc = 44.0
-    occupations = &#39;smearing&#39;
-    degauss = 0.01
- /
-
- &amp;electrons
- /
-
- &amp;ions
- /
-
- &amp;cell
- /
-
-ATOMIC_SPECIES
-  Si  28.086  Si.pbe-n-kjpaw_psl.1.0.0.UPF
-</code></pre><h3 id="job_cryspy">job_cryspy</h3>
-<pre tabindex="0"><code>#!/bin/sh
-#$ -cwd
-#$ -V -S /bin/bash
-####$ -V -S /bin/zsh
-#$ -N Si8_CrySPY_ID
-#$ -pe smp 8
-####$ -q ibis1.q
-####$ -q ibis2.q
-
-mpirun -np $NSLOTS pw.x -nk 4 -nb 2 &lt; pwscf.in &gt; pwscf.out
-
-
-if [ -e &#34;CRASH&#34; ]; then
-    sed -i -e &#39;3 s/^.*$/skip/&#39; stat_job
-    exit 1
-fi
-
-sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> &amp;control
+</span></span><span style="display:flex;"><span>    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Si8&#39;</span>
+</span></span><span style="display:flex;"><span>    calculation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;relax&#39;</span>
+</span></span><span style="display:flex;"><span>    nstep <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>    restart_mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;from_scratch&#39;</span>,
+</span></span><span style="display:flex;"><span>    pseudo_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/&#39;</span>
+</span></span><span style="display:flex;"><span>    outdir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./out.d/&#39;</span>
+</span></span><span style="display:flex;"><span> /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;system
+</span></span><span style="display:flex;"><span>    ibrav <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>    ntyp <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    ecutwfc <span style="color:#f92672">=</span> 44.0
+</span></span><span style="display:flex;"><span>    occupations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;smearing&#39;</span>
+</span></span><span style="display:flex;"><span>    degauss <span style="color:#f92672">=</span> 0.01
+</span></span><span style="display:flex;"><span> /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;electrons
+</span></span><span style="display:flex;"><span> /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;ions
+</span></span><span style="display:flex;"><span> /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;cell
+</span></span><span style="display:flex;"><span> /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ATOMIC_SPECIES
+</span></span><span style="display:flex;"><span>  Si  28.086  Si.pbe-n-kjpaw_psl.1.0.0.UPF
+</span></span></code></pre></div><h3 id="pwscfin_2">pwscf.in_2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> &amp;control
+</span></span><span style="display:flex;"><span>    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Si8&#39;</span>
+</span></span><span style="display:flex;"><span>    calculation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;vc-relax&#39;</span>
+</span></span><span style="display:flex;"><span>    nstep <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>    restart_mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;from_scratch&#39;</span>,
+</span></span><span style="display:flex;"><span>    pseudo_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/&#39;</span>
+</span></span><span style="display:flex;"><span>    outdir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./out.d/&#39;</span>
+</span></span><span style="display:flex;"><span> /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;system
+</span></span><span style="display:flex;"><span>    ibrav <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>    ntyp <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    ecutwfc <span style="color:#f92672">=</span> 44.0
+</span></span><span style="display:flex;"><span>    occupations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;smearing&#39;</span>
+</span></span><span style="display:flex;"><span>    degauss <span style="color:#f92672">=</span> 0.01
+</span></span><span style="display:flex;"><span> /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;electrons
+</span></span><span style="display:flex;"><span> /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;ions
+</span></span><span style="display:flex;"><span> /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &amp;cell
+</span></span><span style="display:flex;"><span> /
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ATOMIC_SPECIES
+</span></span><span style="display:flex;"><span>  Si  28.086  Si.pbe-n-kjpaw_psl.1.0.0.UPF
+</span></span></code></pre></div><h3 id="job_cryspy">job_cryspy</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#$ -cwd</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#$ -V -S /bin/bash</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####$ -V -S /bin/zsh</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#$ -N Si8_CrySPY_ID</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#$ -pe smp 8</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####$ -q ibis1.q</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####$ -q ibis2.q</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mpirun -np $NSLOTS pw.x -nk <span style="color:#ae81ff">4</span> -nb <span style="color:#ae81ff">2</span> &lt; pwscf.in &gt; pwscf.out
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -e <span style="color:#e6db74">&#34;CRASH&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    sed -i -e <span style="color:#e6db74">&#39;3 s/^.*$/skip/&#39;</span> stat_job
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sed -i -e <span style="color:#e6db74">&#39;3 s/^.*$/done/&#39;</span> stat_job
+</span></span></code></pre></div>
             <footer class="footline">
             </footer>
           </article>
         </div>
       </main>
     </div>
-    <script src="../../../js/clipboard.min.js?1688383261" defer></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1688383261" defer></script>
-    <script src="../../../js/theme.js?1688383261" defer></script>
+    <script src="../../../js/clipboard.min.js?1688985125" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1688985125" defer></script>
+    <script src="../../../js/theme.js?1688985125" defer></script>
   </body>
 </html>

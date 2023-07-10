@@ -11,9 +11,9 @@
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/index.html</guid>
-      <description>Preparation of input files Follow any one of the examples and then go to &amp;ldquo;Running CrySPY&amp;rdquo; section.
-soiap in your local PC VASP QE OpenMX LAMMPS External program Running CrySPY Check cryspy.in (version 0.10.3 or earlier) Script to run First run Submit job Check results Append structures Analysis and visualization Loading external data Only if calc_code == ext.
-Load external data </description>
+      <description>Info ASE is easy to start for beginners because when you install CrySPY (csp-cryspy), ASE is also automatically installed.
+Preparation of input files Follow any one of the examples and then go to &amp;ldquo;Running CrySPY&amp;rdquo; section.
+ASE in your local PC soiap in your local PC VASP QE OpenMX LAMMPS External program Running CrySPY Check cryspy.in (version 0.10.3 or earlier) Script to run First run Submit job Check results Append structures Analysis and visualization Loading external data Only if calc_code == ext.</description>
     </item>
     <item>
       <title>Evolutionary Algorithm (EA)</title>

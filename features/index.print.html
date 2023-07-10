@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/index.html" rel="canonical" type="text/html" title="Features :: CrySPY">
     <link href="../features/index.xml" rel="alternate" type="application/rss+xml" title="Features :: CrySPY">
-    <link href="../images/favicon.png?1688383261" rel="icon" type="image/png">
+    <link href="../images/favicon.png?1688985125" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../css/fontawesome-all.min.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1688383261" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1688383261" rel="stylesheet">
-    <link href="../css/auto-complete.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1688383261" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1688383261" rel="stylesheet">
-    <link href="../css/fonts.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1688383261" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1688383261" rel="stylesheet">
-    <link href="../css/theme-relearn-light.css?1688383261" rel="stylesheet" id="variant-style">
-    <link href="../css/variant.css?1688383261" rel="stylesheet">
-    <link href="../css/print.css?1688383261" rel="stylesheet" media="print">
-    <link href="../css/format-print.css?1688383261" rel="stylesheet">
-    <link href="../css/ie.css?1688383261" rel="stylesheet">
-    <script src="../js/url.js?1688383261"></script>
-    <script src="../js/variant.js?1688383261"></script>
+    <link href="../css/fontawesome-all.min.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1688985125" rel="stylesheet">
+    <link href="../css/auto-complete.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1688985125" rel="stylesheet">
+    <link href="../css/fonts.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1688985125" rel="stylesheet">
+    <link href="../css/theme-relearn-light.css?1688985125" rel="stylesheet" id="variant-style">
+    <link href="../css/variant.css?1688985125" rel="stylesheet">
+    <link href="../css/print.css?1688985125" rel="stylesheet" media="print">
+    <link href="../css/format-print.css?1688985125" rel="stylesheet">
+    <link href="../css/ie.css?1688985125" rel="stylesheet">
+    <script src="../js/url.js?1688985125"></script>
+    <script src="../js/variant.js?1688985125"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -73,6 +73,8 @@
 
 <ul class="children children-li children-sort-">
 	
+<li><a href="../features/logging/index.html">Logging</a><ul>
+	</ul></li>
 <li><a href="../features/backup/index.html">Backup</a><ul>
 	</ul></li>
 <li><a href="../features/clean/index.html">Clean</a><ul>
@@ -91,6 +93,43 @@
 
           <section>
             <h1 class="a11y-only">Subsections of Features</h1>
+          <article class="default">
+<h1 id="logging">Logging</h1>
+
+<p>2023 July 10</p>
+<p>CrySPY 1.2.0 adopts logging library of Python.
+CrySPY logs are output to both the screen and files(<code>log_cryspy</code> and <code>err_cryspy</code>).</p>
+<ul>
+<li>log &ndash;&gt; screen and <code>log_cryspy</code></li>
+<li>error and warning &ndash;&gt; screen and <code>err_cryspy</code></li>
+</ul>
+<p>Here is the example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,389<span style="color:#f92672">][</span>cryspy_init<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Start CrySPY 1.2.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,389<span style="color:#f92672">][</span>cryspy_init<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> <span style="color:#75715e"># ---------- Read input file, cryspy.in</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,390<span style="color:#f92672">][</span>read_input<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> Save input data in cryspy.stat
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,391<span style="color:#f92672">][</span>cryspy_init<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> <span style="color:#75715e"># ---------- Initial structure generation</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,391<span style="color:#f92672">][</span>cryspy_init<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> Number of MPI processes: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,391<span style="color:#f92672">][</span>gen_init_struc<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> <span style="color:#75715e"># ------ mindist</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,395<span style="color:#f92672">][</span>struc_util<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> Cu - Cu: 1.32
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,395<span style="color:#f92672">][</span>gen_init_struc<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> <span style="color:#75715e"># ------ generate structures</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,481<span style="color:#f92672">][</span>gen_pyxtal<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> Structure ID      <span style="color:#ae81ff">0</span> was generated. Space group:   <span style="color:#ae81ff">1</span> --&gt;   <span style="color:#ae81ff">1</span> P1
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,493<span style="color:#f92672">][</span>gen_pyxtal<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> Structure ID      <span style="color:#ae81ff">1</span> was generated. Space group:  <span style="color:#ae81ff">28</span> --&gt;  <span style="color:#ae81ff">28</span> Pma2
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,498<span style="color:#f92672">][</span>gen_pyxtal<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> Structure ID      <span style="color:#ae81ff">2</span> was generated. Space group:  <span style="color:#ae81ff">29</span> --&gt;  <span style="color:#ae81ff">29</span> Pca2_1
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,704<span style="color:#f92672">][</span>gen_pyxtal<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> Structure ID      <span style="color:#ae81ff">3</span> was generated. Space group: <span style="color:#ae81ff">137</span> --&gt; <span style="color:#ae81ff">137</span> P4_2/nmc
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,725<span style="color:#f92672">][</span>gen_pyxtal<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> Structure ID      <span style="color:#ae81ff">4</span> was generated. Space group: <span style="color:#ae81ff">212</span> --&gt; <span style="color:#ae81ff">214</span> I4_132
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:40:54,800<span style="color:#f92672">][</span>cryspy_init<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> Elapsed time <span style="color:#66d9ef">for</span> structure generation: 0:00:00.408367
+</span></span></code></pre></div><p>If you want to run cryspy as a background job, or if you use the auto script, and do NOT want it to output to the screen, execute it with the <code>-n</code> option as follow:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cryspy -n
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
           <article class="default">
 <h1 id="backup">Backup</h1>
 
@@ -243,10 +282,10 @@ mindist_1 = 2.2
 </code></pre><p>The structure generation is taking a long time because of a slightly stricter setting like <code>mindset_1 = 2.2</code>.
 The structure generation was performed 10 times for each number of processes.</p>
 <p>
-<a href="#image-4815d498b34a874b153b6a216ee8af17" class="lightbox-link">
+<a href="#image-fb29383f7c13c3422a759efce81f3c58" class="lightbox-link">
 <img src="../images/MPI/elapsed_time_ibis.png" alt="fig_MPI" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-4815d498b34a874b153b6a216ee8af17">
+<a href="javascript:history.back();" class="lightbox" id="image-fb29383f7c13c3422a759efce81f3c58">
 <img src="../images/MPI/elapsed_time_ibis.png" alt="fig_MPI" class="lightbox-image" loading="lazy">
 </a></p>
 
@@ -257,8 +296,8 @@ The structure generation was performed 10 times for each number of processes.</p
           </section>        </div>
       </main>
     </div>
-    <script src="../js/clipboard.min.js?1688383261" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1688383261" defer></script>
-    <script src="../js/theme.js?1688383261" defer></script>
+    <script src="../js/clipboard.min.js?1688985125" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1688985125" defer></script>
+    <script src="../js/theme.js?1688985125" defer></script>
   </body>
 </html>

@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/random/submit_job/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/submit_job/index.html" rel="canonical" type="text/html" title="Submit job :: CrySPY">
     <link href="../../../tutorial/random/submit_job/index.xml" rel="alternate" type="application/rss+xml" title="Submit job :: CrySPY">
-    <link href="../../../images/favicon.png?1688383261" rel="icon" type="image/png">
+    <link href="../../../images/favicon.png?1688985125" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../../css/fontawesome-all.min.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1688383261" rel="stylesheet"></noscript>
-    <link href="../../../css/nucleus.css?1688383261" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1688383261" rel="stylesheet"></noscript>
-    <link href="../../../css/perfect-scrollbar.min.css?1688383261" rel="stylesheet">
-    <link href="../../../css/fonts.css?1688383261" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1688383261" rel="stylesheet"></noscript>
-    <link href="../../../css/theme.css?1688383261" rel="stylesheet">
-    <link href="../../../css/theme-relearn-light.css?1688383261" rel="stylesheet" id="variant-style">
-    <link href="../../../css/variant.css?1688383261" rel="stylesheet">
-    <link href="../../../css/print.css?1688383261" rel="stylesheet" media="print">
-    <link href="../../../css/format-print.css?1688383261" rel="stylesheet">
-    <link href="../../../css/ie.css?1688383261" rel="stylesheet">
-    <script src="../../../js/url.js?1688383261"></script>
-    <script src="../../../js/variant.js?1688383261"></script>
+    <link href="../../../css/fontawesome-all.min.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1688985125" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1688985125" rel="stylesheet">
+    <link href="../../../css/fonts.css?1688985125" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1688985125" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1688985125" rel="stylesheet">
+    <link href="../../../css/theme-relearn-light.css?1688985125" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css?1688985125" rel="stylesheet">
+    <link href="../../../css/print.css?1688985125" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1688985125" rel="stylesheet">
+    <link href="../../../css/ie.css?1688985125" rel="stylesheet">
+    <script src="../../../js/url.js?1688985125"></script>
+    <script src="../../../js/variant.js?1688985125"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -71,6 +71,7 @@
           <article class="default">
 <h1 id="submit-job">Submit job</h1>
 
+<p>2023 July 10, update</p>
 <h2 id="continue">Continue</h2>
 <p>CrySPY continues the simulation if you have <code>cryspy.stat</code> file.</p>
 
@@ -83,17 +84,17 @@ Start from the beginning if you don&rsquo;t have <code>cryspy.stat</code></p>
 </div>
 <h2 id="submit-job">Submit job</h2>
 <p>Run CyrSPY again.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
-</span></span></code></pre></div><p>Check <code>log_cryspy</code> file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>2023/03/18 23:35:08
-</span></span><span style="display:flex;"><span>CrySPY 1.0.0
-</span></span><span style="display:flex;"><span>Restart cryspy.py
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy
+</span></span></code></pre></div><p>Check the screen or <code>log_cryspy</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>[2023-07-10 18:52:51,859][cryspy_restart][INFO] 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Restart CrySPY 1.2.0
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span># ---------- job status
-</span></span><span style="display:flex;"><span>ID      0: submit job, Stage 1
-</span></span><span style="display:flex;"><span>ID      1: submit job, Stage 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[2023-07-10 18:52:51,869][ctrl_job][INFO] # ---------- job status
+</span></span><span style="display:flex;"><span>[2023-07-10 18:52:51,904][ctrl_job][INFO] ID      0: submit job, Stage 1
+</span></span><span style="display:flex;"><span>[2023-07-10 18:52:51,931][ctrl_job][INFO] ID      1: submit job, Stage 1
 </span></span></code></pre></div><p>And also <code>cryspy.stat</code> file.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span>(omit)
@@ -111,11 +112,29 @@ These directory names correspond to their structure ID.</p>
 </span></span><span style="display:flex;"><span>├── 000001
 </span></span><span style="display:flex;"><span>└── fin
 </span></span></code></pre></div><p>When the two jobs are done, run CrySPY again.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy &amp;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>cryspy
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:55:01,053<span style="color:#f92672">][</span>cryspy_restart<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Restart CrySPY 1.2.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:55:01,058<span style="color:#f92672">][</span>ctrl_job<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> <span style="color:#75715e"># ---------- job status</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:55:01,058<span style="color:#f92672">][</span>ctrl_job<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> ID      0: Stage <span style="color:#ae81ff">1</span> Done!
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:55:01,093<span style="color:#f92672">][</span>ctrl_job<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span>     collect results: E <span style="color:#f92672">=</span> -0.00696997755502915 eV/atom
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:55:01,132<span style="color:#f92672">][</span>ctrl_job<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> ID      1: Stage <span style="color:#ae81ff">1</span> Done!
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:55:01,133<span style="color:#f92672">][</span>ctrl_job<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span>     collect results: E <span style="color:#f92672">=</span> 0.4934076667166454 eV/atom
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:55:01,144<span style="color:#f92672">][</span>cryspy<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>recheck <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:55:01,145<span style="color:#f92672">][</span>ctrl_job<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> <span style="color:#75715e"># ---------- job status</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:55:01,153<span style="color:#f92672">][</span>ctrl_job<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> ID      2: submit job, Stage <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2023-07-10 18:55:01,161<span style="color:#f92672">][</span>ctrl_job<span style="color:#f92672">][</span>INFO<span style="color:#f92672">]</span> ID      3: submit job, Stage <span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><p>If you set <code>nstage = 2</code> (more than 2), new jobs on stage 2 for ID 0 and 1 are submitted.
 If you set <code>nstage = 1</code>, CrySPY collects calculation data of ID 0 and 1, then submits next ID&rsquo;s jobs.
 Directories of the finished structure are moved to the <code>fin</code> directory.</p>
-<p>Repeat <code>cryspy &amp;</code> several times until all 5 structures are done.
+<p>Repeat <code>cryspy</code> several times until all 5 structures are done.
 You can delete the <code>work</code> directory when the simulation is done if you do not need it.</p>
 
             <footer class="footline">
@@ -124,8 +143,8 @@ You can delete the <code>work</code> directory when the simulation is done if yo
         </div>
       </main>
     </div>
-    <script src="../../../js/clipboard.min.js?1688383261" defer></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1688383261" defer></script>
-    <script src="../../../js/theme.js?1688383261" defer></script>
+    <script src="../../../js/clipboard.min.js?1688985125" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1688985125" defer></script>
+    <script src="../../../js/theme.js?1688985125" defer></script>
   </body>
 </html>

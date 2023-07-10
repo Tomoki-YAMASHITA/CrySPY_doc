@@ -68,6 +68,14 @@ Name Value Default Description soiap_infile str File name of soiap input file. s
 Name Value Default Description lammps_infile str File name of LAMMPS input file. lammps_outfile str File name of LAMMPS output file. lammps_potential str [str &amp;hellip;], None None Potential. lammps_data str File name of LAMMPS data file. </description>
     </item>
     <item>
+      <title>[ASE] section</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/ase_sec/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/ase_sec/index.html</guid>
+      <description>[ASE] section is required only if you use ASE (calc_code = ASE)
+Name Value Default Description ase_python str File name of ASE input file. </description>
+    </item>
+    <item>
       <title>[EA] section</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/input/ea/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

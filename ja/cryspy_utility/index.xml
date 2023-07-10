@@ -11,7 +11,7 @@
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/index.html</guid>
-      <description>Table of contents soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA </description>
+      <description>Table of contents ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA </description>
     </item>
     <item>
       <title>extract_struc.py</title>
@@ -47,8 +47,8 @@ $ python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3 Converted. The num
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/repeat/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/repeat/index.html</guid>
-      <description>cryspyを何度も実行するのが面倒な時は，下記の自動スクリプトが便利． これは2分間に1回cryspyを実行する例．
-#!/bin/bash set -e while : do cryspy LOG_LASTLINE=`tail -n 1 log_cryspy` if [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;Done all structures!&amp;#34; ] then exit 0 elif [ &amp;#34;${LOG_LASTLINE:0:21}&amp;#34; = &amp;#34;Reached max_select_bo&amp;#34; ] then exit 0 elif [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;LAQA is ready&amp;#34; ] then # ---------- for LAQA cryspy # selection cryspy # submit jobs fi sleep 2m done </description>
+      <description>cryspyを何度も実行するのが面倒な時は，下記の自動スクリプトが便利． これは5分間に1回cryspyを実行する例．
+#!/bin/bash set -e while : do cryspy -n LOG_LASTLINE=`tail -n 1 log_cryspy` if [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;Done all structures!&amp;#34; ] then exit 0 # ---------- for EA elif [ &amp;#34;${LOG_LASTLINE:0:17}&amp;#34; = &amp;#34;Reached maxgen_ea&amp;#34; ] then exit 0 elif [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;EA is ready&amp;#34; ] then cryspy -n # EA LOG_LASTLINE=`tail -n 1 log_cryspy` if [ &amp;#34;${LOG_LASTLINE:0:17}&amp;#34; = &amp;#34;Reached maxgen_ea&amp;#34; ] then exit 0 fi cryspy -n # submit jobs # ---------- for BO elif [ &amp;#34;${LOG_LASTLINE:0:21}&amp;#34; = &amp;#34;Reached max_select_bo&amp;#34; ] then exit 0 elif [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;BO is ready&amp;#34; ] then cryspy -n # selection LOG_LASTLINE=`tail -n 1 log_cryspy` if [ &amp;#34;${LOG_LASTLINE:0:21}&amp;#34; = &amp;#34;Reached max_select_bo&amp;#34; ] then exit 0 fi cryspy -n # submit jobs # ---------- for LAQA elif [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;LAQA is ready&amp;#34; ] then cryspy -n # selection cryspy -n # submit jobs fi sleep 5m done </description>
     </item>
   </channel>
 </rss>

@@ -7,6 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Logging</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/logging/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/logging/index.html</guid>
+      <description>2023 July 10
+CrySPY 1.2.0 adopts logging library of Python. CrySPY logs are output to both the screen and files(log_cryspy and err_cryspy).
+log &amp;ndash;&amp;gt; screen and log_cryspy error and warning &amp;ndash;&amp;gt; screen and err_cryspy Here is the example:
+[2023-07-10 18:40:54,389][cryspy_init][INFO] Start CrySPY 1.2.0 [2023-07-10 18:40:54,389][cryspy_init][INFO] # ---------- Read input file, cryspy.in [2023-07-10 18:40:54,390][read_input][INFO] Save input data in cryspy.stat [2023-07-10 18:40:54,391][cryspy_init][INFO] # ---------- Initial structure generation [2023-07-10 18:40:54,391][cryspy_init][INFO] Number of MPI processes: 1 [2023-07-10 18:40:54,391][gen_init_struc][INFO] # ------ mindist [2023-07-10 18:40:54,395][struc_util][INFO] Cu - Cu: 1.</description>
+    </item>
+    <item>
       <title>Backup</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/backup/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

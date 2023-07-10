@@ -7,6 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ase_Cu8_RS</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/ase_cu8_rs/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/ase_cu8_rs/index.html</guid>
+      <description>Download ase_Cu8_RS.tar.gz cryspy.in [basic] algo = RS calc_code = ASE tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Cu nat = 8 [ASE] ase_python = ase_in.py [option] calc_in/ ase_in.py_1 from ase.constraints import ExpCellFilter, StrainFilter from ase.calculators.emt import EMT from ase.calculators.lj import LennardJones from ase.optimize.sciopt import SciPyFminCG from ase.optimize import BFGS from ase.spacegroup.symmetrize import FixSymmetry import numpy as np from ase.</description>
+    </item>
+    <item>
       <title>soiap_Si8_RS</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/soiap_si8_rs/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

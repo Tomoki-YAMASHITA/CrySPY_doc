@@ -7,7 +7,7 @@ var relearn_search_index = [
     "uri": "/ja/about/index.html"
   },
   {
-    "content": "Table of contents soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA ",
+    "content": "Table of contents ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA ",
     "description": "",
     "tags": null,
     "title": "Examples",
@@ -21,11 +21,32 @@ var relearn_search_index = [
     "uri": "/ja/cryspy_utility/extract_struc/index.html"
   },
   {
-    "content": "バージョン情報 目次 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
+    "content": "バージョン情報 目次 Version 1.2.0 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
     "description": "",
     "tags": null,
     "title": "バージョン情報",
     "uri": "/ja/version_info/index.html"
+  },
+  {
+    "content": "2023 July 10\nASEは様々なコードのインターフェースを提供しているPythonライブラリであり， Pure Python EMT calculatorというシンプルなEMTの計算も実行できる．CrySPYさえインストールしてあれば，精度はともかく簡単に計算できるので，CrySPYのテストにちょうど良い．\nこのチュートリアルでは，MacやLinuxなどのOSのローカルPCを用いてCu 8原子の構造探索を試す．\nAssumption ここでは次のような条件を想定している：\nCrySPY 1.2.0 or later in your local PC CrySPY job filename: job_cryspy ase input filename: ase_in.py Input files どこか適当なワーキングディレクトリに移動して，まずはexampleをコピーしてくる．下記のどちらからコピーしてきても良い．\nDownload from cryspy_utility/examples/ase_Cu8_RS Copy from CrySPY utility that you installed cd ase_Cu8_RS tree . ├── calc_in │ ├── ase_in.py_1 │ └── job_cryspy └── cryspy.in cryspy.in cryspy.inはCrySPYの入力ファイル．\n[basic] algo = RS calc_code = ASE tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Cu nat = 8 [ASE] ase_python = ase_in.py [option] [basic] セクションのjobcmd = zshは環境に合わせてjobcmd = shやjobcmd = bash等に変更する． CrySPYは内部でバックグラウンドジョブとしてzsh job_cryspyを実行する．\nASEを使う場合は，[ASE]セクションが必要． 下記の二つのファイル名は好きなように変えても良い．\njobfile: job_cryspy ase_python: ase_in.py 他の入力変数については後で説明を行う．\ncalc_in directory ASEのジョブファイルや入力ファイルはこのディレクトリに準備する．\nJob file ジョブファイルの名前はcryspy.inのjobfileに一致させる必要がある． ジョブファイルの例は下記の通り．\n#!/bin/sh # ---------- ASE python3 ase_in.py # ---------- CrySPY sed -i -e '3 s/^.*$/done/' stat_job ase_in.pyというファイル名も自由に変えられるが， cryspy.inのase_pythonの値と一致させておく必要がある． CrySPYではジョブファイルの最後の行はsed -i -e '3 s/^.*$/done/' stat_jobとしておくルールになっている．\nメモ ジョブファイルの最後の行はsed -i -e '3 s/^.*$/done/' stat_jobと書いておく．\nヒント CrySPYのジョブファイルのCrySPY_IDという文字列は自動的に構造IDに置き換わるようになっている． PBSやSLURMといったジョブスケジューラーを使う場合，ジョブ名にCrySPY_IDと書いておくとどの構造のジョブなのかが分かり便利である． 例えば，PBSでは#PBS -N Si_CrySPY_IDのように書いておくと，ジョブをサブミットする際，#PBS -N Si_10のように置き換わる． 注意点として，ジョブ名を数字から始めるとエラーとなることが多いので，Si_のように何か文字列を頭につけておくこと．\nInput for ASE ステージ数(nstage in cryspy.in)に応じた数のインプットファイルが必要となる． インプットファイル名の語尾に_xをつけて準備する． ここでxはステージ数．\nASEのチュートリアルではnstage = 1を用いるので，ASEのインプットファイルはase_in.py_1の一つだけが必要． ase_in.py_1は例えば下記の通り（ASEの使い方の詳細は公式のドキュメントを見ること）．\nfrom ase.constraints import ExpCellFilter, StrainFilter from ase.calculators.emt import EMT from ase.calculators.lj import LennardJones from ase.optimize.sciopt import SciPyFminCG from ase.optimize import BFGS from ase.spacegroup.symmetrize import FixSymmetry import numpy as np from ase.io import read, write # ---------- input structure # CrySPY outputs 'POSCAR' as an input file in work/xxxxxx directory atoms = read('POSCAR', format='vasp') # ---------- setting and run atoms.calc = EMT() atoms.set_constraint([FixSymmetry(atoms)]) atoms = ExpCellFilter(atoms, hydrostatic_strain=False) opt = BFGS(atoms) #opt=SciPyFminCG(atoms) opt.run() # ---------- opt. structure and energy # [rule in ASE interface] # output file for energy: 'log.tote' in eV/cell # CrySPY reads the last line of 'log.tote' # output file for structure: 'CONTCAR' in vasp format e = atoms.atoms.get_total_energy() with open('log.tote', mode='w') as f: f.write(str(e)) write('CONTCAR', atoms.atoms, format='vasp') ASEはVASPやQEなどと違って，入力ファイル（python script）は自分で書くことになるので自由度がある． CrySPYでは2つのルールを設けている．\nエネルギーはeV/cellの単位でlog.toteというファイルに出力する．CrySPYはこのファイルの最後の行を読む． 最適化後の構造データはCONTCARというファイルにVASPフォーマットで出力する． Running CrySPY ここまで準備ができたらRunning CrySPYへ進む．\n",
+    "description": "",
+    "tags": null,
+    "title": "ASE in your local PC",
+    "uri": "/ja/tutorial/random/ase/index.html"
+  },
+  {
+    "content": "Download ase_Cu8_RS.tar.gz cryspy.in [basic] algo = RS calc_code = ASE tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Cu nat = 8 [ASE] ase_python = ase_in.py [option] calc_in/ ase_in.py_1 from ase.constraints import ExpCellFilter, StrainFilter from ase.calculators.emt import EMT from ase.calculators.lj import LennardJones from ase.optimize.sciopt import SciPyFminCG from ase.optimize import BFGS from ase.spacegroup.symmetrize import FixSymmetry import numpy as np from ase.io import read, write # ---------- input structure # CrySPY outputs 'POSCAR' as an input file in work/xxxxxx directory atoms = read('POSCAR', format='vasp') # ---------- setting and run atoms.calc = EMT() atoms.set_constraint([FixSymmetry(atoms)]) atoms = ExpCellFilter(atoms, hydrostatic_strain=False) opt = BFGS(atoms) #opt=SciPyFminCG(atoms) opt.run() # ---------- opt. structure and energy # [rule in ASE interface] # output file for energy: 'log.tote' in eV/cell # CrySPY reads the last line of 'log.tote' # output file for structure: 'CONTCAR' in vasp format e = atoms.atoms.get_total_energy() with open('log.tote', mode='w') as f: f.write(str(e)) write('CONTCAR', atoms.atoms, format='vasp') job_cryspy #!/bin/sh # ---------- ASE python3 ase_in.py # ---------- CrySPY sed -i -e '3 s/^.*$/done/' stat_job ",
+    "description": "",
+    "tags": null,
+    "title": "ase_Cu8_RS",
+    "uri": "/ja/cryspy_utility/examples/ase_cu8_rs/index.html"
+  },
+  {
+    "content": "2023 July 10\nCrySPY 1.2.0からPython標準ライブラリのloggingを採用． CrySPYのログは画面とファイル(log_cryspy and err_cryspy)の両方に出力される．\nlog –\u003e screen and log_cryspy error and warning –\u003e screen and err_cryspy ログの例:\n[2023-07-10 18:40:54,389][cryspy_init][INFO] Start CrySPY 1.2.0 [2023-07-10 18:40:54,389][cryspy_init][INFO] # ---------- Read input file, cryspy.in [2023-07-10 18:40:54,390][read_input][INFO] Save input data in cryspy.stat [2023-07-10 18:40:54,391][cryspy_init][INFO] # ---------- Initial structure generation [2023-07-10 18:40:54,391][cryspy_init][INFO] Number of MPI processes: 1 [2023-07-10 18:40:54,391][gen_init_struc][INFO] # ------ mindist [2023-07-10 18:40:54,395][struc_util][INFO] Cu - Cu: 1.32 [2023-07-10 18:40:54,395][gen_init_struc][INFO] # ------ generate structures [2023-07-10 18:40:54,481][gen_pyxtal][INFO] Structure ID 0 was generated. Space group: 1 --\u003e 1 P1 [2023-07-10 18:40:54,493][gen_pyxtal][INFO] Structure ID 1 was generated. Space group: 28 --\u003e 28 Pma2 [2023-07-10 18:40:54,498][gen_pyxtal][INFO] Structure ID 2 was generated. Space group: 29 --\u003e 29 Pca2_1 [2023-07-10 18:40:54,704][gen_pyxtal][INFO] Structure ID 3 was generated. Space group: 137 --\u003e 137 P4_2/nmc [2023-07-10 18:40:54,725][gen_pyxtal][INFO] Structure ID 4 was generated. Space group: 212 --\u003e 214 I4_132 [2023-07-10 18:40:54,800][cryspy_init][INFO] Elapsed time for structure generation: 0:00:00.408367 CrySPYをバックグラウンドジョブとして実行する場合や，自動スクリプトを使う場合などで，画面に出力させたくないときは下記のように-n オプションをつけて実行する．\ncryspy -n ",
+    "description": "",
+    "tags": null,
+    "title": "Logging",
+    "uri": "/ja/features/logging/index.html"
   },
   {
     "content": "Table of contents Initial and optimized structure data Result data ",
@@ -203,7 +224,7 @@ var relearn_search_index = [
     "uri": "/ja/features/clean/index.html"
   },
   {
-    "content": "構造最適化ソフト 少なくとも１つは必要．\n第一原理計算 VASP QUANTUM ESPRESSO OpenMX (CrySPY 0.9.0 以上) 原子間ポテンシャル soiap LAMMPS ",
+    "content": "構造最適化ソフト 少なくとも１つは必要．\n第一原理計算 VASP QUANTUM ESPRESSO OpenMX (CrySPY 0.9.0 以上) 原子間ポテンシャル soiap LAMMPS その他 ASE (CrySPY 1.2.0 or later) ",
     "description": "",
     "tags": null,
     "title": "構造最適化ソフト",
@@ -280,14 +301,14 @@ var relearn_search_index = [
     "uri": "/ja/structure_generation/mol_bs/index.html"
   },
   {
-    "content": "CrySPYはエネルギー計算や構造最適化に外部のソフトウェアを利用する． 以下のソフトウェアを利用可能．\n第一原理計算 VASP Quantum Espresso OpenMX （CrySPY 0.9.0 以上） 原子間ポテンシャル soiap LAMMPS 少なくともどれか一つは必要．\n",
+    "content": "CrySPYはエネルギー計算や構造最適化に外部のソフトウェアを利用する． 以下のソフトウェアを利用可能．\n第一原理計算 VASP Quantum Espresso OpenMX （CrySPY 0.9.0 以上） 原子間ポテンシャル soiap LAMMPS その他 ASE (CrySPY 1.2.0 or later) 少なくともどれか一つは必要．\n",
     "description": "",
     "tags": null,
     "title": "インターフェース",
     "uri": "/ja/about/interface/index.html"
   },
   {
-    "content": "チュートリアル 情報 Exampleファイルはこちら –\u003e cryspy_utility/examples.\n目次 Random Search (RS) soiap in your local PC VASP QE OpenMX LAMMPS External program Check cryspy.in Script to run Firsrt run Submit job Check results Append structures Analysis and visualization Load external data Evolutionary Algorithm (EA) Bayesian Optimization (BO) LAQA Molecular crystal structure prediction Random structure generation with MPI ",
+    "content": "チュートリアル 情報 初心者の方はランダムサーチから始めると良い．Exampleファイルはこちら –\u003e cryspy_utility.\n目次 Random Search (RS) Evolutionary Algorithm (EA) Bayesian Optimization (BO) LAQA Molecular crystal structure prediction Random structure generation with MPI ",
     "description": "",
     "tags": null,
     "title": "チュートリアル",
@@ -308,7 +329,7 @@ var relearn_search_index = [
     "uri": "/ja/structure_generation/index.html"
   },
   {
-    "content": "機能 目次 バックアップ クリーン Restriction on interatomic distances ジョブファイルのCrySPY_ID MPI並列化を用いた構造生成 ",
+    "content": "機能 目次 Logging バックアップ クリーン Restriction on interatomic distances ジョブファイルのCrySPY_ID MPI並列化を用いた構造生成 ",
     "description": "",
     "tags": null,
     "title": "機能",
@@ -364,7 +385,7 @@ var relearn_search_index = [
     "uri": "/ja/about/logo/index.html"
   },
   {
-    "content": "Input file 入力ファイルcryspy.inの解説.\n目次 File format [basic] section [structure] section [VASP] section [QE] section [OMX] section [soaip] section [LAMMPS] section [EA] section [BO] section [LAQA] section [option] section ",
+    "content": "Input file 入力ファイルcryspy.inの解説.\n目次 File format [basic] section [structure] section [VASP] section [QE] section [OMX] section [soaip] section [LAMMPS] section [ASE] section [EA] section [BO] section [LAQA] section [option] section ",
     "description": "",
     "tags": null,
     "title": "入力ファイル",
@@ -399,7 +420,7 @@ var relearn_search_index = [
     "uri": "/ja/input/omx_sec/index.html"
   },
   {
-    "content": "CrySPY Utility ダウンロードに関してはこちらのページ： Installation/CrySPY utility． 一部のexamplesはこのドキュメントサイトからもダウンロード可能．\n目次 Examples soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy ",
+    "content": "CrySPY Utility ダウンロードに関してはこちらのページ： Installation/CrySPY utility． 一部のexamplesはこのドキュメントサイトからもダウンロード可能．\n目次 Examples ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy ",
     "description": "",
     "tags": null,
     "title": "CrySPY Utility",
@@ -469,6 +490,13 @@ var relearn_search_index = [
     "uri": "/ja/cryspy_utility/examples/qe_benzene_2_rs_mol/index.html"
   },
   {
+    "content": "[ASE] section is required only if you use ASE (calc_code = ASE)\nName Value Default Description ase_python str File name of ASE input file. ",
+    "description": "",
+    "tags": null,
+    "title": "[ASE] section",
+    "uri": "/ja/input/ase_sec/index.html"
+  },
+  {
     "content": "[EA] section is required only if you use EA (algo = EA)\nName Value Default Description n_pop int Population from second generation. n_crsov int The number of structures generated by crossover. n_perm int The number of structures generated by permutation. n_strain int The number of structures generated by strain. n_rand int The number of structures generated randomly. n_elite int The number of elite structures. fit_reverse bool False If False, minimal search. n_fittest int None The number of structures which can survive. slct_func TNM, RLT Select function. t_size int 3 Only used with slct_func = TNM. Tournament size. a_rlt float 10.0 Only used with slct_func = RLT. Parameter for linear scaling. b_rlt float 1.0 Only used with slct_func = RLT. Parameter for linear scaling. crs_lat equal, random equal How to mix lattice vectors. nat_diff_tole int 4 Tolerance for difference in the number of atoms in crossover. ntimes int 1 The number of times in permutation. sigma_st float 0.5 Standard deviation for strain. maxcnt_ea int 50 Maximum number of trials in EA. maxgen_ea int 0 Maximum generation. emax_ea float None Upper limit of energy in selecting parents. emin_ea float None Lower limit of energy in selecting parents. ",
     "description": "",
     "tags": null,
@@ -483,7 +511,7 @@ var relearn_search_index = [
     "uri": "/ja/tutorial/random/external/index.html"
   },
   {
-    "content": "cryspyを何度も実行するのが面倒な時は，下記の自動スクリプトが便利． これは2分間に1回cryspyを実行する例．\n#!/bin/bash set -e while : do cryspy LOG_LASTLINE=`tail -n 1 log_cryspy` if [ \"$LOG_LASTLINE\" = \"Done all structures!\" ] then exit 0 elif [ \"${LOG_LASTLINE:0:21}\" = \"Reached max_select_bo\" ] then exit 0 elif [ \"$LOG_LASTLINE\" = \"LAQA is ready\" ] then # ---------- for LAQA cryspy # selection cryspy # submit jobs fi sleep 2m done ",
+    "content": "cryspyを何度も実行するのが面倒な時は，下記の自動スクリプトが便利． これは5分間に1回cryspyを実行する例．\n#!/bin/bash set -e while : do cryspy -n LOG_LASTLINE=`tail -n 1 log_cryspy` if [ \"$LOG_LASTLINE\" = \"Done all structures!\" ] then exit 0 # ---------- for EA elif [ \"${LOG_LASTLINE:0:17}\" = \"Reached maxgen_ea\" ] then exit 0 elif [ \"$LOG_LASTLINE\" = \"EA is ready\" ] then cryspy -n # EA LOG_LASTLINE=`tail -n 1 log_cryspy` if [ \"${LOG_LASTLINE:0:17}\" = \"Reached maxgen_ea\" ] then exit 0 fi cryspy -n # submit jobs # ---------- for BO elif [ \"${LOG_LASTLINE:0:21}\" = \"Reached max_select_bo\" ] then exit 0 elif [ \"$LOG_LASTLINE\" = \"BO is ready\" ] then cryspy -n # selection LOG_LASTLINE=`tail -n 1 log_cryspy` if [ \"${LOG_LASTLINE:0:21}\" = \"Reached max_select_bo\" ] then exit 0 fi cryspy -n # submit jobs # ---------- for LAQA elif [ \"$LOG_LASTLINE\" = \"LAQA is ready\" ] then cryspy -n # selection cryspy -n # submit jobs fi sleep 5m done ",
     "description": "",
     "tags": null,
     "title": "repeat_cryspy",
@@ -539,14 +567,14 @@ var relearn_search_index = [
     "uri": "/ja/tutorial/random/script_to_run/index.html"
   },
   {
-    "content": "Make sure you have the following in your working directory.\ncalc_in/ (cryspy) cryspy.in $ ls calc_in/ cryspy.in Then, run CyrSPY!\ncryspy \u0026 If you use old version (0.10.3 or earlier):\nbash ./cryspy \u0026 At the first run, CrySPY goes into structure generation mode. CrySPY stops after 5 structure generation.\nIf it worked properly, log_cryspy (log in ver. 0.10.3 or earlier) would look like this.\n2023/03/18 20:35:46 CrySPY 1.0.0 Start cryspy.py Read input file, cryspy.in Save input data in cryspy.stat # --------- Generate initial structures # ------ mindist Si - Si 1.11 Structure ID 0 was generated. Space group: 54 --\u003e 54 Pcca Structure ID 1 was generated. Space group: 175 --\u003e 191 P6/mmm Structure ID 2 was generated. Space group: 114 --\u003e 129 P4/nmm Structure ID 3 was generated. Space group: 108 --\u003e 108 I4cm Structure ID 4 was generated. Space group: 155 --\u003e 155 R32 Several output files are also generated.\n(cryspy.out): Short log. only version 0.10.3 or earlier. cryspy.stat: Status file. data/init_POSCARS: Initial struture file in POSCAR format. You can open this file using VESTA data/pkl_data: Directory to save pickled data. log_cryspy: Detail log. (log in version 0.10.3 or earlier) err_cryspy: Error message. (err in version 0.10.3 or earlier) Let’s take a look at cryspy.stat file.\n... (omit) ... [status] id_queueing = 0 1 2 3 4 Structure ID 0 – 4 are queueing because we just generated structures, and have not submitted yet.\nヒント Check the initial structures, if the distance between atoms is too close, you should set the mindist in cryspy.in.\n",
+    "content": "2023 July 10, update\nMake sure you have the following in your working directory.\ncalc_in/ (cryspy) cryspy.in $ ls calc_in/ cryspy.in Then, run CyrSPY!\ncryspy If you use old version (0.10.3 or earlier):\nbash ./cryspy At the first run, CrySPY goes into structure generation mode. CrySPY stops after 5 structure generation.\nIf it worked properly, the following output appears on the screen:\n[2023-07-10 18:40:54,389][cryspy_init][INFO] Start CrySPY 1.2.0 [2023-07-10 18:40:54,389][cryspy_init][INFO] # ---------- Read input file, cryspy.in [2023-07-10 18:40:54,390][read_input][INFO] Save input data in cryspy.stat [2023-07-10 18:40:54,391][cryspy_init][INFO] # ---------- Initial structure generation [2023-07-10 18:40:54,391][cryspy_init][INFO] Number of MPI processes: 1 [2023-07-10 18:40:54,391][gen_init_struc][INFO] # ------ mindist [2023-07-10 18:40:54,395][struc_util][INFO] Cu - Cu: 1.32 [2023-07-10 18:40:54,395][gen_init_struc][INFO] # ------ generate structures [2023-07-10 18:40:54,481][gen_pyxtal][INFO] Structure ID 0 was generated. Space group: 1 --\u003e 1 P1 [2023-07-10 18:40:54,493][gen_pyxtal][INFO] Structure ID 1 was generated. Space group: 28 --\u003e 28 Pma2 [2023-07-10 18:40:54,498][gen_pyxtal][INFO] Structure ID 2 was generated. Space group: 29 --\u003e 29 Pca2_1 [2023-07-10 18:40:54,704][gen_pyxtal][INFO] Structure ID 3 was generated. Space group: 137 --\u003e 137 P4_2/nmc [2023-07-10 18:40:54,725][gen_pyxtal][INFO] Structure ID 4 was generated. Space group: 212 --\u003e 214 I4_132 [2023-07-10 18:40:54,800][cryspy_init][INFO] Elapsed time for structure generation: 0:00:00.408367 cryspy 4.35s user 1.04s system 145% cpu 3.697 total Several output files are also generated.\n(cryspy.out): Short log. only version 0.10.3 or earlier. cryspy.stat: Status file. data/init_POSCARS: Initial struture file in POSCAR format. You can open this file using VESTA data/pkl_data: Directory to save pickled data. log_cryspy: log. err_cryspy: error and warning. Let’s take a look at cryspy.stat file.\n... (omit) ... [status] id_queueing = 0 1 2 3 4 Structure ID 0 – 4 are queueing because we just generated structures, and have not submitted yet.\nヒント Check the initial structures, if the distance between atoms is too close, you should set the mindist in cryspy.in.\n",
     "description": "",
     "tags": null,
     "title": "Firsrt run",
     "uri": "/ja/tutorial/random/first_run/index.html"
   },
   {
-    "content": "Continue CrySPY continues the simulation if you have cryspy.stat file.\nヒント Continue if you have crypy.stat\nStart from the beginning if you don’t have cryspy.stat\nSubmit job Run CyrSPY again.\ncryspy \u0026 Check log_cryspy file.\n2023/03/18 23:35:08 CrySPY 1.0.0 Restart cryspy.py # ---------- job status ID 0: submit job, Stage 1 ID 1: submit job, Stage 1 And also cryspy.stat file.\n... (omit) ... [status] id_queueing = 2 3 4 id 0 = Stage 1 id 1 = Stage 1 CrySPY submitted two jobs for structure ID 0 and 1 as you set njob = 2 in cryspy.in. Calculations are performed in the work directory. These directory names correspond to their structure ID.\ntree -d work work ├── 000000 ├── 000001 └── fin When the two jobs are done, run CrySPY again.\ncryspy \u0026 If you set nstage = 2 (more than 2), new jobs on stage 2 for ID 0 and 1 are submitted. If you set nstage = 1, CrySPY collects calculation data of ID 0 and 1, then submits next ID’s jobs. Directories of the finished structure are moved to the fin directory.\nRepeat cryspy \u0026 several times until all 5 structures are done. You can delete the work directory when the simulation is done if you do not need it.\n",
+    "content": "2023 July 10, update\nContinue CrySPY continues the simulation if you have cryspy.stat file.\nヒント Continue if you have crypy.stat\nStart from the beginning if you don’t have cryspy.stat\nSubmit job Run CyrSPY again.\ncryspy Check the screen or log_cryspy file.\n[2023-07-10 18:52:51,859][cryspy_restart][INFO] Restart CrySPY 1.2.0 [2023-07-10 18:52:51,869][ctrl_job][INFO] # ---------- job status [2023-07-10 18:52:51,904][ctrl_job][INFO] ID 0: submit job, Stage 1 [2023-07-10 18:52:51,931][ctrl_job][INFO] ID 1: submit job, Stage 1 And also cryspy.stat file.\n... (omit) ... [status] id_queueing = 2 3 4 id 0 = Stage 1 id 1 = Stage 1 CrySPY submitted two jobs for structure ID 0 and 1 as you set njob = 2 in cryspy.in. Calculations are performed in the work directory. These directory names correspond to their structure ID.\ntree -d work work ├── 000000 ├── 000001 └── fin When the two jobs are done, run CrySPY again.\ncryspy [2023-07-10 18:55:01,053][cryspy_restart][INFO] Restart CrySPY 1.2.0 [2023-07-10 18:55:01,058][ctrl_job][INFO] # ---------- job status [2023-07-10 18:55:01,058][ctrl_job][INFO] ID 0: Stage 1 Done! [2023-07-10 18:55:01,093][ctrl_job][INFO] collect results: E = -0.00696997755502915 eV/atom [2023-07-10 18:55:01,132][ctrl_job][INFO] ID 1: Stage 1 Done! [2023-07-10 18:55:01,133][ctrl_job][INFO] collect results: E = 0.4934076667166454 eV/atom [2023-07-10 18:55:01,144][cryspy][INFO] recheck 1 [2023-07-10 18:55:01,145][ctrl_job][INFO] # ---------- job status [2023-07-10 18:55:01,153][ctrl_job][INFO] ID 2: submit job, Stage 1 [2023-07-10 18:55:01,161][ctrl_job][INFO] ID 3: submit job, Stage 1 If you set nstage = 2 (more than 2), new jobs on stage 2 for ID 0 and 1 are submitted. If you set nstage = 1, CrySPY collects calculation data of ID 0 and 1, then submits next ID’s jobs. Directories of the finished structure are moved to the fin directory.\nRepeat cryspy several times until all 5 structures are done. You can delete the work directory when the simulation is done if you do not need it.\n",
     "description": "",
     "tags": null,
     "title": "Submit job",
@@ -593,6 +621,13 @@ var relearn_search_index = [
     "tags": null,
     "title": "Load external data",
     "uri": "/ja/tutorial/random/ext_load_data/index.html"
+  },
+  {
+    "content": "ASE interface ASEインターフェースが利用可能．\nSee also\nチュートリアル \u003e Random Search (RS) \u003e ASE in your local PC Adoption of logging CrySPYのログは画面とファイル (log_cryspy and err_cryspy)の両方に出力\nSee also\n機能 \u003e Logging ",
+    "description": "",
+    "tags": null,
+    "title": "Version 1.2.0",
+    "uri": "/ja/version_info/ver_1.2.0/index.html"
   },
   {
     "content": "spg_errorのバグ修正 ランダム構造生成時，ある空間群で構造生成ができない時にsgp_errorという変数にその空間群番号を記録し，以降その番号はスキップするようにしていたが，ごく稀に間違って登録されてしまうバグが見つかった．よってこのspg_errorという機能は削除した．\n",
