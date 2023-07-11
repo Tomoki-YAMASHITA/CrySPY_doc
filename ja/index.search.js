@@ -84,7 +84,7 @@ var relearn_search_index = [
     "uri": "/ja/installation/requirements/python/index.html"
   },
   {
-    "content": "Preparation of input files Follow any one of the examples and then go to “Running CrySPY” section.\nsoiap in your local PC VASP QE OpenMX LAMMPS External program Running CrySPY Check cryspy.in (version 0.10.3 or earlier) Script to run First run Submit job Check results Append structures Analysis and visualization Loading external data Only if calc_code == ext.\nLoad external data ",
+    "content": "Preparation of input files Follow any one of the examples and then go to “Running CrySPY” section.\nASE in your local PC soiap in your local PC VASP QE OpenMX LAMMPS External program Running CrySPY Check cryspy.in (version 0.10.3 or earlier) Script to run First run Submit job Check results Append structures Analysis and visualization Loading external data Only if calc_code == ext.\nLoad external data ",
     "description": "",
     "tags": null,
     "title": "Random Search (RS)",
