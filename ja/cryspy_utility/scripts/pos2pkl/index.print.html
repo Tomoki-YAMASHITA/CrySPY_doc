@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.115.2">
+    <meta name="generator" content="Relearn 5.12.3+tip">
+    <meta name="description" content="">
+    <title>pos2pkl.py :: CrySPY</title>
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/scripts/pos2pkl/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/scripts/pos2pkl/index.html" rel="alternate" hreflang="en">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/scripts/pos2pkl/index.html" rel="alternate" hreflang="ja">
+    <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/scripts/pos2pkl/index.html" rel="canonical" type="text/html" title="pos2pkl.py :: CrySPY">
+    <link href="../../../../ja/cryspy_utility/scripts/pos2pkl/index.xml" rel="alternate" type="application/rss+xml" title="pos2pkl.py :: CrySPY">
+    <link href="../../../../images/favicon.png?1690089271" rel="icon" type="image/png">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../../css/fontawesome-all.min.css?1690089271" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fontawesome-all.min.css?1690089271" rel="stylesheet"></noscript>
+    <link href="../../../../css/nucleus.css?1690089271" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1690089271" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/auto-complete.css?1690089271" rel="stylesheet"></noscript>
+    <link href="../../../../css/perfect-scrollbar.min.css?1690089271" rel="stylesheet">
+    <link href="../../../../css/fonts.css?1690089271" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../../css/fonts.css?1690089271" rel="stylesheet"></noscript>
+    <link href="../../../../css/theme.css?1690089271" rel="stylesheet">
+    <link href="../../../../css/theme-relearn-light.css?1690089271" rel="stylesheet" id="variant-style">
+    <link href="../../../../css/variant.css?1690089271" rel="stylesheet">
+    <link href="../../../../css/print.css?1690089271" rel="stylesheet" media="print">
+    <link href="../../../../css/format-print.css?1690089271" rel="stylesheet">
+    <link href="../../../../css/ie.css?1690089271" rel="stylesheet">
+    <script src="../../../../js/url.js?1690089271"></script>
+    <script src="../../../../js/variant.js?1690089271"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../../ja/index.search.js";
+      var root_url="../../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'クリップボードにコピー';
+      window.T_Copied_to_clipboard = 'クリップボードにコピー!';
+      window.T_Copy_link_to_clipboard = 'リンクをクリップボードにコピー';
+      window.T_Link_copied_to_clipboard = 'リンクをクリップボードにコピーしました!';
+      window.T_No_results_found = '\u0022{0}\u0022 の結果が見つかりません';
+      window.T_N_results_found = '\u0022{0}\u0022 で {1} 件の結果が見つかりました';
+      // some further base stuff
+      var baseUriFull='https:\/\/tomoki-yamashita.github.io\/CrySPY_doc/';
+      window.variants && variants.init( [ 'relearn-light' ] );
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="../../../../ja/cryspy_utility/scripts/pos2pkl/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='メニュー (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/index.html"><span itemprop="name">CrySPY</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/cryspy_utility/index.html"><span itemprop="name">CrySPY Utility</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../../ja/cryspy_utility/scripts/index.html"><span itemprop="name">Scripts</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">pos2pkl.py</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="pos2pklpy">pos2pkl.py</h1>
+
+<p>2023年7月23日更新</p>
+<p>あらかじめ用意した構造のテキストデータを<code>init_struc_data.pkl</code>に変換するスクリプト．
+入力のデフォルトは<code>init_POSCARS</code>形式．オプションでPOSCARやcifファイルなどのシングル構造データも変換可能．
+出力は<code>init_struc_data.pkl</code>．
+すでに存在する<code>init_struc_data.pkl</code>に構造データを追加することもできる．
+構造IDは考慮されず，新しく割り振られる．
+原子数が異なる場合はエラーが出る．</p>
+<p><code>init_struc_data.pkl</code>はCrySPYでシミュレーション開始時にロードすることが可能．</p>
+<p><code>-f</code>オプションで原子種の削除とソートが可能．このオプションを指定しないとpymatgenが勝手に電気陰性度の順番で並び替えるので注意！</p>
+<h2 id="使い方">使い方</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>usage: pos2pkl.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-s <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>-f <span style="color:#f92672">[</span>FILTER ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>-p<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>infile ...<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>positional arguments:
+</span></span><span style="display:flex;"><span>  infile                input file: init_POSCARS
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>options:
+</span></span><span style="display:flex;"><span>  -h, --help            show this help message and exit
+</span></span><span style="display:flex;"><span>  -s <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]</span>, --single <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                        input file: single structure file <span style="color:#f92672">(</span>POSCAR, cif<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -f <span style="color:#f92672">[</span>FILTER ...<span style="color:#f92672">]</span>, --filter <span style="color:#f92672">[</span>FILTER ...<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                        filter <span style="color:#f92672">(</span>sort<span style="color:#f92672">)</span>: remove species and sort
+</span></span><span style="display:flex;"><span>  -p, --permit_diff_comp
+</span></span><span style="display:flex;"><span>                        flag <span style="color:#66d9ef">for</span> permitting different composition
+</span></span></code></pre></div><h2 id="例">例</h2>
+<h3 id="init_poscars----init_struc_datapkl">init_POSCARS &ndash;&gt; init_struc_data.pkl</h3>
+<p>CrySPYで構造生成後に出力される<code>init_POSCARS</code>をスパコン等の別のマシンに移すような場合に使える．複数のファイルを変換可能．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py init_POSCARS
+</span></span></code></pre></div><p><code>pos2pkl.py</code>をPATHが通ったところにおけば，<code>python3</code>は省略可能.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pos2pkl.py init_POSCARS
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Composition: Na8 Cl8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
+</span></span></code></pre></div><p>複数の入力ファイルの場合．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Composition: Na8 Cl8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
+</span></span></code></pre></div><p>カレントディレクトリにすでに<code>init_struc_data.pkl</code>が存在し，それに追加する場合．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py init_POSCARS
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>init_struc_data.pkl already exists.
+</span></span><span style="display:flex;"><span>Append to init_struc_data.pkl? <span style="color:#f92672">[</span>y/n<span style="color:#f92672">]</span>: y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Load init_struc_data
+</span></span><span style="display:flex;"><span>Composition: Na8 Cl8
+</span></span><span style="display:flex;"><span>The number of structures: <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
+</span></span></code></pre></div><h3 id="poscar-or-cif----init_struc_datapkl">POSCAR or cif &ndash;&gt; init_struc_data.pkl</h3>
+<p>POSCARファイルやcifファイル等の構造が一つだけのデータも変換可能．<code>-s/--single</code>オプションが必要．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py -s POSCAR test.cif
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Composition: Na8 Cl8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
+</span></span></code></pre></div><h3 id="init_poscars-poscar----init_struc_datapkl">init_POSCARS, POSCAR &ndash;&gt; init_struc_data.pkl</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py init_POSCARS -s POSCAR
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Composition: Na8 Cl8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
+</span></span></code></pre></div>
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> 警告</div>
+  <div class="box-content">
+<p>下記は間違い．<code>init_POSCARS</code>もシングル構造として取り扱われてしまう．</p>
+  </div>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py -s POSCAR init_POSCARS
+</span></span></code></pre></div><h3 id="filter-remove-and-sort">Filter (remove and sort)</h3>
+<p>次のような組成のcifファイルを考える：Sr8 Co8 O20 X4．これはダミー原子(X4)を4原子含んでいる．
+<code>-f/--filter</code>オプションは原子種を削除したり，ソートするのに使える．
+<code>cryspy.in</code>の<code>atype</code>と同じように指定する．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 pos2pkl.py -s Sr8Co8O20X4.cif -f Sr Co O
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Removed species: <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;X0+&#39;</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>Composition: Sr8 Co8 O20
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
+</span></span></code></pre></div><p><a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/scripts/extract_struc/">extract_struc.py</a>を使えば，
+<code>init_struc_data.pkl</code>にどのように登録されたのか確認できる．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 extract_struc.py init_struc_data.pkl -pa
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ID <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Full Formula <span style="color:#f92672">(</span>Sr8 Co8 O20<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Reduced Formula: Sr2Co2O5
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p><code>-f</code>オプションでソートもできる．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 pos2pkl.py -s Sr8Co8O20X4.cif -f O Co 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Removed species: <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;Sr&#39;</span>, <span style="color:#e6db74">&#39;X0+&#39;</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>Composition: O20 Co8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../../js/clipboard.min.js?1690089271" defer></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1690089271" defer></script>
+    <script src="../../../../js/theme.js?1690089271" defer></script>
+  </body>
+</html>

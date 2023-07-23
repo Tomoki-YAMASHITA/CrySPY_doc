@@ -5,7 +5,7 @@
     <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.html</link>
     <description>Recent content in CrySPY Utility on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Examples</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/index.html</link>
@@ -14,41 +14,11 @@
       <description>Table of contents ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA </description>
     </item>
     <item>
-      <title>extract_struc.py</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/extract_struc/index.html</link>
+      <title>Scripts</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/scripts/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/extract_struc/index.html</guid>
-      <description>init_struc_data.pklやopt_struc_data.pklから構造ごとにcifファイルを出力するスクリプト．
--iオプションでインデックス（構造ID)を（複数）指定できる． -tオプションでエネルギーが低い順番に指定した構造数のcifファイルを出力可能． -aオプションの場合は全ての構造をcifファイルに出力する．数が多い場合はディレクトリを作成してそこに移動してから実行したほうが良い．-sオプションをつけると対称性（空間群）の情報を付けられる．ただし，セルや原子数が変わるので注意．
-使い方 usage: extract_struc.py [-h] [-a] [-i [INDEX ...]] [-t TOP] [-r] [-s] infile positional arguments: infile input file options: -h, --help show this help message and exit -a, --all_id flag for all structures -i [INDEX ...], --index [INDEX ...] structure ID -t TOP, --top TOP top k structures -r, --rank flag for rank in file names -s, --symmetrized flag for symmetrized structure 例 構造ID指定 $ python3 extract_struc.</description>
-    </item>
-    <item>
-      <title>pos2pkl.py</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/pos2pkl/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/pos2pkl/index.html</guid>
-      <description>あらかじめ用意した構造のテキストデータをinit_struc_data.pklに変換するスクリプト． 入力のデフォルトはinit_POSCARS形式．オプションでPOSCARやcifファイルなどのシングル構造データも変換可能． 出力はinit_struc_data.pkl． すでに存在するinit_struc_data.pklに構造データを追加することもできる． 構造IDは考慮されず，新しく割り振られる． 原子数が異なる場合はエラーが出る．
-init_struc_data.pklはCrySPYでシミュレーション開始時にロードすることが可能．
-使い方 usage: pos2pkl.py [-h] [-s [SINGLE ...]] [infile ...] positional arguments: infile input file: init_POSCARS optional arguments: -h, --help show this help message and exit -s [SINGLE ...], --single [SINGLE ...] input file: single structure file (POSCAR, cif) 例 init_POSCARS &amp;ndash;&amp;gt; init_struc_data.pkl CrySPYで構造生成後に出力されるinit_POSCARSをスパコン等の別のマシンに移すような場合に使える．複数のファイルを変換可能．
-$ python3 pos2pkl.py init_POSCARS Converted. The number of structures: 4 Save init_struc_data.pkl 複数の入力ファイルの場合．
-$ python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3 Converted. The number of structures: 12 Save init_struc_data.</description>
-    </item>
-    <item>
-      <title>kpt_check.py</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/kpt_check/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/kpt_check/index.html</guid>
-      <description>kpt_check.pyはkppvolを入力した際にkメッシュがどれくらいになるかをチェックすることができる． POSCAR，CONTCAR，およびinit_struc_data.pklが読み込み可能． pymatgenライブラリが必要．
-初期構造を生成後に，kppvolの値をどれくらいにしたら良いか色々試すことができる．（下記の最後の例を参照）
-使い方 python3 kpt_check.py [-h] [-w] [-n NSTRUC] infile kppvol positional arguments: infile input file: POSCAR or CONTCAR or init_struc_data.pkl kppvol kppvol optional arguments: -h, --help show this help message and exit -w, --write write KPOINTS -n NSTRUC, --nstruc NSTRUC number of structure to check 例 POSCARとkppvol $ python3 kpt_check.py POSCAR 100 a = 10.689217 b = 10.689217 c = 10.730846 Lattice vector 10.689217 0.000000 0.000000 0.000000 10.</description>
-    </item>
-    <item>
-      <title>repeat_cryspy</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/repeat/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/repeat/index.html</guid>
-      <description>cryspyを何度も実行するのが面倒な時は，下記の自動スクリプトが便利． これは5分間に1回cryspyを実行する例．
-#!/bin/bash set -e while : do cryspy -n LOG_LASTLINE=`tail -n 1 log_cryspy` if [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;Done all structures!&amp;#34; ] then exit 0 # ---------- for EA elif [ &amp;#34;${LOG_LASTLINE:0:17}&amp;#34; = &amp;#34;Reached maxgen_ea&amp;#34; ] then exit 0 elif [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;EA is ready&amp;#34; ] then cryspy -n # EA LOG_LASTLINE=`tail -n 1 log_cryspy` if [ &amp;#34;${LOG_LASTLINE:0:17}&amp;#34; = &amp;#34;Reached maxgen_ea&amp;#34; ] then exit 0 fi cryspy -n # submit jobs # ---------- for BO elif [ &amp;#34;${LOG_LASTLINE:0:21}&amp;#34; = &amp;#34;Reached max_select_bo&amp;#34; ] then exit 0 elif [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;BO is ready&amp;#34; ] then cryspy -n # selection LOG_LASTLINE=`tail -n 1 log_cryspy` if [ &amp;#34;${LOG_LASTLINE:0:21}&amp;#34; = &amp;#34;Reached max_select_bo&amp;#34; ] then exit 0 fi cryspy -n # submit jobs # ---------- for LAQA elif [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;LAQA is ready&amp;#34; ] then cryspy -n # selection cryspy -n # submit jobs fi sleep 5m done </description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/scripts/index.html</guid>
+      <description>目次 extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy </description>
     </item>
   </channel>
 </rss>

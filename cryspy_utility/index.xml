@@ -5,7 +5,7 @@
     <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/index.html</link>
     <description>Recent content in CrySPY Utility on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Examples</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/index.html</link>
@@ -14,38 +14,11 @@
       <description>Table of contents ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA </description>
     </item>
     <item>
-      <title>extract_struc.py</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/extract_struc/index.html</link>
+      <title>Scripts</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/scripts/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/extract_struc/index.html</guid>
-      <description>Script to extract structures from init_struc_data.pkl or opt_struc_data.pkl. Output cif files.
-One can specify structure ID(s) using -i option. Top k structures (the k most stable structures) can be extracted using -t option. -a option is for outputting all the structures. (note that many cif files will be output.) Symmetrized cif files can be generated with -s option.
-Usage usage: extract_struc.py [-h] [-a] [-i [INDEX ...]] [-t TOP] [-r] [-s] infile positional arguments: infile input file options: -h, --help show this help message and exit -a, --all_id flag for all structures -i [INDEX .</description>
-    </item>
-    <item>
-      <title>pos2pkl.py</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/pos2pkl/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/pos2pkl/index.html</guid>
-      <description>Script to convert structre data into init_struc_data.pkl. The default input format is init_POSCARS. Single structure data such as POSCAR and cif files can be optionally converted. Output is init_struc_data.pkl. Structure data can be added to an already existing init_struc_data.pkl. The structure ID is not taken into account and is newly assigned. If the number of atoms is different, an error is generated.
-init_struc_data.pkl can be loaded at the start of the simulation in CrySPY.</description>
-    </item>
-    <item>
-      <title>kpt_check.py</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/kpt_check/index.html</guid>
-      <description>kpt_check.py can check a k-point mesh with a given kppvol. This script supports POSCAR, CONTCAR, and init_struc_data.pkl. pymatgen library is required.
-After generating initial structures, you can try to see how much the value of kppvol should be.
-Usage python3 kpt_check.py [-h] [-w] [-n NSTRUC] infile kppvol positional arguments: infile input file: POSCAR or CONTCAR or init_struc_data.pkl kppvol kppvol optional arguments: -h, --help show this help message and exit -w, --write write KPOINTS -n NSTRUC, --nstruc NSTRUC number of structure to check Example POSCAR with a given kppvol $ python3 kpt_check.</description>
-    </item>
-    <item>
-      <title>repeat_cryspy</title>
-      <link>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/repeat/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/repeat/index.html</guid>
-      <description>You may find it tedious to run cryspy over and over again. This auto script could help you. This runs cryspy once every 5 minutes.
-#!/bin/bash set -e while : do cryspy -n LOG_LASTLINE=`tail -n 1 log_cryspy` if [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;Done all structures!&amp;#34; ] then exit 0 # ---------- for EA elif [ &amp;#34;${LOG_LASTLINE:0:17}&amp;#34; = &amp;#34;Reached maxgen_ea&amp;#34; ] then exit 0 elif [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;EA is ready&amp;#34; ] then cryspy -n # EA LOG_LASTLINE=`tail -n 1 log_cryspy` if [ &amp;#34;${LOG_LASTLINE:0:17}&amp;#34; = &amp;#34;Reached maxgen_ea&amp;#34; ] then exit 0 fi cryspy -n # submit jobs # ---------- for BO elif [ &amp;#34;${LOG_LASTLINE:0:21}&amp;#34; = &amp;#34;Reached max_select_bo&amp;#34; ] then exit 0 elif [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;BO is ready&amp;#34; ] then cryspy -n # selection LOG_LASTLINE=`tail -n 1 log_cryspy` if [ &amp;#34;${LOG_LASTLINE:0:21}&amp;#34; = &amp;#34;Reached max_select_bo&amp;#34; ] then exit 0 fi cryspy -n # submit jobs # ---------- for LAQA elif [ &amp;#34;$LOG_LASTLINE&amp;#34; = &amp;#34;LAQA is ready&amp;#34; ] then cryspy -n # selection cryspy -n # submit jobs fi sleep 5m done </description>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/scripts/index.html</guid>
+      <description>Table of contents extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy </description>
     </item>
   </channel>
 </rss>

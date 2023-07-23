@@ -5,7 +5,7 @@
     <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/index.html</link>
     <description>Recent content on CrySPY</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CrySPYについて</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/about/index.html</link>
@@ -81,7 +81,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.html</guid>
       <description>CrySPY Utility ダウンロードに関してはこちらのページ： Installation/CrySPY utility． 一部のexamplesはこのドキュメントサイトからもダウンロード可能．
-目次 Examples ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy </description>
+目次 Examples ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA Scripts extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy </description>
     </item>
   </channel>
 </rss>

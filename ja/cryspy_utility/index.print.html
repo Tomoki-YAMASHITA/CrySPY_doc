@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Hugo 0.115.2">
     <meta name="generator" content="Relearn 5.12.3+tip">
     <meta name="description" content="">
     <title>CrySPY Utility :: CrySPY</title>
@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.html" rel="canonical" type="text/html" title="CrySPY Utility :: CrySPY">
     <link href="../../ja/cryspy_utility/index.xml" rel="alternate" type="application/rss+xml" title="CrySPY Utility :: CrySPY">
-    <link href="../../images/favicon.png?1689056186" rel="icon" type="image/png">
+    <link href="../../images/favicon.png?1690089271" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../css/fontawesome-all.min.css?1689056187" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1689056187" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1689056187" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1689056187" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1689056187" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1689056187" rel="stylesheet">
-    <link href="../../css/fonts.css?1689056187" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1689056187" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1689056187" rel="stylesheet">
-    <link href="../../css/theme-relearn-light.css?1689056187" rel="stylesheet" id="variant-style">
-    <link href="../../css/variant.css?1689056187" rel="stylesheet">
-    <link href="../../css/print.css?1689056187" rel="stylesheet" media="print">
-    <link href="../../css/format-print.css?1689056187" rel="stylesheet">
-    <link href="../../css/ie.css?1689056187" rel="stylesheet">
-    <script src="../../js/url.js?1689056187"></script>
-    <script src="../../js/variant.js?1689056187"></script>
+    <link href="../../css/fontawesome-all.min.css?1690089271" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1690089271" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1690089271" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1690089271" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1690089271" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1690089271" rel="stylesheet">
+    <link href="../../css/fonts.css?1690089271" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1690089271" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1690089271" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1690089271" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1690089271" rel="stylesheet">
+    <link href="../../css/print.css?1690089271" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1690089271" rel="stylesheet">
+    <link href="../../css/ie.css?1690089271" rel="stylesheet">
+    <script src="../../js/url.js?1690089271"></script>
+    <script src="../../js/variant.js?1690089271"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -89,14 +89,16 @@
 	</ul></li>
 <li><a href="../../ja/cryspy_utility/examples/qe_si16_laqa/index.html">qe_Si16_LAQA</a><ul>
 	</ul></li></ul></li>
-<li><a href="../../ja/cryspy_utility/extract_struc/index.html">extract_struc.py</a><ul>
+<li><a href="../../ja/cryspy_utility/scripts/index.html">Scripts</a><ul>
+	
+<li><a href="../../ja/cryspy_utility/scripts/extract_struc/index.html">extract_struc.py</a><ul>
 	</ul></li>
-<li><a href="../../ja/cryspy_utility/pos2pkl/index.html">pos2pkl.py</a><ul>
+<li><a href="../../ja/cryspy_utility/scripts/pos2pkl/index.html">pos2pkl.py</a><ul>
 	</ul></li>
-<li><a href="../../ja/cryspy_utility/kpt_check/index.html">kpt_check.py</a><ul>
+<li><a href="../../ja/cryspy_utility/scripts/kpt_check/index.html">kpt_check.py</a><ul>
 	</ul></li>
-<li><a href="../../ja/cryspy_utility/repeat/index.html">repeat_cryspy</a><ul>
-	</ul></li>
+<li><a href="../../ja/cryspy_utility/scripts/repeat/index.html">repeat_cryspy</a><ul>
+	</ul></li></ul></li>
 </ul>
 
             <footer class="footline">
@@ -678,20 +680,48 @@ sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
 
           </section>
           <article class="default">
+<h1 id="scripts">Scripts</h1>
+
+<h2 id="目次">目次</h2>
+
+<ul class="children children-li children-sort-">
+	
+<li><a href="../../ja/cryspy_utility/scripts/extract_struc/index.html">extract_struc.py</a><ul>
+	</ul></li>
+<li><a href="../../ja/cryspy_utility/scripts/pos2pkl/index.html">pos2pkl.py</a><ul>
+	</ul></li>
+<li><a href="../../ja/cryspy_utility/scripts/kpt_check/index.html">kpt_check.py</a><ul>
+	</ul></li>
+<li><a href="../../ja/cryspy_utility/scripts/repeat/index.html">repeat_cryspy</a><ul>
+	</ul></li>
+</ul>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Scriptsのサブセクション</h1>
+          <article class="default">
 <h1 id="extract_strucpy">extract_struc.py</h1>
 
-<p><code>init_struc_data.pkl</code>や<code>opt_struc_data.pkl</code>から構造ごとにcifファイルを出力するスクリプト．</p>
+<p>2023年7月21日更新</p>
+<p><code>init_struc_data.pkl</code>や<code>opt_struc_data.pkl</code>から構造ごとにcifファイルを出力するスクリプト．
+ファイル出力せず，構造情報を画面にプリントすることも可能．</p>
 <p><code>-i</code>オプションでインデックス（構造ID)を（複数）指定できる．
 <code>-t</code>オプションでエネルギーが低い順番に指定した構造数のcifファイルを出力可能．
-<code>-a</code>オプションの場合は全ての構造をcifファイルに出力する．数が多い場合はディレクトリを作成してそこに移動してから実行したほうが良い．<code>-s</code>オプションをつけると対称性（空間群）の情報を付けられる．ただし，セルや原子数が変わるので注意．</p>
+<code>-a</code>オプションの場合は全ての構造をcifファイルに出力する．数が多い場合はディレクトリを作成してそこに移動してから実行したほうが良い．
+<code>-s</code>オプションをつけると対称性（空間群）の情報を付けられる．ただし，セルや原子数が変わるので注意．
+<code>-p</code>オプションをつけるとファイル出力せずに，画面にプリントする．</p>
 <h2 id="使い方">使い方</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>usage: extract_struc.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-a<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-i <span style="color:#f92672">[</span>INDEX ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>-t TOP<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-r<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-s<span style="color:#f92672">]</span> infile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>usage: extract_struc.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-a<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-i <span style="color:#f92672">[</span>INDEX ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>-t TOP<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-r<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-s<span style="color:#f92672">]</span> infile
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>positional arguments:
 </span></span><span style="display:flex;"><span>  infile                input file
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>options:
 </span></span><span style="display:flex;"><span>  -h, --help            show this help message and exit
+</span></span><span style="display:flex;"><span>  -p, --print           flag <span style="color:#66d9ef">for</span> print
 </span></span><span style="display:flex;"><span>  -a, --all_id          flag <span style="color:#66d9ef">for</span> all structures
 </span></span><span style="display:flex;"><span>  -i <span style="color:#f92672">[</span>INDEX ...<span style="color:#f92672">]</span>, --index <span style="color:#f92672">[</span>INDEX ...<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>                        structure ID
@@ -699,7 +729,63 @@ sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
 </span></span><span style="display:flex;"><span>  -r, --rank            flag <span style="color:#66d9ef">for</span> rank in file names
 </span></span><span style="display:flex;"><span>  -s, --symmetrized     flag <span style="color:#66d9ef">for</span> symmetrized structure
 </span></span></code></pre></div><h2 id="例">例</h2>
-<h3 id="構造id指定">構造ID指定</h3>
+<h3 id="プリント">プリント</h3>
+<p><code>-p</code>オプションは<code>-s</code>以外のオプションと組み合わせて使用することができる．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 extract_struc.py -p init_struc_data.pkl -i <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>このスクリプトをPATHが通ったところにおけば<code>python3</code>を省略できる</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>extract_struc.py -p init_struc_data.pkl -i <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ID <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Full Formula <span style="color:#f92672">(</span>Na8 Cl8<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Reduced Formula: NaCl
+</span></span><span style="display:flex;"><span>abc   :   6.823618   6.823618   7.566454
+</span></span><span style="display:flex;"><span>angles:  90.000000  90.000000  96.650518
+</span></span><span style="display:flex;"><span>pbc   :       True       True       True
+</span></span><span style="display:flex;"><span>Sites <span style="color:#f92672">(</span>16<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#  SP           a         b         c</span>
+</span></span><span style="display:flex;"><span>---  ----  --------  --------  --------
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">0</span>  Na    <span style="color:#ae81ff">0</span>         <span style="color:#ae81ff">0</span>         <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">1</span>  Na    <span style="color:#ae81ff">0</span>         <span style="color:#ae81ff">0</span>         0.5
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2</span>  Na    0.704707  0.295293  0.75
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">3</span>  Na    0.295293  0.704707  0.25
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">4</span>  Na    0.5       <span style="color:#ae81ff">0</span>         <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5</span>  Na    0.5       <span style="color:#ae81ff">0</span>         0.5
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">6</span>  Na    <span style="color:#ae81ff">0</span>         0.5       0.5
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">7</span>  Na    <span style="color:#ae81ff">0</span>         0.5       <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">8</span>  Cl    0.5       0.5       <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">9</span>  Cl    0.5       0.5       0.5
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">10</span>  Cl    0.484753  0.515247  0.75
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">11</span>  Cl    0.515247  0.484753  0.25
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">12</span>  Cl    0.828247  0.171753  0.851096
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">13</span>  Cl    0.171753  0.828247  0.351096
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">14</span>  Cl    0.828247  0.171753  0.648904
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">15</span>  Cl    0.171753  0.828247  0.148904
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ID <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Full Formula <span style="color:#f92672">(</span>Na8 Cl8<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Reduced Formula: NaCl
+</span></span><span style="display:flex;"><span>abc   :   8.145021   8.145021   4.324235
+</span></span><span style="display:flex;"><span>angles:  90.000000  90.000000 120.000000
+</span></span><span style="display:flex;"><span>pbc   :       True       True       True
+</span></span><span style="display:flex;"><span>Sites <span style="color:#f92672">(</span>16<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#  SP            a          b         c</span>
+</span></span><span style="display:flex;"><span>---  ----  ---------  ---------  --------
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">0</span>  Na     0.666667   0.333333  0.736206
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">1</span>  Na     0.666667   0.333333  0.263794
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2</span>  Na     0.913147   0.086853  0.5
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">3</span>  Na     0.913147   0.826295  0.5
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">4</span>  Na     0.173705   0.086853  0.5
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5</span>  Na     0.77711    0.22289   <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">6</span>  Na     0.77711    0.55422   <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">7</span>  Na     0.44578    0.22289   <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">8</span>  Cl     0.027675   0.423376  0.5
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">9</span>  Cl    -0.423376  -0.395701  0.5
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">10</span>  Cl     0.395701  -0.027675  0.5
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">11</span>  Cl    -0.423376  -0.027675  0.5
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">12</span>  Cl     0.395701   0.423376  0.5
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">13</span>  Cl     0.027675  -0.395701  0.5
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">14</span>  Cl     0.333333   0.666667  0.5
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">15</span>  Cl     <span style="color:#ae81ff">0</span>          <span style="color:#ae81ff">0</span>         <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h3 id="構造id">構造ID</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 extract_struc.py init_struc_data.pkl -i <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">12</span>
 </span></span></code></pre></div><p>以下のファイルが出力される．</p>
 <p><code>7.cif</code>，<code>10.cif</code>，<code>12.cif</code></p>
@@ -707,8 +793,8 @@ sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 extract_struc.py init_struc_data.pkl -i <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">12</span> -s
 </span></span></code></pre></div><h3 id="エネルギーの低い構造">エネルギーの低い構造</h3>
 
-<div class="box notices cstyle warning">
-  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> 警告</div>
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> 情報</div>
   <div class="box-content">
 <p><code>rslt_data.pkl</code> がインプット（<code>init_struc_data.pkl</code>か<code>opt_struc_data.pkl</code>）と同じディレクトリに必要．</p>
   </div>
@@ -745,6 +831,7 @@ sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
           <article class="default">
 <h1 id="pos2pklpy">pos2pkl.py</h1>
 
+<p>2023年7月23日更新</p>
 <p>あらかじめ用意した構造のテキストデータを<code>init_struc_data.pkl</code>に変換するスクリプト．
 入力のデフォルトは<code>init_POSCARS</code>形式．オプションでPOSCARやcifファイルなどのシングル構造データも変換可能．
 出力は<code>init_struc_data.pkl</code>．
@@ -752,45 +839,58 @@ sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
 構造IDは考慮されず，新しく割り振られる．
 原子数が異なる場合はエラーが出る．</p>
 <p><code>init_struc_data.pkl</code>はCrySPYでシミュレーション開始時にロードすることが可能．</p>
+<p><code>-f</code>オプションで原子種の削除とソートが可能．このオプションを指定しないとpymatgenが勝手に電気陰性度の順番で並び替えるので注意！</p>
 <h2 id="使い方">使い方</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>usage: pos2pkl.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-s <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>infile ...<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>usage: pos2pkl.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-s <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>-f <span style="color:#f92672">[</span>FILTER ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>-p<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>infile ...<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>positional arguments:
 </span></span><span style="display:flex;"><span>  infile                input file: init_POSCARS
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>optional arguments:
+</span></span><span style="display:flex;"><span>options:
 </span></span><span style="display:flex;"><span>  -h, --help            show this help message and exit
 </span></span><span style="display:flex;"><span>  -s <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]</span>, --single <span style="color:#f92672">[</span>SINGLE ...<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>                        input file: single structure file <span style="color:#f92672">(</span>POSCAR, cif<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -f <span style="color:#f92672">[</span>FILTER ...<span style="color:#f92672">]</span>, --filter <span style="color:#f92672">[</span>FILTER ...<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                        filter <span style="color:#f92672">(</span>sort<span style="color:#f92672">)</span>: remove species and sort
+</span></span><span style="display:flex;"><span>  -p, --permit_diff_comp
+</span></span><span style="display:flex;"><span>                        flag <span style="color:#66d9ef">for</span> permitting different composition
 </span></span></code></pre></div><h2 id="例">例</h2>
 <h3 id="init_poscars----init_struc_datapkl">init_POSCARS &ndash;&gt; init_struc_data.pkl</h3>
 <p>CrySPYで構造生成後に出力される<code>init_POSCARS</code>をスパコン等の別のマシンに移すような場合に使える．複数のファイルを変換可能．</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py init_POSCARS
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py init_POSCARS
+</span></span></code></pre></div><p><code>pos2pkl.py</code>をPATHが通ったところにおけば，<code>python3</code>は省略可能.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pos2pkl.py init_POSCARS
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Composition: Na8 Cl8
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">4</span>
 </span></span><span style="display:flex;"><span>Save init_struc_data.pkl
 </span></span></code></pre></div><p>複数の入力ファイルの場合．</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py init_POSCARS init_POSCARS2 init_POSCARS3
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Composition: Na8 Cl8
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">12</span>
 </span></span><span style="display:flex;"><span>Save init_struc_data.pkl
 </span></span></code></pre></div><p>カレントディレクトリにすでに<code>init_struc_data.pkl</code>が存在し，それに追加する場合．</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py init_POSCARS
-</span></span><span style="display:flex;"><span>init_struc_data.pkl already exists.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py init_POSCARS
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>init_struc_data.pkl already exists.
 </span></span><span style="display:flex;"><span>Append to init_struc_data.pkl? <span style="color:#f92672">[</span>y/n<span style="color:#f92672">]</span>: y
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Load init_struc_data. The number of structures: <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>Load init_struc_data
+</span></span><span style="display:flex;"><span>Composition: Na8 Cl8
+</span></span><span style="display:flex;"><span>The number of structures: <span style="color:#ae81ff">12</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">16</span>
 </span></span><span style="display:flex;"><span>Save init_struc_data.pkl
 </span></span></code></pre></div><h3 id="poscar-or-cif----init_struc_datapkl">POSCAR or cif &ndash;&gt; init_struc_data.pkl</h3>
 <p>POSCARファイルやcifファイル等の構造が一つだけのデータも変換可能．<code>-s/--single</code>オプションが必要．</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py -s POSCAR test.cif
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py -s POSCAR test.cif
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Composition: Na8 Cl8
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">2</span>
 </span></span><span style="display:flex;"><span>Save init_struc_data.pkl
 </span></span></code></pre></div><h3 id="init_poscars-poscar----init_struc_datapkl">init_POSCARS, POSCAR &ndash;&gt; init_struc_data.pkl</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py init_POSCARS -s POSCAR
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py init_POSCARS -s POSCAR
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Composition: Na8 Cl8
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">5</span>
 </span></span><span style="display:flex;"><span>Save init_struc_data.pkl
@@ -801,7 +901,31 @@ sed -i -e &#39;3 s/^.*$/done/&#39; stat_job
 <p>下記は間違い．<code>init_POSCARS</code>もシングル構造として取り扱われてしまう．</p>
   </div>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ python3 pos2pkl.py -s POSCAR init_POSCARS
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>python3 pos2pkl.py -s POSCAR init_POSCARS
+</span></span></code></pre></div><h3 id="filter-remove-and-sort">Filter (remove and sort)</h3>
+<p>次のような組成のcifファイルを考える：Sr8 Co8 O20 X4．これはダミー原子(X4)を4原子含んでいる．
+<code>-f/--filter</code>オプションは原子種を削除したり，ソートするのに使える．
+<code>cryspy.in</code>の<code>atype</code>と同じように指定する．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 pos2pkl.py -s Sr8Co8O20X4.cif -f Sr Co O
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Removed species: <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;X0+&#39;</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>Composition: Sr8 Co8 O20
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
+</span></span></code></pre></div><p><a href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/scripts/extract_struc/">extract_struc.py</a>を使えば，
+<code>init_struc_data.pkl</code>にどのように登録されたのか確認できる．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 extract_struc.py init_struc_data.pkl -pa
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ID <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Full Formula <span style="color:#f92672">(</span>Sr8 Co8 O20<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Reduced Formula: Sr2Co2O5
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p><code>-f</code>オプションでソートもできる．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 pos2pkl.py -s Sr8Co8O20X4.cif -f O Co 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Removed species: <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;Sr&#39;</span>, <span style="color:#e6db74">&#39;X0+&#39;</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>Composition: O20 Co8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Converted. The number of structures: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Save init_struc_data.pkl
 </span></span></code></pre></div>
             <footer class="footline">
             </footer>
@@ -951,11 +1075,12 @@ pymatgenライブラリが必要．</p>
             </footer>
           </article>
 
+          </section>
           </section>        </div>
       </main>
     </div>
-    <script src="../../js/clipboard.min.js?1689056187" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1689056187" defer></script>
-    <script src="../../js/theme.js?1689056187" defer></script>
+    <script src="../../js/clipboard.min.js?1690089271" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1690089271" defer></script>
+    <script src="../../js/theme.js?1690089271" defer></script>
   </body>
 </html>
