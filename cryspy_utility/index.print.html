@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/index.html" rel="canonical" type="text/html" title="CrySPY Utility :: CrySPY">
     <link href="../cryspy_utility/index.xml" rel="alternate" type="application/rss+xml" title="CrySPY Utility :: CrySPY">
-    <link href="../images/favicon.png?1690089270" rel="icon" type="image/png">
+    <link href="../images/favicon.png?1691487640" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../css/fontawesome-all.min.css?1690089271" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1690089271" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1690089271" rel="stylesheet">
-    <link href="../css/auto-complete.css?1690089271" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1690089271" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1690089271" rel="stylesheet">
-    <link href="../css/fonts.css?1690089271" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1690089271" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1690089271" rel="stylesheet">
-    <link href="../css/theme-relearn-light.css?1690089271" rel="stylesheet" id="variant-style">
-    <link href="../css/variant.css?1690089271" rel="stylesheet">
-    <link href="../css/print.css?1690089271" rel="stylesheet" media="print">
-    <link href="../css/format-print.css?1690089271" rel="stylesheet">
-    <link href="../css/ie.css?1690089271" rel="stylesheet">
-    <script src="../js/url.js?1690089271"></script>
-    <script src="../js/variant.js?1690089271"></script>
+    <link href="../css/fontawesome-all.min.css?1691487641" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1691487641" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1691487641" rel="stylesheet">
+    <link href="../css/auto-complete.css?1691487641" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1691487641" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1691487641" rel="stylesheet">
+    <link href="../css/fonts.css?1691487641" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1691487641" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1691487641" rel="stylesheet">
+    <link href="../css/theme-relearn-light.css?1691487641" rel="stylesheet" id="variant-style">
+    <link href="../css/variant.css?1691487641" rel="stylesheet">
+    <link href="../css/print.css?1691487641" rel="stylesheet" media="print">
+    <link href="../css/format-print.css?1691487641" rel="stylesheet">
+    <link href="../css/ie.css?1691487641" rel="stylesheet">
+    <script src="../js/url.js?1691487641"></script>
+    <script src="../js/variant.js?1691487641"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -77,6 +77,8 @@ Some (but not all) examples can also be downloaded from this document site.</p>
 	
 <li><a href="../cryspy_utility/examples/index.html">Examples</a><ul>
 	
+<li><a href="../cryspy_utility/examples/ase_chgnet_sr4co4o12/index.html">ase_chgnet_Sr4Co4O12</a><ul>
+	</ul></li>
 <li><a href="../cryspy_utility/examples/ase_cu8_rs/index.html">ase_Cu8_RS</a><ul>
 	</ul></li>
 <li><a href="../cryspy_utility/examples/soiap_si8_rs/index.html">soiap_Si8_RS</a><ul>
@@ -114,6 +116,8 @@ Some (but not all) examples can also be downloaded from this document site.</p>
 
 <ul class="children children-li children-sort-">
 	
+<li><a href="../cryspy_utility/examples/ase_chgnet_sr4co4o12/index.html">ase_chgnet_Sr4Co4O12</a><ul>
+	</ul></li>
 <li><a href="../cryspy_utility/examples/ase_cu8_rs/index.html">ase_Cu8_RS</a><ul>
 	</ul></li>
 <li><a href="../cryspy_utility/examples/soiap_si8_rs/index.html">soiap_Si8_RS</a><ul>
@@ -134,6 +138,79 @@ Some (but not all) examples can also be downloaded from this document site.</p>
 
           <section>
             <h1 class="a11y-only">Subsections of Examples</h1>
+          <article class="default">
+<h1 id="ase_chgnet_sr4co4o12">ase_chgnet_Sr4Co4O12</h1>
+
+<h2 id="download">Download</h2>
+
+<span class="btn cstyle transparent">
+  <a href="../examples/ase_chgnet_Sr4Co4O12.tar.gz">
+    <i class="fa-fw fas fa-download"></i> 
+    ase_chgnet_Sr4Co4O12.tar.gz
+  </a>
+</span>
+<h2 id="cryspyin">cryspy.in</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[basic]
+</span></span><span style="display:flex;"><span>algo <span style="color:#f92672">=</span> RS
+</span></span><span style="display:flex;"><span>calc_code <span style="color:#f92672">=</span> ASE
+</span></span><span style="display:flex;"><span>tot_struc <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>nstage <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>njob <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>jobcmd <span style="color:#f92672">=</span> bash
+</span></span><span style="display:flex;"><span>jobfile <span style="color:#f92672">=</span> job_cryspy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[structure]
+</span></span><span style="display:flex;"><span>natot <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>atype <span style="color:#f92672">=</span> Sr Co O
+</span></span><span style="display:flex;"><span>nat <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>  <span style="color:#ae81ff">4</span>  <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>mindist_1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.2</span>  <span style="color:#ae81ff">2.0</span>  <span style="color:#ae81ff">1.8</span>
+</span></span><span style="display:flex;"><span>mindist_2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.0</span>  <span style="color:#ae81ff">2.2</span>  <span style="color:#ae81ff">1.5</span>
+</span></span><span style="display:flex;"><span>mindist_3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.8</span>  <span style="color:#ae81ff">1.5</span>  <span style="color:#ae81ff">2.0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[ASE]
+</span></span><span style="display:flex;"><span>ase_python <span style="color:#f92672">=</span> chgnet_in<span style="color:#f92672">.</span>py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[option]
+</span></span></code></pre></div><h2 id="calc_in">calc_in/</h2>
+<h3 id="chgnet_inpy_1">chgnet_in.py_1</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> chgnet.model <span style="color:#f92672">import</span> StructOptimizer
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pymatgen.core <span style="color:#f92672">import</span> Structure
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- input structure</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># CrySPY outputs &#39;POSCAR&#39; as an input file in work/xxxxxx directory</span>
+</span></span><span style="display:flex;"><span>structure <span style="color:#f92672">=</span> Structure<span style="color:#f92672">.</span>from_file(<span style="color:#e6db74">&#39;POSCAR&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- relax</span>
+</span></span><span style="display:flex;"><span>relaxer <span style="color:#f92672">=</span> StructOptimizer()
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> relaxer<span style="color:#f92672">.</span>relax(atoms<span style="color:#f92672">=</span>structure)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- opt. structure and energy</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># [rule in ASE interface]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output file for energy: &#39;log.tote&#39; in eV/cell</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                         CrySPY reads the last line of &#39;log.tote&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output file for structure: &#39;CONTCAR&#39; in vasp format</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ------ energy</span>
+</span></span><span style="display:flex;"><span>traj <span style="color:#f92672">=</span> result[<span style="color:#e6db74">&#39;trajectory&#39;</span>]
+</span></span><span style="display:flex;"><span>e <span style="color:#f92672">=</span> traj<span style="color:#f92672">.</span>compute_energy()   <span style="color:#75715e"># eV/cell</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;log.tote&#39;</span>, mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    f<span style="color:#f92672">.</span>write(str(e))
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ------ struc</span>
+</span></span><span style="display:flex;"><span>opt_struc <span style="color:#f92672">=</span> result[<span style="color:#e6db74">&#34;final_structure&#34;</span>]
+</span></span><span style="display:flex;"><span>opt_struc<span style="color:#f92672">.</span>to(fmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;poscar&#39;</span>, filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;CONTCAR&#39;</span>)
+</span></span></code></pre></div><h3 id="job_cryspy">job_cryspy</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- ASE</span>
+</span></span><span style="display:flex;"><span>python3 chgnet_in.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- CrySPY</span>
+</span></span><span style="display:flex;"><span>sed -i -e <span style="color:#e6db74">&#39;3 s/^.*$/done/&#39;</span> stat_job
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
           <article class="default">
 <h1 id="ase_cu8_rs">ase_Cu8_RS</h1>
 
@@ -1074,8 +1151,8 @@ This runs <code>cryspy</code> once every 5 minutes.</p>
           </section>        </div>
       </main>
     </div>
-    <script src="../js/clipboard.min.js?1690089271" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1690089271" defer></script>
-    <script src="../js/theme.js?1690089271" defer></script>
+    <script src="../js/clipboard.min.js?1691487641" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1691487641" defer></script>
+    <script src="../js/theme.js?1691487641" defer></script>
   </body>
 </html>

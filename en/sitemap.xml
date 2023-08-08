@@ -25,6 +25,12 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/version_info/index.html" />
   </url>
   <url>
+    <loc>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/ase_chgnet_sr4co4o12/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/ase_chgnet_sr4co4o12/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/ase_chgnet_sr4co4o12/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/ase_chgnet_sr4co4o12/index.html" />
+  </url>
+  <url>
     <loc>https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ase/index.html</loc>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ase/index.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/random/ase/index.html" />

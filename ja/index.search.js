@@ -7,7 +7,7 @@ var relearn_search_index = [
     "uri": "/ja/about/index.html"
   },
   {
-    "content": "Table of contents ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA ",
+    "content": "Table of contents ase_chgnet_Sr4Co4O12 ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA ",
     "description": "",
     "tags": null,
     "title": "Examples",
@@ -26,6 +26,13 @@ var relearn_search_index = [
     "tags": null,
     "title": "バージョン情報",
     "uri": "/ja/version_info/index.html"
+  },
+  {
+    "content": "Download ase_chgnet_Sr4Co4O12.tar.gz cryspy.in [basic] algo = RS calc_code = ASE tot_struc = 10 nstage = 1 njob = 2 jobcmd = bash jobfile = job_cryspy [structure] natot = 20 atype = Sr Co O nat = 4 4 12 mindist_1 = 2.2 2.0 1.8 mindist_2 = 2.0 2.2 1.5 mindist_3 = 1.8 1.5 2.0 [ASE] ase_python = chgnet_in.py [option] calc_in/ chgnet_in.py_1 from chgnet.model import StructOptimizer from pymatgen.core import Structure # ---------- input structure # CrySPY outputs 'POSCAR' as an input file in work/xxxxxx directory structure = Structure.from_file('POSCAR') # ---------- relax relaxer = StructOptimizer() result = relaxer.relax(atoms=structure) # ---------- opt. structure and energy # [rule in ASE interface] # output file for energy: 'log.tote' in eV/cell # CrySPY reads the last line of 'log.tote' # output file for structure: 'CONTCAR' in vasp format # ------ energy traj = result['trajectory'] e = traj.compute_energy() # eV/cell with open('log.tote', mode='w') as f: f.write(str(e)) # ------ struc opt_struc = result[\"final_structure\"] opt_struc.to(fmt='poscar', filename='CONTCAR') job_cryspy #!/bin/sh # ---------- ASE python3 chgnet_in.py # ---------- CrySPY sed -i -e '3 s/^.*$/done/' stat_job ",
+    "description": "",
+    "tags": null,
+    "title": "ase_chgnet_Sr4Co4O12",
+    "uri": "/ja/cryspy_utility/examples/ase_chgnet_sr4co4o12/index.html"
   },
   {
     "content": "2023 July 10\nASEは様々なコードのインターフェースを提供しているPythonライブラリであり， Pure Python EMT calculatorというシンプルなEMTの計算も実行できる．CrySPYさえインストールしてあれば，精度はともかく簡単に計算できるので，CrySPYのテストにちょうど良い．\nこのチュートリアルでは，MacやLinuxなどのOSのローカルPCを用いてCu 8原子の構造探索を試す．\nAssumption ここでは次のような条件を想定している：\nCrySPY 1.2.0 or later in your local PC CrySPY job filename: job_cryspy ase input filename: ase_in.py Input files どこか適当なワーキングディレクトリに移動して，まずはexampleをコピーしてくる．下記のどちらからコピーしてきても良い．\nDownload from cryspy_utility/examples/ase_Cu8_RS Copy from CrySPY utility that you installed cd ase_Cu8_RS tree . ├── calc_in │ ├── ase_in.py_1 │ └── job_cryspy └── cryspy.in cryspy.in cryspy.inはCrySPYの入力ファイル．\n[basic] algo = RS calc_code = ASE tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Cu nat = 8 [ASE] ase_python = ase_in.py [option] [basic] セクションのjobcmd = zshは環境に合わせてjobcmd = shやjobcmd = bash等に変更する． CrySPYは内部でバックグラウンドジョブとしてzsh job_cryspyを実行する．\nASEを使う場合は，[ASE]セクションが必要． 下記の二つのファイル名は好きなように変えても良い．\njobfile: job_cryspy ase_python: ase_in.py 他の入力変数については後で説明を行う．\ncalc_in directory ASEのジョブファイルや入力ファイルはこのディレクトリに準備する．\nJob file ジョブファイルの名前はcryspy.inのjobfileに一致させる必要がある． ジョブファイルの例は下記の通り．\n#!/bin/sh # ---------- ASE python3 ase_in.py # ---------- CrySPY sed -i -e '3 s/^.*$/done/' stat_job ase_in.pyというファイル名も自由に変えられるが， cryspy.inのase_pythonの値と一致させておく必要がある． CrySPYではジョブファイルの最後の行はsed -i -e '3 s/^.*$/done/' stat_jobとしておくルールになっている．\nメモ ジョブファイルの最後の行はsed -i -e '3 s/^.*$/done/' stat_jobと書いておく．\nヒント CrySPYのジョブファイルのCrySPY_IDという文字列は自動的に構造IDに置き換わるようになっている． PBSやSLURMといったジョブスケジューラーを使う場合，ジョブ名にCrySPY_IDと書いておくとどの構造のジョブなのかが分かり便利である． 例えば，PBSでは#PBS -N Si_CrySPY_IDのように書いておくと，ジョブをサブミットする際，#PBS -N Si_10のように置き換わる． 注意点として，ジョブ名を数字から始めるとエラーとなることが多いので，Si_のように何か文字列を頭につけておくこと．\nInput for ASE ステージ数(nstage in cryspy.in)に応じた数のインプットファイルが必要となる． インプットファイル名の語尾に_xをつけて準備する． ここでxはステージ数．\nASEのチュートリアルではnstage = 1を用いるので，ASEのインプットファイルはase_in.py_1の一つだけが必要． ase_in.py_1は例えば下記の通り（ASEの使い方の詳細は公式のドキュメントを見ること）．\nfrom ase.constraints import ExpCellFilter, StrainFilter from ase.calculators.emt import EMT from ase.calculators.lj import LennardJones from ase.optimize.sciopt import SciPyFminCG from ase.optimize import BFGS from ase.spacegroup.symmetrize import FixSymmetry import numpy as np from ase.io import read, write # ---------- input structure # CrySPY outputs 'POSCAR' as an input file in work/xxxxxx directory atoms = read('POSCAR', format='vasp') # ---------- setting and run atoms.calc = EMT() atoms.set_constraint([FixSymmetry(atoms)]) atoms = ExpCellFilter(atoms, hydrostatic_strain=False) opt = BFGS(atoms) #opt=SciPyFminCG(atoms) opt.run() # ---------- opt. structure and energy # [rule in ASE interface] # output file for energy: 'log.tote' in eV/cell # CrySPY reads the last line of 'log.tote' # output file for structure: 'CONTCAR' in vasp format e = atoms.atoms.get_total_energy() with open('log.tote', mode='w') as f: f.write(str(e)) write('CONTCAR', atoms.atoms, format='vasp') ASEはVASPやQEなどと違って，入力ファイル（python script）は自分で書くことになるので自由度がある． CrySPYでは2つのルールを設けている．\nエネルギーはeV/cellの単位でlog.toteというファイルに出力する．CrySPYはこのファイルの最後の行を読む． 最適化後の構造データはCONTCARというファイルにVASPフォーマットで出力する． Running CrySPY ここまで準備ができたらRunning CrySPYへ進む．\n",
@@ -427,7 +434,7 @@ var relearn_search_index = [
     "uri": "/ja/input/omx_sec/index.html"
   },
   {
-    "content": "CrySPY Utility ダウンロードに関してはこちらのページ： Installation/CrySPY utility． 一部のexamplesはこのドキュメントサイトからもダウンロード可能．\n目次 Examples ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA Scripts extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy ",
+    "content": "CrySPY Utility ダウンロードに関してはこちらのページ： Installation/CrySPY utility． 一部のexamplesはこのドキュメントサイトからもダウンロード可能．\n目次 Examples ase_chgnet_Sr4Co4O12 ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA Scripts extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy ",
     "description": "",
     "tags": null,
     "title": "CrySPY Utility",
