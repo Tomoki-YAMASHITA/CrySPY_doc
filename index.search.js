@@ -21,7 +21,7 @@ var relearn_search_index = [
     "uri": "/cryspy_utility/scripts/extract_struc/index.html"
   },
   {
-    "content": "Version information Table of contents Version 1.2.0 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
+    "content": "Version information Table of contents Version 1.2.1 Version 1.2.0 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
     "description": "",
     "tags": null,
     "title": "Version information",
@@ -656,6 +656,13 @@ var relearn_search_index = [
     "tags": null,
     "title": "Load external data",
     "uri": "/tutorial/random/ext_load_data/index.html"
+  },
+  {
+    "content": "ASE interface Bug fixed for multiple stages.\n",
+    "description": "",
+    "tags": null,
+    "title": "Version 1.2.1",
+    "uri": "/version_info/ver_1.2.1/index.html"
   },
   {
     "content": "ASE interface ASE interface is now available.\nSee also\nTutorial \u003e Random Search (RS) \u003e ASE in your local PC Adoption of logging CrySPY logs are output to both the screen and files (log_cryspy and err_cryspy).\nSee also\nFeatures \u003e Logging ",

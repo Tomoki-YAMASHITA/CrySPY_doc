@@ -7,6 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://tomoki-yamashita.github.io/CrySPY_doc/version_info/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Version 1.2.1</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_1.2.1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_1.2.1/index.html</guid>
+      <description>ASE interface Bug fixed for multiple stages.</description>
+    </item>
+    <item>
       <title>Version 1.2.0</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/ver_1.2.0/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

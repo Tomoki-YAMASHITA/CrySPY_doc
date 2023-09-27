@@ -21,7 +21,7 @@ var relearn_search_index = [
     "uri": "/ja/cryspy_utility/scripts/extract_struc/index.html"
   },
   {
-    "content": "バージョン情報 目次 Version 1.2.0 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
+    "content": "バージョン情報 目次 Version 1.2.1 Version 1.2.0 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
     "description": "",
     "tags": null,
     "title": "バージョン情報",
@@ -635,6 +635,13 @@ var relearn_search_index = [
     "tags": null,
     "title": "Load external data",
     "uri": "/ja/tutorial/random/ext_load_data/index.html"
+  },
+  {
+    "content": "ASE interface Bug fixed for multiple stages.\n",
+    "description": "",
+    "tags": null,
+    "title": "Version 1.2.1",
+    "uri": "/ja/version_info/ver_1.2.1/index.html"
   },
   {
     "content": "ASE interface ASEインターフェースが利用可能．\nSee also\nチュートリアル \u003e Random Search (RS) \u003e ASE in your local PC Adoption of logging CrySPYのログは画面とファイル (log_cryspy and err_cryspy)の両方に出力\nSee also\n機能 \u003e Logging ",
