@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/installation/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/installation/index.html" rel="canonical" type="text/html" title="Installation :: CrySPY">
     <link href="../installation/index.xml" rel="alternate" type="application/rss+xml" title="Installation :: CrySPY">
-    <link href="../images/favicon.png?1695781614" rel="icon" type="image/png">
+    <link href="../images/favicon.png?1696997915" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../css/fontawesome-all.min.css?1695781614" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1695781614" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1695781614" rel="stylesheet">
-    <link href="../css/auto-complete.css?1695781614" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1695781614" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1695781614" rel="stylesheet">
-    <link href="../css/fonts.css?1695781614" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1695781614" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1695781614" rel="stylesheet">
-    <link href="../css/theme-relearn-light.css?1695781614" rel="stylesheet" id="variant-style">
-    <link href="../css/variant.css?1695781614" rel="stylesheet">
-    <link href="../css/print.css?1695781614" rel="stylesheet" media="print">
-    <link href="../css/format-print.css?1695781614" rel="stylesheet">
-    <link href="../css/ie.css?1695781614" rel="stylesheet">
-    <script src="../js/url.js?1695781614"></script>
-    <script src="../js/variant.js?1695781614"></script>
+    <link href="../css/fontawesome-all.min.css?1696997916" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1696997916" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1696997916" rel="stylesheet">
+    <link href="../css/auto-complete.css?1696997916" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1696997916" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1696997916" rel="stylesheet">
+    <link href="../css/fonts.css?1696997916" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1696997916" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1696997916" rel="stylesheet">
+    <link href="../css/theme-relearn-light.css?1696997916" rel="stylesheet" id="variant-style">
+    <link href="../css/variant.css?1696997916" rel="stylesheet">
+    <link href="../css/print.css?1696997916" rel="stylesheet" media="print">
+    <link href="../css/format-print.css?1696997916" rel="stylesheet">
+    <link href="../css/ie.css?1696997916" rel="stylesheet">
+    <script src="../js/url.js?1696997916"></script>
+    <script src="../js/variant.js?1696997916"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -431,15 +431,11 @@ fppath = /xxx/xxx/xxx/cal_fingerprint
 </code></pre><h2 id="arm64-on-macos-without-rosseta-2">Arm64 on MacOS (without Rosseta 2)</h2>
 <ol>
 <li>Install <a href="https://github.com/conda-forge/miniforge" target="_blank">miniforge3</a><i class="fas fa-external-link-alt"></i> (We do not know how to install pyshtools with homebrew python.)</li>
-<li>Install pymatgen (numpy is also installed), fftw by conda</li>
+<li>Install pymatgen, pyshtools by conda (recent versions of pyshtools are available in conda-forge)</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda install pymatgen
-</span></span><span style="display:flex;"><span>conda install fftw
+</span></span><span style="display:flex;"><span>conda install pyshtools
 </span></span></code></pre></div><ol start="3">
-<li>Build pyshtools from the source code. PyXtal needs pyshtools.</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip3 install pyshtools --no-binary pyshtools
-</span></span></code></pre></div><ol start="4">
 <li>Install CrySPY</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip3 install csp-cryspy
@@ -561,8 +557,8 @@ Install in the environment where CrySPY is used, such as a workstations and supe
           </section>        </div>
       </main>
     </div>
-    <script src="../js/clipboard.min.js?1695781615" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1695781615" defer></script>
-    <script src="../js/theme.js?1695781615" defer></script>
+    <script src="../js/clipboard.min.js?1696997916" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1696997916" defer></script>
+    <script src="../js/theme.js?1696997916" defer></script>
   </body>
 </html>

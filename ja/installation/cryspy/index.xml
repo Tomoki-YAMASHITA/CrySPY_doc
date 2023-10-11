@@ -17,7 +17,7 @@ which cryspy 編集可能モード CrySPYのソースコードを編集したい
 git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git pip install -e ./CrySPY git cloneの代わりに，release pageから圧縮ファイルをダウンロードしてもよい．
 cal_fingerprint (optional) cal_fingerprintプログラムは構造記述子を計算するためのもので，アルゴリズにベイズ最適化を使う場合は必須． CrySPY 1.0.0からはcal_fingerprintプログラムはCrySPY utilityに含まれている． コンパイルについてはこちらを参照：Instllation/CrySPY_utility/Compile cal_fingerprint．
 実行ファイルcal_fingerprintをPATHが通ったところに置く，もしくは下記のようにcryspy.inで実行ファイルのpathを指定する．
-[BO] fppath = /xxx/xxx/xxx/cal_fingerprint Arm64 on MacOS (without Rosseta 2) miniforge3をインストール（homebrew pythonでpyshtoolsをインストールする方法が今のところ不明） condaでpymatgen (numpyもインストールされる), fftwをインストール conda install pymatgen conda install fftw pyshtoolsをソースからビルドする．pyshtoolsはPyXtalのインストールに必要． pip3 install pyshtools --no-binary pyshtools CrySPYをインストール pip3 install csp-cryspy </description>
+[BO] fppath = /xxx/xxx/xxx/cal_fingerprint Arm64 on MacOS (without Rosseta 2) miniforge3をインストール（homebrew pythonでpyshtoolsをインストールする方法が今のところ不明） condaでpymatgen，pyshtoolsをインストール（最近のバージョンのpyshtoolsはconda-forgeからインストール可能になった） conda install pymatgen conda install pyshtools CrySPYをインストール pip3 install csp-cryspy </description>
     </item>
     <item>
       <title>CrySPY 0.10.3 or earlier</title>
