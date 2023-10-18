@@ -58,5 +58,16 @@ $ ls calc_in cryspy.in cryspy.stat data err_cryspy log_cryspy $ cryspy -c Are yo
 Info Requirements:
 CrySPY 1.1.0 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) The figure below shows the relationship between elapsed time and the number of processes for 1000 structures of Si8 with the following setting:</description>
     </item>
+    <item>
+      <title>Enthalpy</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/enthalpy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/enthalpy/index.html</guid>
+      <description>2023/10/18
+Info Requirements:
+CrySPY 1.2.2 or later VASP or QE When performing CSP at high pressure, enthalpy results can be collected instead of total energy. Not yet compatible with softwares other than VASP and QE.
+E_eV_atom in cryspy_rslt and cryspy_rslt_energy_asc turns into enthalpy (eV/atom). Here is the example of CSP results under 40 GPa pressure for Sr4O4. CsCl-type structure (ID 5) is more stable than NaCl-type (ID 6).
+Spg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom Magmom Opt 5 26 Pmc2_1 221 Pm-3m -2.</description>
+    </item>
   </channel>
 </rss>

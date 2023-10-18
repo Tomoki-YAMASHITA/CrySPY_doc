@@ -36,6 +36,13 @@
 Download soiap_Si8_RS_mindist.tar.gz cryspy.in [basic] algo = RS calc_code = soiap tot_struc = 5 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 mindist_1 = 2.0 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] calc_in/ soiap.in_1 crystal initial.cif ! CIF file for the initial structure symmetry 1 !</description>
     </item>
     <item>
+      <title>vasp_Sr4O4_RS_pv_term</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/vasp_sr4o4_rs_pv_term/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/vasp_sr4o4_rs_pv_term/index.html</guid>
+      <description>Download vasp_Sr4O4_RS_pv_term.tar.gz cryspy.in [basic] algo = RS calc_code = VASP tot_struc = 10 nstage = 2 njob = 4 jobcmd = qsub jobfile = job_cryspy [structure] natot = 8 atype = Sr O nat = 4 4 [VASP] kppvol = 40 80 [option] calc_in/ INCAR_1 SYSTEM = SrO Algo = Fast NSW = 60 LWAVE = .FALSE. !LCHARG = .FALSE. ISPIN = 1 ISMEAR = 0 SIGMA = 0.1 IBRION = 2 ISIF = 2 EDIFF = 1e-5 EDIFFG = -0.</description>
+    </item>
+    <item>
       <title>qe_Si8_RS</title>
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/qe_si8_rs/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -48,6 +55,13 @@ Download soiap_Si8_RS_mindist.tar.gz cryspy.in [basic] algo = RS calc_code = soi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/qe_benzene_2_rs_mol/index.html</guid>
       <description>Download qe_benzene_2_RS_mol.tar.gz cryspy.in [basic] algo = RS calc_code = QE tot_struc = 6 nstage = 2 njob = 2 jobcmd = qsub jobfile = job_cryspy [structure] struc_mode = mol natot = 24 atype = H C nat = 12 12 mol_file = benzene nmol = 2 [QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 40 60 [option] calc_in/ pwscf.in_1 &amp;amp;control title = &amp;#39;2 benzene&amp;#39; calculation = &amp;#39;relax&amp;#39; nstep = 30 restart_mode = &amp;#39;from_scratch&amp;#39;, pseudo_dir = &amp;#39;/usr/local/pslibrary.</description>
+    </item>
+    <item>
+      <title>qe_Sr4O4_RS_pv_term</title>
+      <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/qe_sr4o4_rs_pv_term/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/examples/qe_sr4o4_rs_pv_term/index.html</guid>
+      <description>Download qe_Sr4O4_RS_pv_term.tar.gz cryspy.in [basic] algo = RS calc_code = QE tot_struc = 10 nstage = 2 njob = 4 jobcmd = qsub jobfile = job_cryspy [structure] natot = 8 atype = Sr O nat = 4 4 [QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 40 80 pv_term = True [option] calc_in/ pwscf.in_1 &amp;amp;control title = &amp;#39;SrO&amp;#39; calculation = &amp;#39;relax&amp;#39; nstep = 100 restart_mode = &amp;#39;from_scratch&amp;#39;, pseudo_dir = &amp;#39;/usr/local/gbrv/all_pbe_UPF_v1.5/&amp;#39; outdir=&amp;#39;.</description>
     </item>
     <item>
       <title>qe_Si16_LAQA</title>

@@ -19,7 +19,7 @@ Table of contents Crystal structure prediction Searching algorithms Interface Lo
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/version_info/index.html</guid>
-      <description>Version information Table of contents Version 1.2.1 Version 1.2.0 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier </description>
+      <description>Version information Table of contents Version 1.2.2 Version 1.2.1 Version 1.2.0 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier </description>
     </item>
     <item>
       <title>Installation</title>
@@ -57,7 +57,7 @@ Table of contents struc_mode = crystal struc_mode = mol struc_mode = mol_bs </de
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/index.html</guid>
-      <description>Features Table of contents Logging Backup Clean Restriction on interatomic distances CrySPY_ID in job files Structure generation with MPI parallelization </description>
+      <description>Features Table of contents Logging Backup Clean Restriction on interatomic distances CrySPY_ID in job files Structure generation with MPI parallelization Enthalpy </description>
     </item>
     <item>
       <title>Input file</title>
@@ -81,7 +81,7 @@ Table of contents Common data Initial and optimized structure data Result data R
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/index.html</guid>
       <description>CrySPY Utility See Installation/CrySPY utility to download. Some (but not all) examples can also be downloaded from this document site.
-Table of contents Examples ase_chgnet_Sr4Co4O12 ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA Scripts extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy </description>
+Table of contents Examples ase_chgnet_Sr4Co4O12 ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist vasp_Sr4O4_RS_pv_term qe_Si8_RS qe_benzene_2_RS_mol qe_Sr4O4_RS_pv_term qe_Si16_LAQA Scripts extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy </description>
     </item>
   </channel>
 </rss>

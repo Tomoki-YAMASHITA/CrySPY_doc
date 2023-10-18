@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/index.html" rel="canonical" type="text/html" title="Features :: CrySPY">
     <link href="../features/index.xml" rel="alternate" type="application/rss+xml" title="Features :: CrySPY">
-    <link href="../images/favicon.png?1696997915" rel="icon" type="image/png">
+    <link href="../images/favicon.png?1697599965" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../css/fontawesome-all.min.css?1696997916" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1696997916" rel="stylesheet"></noscript>
-    <link href="../css/nucleus.css?1696997916" rel="stylesheet">
-    <link href="../css/auto-complete.css?1696997916" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1696997916" rel="stylesheet"></noscript>
-    <link href="../css/perfect-scrollbar.min.css?1696997916" rel="stylesheet">
-    <link href="../css/fonts.css?1696997916" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1696997916" rel="stylesheet"></noscript>
-    <link href="../css/theme.css?1696997916" rel="stylesheet">
-    <link href="../css/theme-relearn-light.css?1696997916" rel="stylesheet" id="variant-style">
-    <link href="../css/variant.css?1696997916" rel="stylesheet">
-    <link href="../css/print.css?1696997916" rel="stylesheet" media="print">
-    <link href="../css/format-print.css?1696997916" rel="stylesheet">
-    <link href="../css/ie.css?1696997916" rel="stylesheet">
-    <script src="../js/url.js?1696997916"></script>
-    <script src="../js/variant.js?1696997916"></script>
+    <link href="../css/fontawesome-all.min.css?1697599965" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fontawesome-all.min.css?1697599965" rel="stylesheet"></noscript>
+    <link href="../css/nucleus.css?1697599965" rel="stylesheet">
+    <link href="../css/auto-complete.css?1697599965" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/auto-complete.css?1697599965" rel="stylesheet"></noscript>
+    <link href="../css/perfect-scrollbar.min.css?1697599965" rel="stylesheet">
+    <link href="../css/fonts.css?1697599965" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../css/fonts.css?1697599965" rel="stylesheet"></noscript>
+    <link href="../css/theme.css?1697599965" rel="stylesheet">
+    <link href="../css/theme-relearn-light.css?1697599965" rel="stylesheet" id="variant-style">
+    <link href="../css/variant.css?1697599965" rel="stylesheet">
+    <link href="../css/print.css?1697599965" rel="stylesheet" media="print">
+    <link href="../css/format-print.css?1697599965" rel="stylesheet">
+    <link href="../css/ie.css?1697599965" rel="stylesheet">
+    <script src="../js/url.js?1697599965"></script>
+    <script src="../js/variant.js?1697599965"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -84,6 +84,8 @@
 <li><a href="../features/cryspy_id/index.html">CrySPY_ID in job files</a><ul>
 	</ul></li>
 <li><a href="../features/mpi/index.html">Structure generation with MPI parallelization</a><ul>
+	</ul></li>
+<li><a href="../features/enthalpy/index.html">Enthalpy</a><ul>
 	</ul></li>
 </ul>
 
@@ -282,12 +284,79 @@ mindist_1 = 2.2
 </code></pre><p>The structure generation is taking a long time because of a slightly stricter setting like <code>mindset_1 = 2.2</code>.
 The structure generation was performed 10 times for each number of processes.</p>
 <p>
-<a href="#image-d46125b123f013a9c59a1a4bee1d05fb" class="lightbox-link">
+<a href="#image-533145d24c96c9987635868a48270913" class="lightbox-link">
 <img src="../images/MPI/elapsed_time_ibis.png" alt="fig_MPI" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-d46125b123f013a9c59a1a4bee1d05fb">
+<a href="javascript:history.back();" class="lightbox" id="image-533145d24c96c9987635868a48270913">
 <img src="../images/MPI/elapsed_time_ibis.png" alt="fig_MPI" class="lightbox-image" loading="lazy">
 </a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1 id="enthalpy">Enthalpy</h1>
+
+<p>2023/10/18</p>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+<p>Requirements:</p>
+<ul>
+<li>CrySPY 1.2.2 or later</li>
+<li>VASP or QE</li>
+</ul>
+  </div>
+</div>
+<p>When performing CSP at high pressure, enthalpy results can be collected instead of total energy.
+Not yet compatible with softwares other than VASP and QE.</p>
+<p><code>E_eV_atom</code> in <code>cryspy_rslt</code> and <code>cryspy_rslt_energy_asc</code> turns into enthalpy (eV/atom). Here is the example of CSP results under 40 GPa pressure for Sr4O4.
+CsCl-type structure (ID 5) is more stable than NaCl-type (ID 6).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>   Spg_num Spg_sym  Spg_num_opt Spg_sym_opt  E_eV_atom  Magmom      Opt
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span>       <span style="color:#ae81ff">26</span>  Pmc2_1          <span style="color:#ae81ff">221</span>       Pm-3m  -2.276790     NaN     <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span>      <span style="color:#ae81ff">225</span>   Fm-3m          <span style="color:#ae81ff">225</span>       Fm-3m  -2.244800     NaN     <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>      <span style="color:#ae81ff">101</span>  P4_2cm          <span style="color:#ae81ff">107</span>        I4mm  -2.181115     NaN     <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span>      <span style="color:#ae81ff">123</span>  P4/mmm          <span style="color:#ae81ff">123</span>      P4/mmm  -2.034509     NaN  not_yet
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>       <span style="color:#ae81ff">20</span>  C222_1           <span style="color:#ae81ff">63</span>        Cmcm  -0.686541     NaN     <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>       <span style="color:#ae81ff">75</span>      P4           <span style="color:#ae81ff">75</span>          P4  -0.008713     NaN  not_yet
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9</span>       <span style="color:#ae81ff">51</span>    Pmma           <span style="color:#ae81ff">47</span>        Pmmm   0.096430     NaN     <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">8</span>       <span style="color:#ae81ff">65</span>    Cmmm          <span style="color:#ae81ff">123</span>      P4/mmm   1.099657     NaN     <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">187</span>   P-6m2          <span style="color:#ae81ff">187</span>       P-6m2   1.292124     NaN     <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7</span>       <span style="color:#ae81ff">53</span>    Pmna           <span style="color:#ae81ff">53</span>        Pmna   5.153504     NaN  not_yet
+</span></span></code></pre></div><h2 id="vasp">VASP</h2>
+<p>CrySPY reads energy (enthalpy) from a <code>OSZICAR</code> file.
+This automatically changes to enthalpy when <code>PSTRESS</code> is set in <code>INCAR_x</code> as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PSTRESS <span style="color:#f92672">=</span> <span style="color:#ae81ff">400</span>
+</span></span></code></pre></div><p>You do not have to do anything in <code>cryspy.in</code>.
+<code>energy_step_flag</code> is also supported for enthalpy.</p>
+<p>Example:</p>
+<ul>
+<li><a href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/vasp_sr4o4_rs_pv_term/">CrySPY Utility &gt; Examples &gt; vasp_Sr4O4_RS_pv_term</a></li>
+</ul>
+<h2 id="qe">QE</h2>
+<p>Add <code>pv_term = True</code> in the QE section of <code>cryspy.in</code> to use enthalpy:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[QE]
+</span></span><span style="display:flex;"><span>qe_infile <span style="color:#f92672">=</span> pwscf<span style="color:#f92672">.</span><span style="color:#f92672">in</span>
+</span></span><span style="display:flex;"><span>qe_outfile <span style="color:#f92672">=</span> pwscf<span style="color:#f92672">.</span>out
+</span></span><span style="display:flex;"><span>kppvol <span style="color:#f92672">=</span>  <span style="color:#ae81ff">40</span>  <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>pv_term <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><p>Don&rsquo;t forget to write <code>press</code> in the QE input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> &amp;cell
+</span></span><span style="display:flex;"><span>    press <span style="color:#f92672">=</span> <span style="color:#ae81ff">400</span>
+</span></span><span style="display:flex;"><span> /
+</span></span></code></pre></div>
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+<p>In QE, <code>energy_step_flag</code> is not supported yet for enthalpy.</p>
+  </div>
+</div>
+<p>Example:</p>
+<ul>
+<li><a href="https://tomoki-yamashita.github.io/CrySPY_doc/cryspy_utility/examples/qe_sr4o4_rs_pv_term/">CrySPY Utility &gt; Examples &gt; qe_Sr4O4_RS_pv_term</a></li>
+</ul>
 
             <footer class="footline">
             </footer>
@@ -296,8 +365,8 @@ The structure generation was performed 10 times for each number of processes.</p
           </section>        </div>
       </main>
     </div>
-    <script src="../js/clipboard.min.js?1696997916" defer></script>
-    <script src="../js/perfect-scrollbar.min.js?1696997916" defer></script>
-    <script src="../js/theme.js?1696997916" defer></script>
+    <script src="../js/clipboard.min.js?1697599965" defer></script>
+    <script src="../js/perfect-scrollbar.min.js?1697599965" defer></script>
+    <script src="../js/theme.js?1697599965" defer></script>
   </body>
 </html>

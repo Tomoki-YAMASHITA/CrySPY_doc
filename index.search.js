@@ -7,7 +7,7 @@ var relearn_search_index = [
     "uri": "/about/index.html"
   },
   {
-    "content": "Table of contents ase_chgnet_Sr4Co4O12 ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA ",
+    "content": "Table of contents ase_chgnet_Sr4Co4O12 ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist vasp_Sr4O4_RS_pv_term qe_Si8_RS qe_benzene_2_RS_mol qe_Sr4O4_RS_pv_term qe_Si16_LAQA ",
     "description": "",
     "tags": null,
     "title": "Examples",
@@ -21,7 +21,7 @@ var relearn_search_index = [
     "uri": "/cryspy_utility/scripts/extract_struc/index.html"
   },
   {
-    "content": "Version information Table of contents Version 1.2.1 Version 1.2.0 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
+    "content": "Version information Table of contents Version 1.2.2 Version 1.2.1 Version 1.2.0 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier ",
     "description": "",
     "tags": null,
     "title": "Version information",
@@ -203,13 +203,6 @@ var relearn_search_index = [
     "uri": "/cryspy_utility/scripts/pos2pkl/index.html"
   },
   {
-    "content": "Download qe_Si8_RS.tar.gz cryspy.in [basic] algo = RS calc_code = QE tot_struc = 5 nstage = 2 njob = 1 jobcmd = qsub jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 40 80 [option] calc_in/ pwscf.in_1 \u0026control title = 'Si8' calculation = 'relax' nstep = 100 restart_mode = 'from_scratch', pseudo_dir = '/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/' outdir='./out.d/' / \u0026system ibrav = 0 nat = 8 ntyp = 1 ecutwfc = 44.0 occupations = 'smearing' degauss = 0.01 / \u0026electrons / \u0026ions / \u0026cell / ATOMIC_SPECIES Si 28.086 Si.pbe-n-kjpaw_psl.1.0.0.UPF pwscf.in_2 \u0026control title = 'Si8' calculation = 'vc-relax' nstep = 200 restart_mode = 'from_scratch', pseudo_dir = '/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/' outdir='./out.d/' / \u0026system ibrav = 0 nat = 8 ntyp = 1 ecutwfc = 44.0 occupations = 'smearing' degauss = 0.01 / \u0026electrons / \u0026ions / \u0026cell / ATOMIC_SPECIES Si 28.086 Si.pbe-n-kjpaw_psl.1.0.0.UPF job_cryspy #!/bin/sh #$ -cwd #$ -V -S /bin/bash ####$ -V -S /bin/zsh #$ -N Si8_CrySPY_ID #$ -pe smp 8 ####$ -q ibis1.q ####$ -q ibis2.q mpirun -np $NSLOTS pw.x -nk 4 -nb 2 \u003c pwscf.in \u003e pwscf.out if [ -e \"CRASH\" ]; then sed -i -e '3 s/^.*$/skip/' stat_job exit 1 fi sed -i -e '3 s/^.*$/done/' stat_job ",
-    "description": "",
-    "tags": null,
-    "title": "qe_Si8_RS",
-    "uri": "/cryspy_utility/examples/qe_si8_rs/index.html"
-  },
-  {
     "content": "Table of contents ",
     "description": "",
     "tags": null,
@@ -357,7 +350,7 @@ var relearn_search_index = [
     "uri": "/structure_generation/index.html"
   },
   {
-    "content": "Features Table of contents Logging Backup Clean Restriction on interatomic distances CrySPY_ID in job files Structure generation with MPI parallelization ",
+    "content": "Features Table of contents Logging Backup Clean Restriction on interatomic distances CrySPY_ID in job files Structure generation with MPI parallelization Enthalpy ",
     "description": "",
     "tags": null,
     "title": "Features",
@@ -420,7 +413,7 @@ var relearn_search_index = [
     "uri": "/data_format/optional_data/stress_step/index.html"
   },
   {
-    "content": "[QE] section is required only if you use QE (calc_code = QE)\nName Value Default Description kppvol int [int …] Grid density per Å**(-3) of reciprocal cell in each stage qe_infile str File name of QE input file. qe_outfile str File name of QE output file. ",
+    "content": "[QE] section is required only if you use QE (calc_code = QE)\nName Value Default Description kppvol int [int …] Grid density per Å**(-3) of reciprocal cell in each stage qe_infile str File name of QE input file. qe_outfile str File name of QE output file. pv_term bool False If true, read enthalpy instead of total energy. pv_term Features \u003e Enthalpy \u003e QE ",
     "description": "",
     "tags": null,
     "title": "[QE] section",
@@ -455,7 +448,7 @@ var relearn_search_index = [
     "uri": "/searching_algo/bo/index.html"
   },
   {
-    "content": "CrySPY Utility See Installation/CrySPY utility to download. Some (but not all) examples can also be downloaded from this document site.\nTable of contents Examples ase_chgnet_Sr4Co4O12 ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA Scripts extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy ",
+    "content": "CrySPY Utility See Installation/CrySPY utility to download. Some (but not all) examples can also be downloaded from this document site.\nTable of contents Examples ase_chgnet_Sr4Co4O12 ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist vasp_Sr4O4_RS_pv_term qe_Si8_RS qe_benzene_2_RS_mol qe_Sr4O4_RS_pv_term qe_Si16_LAQA Scripts extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy ",
     "description": "",
     "tags": null,
     "title": "CrySPY Utility",
@@ -497,6 +490,13 @@ var relearn_search_index = [
     "uri": "/data_format/optional_data/index.html"
   },
   {
+    "content": "Download vasp_Sr4O4_RS_pv_term.tar.gz cryspy.in [basic] algo = RS calc_code = VASP tot_struc = 10 nstage = 2 njob = 4 jobcmd = qsub jobfile = job_cryspy [structure] natot = 8 atype = Sr O nat = 4 4 [VASP] kppvol = 40 80 [option] calc_in/ INCAR_1 SYSTEM = SrO Algo = Fast NSW = 60 LWAVE = .FALSE. !LCHARG = .FALSE. ISPIN = 1 ISMEAR = 0 SIGMA = 0.1 IBRION = 2 ISIF = 2 EDIFF = 1e-5 EDIFFG = -0.01 PSTRESS = 400 INCAR_2 SYSTEM = NaCl LREAL = Auto Algo = Fast NSW = 200 ENCUT = 520 !!LWAVE = .FALSE. !!LCHARG = .FALSE. ISPIN = 1 ISMEAR = 0 SIGMA = 0.1 IBRION = 2 ISIF = 3 EDIFF = 1e-5 EDIFFG = -0.01 PSTRESS = 400 job_cryspy #!/bin/sh #$ -cwd #$ -V -S /bin/bash ####$ -V -S /bin/zsh #$ -N SrO_CrySPY_ID #$ -pe smp 20 ####$ -q ibis1.q ####$ -q ibis2.q ####$ -q ibis3.q ####$ -q ibis4.q # ---------- vasp VASPROOT=/usr/local/vasp/vasp.6.4.2/bin mpirun -np $NSLOTS $VASPROOT/vasp_std # ---------- CrySPY sed -i -e '3 s/^.*$/done/' stat_job ",
+    "description": "",
+    "tags": null,
+    "title": "vasp_Sr4O4_RS_pv_term",
+    "uri": "/cryspy_utility/examples/vasp_sr4o4_rs_pv_term/index.html"
+  },
+  {
     "content": "[LAMMPS] section is required only if you use LAMMPS (calc_code = LAMMPS)\nName Value Default Description lammps_infile str File name of LAMMPS input file. lammps_outfile str File name of LAMMPS output file. lammps_potential str [str …], None None Potential. lammps_data str File name of LAMMPS data file. ",
     "description": "",
     "tags": null,
@@ -518,11 +518,32 @@ var relearn_search_index = [
     "uri": "/tutorial/mol/index.html"
   },
   {
+    "content": "Download qe_Si8_RS.tar.gz cryspy.in [basic] algo = RS calc_code = QE tot_struc = 5 nstage = 2 njob = 1 jobcmd = qsub jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 40 80 [option] calc_in/ pwscf.in_1 \u0026control title = 'Si8' calculation = 'relax' nstep = 100 restart_mode = 'from_scratch', pseudo_dir = '/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/' outdir='./out.d/' / \u0026system ibrav = 0 nat = 8 ntyp = 1 ecutwfc = 44.0 occupations = 'smearing' degauss = 0.01 / \u0026electrons / \u0026ions / \u0026cell / ATOMIC_SPECIES Si 28.086 Si.pbe-n-kjpaw_psl.1.0.0.UPF pwscf.in_2 \u0026control title = 'Si8' calculation = 'vc-relax' nstep = 200 restart_mode = 'from_scratch', pseudo_dir = '/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/' outdir='./out.d/' / \u0026system ibrav = 0 nat = 8 ntyp = 1 ecutwfc = 44.0 occupations = 'smearing' degauss = 0.01 / \u0026electrons / \u0026ions / \u0026cell / ATOMIC_SPECIES Si 28.086 Si.pbe-n-kjpaw_psl.1.0.0.UPF job_cryspy #!/bin/sh #$ -cwd #$ -V -S /bin/bash ####$ -V -S /bin/zsh #$ -N Si8_CrySPY_ID #$ -pe smp 8 ####$ -q ibis1.q ####$ -q ibis2.q mpirun -np $NSLOTS pw.x -nk 4 -nb 2 \u003c pwscf.in \u003e pwscf.out if [ -e \"CRASH\" ]; then sed -i -e '3 s/^.*$/skip/' stat_job exit 1 fi sed -i -e '3 s/^.*$/done/' stat_job ",
+    "description": "",
+    "tags": null,
+    "title": "qe_Si8_RS",
+    "uri": "/cryspy_utility/examples/qe_si8_rs/index.html"
+  },
+  {
     "content": "Download qe_benzene_2_RS_mol.tar.gz cryspy.in [basic] algo = RS calc_code = QE tot_struc = 6 nstage = 2 njob = 2 jobcmd = qsub jobfile = job_cryspy [structure] struc_mode = mol natot = 24 atype = H C nat = 12 12 mol_file = benzene nmol = 2 [QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 40 60 [option] calc_in/ pwscf.in_1 \u0026control title = '2 benzene' calculation = 'relax' nstep = 30 restart_mode = 'from_scratch', pseudo_dir = '/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/' outdir='./outdir/' / \u0026system ibrav = 0 nat = 24 ntyp = 2 ecutwfc = 35.00 ecutrho = 300.00 occupations = 'smearing' degauss = 0.01 / \u0026electrons / \u0026ions / \u0026cell / ATOMIC_SPECIES H 1.008 H.pbe-kjpaw_psl.1.0.0.UPF C 12.01 C.pbe-n-kjpaw_psl.1.0.0.UPF pwscf.in_2 \u0026control title = '2 benzene' calculation = 'vc-relax' nstep = 200 restart_mode = 'from_scratch', pseudo_dir = '/usr/local/pslibrary.1.0.0/pbe/PSEUDOPOTENTIALS/' outdir='./outdir/' / \u0026system ibrav = 0 nat = 24 ntyp = 2 ecutwfc = 46.00 ecutrho = 326.00 occupations = 'smearing' degauss = 0.01 / \u0026electrons / \u0026ions / \u0026cell / ATOMIC_SPECIES H 1.008 H.pbe-kjpaw_psl.1.0.0.UPF C 12.01 C.pbe-n-kjpaw_psl.1.0.0.UPF job_cryspy #!/bin/sh #$ -cwd #$ -V -S /bin/bash ####$ -V -S /bin/zsh #$ -N bz_CrySPY_ID #$ -pe smp 8 mpirun -np $NSLOTS pw.x -nk 4 -nb 2 \u003c pwscf.in \u003e pwscf.out # for QE if [ -e \"CRASH\" ]; then sed -i -e '3 s/^.*$/skip/' stat_job exit 1 fi sed -i -e '3 s/^.*$/done/' stat_job ",
     "description": "",
     "tags": null,
     "title": "qe_benzene_2_RS_mol",
     "uri": "/cryspy_utility/examples/qe_benzene_2_rs_mol/index.html"
+  },
+  {
+    "content": "Download qe_Sr4O4_RS_pv_term.tar.gz cryspy.in [basic] algo = RS calc_code = QE tot_struc = 10 nstage = 2 njob = 4 jobcmd = qsub jobfile = job_cryspy [structure] natot = 8 atype = Sr O nat = 4 4 [QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 40 80 pv_term = True [option] calc_in/ pwscf.in_1 \u0026control title = 'SrO' calculation = 'relax' nstep = 100 restart_mode = 'from_scratch', pseudo_dir = '/usr/local/gbrv/all_pbe_UPF_v1.5/' outdir='./out.d/' / \u0026system ibrav = 0 nat = 8 ntyp = 2 ecutwfc = 40 ecutrho = 200 occupations = 'smearing' degauss = 0.01 / \u0026electrons / \u0026ions / \u0026cell press = 400 / ATOMIC_SPECIES Sr -1.0 sr_pbe_v1.uspp.F.UPF O -1.0 o_pbe_v1.2.uspp.F.UPF pwscf.in_2 \u0026control title = 'SrO' calculation = 'vc-relax' nstep = 200 restart_mode = 'from_scratch', pseudo_dir = '/usr/local/gbrv/all_pbe_UPF_v1.5/' outdir='./out.d/' / \u0026system ibrav = 0 nat = 8 ntyp = 2 ecutwfc = 40 ecutrho = 200 occupations = 'smearing' degauss = 0.01 / \u0026electrons / \u0026ions / \u0026cell press = 400 / ATOMIC_SPECIES Sr -1.0 sr_pbe_v1.uspp.F.UPF O -1.0 o_pbe_v1.2.uspp.F.UPF job_cryspy #!/bin/sh #$ -cwd #$ -V -S /bin/bash ####$ -V -S /bin/zsh #$ -N SrO_CrySPY_ID #$ -pe smp 20 ####$ -q ibis1.q ####$ -q ibis2.q mpirun -np $NSLOTS pw.x \u003c pwscf.in \u003e pwscf.out if [ -e \"CRASH\" ]; then sed -i -e '3 s/^.*$/skip/' stat_job exit 1 fi sed -i -e '3 s/^.*$/done/' stat_job ",
+    "description": "",
+    "tags": null,
+    "title": "qe_Sr4O4_RS_pv_term",
+    "uri": "/cryspy_utility/examples/qe_sr4o4_rs_pv_term/index.html"
+  },
+  {
+    "content": "Download qe_Si16_LAQA.tar.gz cryspy.in [basic] algo = LAQA calc_code = QE tot_struc = 50 nstage = 1 njob = 10 jobcmd = qsub jobfile = job_cryspy [structure] natot = 16 atype = Si nat = 16 mindist_1 = 1.5 [QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 80 [LAQA] nselect_laqa = 4 [option] calc_in/ pwscf.in_1 \u0026control calculation = 'vc-relax' pseudo_dir = '/usr/local/gbrv/all_pbe_UPF_v1.5/' outdir='./outdir/' nstep = 10 / \u0026system ibrav = 0 nat = 16 ntyp = 1 ecutwfc = 40 ecutrho = 200 occupations = 'smearing' degauss = 0.01 / \u0026electrons / \u0026ions / \u0026cell / ATOMIC_SPECIES Si -1.0 si_pbe_v1.uspp.F.UPF job_cryspy #!/bin/sh #$ -cwd #$ -V -S /bin/bash ####$ -V -S /bin/zsh #$ -N Si_CrySPY_ID #$ -pe smp 20 ####$ -q ibis1.q ####$ -q ibis2.q mpirun -np $NSLOTS pw.x -nk 4 \u003c pwscf.in \u003e pwscf.out if [ -e \"CRASH\" ]; then sed -i -e '3 s/^.*$/skip/' stat_job exit 1 fi sed -i -e '3 s/^.*$/done/' stat_job ",
+    "description": "",
+    "tags": null,
+    "title": "qe_Si16_LAQA",
+    "uri": "/cryspy_utility/examples/qe_si16_laqa/index.html"
   },
   {
     "content": "[ASE] section is required only if you use ASE (calc_code = ASE)\nName Value Default Description ase_python str File name of ASE input file. ",
@@ -572,13 +593,6 @@ var relearn_search_index = [
     "tags": null,
     "title": "CrySPY_ID in job files",
     "uri": "/features/cryspy_id/index.html"
-  },
-  {
-    "content": "Download qe_Si16_LAQA.tar.gz cryspy.in [basic] algo = LAQA calc_code = QE tot_struc = 50 nstage = 1 njob = 10 jobcmd = qsub jobfile = job_cryspy [structure] natot = 16 atype = Si nat = 16 mindist_1 = 1.5 [QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 80 [LAQA] nselect_laqa = 4 [option] calc_in/ pwscf.in_1 \u0026control calculation = 'vc-relax' pseudo_dir = '/usr/local/gbrv/all_pbe_UPF_v1.5/' outdir='./outdir/' nstep = 10 / \u0026system ibrav = 0 nat = 16 ntyp = 1 ecutwfc = 40 ecutrho = 200 occupations = 'smearing' degauss = 0.01 / \u0026electrons / \u0026ions / \u0026cell / ATOMIC_SPECIES Si -1.0 si_pbe_v1.uspp.F.UPF job_cryspy #!/bin/sh #$ -cwd #$ -V -S /bin/bash ####$ -V -S /bin/zsh #$ -N Si_CrySPY_ID #$ -pe smp 20 ####$ -q ibis1.q ####$ -q ibis2.q mpirun -np $NSLOTS pw.x -nk 4 \u003c pwscf.in \u003e pwscf.out if [ -e \"CRASH\" ]; then sed -i -e '3 s/^.*$/skip/' stat_job exit 1 fi sed -i -e '3 s/^.*$/done/' stat_job ",
-    "description": "",
-    "tags": null,
-    "title": "qe_Si16_LAQA",
-    "uri": "/cryspy_utility/examples/qe_si16_laqa/index.html"
   },
   {
     "content": "May 15th, 2023\nInfo First, see Tutorial \u003e Random Search (RS) for basic usage of CrySPY.\nInfo Requirements:\nCrySPY 1.1.0 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) mpi4py Install mpi4py if it is not already installed.\npip install mpi4py Input cryspy.in is the same as normal usage and does not need to be changed. Here we try structure generation with MPI using the following settings:\n[basic] algo = RS calc_code = soiap tot_struc = 100 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.cif [option] All except tot_struc, natot, atype, and nat are irrelevant for structure generation and can be ignored here.\nRun If you want to generate structures with 4 MPI processes, just use mpiexec -n:\nmpiexec -n 4 cryspy If you submit the job with a job scheduler system, make the job file. Here is an example:\n#!/bin/sh #$ -cwd #$ -V -S /bin/bash #$ -N n_nproc #$ -pe smp 4 mpirun -np $NSLOTS ~/.local/bin/cryspy Please edit the location of the executable script cryspy.\nResult CrySPY simply divides the task (number of structures) by the number of processes:\nRank 0: IDs 0 – 24 Rank 1: IDs 25 – 49 Rank 2: IDs 50 – 74 Rank 3: IDs 75 – 99 CrySPY outputs the log in the order they are generated as follows:\n2023/04/24 22:47:51 CrySPY 1.1.0 Start cryspy.py Number of MPI processes: 4 Read input file, cryspy.in Save input data in cryspy.stat # --------- Generate initial structures # ------ mindist Si - Si 1.11 Structure ID 25 was generated. Space group: 138 --\u003e 123 P4/mmm Structure ID 75 was generated. Space group: 99 --\u003e 99 P4mm Structure ID 0 was generated. Space group: 127 --\u003e 123 P4/mmm Structure ID 1 was generated. Space group: 61 --\u003e 61 Pbca Structure ID 50 was generated. Space group: 38 --\u003e 38 Amm2 Structure ID 51 was generated. Space group: 134 --\u003e 123 P4/mmm Structure ID 26 was generated. Space group: 111 --\u003e 123 P4/mmm Structure ID 2 was generated. Space group: 9 --\u003e 9 Cc Structure ID 3 was generated. Space group: 80 --\u003e 80 I4_1 Structure ID 4 was generated. Space group: 107 --\u003e 107 I4mm Structure ID 5 was generated. Space group: 75 --\u003e 75 P4 Structure ID 76 was generated. Space group: 108 --\u003e 108 I4cm Structure ID 77 was generated. Space group: 100 --\u003e 100 P4bm Structure ID 27 was generated. Space group: 207 --\u003e 221 Pm-3m However, the order in init_POSCARS is by structure ID since CrySPY outputs after all structures have been generated.\nID_0 1.0 2.9636956737951818 0.0000000000000002 0.0000000000000002 0.0000000000000000 2.9636956737951818 0.0000000000000002 0.0000000000000000 0.0000000000000000 6.2634106638053080 Si 8 direct -0.1602734164607877 -0.1602734164607877 -0.0000000000000000 Si 0.1602734164607877 0.1602734164607877 0.5000000000000000 Si 0.6602734164607877 0.3397265835392123 0.7500000000000000 Si 0.3397265835392122 0.6602734164607877 0.2500000000000000 Si 0.4469739273741755 0.4469739273741755 -0.0000000000000000 Si 0.5530260726258245 0.5530260726258244 0.5000000000000000 Si 0.0530260726258245 0.9469739273741754 0.7500000000000000 Si 0.9469739273741754 0.0530260726258245 0.2500000000000000 Si ID_1 1.0 7.2751506682509657 0.0000000000000004 0.0000000000000004 0.0000000000000000 7.2751506682509657 0.0000000000000004 0.0000000000000000 0.0000000000000000 5.1777634169924873 Si 8 direct -0.3845341807505553 -0.3845341807505553 0.4999999999999999 Si 0.3845341807505553 0.3845341807505553 0.5000000000000000 Si 0.3845341807505553 -0.3845341807505553 0.0000000000000000 Si -0.3845341807505553 0.3845341807505553 -0.0000000000000000 Si 0.0000000000000000 0.5000000000000000 0.2500000000000000 Si 0.5000000000000000 0.0000000000000000 0.7500000000000000 Si 0.0000000000000000 0.5000000000000000 0.7500000000000000 Si 0.5000000000000000 0.0000000000000000 0.2500000000000000 Si ID_2 1.0 -4.3660398676292269 -4.3660398676292269 0.0000000000000000 -4.3660398676292269 -0.0000000000000003 -4.3660398676292269 0.0000000000000000 -4.3660398676292269 -4.3660398676292269 Si 8 direct 0.8700001548800920 0.8700001548800920 0.1299998451199080 Si 0.1299998451199080 0.1299998451199080 0.8700001548800920 Si 0.8700001548800920 0.1299998451199080 0.8700001548800920 Si 0.1299998451199080 0.8700001548800920 0.1299998451199080 Si 0.1299998451199080 0.8700001548800920 0.8700001548800920 Si 0.8700001548800920 0.1299998451199080 0.1299998451199080 Si 0.7500000000000000 0.7500000000000000 0.7500000000000000 Si 0.2500000000000000 0.2500000000000000 0.2500000000000000 Si Note Except for the random structure generation part, there is no point in using MPI because it is not parallelized.\nInfo See also Features \u003e Structure generation with MPI parallelization\n",
@@ -651,11 +665,25 @@ var relearn_search_index = [
     "uri": "/features/mpi/index.html"
   },
   {
+    "content": "2023/10/18\nInfo Requirements:\nCrySPY 1.2.2 or later VASP or QE When performing CSP at high pressure, enthalpy results can be collected instead of total energy. Not yet compatible with softwares other than VASP and QE.\nE_eV_atom in cryspy_rslt and cryspy_rslt_energy_asc turns into enthalpy (eV/atom). Here is the example of CSP results under 40 GPa pressure for Sr4O4. CsCl-type structure (ID 5) is more stable than NaCl-type (ID 6).\nSpg_num Spg_sym Spg_num_opt Spg_sym_opt E_eV_atom Magmom Opt 5 26 Pmc2_1 221 Pm-3m -2.276790 NaN done 6 225 Fm-3m 225 Fm-3m -2.244800 NaN done 1 101 P4_2cm 107 I4mm -2.181115 NaN done 4 123 P4/mmm 123 P4/mmm -2.034509 NaN not_yet 3 20 C222_1 63 Cmcm -0.686541 NaN done 2 75 P4 75 P4 -0.008713 NaN not_yet 9 51 Pmma 47 Pmmm 0.096430 NaN done 8 65 Cmmm 123 P4/mmm 1.099657 NaN done 0 187 P-6m2 187 P-6m2 1.292124 NaN done 7 53 Pmna 53 Pmna 5.153504 NaN not_yet VASP CrySPY reads energy (enthalpy) from a OSZICAR file. This automatically changes to enthalpy when PSTRESS is set in INCAR_x as follows:\nPSTRESS = 400 You do not have to do anything in cryspy.in. energy_step_flag is also supported for enthalpy.\nExample:\nCrySPY Utility \u003e Examples \u003e vasp_Sr4O4_RS_pv_term QE Add pv_term = True in the QE section of cryspy.in to use enthalpy:\n[QE] qe_infile = pwscf.in qe_outfile = pwscf.out kppvol = 40 80 pv_term = True Don’t forget to write press in the QE input:\n\u0026cell press = 400 / Warning In QE, energy_step_flag is not supported yet for enthalpy.\nExample:\nCrySPY Utility \u003e Examples \u003e qe_Sr4O4_RS_pv_term ",
+    "description": "",
+    "tags": null,
+    "title": "Enthalpy",
+    "uri": "/features/enthalpy/index.html"
+  },
+  {
     "content": "You need only cryspy.in.\n$ ls cryspy.in Then, run CyrSPY.\ncryspy \u0026 At the first run, CrySPY goes into structure generation mode as usual. CrySPY stops after 5 structure generation.\nIf it worked properly, log_cryspy would look like this.\n2022/07/14 19:41:41 CrySPY 1.0.0 Start cryspy.py Read input file, cryspy.in Write input data in cryspy.out Save input data in cryspy.stat # --------- Generate initial structures # ------ mindist Si - Si 1.11 Structure ID 0 was generated. Space group: 88 --\u003e 141 I4_1/amd Structure ID 1 was generated. Space group: 101 --\u003e 101 P4_2cm Structure ID 2 was generated. Space group: 204 --\u003e 229 Im-3m Structure ID 3 was generated. Space group: 199 --\u003e 199 I2_13 Structure ID 4 was generated. Space group: 12 --\u003e 12 C2/m Unlike normal use, a directory named ext was created. Only the stat_job file exists in ext/.\n$ cat ext/stat_job out If you run cryspy when “out” is written in the stat_job file, queueing structure files (cif format) are exported in ext/queue.\ncryspy \u0026 $ ls ext/queue 0.cif 1.cif 2.cif 3.cif 4.cif The number in the file name is structure ID. The fist line of stat_job was automatically changed.\n$ cat ext/stat_job submitted Perform structure optimization and energy evaluation in an external program using the output cif files. Once that calculation is done, prepare the optimized structure and energy data in the pickle data format, ext_opt_struc_data.pkl and ext_energy_data.pkl.\nThe data format of ext_opt_struc_data.pkl is the same as init_struc_data.pkl and opt_struc_data.pkl, see Data format/Initial and optimized structure data.\nThe data format of ext_energy_data.pkl is similar to ext_opt_struc_data.pkl. Just change the value from the structure data into the energy. An example of the energy data (dict type) is shown below.\nkey: structure ID value: energy {0: -0.7139331910805997, 1: -0.5643404689832622, 2: -0.5832404287259171, 3: -0.535037327286169, 4: -0.6316663459586607} The ext/calc_data directory should be automatically generated, so put the two pickle files here.\n$ ls ext/calc_data ext_energy_data.pkl ext_opt_struc_data.pkl When ready, replace the first line of the stat_job file with “done” and run CrySPY.\n$ emacs /ext/stat_job $ cat /ext/stat_job done cryspy \u0026 CrySPY collects the result data.\n",
     "description": "",
     "tags": null,
     "title": "Load external data",
     "uri": "/tutorial/random/ext_load_data/index.html"
+  },
+  {
+    "content": "Enthalpy You can use enthalpy instead of energy for VASP and QE.\nSee also\nFeatures \u003e Enthalpy ",
+    "description": "",
+    "tags": null,
+    "title": "Version 1.2.2",
+    "uri": "/version_info/ver_1.2.2/index.html"
   },
   {
     "content": "ASE interface Bug fixed for multiple stages.\n",

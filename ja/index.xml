@@ -19,7 +19,7 @@
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/version_info/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/version_info/index.html</guid>
-      <description>バージョン情報 目次 Version 1.2.1 Version 1.2.0 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier </description>
+      <description>バージョン情報 目次 Version 1.2.2 Version 1.2.1 Version 1.2.0 Version 1.1.1 Version 1.1.0 Version 1.0.0 Version 0.10.3 or earlier </description>
     </item>
     <item>
       <title>インストール</title>
@@ -57,7 +57,7 @@
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/index.html</guid>
-      <description>機能 目次 Logging バックアップ クリーン Restriction on interatomic distances ジョブファイルのCrySPY_ID MPI並列化を用いた構造生成 </description>
+      <description>機能 目次 Logging バックアップ クリーン Restriction on interatomic distances ジョブファイルのCrySPY_ID MPI並列化を用いた構造生成 Enthalpy </description>
     </item>
     <item>
       <title>入力ファイル</title>
@@ -81,7 +81,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/cryspy_utility/index.html</guid>
       <description>CrySPY Utility ダウンロードに関してはこちらのページ： Installation/CrySPY utility． 一部のexamplesはこのドキュメントサイトからもダウンロード可能．
-目次 Examples ase_chgnet_Sr4Co4O12 ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist qe_Si8_RS qe_benzene_2_RS_mol qe_Si16_LAQA Scripts extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy </description>
+目次 Examples ase_chgnet_Sr4Co4O12 ase_Cu8_RS soiap_Si8_RS soiap_Si8_RS_mindist vasp_Sr4O4_RS_pv_term qe_Si8_RS qe_benzene_2_RS_mol qe_Sr4O4_RS_pv_term qe_Si16_LAQA Scripts extract_struc.py pos2pkl.py kpt_check.py repeat_cryspy </description>
     </item>
   </channel>
 </rss>
