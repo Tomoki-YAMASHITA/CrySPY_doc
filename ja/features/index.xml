@@ -60,7 +60,8 @@ $ ls calc_in cryspy.in cryspy.stat data err_cryspy log_cryspy $ cryspy -c Are yo
       <description>CrySPYのバージョン1.1.0からは，MPIを用いたランダム構造生成が可能になった． MPIを使うにはPython環境にmpi4pyをインストールする必要がある． 当然，計算に利用するワークステーション等にMPIライブラリ（Open MPI，Intel MPI，MPICHなど）も必要である．
 情報 MPIを使うのに下記が必要
 CrySPY 1.1.0 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) 下の図にSi8原子1000構造をランダムに生成するのにかかった時間とMPIプロセス数の関係を示す．下記のセッティングを使った．
-[basic] algo = RS calc_code = soiap tot_struc = 1000 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 mindist_1 = 2.2 mindset_1 = 2.2のように厳し目に設定して，わざと時間がかかるようにしてある． それぞれのプロセス数において10回ずつ実行して，平均を線で結んでいる．</description>
+[basic] algo = RS calc_code = soiap tot_struc = 1000 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 mindist_1 = 2.2 mindset_1 = 2.2のように厳し目に設定して，わざと時間がかかるようにしてある． それぞれのプロセス数において10回ずつ実行して，平均を線で結んでいる．
+情報 See also Tutorial &amp;gt; Random structure generation with MPI</description>
     </item>
     <item>
       <title>Enthalpy</title>

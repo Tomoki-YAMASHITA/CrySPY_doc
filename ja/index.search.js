@@ -637,7 +637,7 @@ var relearn_search_index = [
     "uri": "/ja/input/option/index.html"
   },
   {
-    "content": "CrySPYのバージョン1.1.0からは，MPIを用いたランダム構造生成が可能になった． MPIを使うにはPython環境にmpi4pyをインストールする必要がある． 当然，計算に利用するワークステーション等にMPIライブラリ（Open MPI，Intel MPI，MPICHなど）も必要である．\n情報 MPIを使うのに下記が必要\nCrySPY 1.1.0 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) 下の図にSi8原子1000構造をランダムに生成するのにかかった時間とMPIプロセス数の関係を示す．下記のセッティングを使った．\n[basic] algo = RS calc_code = soiap tot_struc = 1000 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 mindist_1 = 2.2 mindset_1 = 2.2のように厳し目に設定して，わざと時間がかかるようにしてある． それぞれのプロセス数において10回ずつ実行して，平均を線で結んでいる．\n",
+    "content": "CrySPYのバージョン1.1.0からは，MPIを用いたランダム構造生成が可能になった． MPIを使うにはPython環境にmpi4pyをインストールする必要がある． 当然，計算に利用するワークステーション等にMPIライブラリ（Open MPI，Intel MPI，MPICHなど）も必要である．\n情報 MPIを使うのに下記が必要\nCrySPY 1.1.0 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) 下の図にSi8原子1000構造をランダムに生成するのにかかった時間とMPIプロセス数の関係を示す．下記のセッティングを使った．\n[basic] algo = RS calc_code = soiap tot_struc = 1000 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 mindist_1 = 2.2 mindset_1 = 2.2のように厳し目に設定して，わざと時間がかかるようにしてある． それぞれのプロセス数において10回ずつ実行して，平均を線で結んでいる．\n情報 See also Tutorial \u003e Random structure generation with MPI\n",
     "description": "",
     "tags": null,
     "title": "MPI並列化を用いた構造生成",
