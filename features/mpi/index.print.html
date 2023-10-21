@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.115.2">
+    <meta name="generator" content="Hugo 0.119.0">
     <meta name="generator" content="Relearn 5.12.3+tip">
     <meta name="description" content="">
     <title>Structure generation with MPI parallelization :: CrySPY</title>
@@ -12,21 +12,21 @@
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/ja/features/mpi/index.html" rel="alternate" hreflang="ja">
     <link href="https://tomoki-yamashita.github.io/CrySPY_doc/features/mpi/index.html" rel="canonical" type="text/html" title="Structure generation with MPI parallelization :: CrySPY">
     <link href="../../features/mpi/index.xml" rel="alternate" type="application/rss+xml" title="Structure generation with MPI parallelization :: CrySPY">
-    <link href="../../images/favicon.png?1697788193" rel="icon" type="image/png">
+    <link href="../../images/favicon.png?1697882925" rel="icon" type="image/png">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="../../css/fontawesome-all.min.css?1697788193" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1697788193" rel="stylesheet"></noscript>
-    <link href="../../css/nucleus.css?1697788193" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1697788193" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1697788193" rel="stylesheet"></noscript>
-    <link href="../../css/perfect-scrollbar.min.css?1697788193" rel="stylesheet">
-    <link href="../../css/fonts.css?1697788193" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1697788193" rel="stylesheet"></noscript>
-    <link href="../../css/theme.css?1697788193" rel="stylesheet">
-    <link href="../../css/theme-relearn-light.css?1697788193" rel="stylesheet" id="variant-style">
-    <link href="../../css/variant.css?1697788193" rel="stylesheet">
-    <link href="../../css/print.css?1697788193" rel="stylesheet" media="print">
-    <link href="../../css/format-print.css?1697788193" rel="stylesheet">
-    <link href="../../css/ie.css?1697788193" rel="stylesheet">
-    <script src="../../js/url.js?1697788193"></script>
-    <script src="../../js/variant.js?1697788193"></script>
+    <link href="../../css/fontawesome-all.min.css?1697882926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1697882926" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1697882926" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1697882926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1697882926" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1697882926" rel="stylesheet">
+    <link href="../../css/fonts.css?1697882926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1697882926" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1697882926" rel="stylesheet">
+    <link href="../../css/theme-relearn-light.css?1697882926" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css?1697882926" rel="stylesheet">
+    <link href="../../css/print.css?1697882926" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1697882926" rel="stylesheet">
+    <link href="../../css/ie.css?1697882926" rel="stylesheet">
+    <script src="../../js/url.js?1697882926"></script>
+    <script src="../../js/variant.js?1697882926"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -70,7 +70,8 @@
           <article class="default">
 <h1 id="structure-generation-with-mpi-parallelization">Structure generation with MPI parallelization</h1>
 
-<p>Random structure generation using MPI has been available since version 1.1.0.
+<p>Oct. 21 2023, update</p>
+<p>Random structure generation using MPI has been available since version 1.1.0 ( using CrySPY &gt;= 1.2.3 is better).
 You need to install mpi4py in your Python environment for MPI parallelization.
 Of course, an MPI library such as Open MPI, Intel MPI, and MPICH is required for your workstation.</p>
 
@@ -79,10 +80,20 @@ Of course, an MPI library such as Open MPI, Intel MPI, and MPICH is required for
   <div class="box-content">
 <p>Requirements:</p>
 <ul>
-<li>CrySPY 1.1.0 or later</li>
+<li>CrySPY <del>1.1.0</del> 1.2.3 or later</li>
 <li>mpi4py</li>
 <li>MPI library (Open MPI, Intel MPI, MPICH, etc.)</li>
 </ul>
+  </div>
+</div>
+
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+  <div class="box-content">
+<p>1.1.0 &lt;= CrySPY &lt;=1.2.2 has a bug.
+When you use bash (zsh) to run a job with MPI (e.g., <code>jobcmd = zsh</code>, <code>jobfile = job_cryspy</code>),
+the MPI job does not run. There is no problem when you use a job scheduler (qsub, sbatch).
+It has already fixed in version 1.2.3.</p>
   </div>
 </div>
 <p>The figure below shows the relationship between elapsed time and the number of processes for 1000 structures of Si8 with the following setting:</p>
@@ -103,17 +114,19 @@ mindist_1 = 2.2
 </code></pre><p>The structure generation is taking a long time because of a slightly stricter setting like <code>mindset_1 = 2.2</code>.
 The structure generation was performed 10 times for each number of processes.</p>
 <p>
-<a href="#image-ddfb320391df8d7b53b494d7e40fbb49" class="lightbox-link">
+<a href="#image-560efd6e55fad1e0b759893e07b92e59" class="lightbox-link">
 <img src="../../images/MPI/elapsed_time_ibis.png" alt="fig_MPI" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ddfb320391df8d7b53b494d7e40fbb49">
+<a href="javascript:history.back();" class="lightbox" id="image-560efd6e55fad1e0b759893e07b92e59">
 <img src="../../images/MPI/elapsed_time_ibis.png" alt="fig_MPI" class="lightbox-image" loading="lazy">
 </a></p>
-
+<h2 id="run">Run</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mpiexec -n <span style="color:#ae81ff">4</span> cryspy -p
+</span></span></code></pre></div>
 <div class="box notices cstyle info">
   <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
   <div class="box-content">
-<p>See also <a href="https://tomoki-yamashita.github.io/CrySPY_doc/tutorial/mpi/" target="_blank">Tutorial &gt; Random structure generation with MPI</a></p>
+<p>See also <a href="../../tutorial/mpi/">Tutorial &gt; Random structure generation with MPI</a></p>
   </div>
 </div>
 
@@ -123,8 +136,8 @@ The structure generation was performed 10 times for each number of processes.</p
         </div>
       </main>
     </div>
-    <script src="../../js/clipboard.min.js?1697788193" defer></script>
-    <script src="../../js/perfect-scrollbar.min.js?1697788193" defer></script>
-    <script src="../../js/theme.js?1697788193" defer></script>
+    <script src="../../js/clipboard.min.js?1697882926" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1697882926" defer></script>
+    <script src="../../js/theme.js?1697882926" defer></script>
   </body>
 </html>

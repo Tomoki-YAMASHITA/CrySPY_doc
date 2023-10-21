@@ -56,12 +56,13 @@ Pre-defined molecule PyXtal currently supports C60, H2O, CH4, NH3, benzene, naph
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mpi/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/ja/tutorial/mpi/index.html</guid>
-      <description>2023年5月15日
+      <description>2023/10/21 update
 情報 CrySPYの基本的な使い方に関してはチュートリアル &amp;gt; Random Search (RS)を見ること．
 情報 動作環境:
-CrySPY 1.1.0 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) mpi4py mpi4pyのインストールがまだであればインストールする．
+CrySPY 1.1.0 1.2.3 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) 警告 1.1.0 &amp;lt;= CrySPY &amp;lt;=1.2.2ではバグがあった． MPIを使ったジョブをbashやzshで実行するとき（e.g., jobcmd = zsh, jobfile = job_cryspy），MPIのジョブが流れない． qsubやsbatchでジョブスケジューラーを使う場合は問題ない。 このバグはバージョン1.2.3で修正．
+mpi4py mpi4pyのインストールがまだであればインストールする．
 pip install mpi4py 入力ファイル cryspy.inはいつもと同じで変更する必要はない．ここでは下記の設定でMPIを使った構造生成を行う．
-[basic] algo = RS calc_code = soiap tot_struc = 100 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.in soiap_outfile = soiap.out soiap_cif = initial.</description>
+[basic] algo = RS calc_code = soiap tot_struc = 100 nstage = 1 njob = 2 jobcmd = zsh jobfile = job_cryspy [structure] natot = 8 atype = Si nat = 8 [soiap] soiap_infile = soiap.</description>
     </item>
   </channel>
 </rss>

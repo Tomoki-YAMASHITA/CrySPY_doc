@@ -54,9 +54,10 @@ $ ls calc_in cryspy.in cryspy.stat data err_cryspy log_cryspy $ cryspy -c Are yo
       <link>https://tomoki-yamashita.github.io/CrySPY_doc/features/mpi/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomoki-yamashita.github.io/CrySPY_doc/features/mpi/index.html</guid>
-      <description>Random structure generation using MPI has been available since version 1.1.0. You need to install mpi4py in your Python environment for MPI parallelization. Of course, an MPI library such as Open MPI, Intel MPI, and MPICH is required for your workstation.
+      <description>Oct. 21 2023, update
+Random structure generation using MPI has been available since version 1.1.0 ( using CrySPY &amp;gt;= 1.2.3 is better). You need to install mpi4py in your Python environment for MPI parallelization. Of course, an MPI library such as Open MPI, Intel MPI, and MPICH is required for your workstation.
 Info Requirements:
-CrySPY 1.1.0 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) The figure below shows the relationship between elapsed time and the number of processes for 1000 structures of Si8 with the following setting:</description>
+CrySPY 1.1.0 1.2.3 or later mpi4py MPI library (Open MPI, Intel MPI, MPICH, etc.) Warning 1.1.0 &amp;lt;= CrySPY &amp;lt;=1.</description>
     </item>
     <item>
       <title>Enthalpy</title>
