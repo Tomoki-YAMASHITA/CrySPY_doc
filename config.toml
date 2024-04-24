@@ -1,0 +1,61 @@
+baseURL = "https://tomoki-yamashita.github.io/CrySPY_doc"
+canonifyURLs = true
+relativeURLs = true
+languageCode = "en-us"
+title = "CrySPY"
+
+[module]
+[[module.imports]]
+  path = 'github.com/McShelby/hugo-theme-relearn'
+
+# Change the default theme to be use when building the site with Hugo
+theme = "hugo-theme-relearn"
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "SEARCH", "SEARCHPAGE", "PRINT"]
+#home = [ "HTML", "RSS"]
+section = ["HTML", "RSS", "PRINT"]
+#section = ["HTML", "RSS"]
+page = ["HTML", "RSS", "PRINT"]
+#page = ["HTML", "RSS"]
+
+[params]
+  # Change default color scheme with a variant one.
+  themeVariant = "relearn-light"
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
+# English is the default language
+defaultContentLanguage = "en"
+
+
+[Languages]
+  [Languages.en]
+    title = "CrySPY"
+    weight = 1
+    languageName = "English"
+
+  [Languages.ja]
+    title = "CrySPY"
+    weight = 2
+    languageName = "日本語"
+
+# menu
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> GitHub repo"
+url = "https://github.com/Tomoki-YAMASHITA/CrySPY"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-comments'></i> GitHub discussions"
+url = "https://github.com/Tomoki-YAMASHITA/CrySPY/discussions"
+weight = 20
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> CrySPY utility"
+url = "https://github.com/Tomoki-YAMASHITA/CrySPY_utility"
+weight = 30
