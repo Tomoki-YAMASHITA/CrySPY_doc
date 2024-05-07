@@ -21,9 +21,13 @@ CrySPY can be install by `pip install csp-cryspy`.
 
 
 ## Latest version
-CrySPY 1.2.3 (2023 October 21)
+CrySPY 1.2.4 (2024 May 7)
 
 ## News
++ [2024 May 7] (Document) [FAQ page]({{< ref "faq" >}})
++ [2024 May 7] CrySPY 1.2.4 released. [Version information/version 1.2.4]({{< ref "version_info/ver_1.2.4.md" >}})
+  - Bug fix
++ [2024 April 24] (Document) [Tutorial > Random Search (RS) > VASP]({{< ref "tutorial/random/vasp" >}})
 + [2023 October 21] CrySPY 1.2.3 released. [Version information/version 1.2.3]({{< ref "version_info/ver_1.2.3.md" >}})
   - Bug fix for MPI
 + [2023 October 18] CrySPY 1.2.2 released. [Version information/version 1.2.2]({{< ref "version_info/ver_1.2.2.md" >}})
@@ -54,7 +58,7 @@ Copyright (c) 2018 CrySPY Development Team
 ## Code contributors
 
 - Tomoki Yamashita and [Lab members](http://owl.nagaokaut.ac.jp/en)<i class="fas fa-external-link-alt"></i> (Nagaoka University of Technology)
-- Nobuya Sato (Tokyo Institute of Technology)
+- Nobuya Sato (National Institute of Advanced Industrial Science and Technology)
 - Hiori Kino (National Institute for Materials Science)
 - Kei Terayama (Yokohama City University)
 - Hikaru Sawahata (Kanazawa University)

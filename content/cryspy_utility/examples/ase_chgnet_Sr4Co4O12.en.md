@@ -67,7 +67,7 @@ opt_struc.to(fmt='poscar', filename='CONTCAR')
 #!/bin/sh
 
 # ---------- ASE
-python3 chgnet_in.py
+python3 chgnet_in.py > out.log
 
 # ---------- for error
 if [ ! -f "log.tote" ]; then

@@ -3,6 +3,8 @@ title: "[EA] section"
 weight: 90
 ---
 
+2024 May 7, updated
+
 [EA] section is required only if you use EA (`algo = EA`)
 
 | Name | Value | Default | Description |
@@ -19,7 +21,7 @@ weight: 90
 | `t_size` | int  | 3 | Only used with `slct_func = TNM`. Tournament size. |
 | `a_rlt` | float | 10.0 | Only used with `slct_func = RLT`. Parameter for linear scaling.  |
 | `b_rlt` | float | 1.0 | Only used with `slct_func = RLT`. Parameter for linear scaling.  |
-| `crs_lat` | `equal`, `random` | `equal` | How to mix lattice vectors. |
+| `crs_lat` | `equal`, `random` | `random` | How to mix lattice vectors. |
 | `nat_diff_tole` | int | 4  | Tolerance for difference in the number of atoms in crossover. |
 | `ntimes` | int  | 1 | The number of times in permutation. |
 | `sigma_st` | float  | 0.5 | Standard deviation for strain. |

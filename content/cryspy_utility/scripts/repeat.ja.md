@@ -50,6 +50,6 @@ do
         cryspy -n    # selection
         cryspy -n    # submit jobs
     fi
-    sleep 5m
+    sleep 300    # seconds
 done
 ```
