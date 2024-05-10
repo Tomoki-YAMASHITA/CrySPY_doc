@@ -2,7 +2,7 @@
 title: "Version 1.2.4"
 weight: 977
 ---
-## Bub fix
+## Bug fix
 - ASE interface: `e.args[0]` --> `str(e.args[0])`
 - ext mode: noprint
 - njob ( see also [FAQ > Can I change njob in the middle of the simulation ]({{< relref "/faq/change_njob" >}}))
