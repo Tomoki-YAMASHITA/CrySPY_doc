@@ -1,5 +1,5 @@
 ---
-title: "CrySPY 1.0.0 or later"
+title: "CrySPY 1.0.0 -- 1.2.5"
 weight: 20
 ---
 
