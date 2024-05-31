@@ -4,8 +4,22 @@ weight: 10
 ---
 
 ## Python
+### CrySPY 1.3.0 or later
++ Python >= 3.8
+  - [PyXtal](https://github.com/qzhu2017/PyXtal)<i class="fas fa-external-link-alt"></i> (>= 0.5.3)
+  - (optional) mpi4py
+  - (optional, required if algo is BO) [PHYSBO](https://www.pasums.issp.u-tokyo.ac.jp/physbo/en/about)<i class="fas fa-external-link-alt"></i> (Not COMBO)
+  - (optional, required if algo is BO) [dscribe](https://singroup.github.io/dscribe/latest)<i class="fas fa-external-link-alt"></i>
 
-### CrySPY 1.1.0 or later
+pipでcsp-cryspyをインストールすると，必須ライブラリのPyXtal，pymatgen，ASEなどは自動的にインストールされる．
+インストールの詳細はこちら [Installation > CrySPY]({{< relref "installation/cryspy" >}})．
+
+#### Quick install
+``` bash
+pip3 install csp-cryspy dscribe physbo
+```
+
+### CrySPY 1.1.0 or 1.2.5
 
 + Python >= 3.8
   - [PyXtal](https://github.com/qzhu2017/PyXtal)<i class="fas fa-external-link-alt"></i> (>= 0.5.3)

@@ -21,9 +21,11 @@ CrySPY can be install by `pip install csp-cryspy`.
 
 
 ## Latest version
-CrySPY 1.2.5 (2024 May 10)
+CrySPY 1.3.0 (2024 May 31)
 
 ## News
++ [2024 May 31] CrySPY 1.3.0 released. [Version information/version 1.3.0]({{< ref "version_info/ver_1.3.0.md" >}})
+  - There are important changes. See version information.
 + [2024 May 10] CrySPY 1.2.5 released. [Version information/version 1.2.5]({{< ref "version_info/ver_1.2.5.md" >}})
   - Bug fix
 + [2024 May 7] (Document) [FAQ page]({{< ref "faq" >}})

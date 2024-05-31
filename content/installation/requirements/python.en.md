@@ -5,14 +5,30 @@ weight: 10
 
 ## Python
 
-### CrySPY 1.1.0 or later
+### CrySPY 1.3.0 or later
++ Python >= 3.8
+  - [PyXtal](https://github.com/qzhu2017/PyXtal)<i class="fas fa-external-link-alt"></i> (>= 0.5.3)
+  - (optional) mpi4py
+  - (optional, required if algo is BO) [PHYSBO](https://www.pasums.issp.u-tokyo.ac.jp/physbo/en/about)<i class="fas fa-external-link-alt"></i> (Not COMBO)
+  - (optional, required if algo is BO) [dscribe](https://singroup.github.io/dscribe/latest)<i class="fas fa-external-link-alt"></i>
+
+If you install csp-cryspy with pip, necessary libraries such as PyXtal, pymatgen, and ASE will be installed automatically.
+Go to [Installation > CrySPY]({{< relref "installation/cryspy" >}}) for detail.
+
+#### Quick install
+``` bash
+pip3 install csp-cryspy dscribe physbo
+```
+
+
+### CrySPY 1.1.0 -- 1.2.5
 
 + Python >= 3.8
   - [PyXtal](https://github.com/qzhu2017/PyXtal)<i class="fas fa-external-link-alt"></i> (>= 0.5.3)
   - (optional) mpi4py
   - (optional, required if algo is BO) [COMBO](https://github.com/Tomoki-YAMASHITA/combo3)<i class="fas fa-external-link-alt"></i>
 
-If you install cryspy with pip, necessary libraries such as PyXtal will be installed automatically.
+If you install csp-cryspy with pip, necessary libraries such as PyXtal will be installed automatically.
 Go to [Installation > CrySPY]({{< relref "installation/cryspy" >}}).
 Manual installation of COMBO is required when using Bayesian optimization.
 

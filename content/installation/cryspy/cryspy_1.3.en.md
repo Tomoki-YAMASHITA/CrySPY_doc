@@ -5,12 +5,11 @@ weight: 18
 
 ## CrySPY
 ### pip
-CrySPY 1.0.0 or later can be installed by pip.
 
 ``` bash
-pip install csp-cryspy
+pip3 install csp-cryspy
 ```
-
+**Please note that the name is csp-cryspy on PyPI, not cryspy.**
 The executable script, `cryspy`, is automatically installed in your PATH. You can check by
 
 ``` bash
@@ -22,21 +21,21 @@ If you want to change the source code of CrySPY, you can use pip's editable mode
 
 ``` bash
 git clone https://github.com/Tomoki-YAMASHITA/CrySPY.git
-pip install -e ./CrySPY
+pip3 install -e ./CrySPY
 ```
 
 Instead of git clone, you can download the compressed file from the [release page](https://github.com/Tomoki-YAMASHITA/CrySPY/releases)<i class="fas fa-external-link-alt"></i>
 
-## DScribe (option)
-If you use Bayesian optimization, [DScribe](https://singroup.github.io/dscribe/latest/#)<i class="fas fa-external-link-alt"></i> is required to calculate structure descriptors.
+## PHYSBO and DScribe (option)
+If you use Bayesian optimization, [PHYSBO](https://www.pasums.issp.u-tokyo.ac.jp/physbo/en/about)<i class="fas fa-external-link-alt"></i> and
+[DScribe](https://singroup.github.io/dscribe/latest/#)<i class="fas fa-external-link-alt"></i> are required.
 
 ``` bash
-pip install dscribe
+pip3 install physbo dscribe
 ```
 
-## cal_fingerprint (obsolete)
 
 {{% notice style="info" %}}
-cal_fingerprint is obsolete.
+cal_fingerprint program and COMBO are obsolete.
 {{% /notice %}}
 

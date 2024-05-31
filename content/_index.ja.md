@@ -19,9 +19,11 @@ CrySPY（クリスピー）は機械学習を利用したPython製の結晶構�
 
 
 ## 最新バージョン
-CrySPY 1.2.5 （2024年5月10日）
+CrySPY 1.3.0 （2024年5月31日）
 
 ## ニュース
++ [2024 May 31] CrySPY 1.3.0 released. [Version information/version 1.3.0]({{< ref "version_info/ver_1.3.0.md" >}})
+  - いくつか重要な変更あり．See version information.
 + [2024 May 10] CrySPY 1.2.5 released. [Version information/version 1.2.5]({{< ref "version_info/ver_1.2.5.md" >}})
   - Bug fix
 + [2024 May 7] (Document) [FAQ page]({{< ref "faq" >}})
