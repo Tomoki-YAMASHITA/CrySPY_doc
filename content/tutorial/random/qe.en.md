@@ -3,7 +3,7 @@ title: "QE"
 weight: 30
 ---
 
-2024 April 24, updated
+2025 March 6, updated
 
 In this tutorial, we try to use CrySPY in a machine with a job scheduler system such as PBS.
 Here we employ QUANTUM ESPRESSO. (QE).
@@ -23,7 +23,7 @@ Here, we assume the following conditions:
 ## Input files
 Move to your working directory, and copy input example files by one of the following methods.
 
-- Download from [cryspy_utility/examples/qe_Si8_RS]({{< ref "/cryspy_utility/examples/qe_Si8_RS" >}})
+- Download from [CrySPY_utility/examples/qe_Si8_RS](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/qe_Si8_RS)
 - Copy from CrySPY utility that you installed
 - (only version 0.10.3 or earlier) `cp -r ~/CrySPY_root/CrySPY-0.9.0/example/v0.9.0/QE_Si8_RS .`
 
@@ -58,7 +58,6 @@ jobcmd = qsub
 jobfile = job_cryspy
 
 [structure]
-natot = 8
 atype = Si
 nat = 8
 

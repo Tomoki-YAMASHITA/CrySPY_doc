@@ -3,7 +3,7 @@ title: "VASP"
 weight: 20
 ---
 
-2024 April 24
+2025年3月6日 更新
 
 このチュートリアルでは，PBSなどのジョブスケジューラーを備えたPCクラスターを想定してCrySPYを試す．第一原理計算のVASPを用いて，Na8Cl8（16原子）の構造探索を行う．
 
@@ -20,7 +20,7 @@ weight: 20
 ## Input files
 どこか適当なワーキングディレクトリに移動して，まずはexampleをコピーしてくる．下記のどちらからコピーしてきても良い．
 
-- Download from [cryspy_utility/examples/vasp_Na8Cl8_RS]({{< ref "/cryspy_utility/examples/vasp_Na8Cl8_RS" >}})
+- Download from [Cryspy_utility/examples/vasp_Na8Cl8_RS](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/vasp_Na8Cl8_RS)
 - Copy from CrySPY utility that you installed
 
 ``` zsh
@@ -54,7 +54,6 @@ jobcmd = qsub
 jobfile = job_cryspy
 
 [structure]
-natot = 16
 atype = Na Cl
 nat = 8 8
 mindist_1 = 2.5 1.5

@@ -1,9 +1,9 @@
 ---
-title: "ASE in your local PC"
+title: "ASE on your local PC"
 weight: 8
 ---
 
-2023 July 10
+2025 June 16, updated
 
 [ASE](https://wiki.fysik.dtu.dk/ase/)<i class="fas fa-external-link-alt"></i> provides interfaces to different codes.
 ASE also includes [Pure Python EMT calculator](https://wiki.fysik.dtu.dk/ase/ase/calculators/emt.html#ase.calculators.emt.EMT)<i class="fas fa-external-link-alt"></i>, which is suitable for testing CrySPY because of its fast and easy structure optimization.
@@ -22,7 +22,7 @@ Here, we assume the following conditions:
 ## Input files
 Move to your working directory, and copy the example files by one of the following methods.
 
-- Download from [cryspy_utility/examples/ase_Cu8_RS]({{< ref "/cryspy_utility/examples/ase_Cu8_RS" >}})
+- Download from [CrySPY_utility/examples/ase_Cu8_RS](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/ase_Cu8_RS)
 - Copy from CrySPY utility that you installed
 
 
@@ -49,12 +49,11 @@ algo = RS
 calc_code = ASE
 tot_struc = 5
 nstage = 1
-njob = 2
+njob = 5
 jobcmd = zsh
 jobfile = job_cryspy
 
 [structure]
-natot = 8
 atype = Cu
 nat = 8
 
@@ -130,12 +129,10 @@ We are using `nstage = 1` in this ASE tutorial, so we need only `ase_in.py_1`.
 Refer to the ASE documentation for details.
 
 ``` python
-from ase.constraints import ExpCellFilter, StrainFilter
+from ase.constraints import FixSymmetry
+from ase.filters import FrechetCellFilter
 from ase.calculators.emt import EMT
-from ase.calculators.lj import LennardJones
-from ase.optimize.sciopt import SciPyFminCG
 from ase.optimize import BFGS
-from ase.spacegroup.symmetrize import FixSymmetry
 import numpy as np
 from ase.io import read, write
 
@@ -146,28 +143,30 @@ atoms = read('POSCAR', format='vasp')
 # ---------- setting and run
 atoms.calc = EMT()
 atoms.set_constraint([FixSymmetry(atoms)])
-atoms = ExpCellFilter(atoms, hydrostatic_strain=False)
-opt = BFGS(atoms)
-#opt=SciPyFminCG(atoms)
-opt.run()
+cell_filter = FrechetCellFilter(atoms, hydrostatic_strain=False)
+opt = BFGS(cell_filter)
+opt.run(fmax=0.01, steps=2000)
 
 # ---------- opt. structure and energy
 # [rule in ASE interface]
 # output file for energy: 'log.tote' in eV/cell
 #                         CrySPY reads the last line of 'log.tote'
 # output file for structure: 'CONTCAR' in vasp format
-e = atoms.atoms.get_total_energy()
+e = cell_filter.atoms.get_total_energy()
 with open('log.tote', mode='w') as f:
     f.write(str(e))
 
-write('CONTCAR', atoms.atoms, format='vasp')
+# ------ write structure
+opt_atoms = cell_filter.atoms.copy()
+opt_atoms.set_constraint(None)    # remove constraint for pymatgen
+write('CONTCAR', opt_atoms, format='vasp', direct=True)
 ```
 
 Unlike VASP and QE, the ASE input (python script) is more flexible.
 CrySPY has two rules:
 
 1. Energy is output in units of eV/cell to `log.tote` file. CrySPY reads the last line of it.
-2. Optimized structure is output to `CONTCAR`` file in the VASP format.
+2. Optimized structure is output to `CONTCAR` file in the VASP format.
 
 
 ## Running CrySPY

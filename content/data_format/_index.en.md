@@ -9,7 +9,7 @@ chapter = true
 # Data format
 
 All pickle data are stored in the `./data/pkl_data/` directory.
-
+A Jupyter notebook for analyzing the pkl data ([pkl_data.ipynb](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/notebook)) is also provided.
 
 ## Table of contents
 

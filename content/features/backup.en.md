@@ -3,15 +3,19 @@ title: "Backup"
 weight: 10
 ---
 
+2024 Dec. 22 updated
+
+
 CrySPY has a simple backup function.
 The following files are backed up:
 - cryspy.in
 - cryspy.stat
 - log_cryspy
 - err_cryspy
+- debug_cryspy
+- cryspy_interactive.ipynb
 - calc_in/*
 - data/*
-- ext/*
 
 work/* are NOT included.
 

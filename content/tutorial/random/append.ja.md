@@ -32,7 +32,6 @@ jobcmd = zsh
 jobfile = job_cryspy
 
 [structure]
-natot = 8
 atype = Si
 nat = 8
 mindist_1 = 2.0
@@ -91,4 +90,4 @@ See [features/backup]({{< ref "/features/backup.md" >}}).
 Repeat `cryspy &` several times until all appended structures are done.
 The auto script may help you.
 
-[repeat_cryspy]({{< ref "/cryspy_utility/scripts/repeat" >}})
+[repeat_cryspy]({{< ref "/cryspy_utility/repeat" >}})

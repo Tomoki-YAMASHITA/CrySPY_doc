@@ -3,7 +3,7 @@ title: "QE"
 weight: 30
 ---
 
-2024 April 24，日本語化
+2025年3月6日 更新
 
 このチュートリアルでは，PBSなどのジョブスケジューラーを備えたPCクラスターを想定してCrySPYを試す．第一原理計算のQUANTUM ESPRESSOを用いて，Si 8原子の構造探索を行う．
 
@@ -21,7 +21,7 @@ weight: 30
 ## Input files
 どこか適当なワーキングディレクトリに移動して，まずはexampleをコピーしてくる．下記のどちらからコピーしてきても良い．
 
-- Download from [cryspy_utility/examples/qe_Si8_RS]({{< ref "/cryspy_utility/examples/qe_Si8_RS" >}})
+- Download from [CrySPY_utility/examples/qe_Si8_RS](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/qe_Si8_RS)
 - Copy from CrySPY utility that you installed
 
 
@@ -55,7 +55,6 @@ jobcmd = qsub
 jobfile = job_cryspy
 
 [structure]
-natot = 8
 atype = Si
 nat = 8
 

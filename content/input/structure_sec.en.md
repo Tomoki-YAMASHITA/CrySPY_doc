@@ -3,17 +3,16 @@ title: "[structure] section"
 weight: 30
 ---
 
-2024 May 22, updated
+2025 March 6, updated
 
 | Name | Value | Default | Description |
 | ---- | ----- | ------- | ----------- |
 | `struc_mode` | `crystal`, `mol`, `mol_bs` | `crystal`   | Structure generation mode |
-| `natot` | int |  | The total number of atoms. |
 | `atype` | atomic symbol [atomic symbol ...] |   | Atom type. e.g. `atype = Na Cl`. |
-| `nat`   | int [int ...] |   | The number of atoms in each atom type. e.g. `nat = 8 8`. |
+| `nat`   | int [int ...] |   | The number of atoms corresponding to each atype. e.g. `nat = 8 8`. Not used in `EA-vc`. |
 | `mindist` (`mindist_?`)   | float [float ...] | `None` | Constraint on minimum interatomic distance [Å]. |
 | `mindist_factor` | float | 1.0 | Scaling factor for `mindist`. |
-| `vol_factor`  | float | 1.0 | Minimum and maximum values of volume factor. |
+| `vol_factor`  | float | 1.0 | Volume scaling factor. |
 | `vol_mu`   | float | `None` | Mean of volume if you want specify the volume of cells. |
 | `vol_sigma`| float | `None` | Standard deviation of volume if you want specify the volume of cells. |
 | `symprec`   | float | 0.01 | Precision for symmetry finding. |
@@ -26,11 +25,10 @@ weight: 30
 ---------
 
 if `algo` is `EA-vc`
-(EA-vc is still beta version)
 
 | Name | Value | Default | Description |
 | ---- | ----- | ------- | ----------- |
-| `ll_nat`   | int [int ...] |   | Lower limit of `nat`. e.g. `ll_nat = 1 1`. |
+| `ll_nat`   | int [int ...] |   | Lower limit of `nat`. e.g. `ll_nat = 0 0`. |
 | `ul_nat`   | int [int ...] |   | Upper limit of `nat`. e.g. `ul_nat = 8 8`. |
 
 ----------------

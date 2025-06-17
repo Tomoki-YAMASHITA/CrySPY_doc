@@ -42,8 +42,7 @@ PSTRESS = 400
 You do not have to do anything in `cryspy.in`.
 `energy_step_flag` is also supported for enthalpy.
 
-Example: 
-- [CrySPY Utility > Examples > vasp_Sr4O4_RS_pv_term]({{< ref "/cryspy_utility/examples/vasp_Sr4O4_RS_pv_term" >}})
+Example: [CrySPY utility > examples > qe_Sr4O4_RS_pv_term](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/qe_Sr4O4_RS_pv_term)
 
 ## QE
 Add `pv_term = True` in the QE section of `cryspy.in` to use enthalpy:
@@ -66,5 +65,3 @@ Don't forget to write `press` in the QE input:
 In QE, `energy_step_flag` is not supported yet for enthalpy.
 {{% /notice %}}
 
-Example: 
-- [CrySPY Utility > Examples > qe_Sr4O4_RS_pv_term]({{< ref "/cryspy_utility/examples/qe_Sr4O4_RS_pv_term" >}})

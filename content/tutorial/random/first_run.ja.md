@@ -3,7 +3,7 @@ title: "Firsrt run"
 weight: 130
 ---
 
-2023 July 10, update
+2025 March 6, updated
 
 Make sure you have the following in your working directory.
 
@@ -33,26 +33,39 @@ CrySPY stops after 5 structure generation.
 
 If it worked properly, the following output appears on the screen:
 ``` text
-[2023-07-10 18:40:54,389][cryspy_init][INFO] 
+[2025-03-06 18:52:21,495][cryspy_init][INFO] 
 
 
-Start CrySPY 1.2.0
+Start CrySPY 1.4.0
 
 
-[2023-07-10 18:40:54,389][cryspy_init][INFO] # ---------- Read input file, cryspy.in
-[2023-07-10 18:40:54,390][read_input][INFO] Save input data in cryspy.stat
-[2023-07-10 18:40:54,391][cryspy_init][INFO] # ---------- Initial structure generation
-[2023-07-10 18:40:54,391][cryspy_init][INFO] Number of MPI processes: 1
-[2023-07-10 18:40:54,391][gen_init_struc][INFO] # ------ mindist
-[2023-07-10 18:40:54,395][struc_util][INFO] Cu - Cu: 1.32
-[2023-07-10 18:40:54,395][gen_init_struc][INFO] # ------ generate structures
-[2023-07-10 18:40:54,481][gen_pyxtal][INFO] Structure ID      0 was generated. Space group:   1 -->   1 P1
-[2023-07-10 18:40:54,493][gen_pyxtal][INFO] Structure ID      1 was generated. Space group:  28 -->  28 Pma2
-[2023-07-10 18:40:54,498][gen_pyxtal][INFO] Structure ID      2 was generated. Space group:  29 -->  29 Pca2_1
-[2023-07-10 18:40:54,704][gen_pyxtal][INFO] Structure ID      3 was generated. Space group: 137 --> 137 P4_2/nmc
-[2023-07-10 18:40:54,725][gen_pyxtal][INFO] Structure ID      4 was generated. Space group: 212 --> 214 I4_132
-[2023-07-10 18:40:54,800][cryspy_init][INFO] Elapsed time for structure generation: 0:00:00.408367
-cryspy  4.35s user 1.04s system 145% cpu 3.697 total
+[2025-03-06 18:52:21,495][cryspy_init][INFO] # ---------- Library version info
+[2025-03-06 18:52:21,495][cryspy_init][INFO] pandas version: 2.2.2
+[2025-03-06 18:52:21,495][cryspy_init][INFO] pymatgen version: 2025.1.24
+[2025-03-06 18:52:21,495][cryspy_init][INFO] pyxtal version: 1.0.6
+[2025-03-06 18:52:21,495][cryspy_init][INFO] # ---------- Read input file, cryspy.in
+[2025-03-06 18:52:21,496][write_input][INFO] [basic]
+[2025-03-06 18:52:21,496][write_input][INFO] algo = RS
+[2025-03-06 18:52:21,496][write_input][INFO] calc_code = ASE
+[2025-03-06 18:52:21,496][write_input][INFO] tot_struc = 5
+[2025-03-06 18:52:21,496][write_input][INFO] nstage = 1
+[2025-03-06 18:52:21,496][write_input][INFO] njob = 2
+[2025-03-06 18:52:21,496][write_input][INFO] jobcmd = zsh
+[2025-03-06 18:52:21,496][write_input][INFO] jobfile = job_cryspy
+...
+(omitted)
+...
+[2025-03-06 18:52:21,497][rs_gen][INFO] # ---------- Initial structure generation
+[2025-03-06 18:52:21,497][rs_gen][INFO] # ------ mindist
+[2025-03-06 18:52:21,498][struc_util][INFO] Cu - Cu: 1.32
+[2025-03-06 18:52:21,498][rs_gen][INFO] # ------ generate structures
+[2025-03-06 18:52:21,519][gen_pyxtal][INFO] Structure ID      0: (8,) Space group:  31 -->  31 Pmn2_1
+[2025-03-06 18:52:21,525][gen_pyxtal][INFO] Structure ID      1: (8,) Space group: 198 --> 198 P2_13
+[2025-03-06 18:52:21,554][gen_pyxtal][INFO] Structure ID      2: (8,) Space group:   4 -->   4 P2_1
+[2025-03-06 18:52:21,580][gen_pyxtal][INFO] Structure ID      3: (8,) Space group: 193 --> 191 P6/mmm
+[2025-03-06 18:52:21,581][gen_pyxtal][WARNING] Compoisition [8] not compatible with symmetry 172:     spg = 172 retry.
+[2025-03-06 18:52:21,625][gen_pyxtal][INFO] Structure ID      4: (8,) Space group:  64 -->  64 Cmce
+[2025-03-06 18:52:22,013][cryspy_init][INFO] Elapsed time for structure generation: 0:00:00.516183
 ```
 
 
@@ -70,9 +83,6 @@ You can open this file using [VESTA](https://jp-minerals.org/vesta/en/)<i class=
 Let's take a look at `cryspy.stat` file.
 
 ``` txt
-...
-(omit)
-...
 [status]
 id_queueing = 0 1 2 3 4
 ```

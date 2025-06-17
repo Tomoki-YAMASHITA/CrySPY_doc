@@ -32,15 +32,3 @@ $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git
 
 [CrySPY utility](https://github.com/Tomoki-YAMASHITA/CrySPY_utility)<i class="fas fa-external-link-alt"></i>へ飛んで，緑の`Code`と書かれたボタンをクリック，`Download ZIP`を選んでダウンロード.
 
-## Compile cal_fingerprint
-ベイズ最適化を使うときは構造記述子を計算するための`cal_fingerpirnt`プログラムをコンパイルする．
-Fortranコンパイラが必要になる．
-ワークステーションやスパコンなどのCrySPYを用いる環境にインストールする．
-
-``` bash
-cd CrySPY_utility/f-fingerprint
-emacs Makefile
-make
-```
-
-実行ファイルの扱いに関しては[Installation/CrySPY]({{< ref "installation/cryspy/" >}})も参照.

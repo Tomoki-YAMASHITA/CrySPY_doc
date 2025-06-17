@@ -5,35 +5,31 @@ weight = 10
 +++
 
 {{% notice style="info" %}}
-ASE is easy to start for beginners because when you install CrySPY (csp-cryspy), ASE is also automatically installed.
+[ASE](https://wiki.fysik.dtu.dk/ase/)<i class="fas fa-external-link-alt"></i> is easy to start for beginners because when you [install CrySPY]({{< ref "installation/cryspy" >}}), ASE is also automatically installed.
+Although not highly accurate, ASE provides very lightweight and fast interatomic potentials, making it suitable for testing on a laptop or other low-spec machines.
 {{% /notice %}}
 
 ## Preparation of input files
 
-Follow any one of the examples and then go to "Running CrySPY" section.
+Follow one of the instructions below, then proceed to the section on running CrySPY.
 
-- [ASE in your local PC]({{< relref "ase.md" >}})
-- [soiap in your local PC]({{< relref "soiap.md" >}})
-- [VASP]({{< relref "vasp.md" >}})
-- [QE]({{< relref "qe.md" >}})
-- [OpenMX]({{< relref "omx.md" >}})
-- [LAMMPS]({{< relref "lammps.md" >}})
-- [External program]({{< relref "external.md" >}})
+- [ASE on your local PC]({{< relref "ase" >}})
+- [soiap on your local PC]({{< relref "soiap" >}})
+- [VASP]({{< relref "vasp" >}})
+- [QE]({{< relref "qe" >}})
+- [OpenMX]({{< relref "omx" >}})
+- [LAMMPS]({{< relref "lammps" >}})
 
 ## Running CrySPY
 
-1. [Check cryspy.in]({{< relref "cryspy_in.md" >}})
-1. [(version 0.10.3 or earlier) Script to run]({{< relref "script_to_run.md" >}})
-1. [First run]({{< relref "first_run.md" >}})
-1. [Submit job]({{< relref "submit_job.md" >}})
-1. [Check results]({{< relref "result.md" >}})
-1. [Append structures]({{< relref "append.md" >}})
-1. [Analysis and visualization]({{< relref "analysis_visualization.md" >}})
+1. [Check cryspy.in]({{< relref "cryspy_in" >}})
+1. [(version 0.10.3 or earlier) Script to run]({{< relref "script_to_run" >}})
+1. [First run]({{< relref "first_run" >}})
+1. [Submit job]({{< relref "submit_job" >}})
+1. [Check results]({{< relref "result" >}})
+1. [Append structures]({{< relref "append" >}})
+1. [Analysis and visualization]({{< relref "analysis_visualization" >}})
 
 
 
 
-### Loading external data
-
-Only if `calc_code == ext`.
-- [Load external data]({{< relref "ext_load_data.md" >}})

@@ -11,7 +11,7 @@ CrySPYの基本的な使い方に関してははじめに[Tutorial > Random Sear
 {{% /notice %}}
 
 
-ここで利用しているファイルは[CrySPY Utility > Examples > qe_Si16_LAQA]({{< ref "cryspy_utility/examples/qe_si16_laqa" >}})からダウンロードできる．
+ここで利用しているファイルは[CrySPY_utility/examples/qe_Si16_LAQA](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/qe_Si16_LAQA)からダウンロードできる．
 このチュートリアルでは，50個だけ初期構造を生成しているが，本来LAQAでは，もっと多くの構造を生成しておいてそこから良い候補を選択することでシミュレーションを進める．
 
 
@@ -32,7 +32,6 @@ jobcmd = qsub
 jobfile = job_cryspy
 
 [structure]
-natot = 16
 atype = Si
 nat = 16
 mindist_1 = 1.5
@@ -54,7 +53,7 @@ nselect_laqa = 4
 
 下記のように`wf`や`ws`を指定すれば，LAQAのスコアにおける重みも変えられる．
 省略した場合，デフォルトでは0.1と10.0がそれぞれ使われる．
-スコアの詳細については[Searching algorithms > LAQA]({{< ref "searching_algo/laqa" >}})を見ること．
+スコアの詳細については[Search algorithms > LAQA]({{< ref "search_algo/laqa" >}})を見ること．
 
 ```
 [LAQA]
@@ -291,4 +290,4 @@ struc_step_flag = True
 何度も繰り返しcryspyを実行するのは面倒に感じたかもしれない．
 下記のようなスクリプトを使えば自動化できる．
 
-[repeat_cryspy]({{< ref "/cryspy_utility/scripts/repeat" >}})
+[repeat_cryspy]({{< ref "/cryspy_utility/repeat" >}})

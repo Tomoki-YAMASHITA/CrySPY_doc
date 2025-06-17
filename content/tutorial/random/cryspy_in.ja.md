@@ -3,29 +3,27 @@ title: "Check cryspy.in"
 weight: 100
 ---
 
-See [Input file]({{< ref "/input" >}}) in detail.
+2025年6月16日 更新
 
-Let's take a look at `cryspy.in` again.
-This may be slightly different depending on `calc_code` you chose.
+詳細は [入力ファイル]({{< ref "/input" >}})のページも見ること．
+
+`cryspy.in`をもう一度チェックしてみよう．ここでの例は選んだ`calc_code`に応じて，準備したものと少し異なるかもしれない．
 ```
 [basic]
 algo = RS
-calc_code = soiap
+calc_code = ASE
 tot_struc = 5
 nstage = 1
-njob = 2
+njob = 5
 jobcmd = zsh
 jobfile = job_cryspy
 
 [structure]
-natot = 8
-atype = Si
+atype = Cu
 nat = 8
 
-[soiap]
-soiap_infile = soiap.in
-soiap_outfile = soiap.out
-soiap_cif = initial.cif
+[ASE]
+ase_python = ase_in.py
 
 [option]
 ```
@@ -33,16 +31,15 @@ soiap_cif = initial.cif
 
 ## [basic] section
 
-- `algo`: Algorithm. Set `RS` for Random Search.
-- `calc_code`: Structure optimizer. Choose from `VASP`, `QE`, `OMX`, `soiap`, `LAMMPS`
-- `tot_struc`: The total number of structures. In this case, 5 random structures are generated at 1st run.
-- `nstage`: The number of stages. It's up to you.
-- `njob`: The number of jobs running at the same time. In this example, CrySPY sets 2 slots for structure optimization, in other words, optimizes every 2 structures.
-- `jobcmd`: Command for jobs. Use `bash`, `zsh`, `qsub`, and so on.
-- `jobfile`: File name of the job file.
+- `algo`: アルゴリズム．ランダムサーチの場合は`RS`を使う．
+- `calc_code`: 構造最適化のコード． `VASP`, `QE`, `OMX`, `soiap`, `LAMMPS`, `ASE`から選択．
+- `tot_struc`: 構造数．この場合初回実行で5構造ランダムに生成される．
+- `nstage`: ステージ数
+- `njob`: 同時にサブミットするジョブの数．この例では2つのスロットを設定，言い換えると，2構造ずつ最適化を行う．
+- `jobcmd`: ジョブを実行または投入するコマンド． `bash`, `zsh`, `qsub`など
+- `jobfile`: ジョブファイルのファイル名
 
 
 ## [structure] section
-- `natot`: The total number of atoms. e.g. for Na8Cl8: `natot = 16`.
-- `atype`: Atom type. e.g. for Na8Cl8: `atype = Na Cl`.
-- `nat`: The number of each atom. e.g. for Na8Cl8: `nat = 8 8`
+- `atype`: Atom type. Na8Cl8の例： `atype = Na Cl`.
+- `nat`: atypeに応じた原子数． Na8Cl8の例： `nat = 8 8`

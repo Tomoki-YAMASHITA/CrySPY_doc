@@ -65,7 +65,7 @@ The python library COMBO is now optional in CrySPY.
 If you do not use Bayesian optimizaion, you do not need to install it.
 
 ## New calc_code
-- ext: see [tutorial/random/ext_load_data]({{< relref "../tutorial/random/ext_load_data.md" >}})
+- ext: Deprecated in version 1.4.0.
 
 
 ## cryspy.in

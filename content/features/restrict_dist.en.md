@@ -22,6 +22,16 @@ Structures with interatomic distances shorter than these values are automaticall
 For ternary systems, you will need `mindist_1`, `mindist_2`, and `mindist_3`.
 Mindist matrix must be a symmetric matrix.
 
+
+Since CrySPY version 1.4.0, the minimum interatomic distance check is also performed after structure relaxation.
+This feature was introduced because, with machine learning potentials, structures with nearly overlapping atoms can sometimes be obtained.
+You can disable this feature by adding the following line to `cryspy.in` (it is enabled by default):
+``` python
+[option]
+check_mindist_opt = False
+```
+
+
 ## Example: Na8Cl8
 
 ### Without mindist

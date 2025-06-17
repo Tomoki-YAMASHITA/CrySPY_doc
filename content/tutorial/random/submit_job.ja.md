@@ -96,4 +96,4 @@ recheck 1
 5構造全ての計算が終わるまで`cryspy`を繰り返し実行する．
 すべての計算が終わって，計算結果の詳細が必要なければ`work`ディレクトリを削除しても良い．
 
-何度も何度もcryspyを繰り返し実行する時は，自動スクリプト（[repeat_cryspy]({{< ref "/cryspy_utility/scripts/repeat" >}})）が役に立つ．
+何度も何度もcryspyを繰り返し実行する時は，自動スクリプト（[repeat_cryspy]({{< ref "/cryspy_utility/repeat" >}})）が役に立つ．

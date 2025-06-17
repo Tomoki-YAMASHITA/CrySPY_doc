@@ -43,7 +43,7 @@ PSTRESS = 400
 `cryspy.in`では特に何もする必要はない．
 `energy_step_flag`のオプションも使用可能でエンタルピーを読み込める．
 
-Example: [CrySPY Utility > Examples > vasp_Sr4O4_RS_pv_term]({{< ref "/cryspy_utility/examples/vasp_Sr4O4_RS_pv_term" >}})
+Example: [CrySPY utility > examples > qe_Sr4O4_RS_pv_term](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/qe_Sr4O4_RS_pv_term)
 
 ## QE
 エンタルピーを読むためには`cryspy.in`のQEセクションで`pv_term = True`をつける:
@@ -66,4 +66,3 @@ QEの入力ファイルでも`press`の設定を忘れずに:
 QEでは`energy_step_flag`オプションでエンタルピーを読むことにまだ未対応．
 {{% /notice %}}
 
-Example: [CrySPY Utility > Examples > qe_Sr4O4_RS_pv_term]({{< ref "/cryspy_utility/examples/qe_Sr4O4_RS_pv_term" >}})

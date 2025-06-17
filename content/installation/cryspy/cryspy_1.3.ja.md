@@ -27,12 +27,12 @@ pip install -e ./CrySPY
 git cloneの代わりに，[release page](https://github.com/Tomoki-YAMASHITA/CrySPY/releases)<i class="fas fa-external-link-alt"></i>から圧縮ファイルをダウンロードしてもよい．
 
 
-## PHYSBO and DScribe (option)
+## PHYSBO and DScribe (optional)
 ベイズ最適化を使う場合は， [PHYSBO](https://www.pasums.issp.u-tokyo.ac.jp/physbo/en/about)<i class="fas fa-external-link-alt"></i>と
 [DScribe](https://singroup.github.io/dscribe/latest/#)<i class="fas fa-external-link-alt"></i>が必要．
 
 ``` bash
-pip3 install physbo dscribe
+pip install physbo dscribe
 ```
 
 
@@ -40,4 +40,15 @@ pip3 install physbo dscribe
 cal_fingerprint program and COMBO are obsolete.
 {{% /notice %}}
 
+## mpi4py (optional)
+[MPI並列化を用いたランダム構造生成]({{< ref "features/mpi" >}})を行う場合は，mpi4pyが必要．
+``` bash
+pip install mpi4py
+```
 
+## Jupyter and nglview (optional)
+ローカルPCでの解析やインタラクティブモードには[Jupyter](https://jupyter.org)<i class="fas fa-external-link-alt"></i>が必要．
+インタラクティブモードで結晶構造を可視化する時に[nglview](https://github.com/nglviewer/nglview)<i class="fas fa-external-link-alt"></i>を使いたい場合はインストールしておく．
+``` bash
+pip install nglview
+```

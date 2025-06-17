@@ -6,6 +6,7 @@ weight: 200
 
 | Name               | Value         | Default      | Description                                                                                      |
 | ----               | -----         | -------      | -----------                                                                                      |
+| `check_mindist_opt`| bool          | `True`       | If True, a mindist constraint  is checked after structure relaxation.                            |
 | `stop_chkpt`       | int           | 0            | CrySPY stops at a specified check point.                                                         |
 | `load_struc_flag`  | bool          | `False`      | If True, load initial structures from `./data/pkl_data/init_struc_data.pkl`.                     |
 | `stop_next_struc`  | bool          | `False`      | If True, CrySPY does not submit jobs for next structures, but jobs for next stage are submitted. |

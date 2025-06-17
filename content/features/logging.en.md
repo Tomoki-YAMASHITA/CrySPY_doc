@@ -34,7 +34,7 @@ Start CrySPY 1.2.0
 [2023-07-10 18:40:54,800][cryspy_init][INFO] Elapsed time for structure generation: 0:00:00.408367
 ```
 
-If you want to run cryspy as a background job, or if you use the auto script ([repeat_cryspy]({{< ref "cryspy_utility/scripts/repeat" >}})), and do NOT want it to output to the screen, run cryspy with the `-n` option as follow:
+If you do not want output in the console, run cryspy with the `-n` option as follows:
 ``` bash
 cryspy -n
 ```

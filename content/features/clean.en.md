@@ -3,6 +3,9 @@ title: "Clean"
 weight: 20
 ---
 
+2024 Dec. 22 updated
+
+
 CrySPY has a simple clean (just move files) function.
 It is useful when you want to start over from the beginning.
 The following files are cleaned up:
@@ -12,8 +15,6 @@ The following files are cleaned up:
 - lock_cryspy
 - data/*
 - work/*
-- ext/*
-- tmp_calc_FP/*
 - tmp_gen_struc/*
 
 To clean up, run cryspy with `-c` or `--clean` option as:

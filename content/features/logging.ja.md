@@ -34,7 +34,7 @@ Start CrySPY 1.2.0
 [2023-07-10 18:40:54,800][cryspy_init][INFO] Elapsed time for structure generation: 0:00:00.408367
 ```
 
-CrySPYをバックグラウンドジョブとして実行する場合や，自動スクリプト（[repeat_cryspy]({{< ref "cryspy_utility/scripts/repeat" >}})）を使う場合などで，画面に出力させたくないときは下記のように`-n` オプションをつけて実行する．
+ログを画面に出力させたくないときは下記のように`-n` オプションをつけて実行する．
 ``` bash
 cryspy -n
 ```

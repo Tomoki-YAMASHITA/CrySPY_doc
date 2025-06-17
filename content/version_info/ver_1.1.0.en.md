@@ -15,7 +15,7 @@ Updated score formula to take into account the stress term (T. Yamashita and H. 
 See also
 - [Tutorial > LAQA]({{< ref "tutorial/laqa" >}})
 - [Input file > [LAQA] section ]({{< ref "input/laqa" >}})
-- [CrySPY Utility > Examples > qe_Si16_LAQA]({{< ref "cryspy_utility/examples/qe_si16_laqa" >}})
+- [CrySPY_utility/examples/qe_Si16_LAQA](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/qe_Si16_LAQA)
 
 
 ## Backup

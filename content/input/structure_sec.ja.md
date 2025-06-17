@@ -3,35 +3,33 @@ title: "[structure] section"
 weight: 30
 ---
 
-2024 May 22, updated
+2025年3月6日 更新
 
 | Name | Value | Default | Description |
 | ---- | ----- | ------- | ----------- |
-| `struc_mode` | `crystal`, `mol`, `mol_bs` | `crystal`   | Structure generation mode |
-| `natot` | int |  | The total number of atoms. |
-| `atype` | atomic symbol [atomic symbol ...] |   | Atom type. e.g. `atype = Na Cl`. |
-| `nat`   | int [int ...] |   | The number of atoms in each atom type. e.g. `nat = 8 8`. |
-| `mindist` (`mindist_?`)   | float [float ...] | `None` | Constraint on minimum interatomic distance [Å]. |
-| `mindist_factor` | float | 1.0 | Scaling factor for `mindist`. |
-| `vol_factor`  | float | 1.0 | Minimum and maximum values of volume factor. |
-| `vol_mu`   | float | `None` | Mean of volume if you want specify the volume of cells. |
-| `vol_sigma`| float | `None` | Standard deviation of volume if you want specify the volume of cells. |
-| `symprec`   | float | 0.01 | Precision for symmetry finding. |
-| `spgnum`   | `all`, space group number, 0 | `all` | Constraint on space group. If `all`, 1--230. If 0, random structure without space group information (no symmetry). |
-| `use_find_wy`  | bool | `False` | Structure generation with find_wy. |
+| `struc_mode` | `crystal`, `mol`, `mol_bs` | `crystal`   | 構造生成モード |
+| `atype` | atomic symbol [atomic symbol ...] |   | Atom type. e.g. `atype = Na Cl`. `EA-vc`では使用されない． |
+| `nat`   | int [int ...] |   | atom typeに応じた原子数． e.g. `nat = 8 8`. |
+| `mindist` (`mindist_?`)   | float [float ...] | `None` | 最小原子間距離の制限 [Å]. |
+| `mindist_factor` | float | 1.0 | `mindist`のスケーリング係数 |
+| `vol_factor`  | float | 1.0 | 体積スケーリング係数 |
+| `vol_mu`   | float | `None` | 体積の平均．体積を指定したい場合に使用 |
+| `vol_sigma`| float | `None` | 体積の標準偏差．体積を指定したい場合に使用 |
+| `symprec`   | float | 0.01 | 対称性を見つける際の精度 |
+| `spgnum`   | `all`, space group number, 0 | `all` | 空間群の制限．`all`であれば1--230の全て．0であれば空間群情報のない（対称性のない）ランダム構造生成 |
+| `use_find_wy`  | bool | `False` | find_wyを使用して構造生成する際のオプション |
 
 ## mindist
-- [Features > Restriction on interatomic distances ]({{< ref "features/restrict_dist" >}})
+- [機能 > 原子間距離の制限 ]({{< ref "features/restrict_dist" >}})
 
 ---------
 
 if `algo` is `EA-vc`
-(EA-vc is still beta version)
 
 | Name | Value | Default | Description |
 | ---- | ----- | ------- | ----------- |
-| `ll_nat`   | int [int ...] |   | Lower limit of `nat`. e.g. `ll_nat = 1 1`. |
-| `ul_nat`   | int [int ...] |   | Upper limit of `nat`. e.g. `ul_nat = 8 8`. |
+| `ll_nat`   | int [int ...] |   | `nat`の下限. e.g. `ll_nat = 0 0`. |
+| `ul_nat`   | int [int ...] |   | `nat`の上限. e.g. `ul_nat = 8 8`. |
 
 ----------------
 

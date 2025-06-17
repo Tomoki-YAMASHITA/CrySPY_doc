@@ -11,7 +11,7 @@ Here, we assume CrySPY 1.1.0 or later.
 {{% /notice %}}
 
 
-The example files used here can be downloaded from [CrySPY Utility > Examples > qe_Si16_LAQA]({{< ref "cryspy_utility/examples/qe_si16_laqa" >}}).
+The example files used here can be downloaded from [CrySPY_utility/examples/qe_Si16_LAQA](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/qe_Si16_LAQA).
 In this tutorial, only 50 initial structures are generated, but originally, LAQA is designed to select candidates from many more structures.
 
 
@@ -32,7 +32,6 @@ jobcmd = qsub
 jobfile = job_cryspy
 
 [structure]
-natot = 16
 atype = Si
 nat = 16
 mindist_1 = 1.5
@@ -54,7 +53,7 @@ nselect_laqa = 4
 
 If you want to change the value of the weight for LAQA score, edit `wf` and `ws` as below.
 If omitted, the default values are used (0.1 and 10.0, respectively).
-See, [Searching algorithms > LAQA]({{< ref "searching_algo/laqa" >}}) for the score.
+See, [Search algorithms > LAQA]({{< ref "search_algo/laqa" >}}) for the score.
 
 ```
 [LAQA]
@@ -295,4 +294,4 @@ You may find it tedious to run cryspy over and over again.
 The auto script could help you.
 
 
-[repeat_cryspy]({{< ref "/cryspy_utility/scripts/repeat" >}})
+[repeat_cryspy]({{< ref "/cryspy_utility/repeat" >}})

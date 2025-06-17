@@ -9,8 +9,10 @@ chapter = true
 # Tutorial
 
 {{% notice style="info" %}}
-Beginners are encouraged to start with a random search. You can find examaple files in [cryspy_utility]({{< ref "/cryspy_utility/" >}}).
-{{% /notice %}}
+- Beginners are encouraged to start with a random search.
+- Additional example files not included in the tutorials are also available in [CrySPY utility]({{< ref "cryspy_utility" >}}).
+{{% /notice %}}.
+
 
 ## Table of contents
 

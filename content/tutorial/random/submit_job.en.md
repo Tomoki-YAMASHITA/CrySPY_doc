@@ -100,4 +100,4 @@ Directories of the finished structure are moved to the `fin` directory.
 Repeat `cryspy` several times until all 5 structures are done.
 You can delete the `work` directory when the simulation is done if you do not need it.
 
-The auto script ([repeat_cryspy]({{< ref "/cryspy_utility/scripts/repeat" >}})) may help you.
+The auto script ([repeat_cryspy]({{< ref "/cryspy_utility/repeat" >}})) may help you.

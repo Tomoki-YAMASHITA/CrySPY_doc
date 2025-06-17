@@ -3,12 +3,14 @@ title: "[basic] section"
 weight: 20
 ---
 
+2025年3月6日 更新
+
 | Name | Value | Default | Description |
 | ---- | ----- | ------- | ----------- |
-| `algo` | `RS`, `EA`, `BO`, `LAQA` |   | Algorithm |
-| `calc_code` | `VASP`, `QE`, `OMX`, `soiap`, `LAMMPS` |  | Caluculation code for structure optimization |
-| `tot_struc` | int |   | The total number of structures |
-| `nstage`    | int |   | The number of stages |
-| `njob`      | int |   | The number of jobs running at the same time. |
-| `jobcmd`    | str |   | Command to submit jobs such as qsub and sbatch. |
-| `jobfile`   | str |   | File name of the job file. |
+| `algo` | `RS`, `EA`, `EA-vc`, `BO`, `LAQA` |   | アルゴリズム |
+| `calc_code` | `VASP`, `QE`, `OMX`, `soiap`, `LAMMPS`, `ASE` |  | 構造最適化の計算コード |
+| `tot_struc` | int |   | 構造数．EAやEA-vcの場合は使用されない．|
+| `nstage`    | int |   | ステージ数 |
+| `njob`      | int |   | 同時に投入するジョブの数 |
+| `jobcmd`    | str |   | ジョブを投入するコマンド，例えばqsubやsbatch |
+| `jobfile`   | str |   | ジョブファイルのファイル名 |

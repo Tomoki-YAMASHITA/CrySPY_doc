@@ -43,7 +43,6 @@ jobcmd = zsh
 jobfile = job_cryspy
 
 [structure]
-natot = 8
 atype = Si
 nat = 8
 
@@ -54,7 +53,7 @@ soiap_cif = initial.cif
 
 [option]
 ```
-`tot_struc`，`natot`，`atype`，`nat`以外の変数は構造生成に関係がないのでここでは無視して良い．
+`tot_struc`，`atype`，`nat`以外の変数は構造生成に関係がないのでここでは無視して良い．
 
 ## 実行
 

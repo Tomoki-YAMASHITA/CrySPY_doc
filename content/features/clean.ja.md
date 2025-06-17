@@ -3,6 +3,9 @@ title: "クリーン"
 weight: 20
 ---
 
+2024 Dec. 22 updated
+
+
 CrySPYはシンプルなクリーン機能を備えている．
 初めからやり直したい時に便利となる．
 以下のファイルがクリーン（実際はファイルを移動するだけ）される．
@@ -13,8 +16,6 @@ CrySPYはシンプルなクリーン機能を備えている．
 - lock_cryspy
 - data/*
 - work/*
-- ext/*
-- tmp_calc_FP/*
 - tmp_gen_struc/*
 
 クリーンする場合は`-c` または `--clean` オプションをつけてcryspyを実行する:

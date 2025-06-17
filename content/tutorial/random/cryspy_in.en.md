@@ -3,6 +3,8 @@ title: "Check cryspy.in"
 weight: 100
 ---
 
+2025 June 16, updated
+
 See [Input file]({{< ref "/input" >}}) in detail.
 
 Let's take a look at `cryspy.in` again.
@@ -10,22 +12,19 @@ This may be slightly different depending on `calc_code` you chose.
 ```
 [basic]
 algo = RS
-calc_code = soiap
+calc_code = ASE
 tot_struc = 5
 nstage = 1
-njob = 2
+njob = 5
 jobcmd = zsh
 jobfile = job_cryspy
 
 [structure]
-natot = 8
-atype = Si
+atype = Cu
 nat = 8
 
-[soiap]
-soiap_infile = soiap.in
-soiap_outfile = soiap.out
-soiap_cif = initial.cif
+[ASE]
+ase_python = ase_in.py
 
 [option]
 ```
@@ -34,7 +33,7 @@ soiap_cif = initial.cif
 ## [basic] section
 
 - `algo`: Algorithm. Set `RS` for Random Search.
-- `calc_code`: Structure optimizer. Choose from `VASP`, `QE`, `OMX`, `soiap`, `LAMMPS`
+- `calc_code`: Structure optimizer. Choose from `VASP`, `QE`, `OMX`, `soiap`, `LAMMPS`, `ASE`
 - `tot_struc`: The total number of structures. In this case, 5 random structures are generated at 1st run.
 - `nstage`: The number of stages. It's up to you.
 - `njob`: The number of jobs running at the same time. In this example, CrySPY sets 2 slots for structure optimization, in other words, optimizes every 2 structures.
@@ -43,6 +42,5 @@ soiap_cif = initial.cif
 
 
 ## [structure] section
-- `natot`: The total number of atoms. e.g. for Na8Cl8: `natot = 16`.
 - `atype`: Atom type. e.g. for Na8Cl8: `atype = Na Cl`.
-- `nat`: The number of each atom. e.g. for Na8Cl8: `nat = 8 8`
+- `nat`: The number of atoms corresponding to each atype. e.g. for Na8Cl8: `nat = 8 8`

@@ -1,8 +1,9 @@
 ---
-title: "soiap in your local PC"
+title: "soiap on your local PC"
 weight: 10
 ---
 
+2025 March 6 update
 
 [soiap](https://github.com/nbsato/soiap)<i class="fas fa-external-link-alt"></i> is Structure Optimization with InterAtomic Potential.
 It is suitable for testing CrySPY because of its fast structure optimization.
@@ -26,7 +27,7 @@ Here, we assume the following conditions:
 ## Input files
 Move to your working directory, and copy input example files by one of the following methods.
 
-- Download from [cryspy_utility/examples/soiap_Si8_RS]({{< ref "/cryspy_utility/examples/soiap_Si8_RS" >}})
+- Download from [Cryspy_utility/examples/soiap_Si8_RS](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/soiap_Si8_RS)
 - Copy from CrySPY utility that you installed
 - (only version 0.10.3 or earlier) `cp -r ~/CrySPY_root/CrySPY-0.9.0/example/v0.9.0/soiap_RS_Si8 .`
 
@@ -60,7 +61,6 @@ jobcmd = zsh
 jobfile = job_cryspy
 
 [structure]
-natot = 8
 atype = Si
 nat = 8
 

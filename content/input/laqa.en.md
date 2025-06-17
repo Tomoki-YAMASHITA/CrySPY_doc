@@ -12,7 +12,7 @@ weight: 110
 | `ws` | float | 10.0  | Weight of the stress term.  |
 
 {{% notice info %}}
-See also [Searching algorithms > LAQA]({{< ref "searching_algo/laqa" >}})
+See also [Search algorithms > LAQA]({{< ref "search_algo/laqa" >}})
 {{% /notice %}}
 
 {{% notice info %}}

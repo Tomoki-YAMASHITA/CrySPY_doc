@@ -32,16 +32,3 @@ $ git clone https://github.com/Tomoki-YAMASHITA/CrySPY_utility.git
 
 Go to [CrySPY utility](https://github.com/Tomoki-YAMASHITA/CrySPY_utility)<i class="fas fa-external-link-alt"></i> and click green `Code` button, then choose `Download ZIP`.
 
-
-## Compile cal_fingerprint
-When you use Bayesian optimization, compile `cal_fingerpirnt` program which calculates structure descriptors.
-A Fortran compiler is needed.
-Install in the environment where CrySPY is used, such as a workstations and supercomputers.
-
-``` bash
-cd CrySPY_utility/f-fingerprint
-emacs Makefile
-make
-```
-
-See also [Instllation/CrySPY]({{< ref "installation/cryspy/" >}}).

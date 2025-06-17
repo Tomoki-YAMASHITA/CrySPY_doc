@@ -19,11 +19,15 @@ CrySPY automates the following:
 
 CrySPY can be install by `pip install csp-cryspy`.
 
+![fig_csp](/images/csp/csp.png?width=40vw)
 
 ## Latest version
-CrySPY 1.3.0 (2024 May 31)
+CrySPY 1.4.0 (2025 June 17)
 
 ## News
++ [2025 June 17] CrySPY 1.4.0 released. [Version information/version 1.4.0]({{< ref "version_info/ver_1.4.0.md" >}})
+  - Variable-composition evolutionary algorithm
+  - Interactive mode
 + [2024 May 31] CrySPY 1.3.0 released. [Version information/version 1.3.0]({{< ref "version_info/ver_1.3.0.md" >}})
   - There are important changes. See version information.
 + [2024 May 10] CrySPY 1.2.5 released. [Version information/version 1.2.5]({{< ref "version_info/ver_1.2.5.md" >}})

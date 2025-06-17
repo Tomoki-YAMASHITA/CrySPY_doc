@@ -21,7 +21,7 @@ Let us generate molecular crystal structures that consist of 2 benzenes.
 
 Move to your working directory, and copy input example files by one of the following methods.
 
-- Download from [CrySPY Utility > Examples > qe_benzene_2_RS_mol]({{< ref "/cryspy_utility/examples/qe_benzene_2_RS_mol" >}})
+- Download from [CrySPY utility > examples > qe_benzene_2_RS_mol](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/qe_benzene_2_RS_mol)
 - Copy from CrySPY utility that you installed
 - (only version 0.10.3 or earlier) `cp -r ~/CrySPY_root/CrySPY-0.9.0/example/QE_benzene_2_RS_mol .`
 
@@ -41,7 +41,6 @@ jobfile = job_cryspy
 
 [structure]
 struc_mode = mol
-natot = 24
 atype = H C
 nat = 12 12
 mol_file = benzene
@@ -115,7 +114,6 @@ jobfile = job_cryspy
 
 [structure]
 struc_mode = mol
-natot = 16
 atype = Li P S
 nat = 6 2 8
 mol_file = ./Li.xyz  ./PS4.xyz
@@ -152,7 +150,6 @@ If the limit is insufficient, you have to increase it as (see last line):
 
 ``` zsh
 struc_mode = mol
-natot = 16
 atype = Li P S
 nat = 6 2 8
 mol_file = ./Li.xyz  ./PS4.xyz
@@ -168,7 +165,6 @@ It is also possible to specify a range of factors.
 Set minimum and maximum values as follows:
 ``` zsh
 struc_mode = mol
-natot = 16
 atype = Li P S
 nat = 6 2 8
 mol_file = ./Li.xyz  ./PS4.xyz

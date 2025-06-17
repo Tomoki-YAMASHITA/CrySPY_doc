@@ -15,7 +15,7 @@ MPIを用いたランダム構造生成が利用可能．
 詳細は下記を参照．
 - [Tutorial > LAQA]({{< ref "tutorial/laqa" >}})
 - [Input file > [LAQA] section ]({{< ref "input/laqa" >}})
-- [CrySPY Utility > Examples > qe_Si16_LAQA]({{< ref "cryspy_utility/examples/qe_si16_laqa" >}})
+- [CrySPY_utility/examples/qe_Si16_LAQA](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/qe_Si16_LAQA)
 
 
 ## Backup

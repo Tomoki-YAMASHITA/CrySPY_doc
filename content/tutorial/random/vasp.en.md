@@ -3,7 +3,7 @@ title: "VASP"
 weight: 20
 ---
 
-2024 April 24
+2025 March 6 update
 
 In this tutorial, we try to use CrySPY in a PC cluster with a job scheduler system such as PBS.
 Here we employ VASP.
@@ -21,7 +21,7 @@ Here, we assume the following conditions:
 ## Input files
 Move to your working directory, and copy the example files by one of the following methods.
 
-- Download from [cryspy_utility/examples/vasp_Na8Cl8_RS]({{< ref "/cryspy_utility/examples/vasp_Na8Cl8_RS" >}})
+- Download from [Cryspy_utility/examples/vasp_Na8Cl8_RS](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/vasp_Na8Cl8_RS)
 - Copy from CrySPY utility that you installed
 
 ``` zsh
@@ -55,7 +55,6 @@ jobcmd = qsub
 jobfile = job_cryspy
 
 [structure]
-natot = 16
 atype = Na Cl
 nat = 8 8
 mindist_1 = 2.5 1.5

@@ -3,15 +3,20 @@ title: "バックアップ"
 weight: 10
 ---
 
+2024 Dec. 22 updated
+
+
 CrySPYはシンプルなバックアップ機能を備えている．
 バックアップの対象は以下のファイル：
 - cryspy.in
 - cryspy.stat
 - log_cryspy
 - err_cryspy
+- debug_cryspy
+- cryspy_interactive.ipynb
 - calc_in/*
 - data/*
-- ext/*
+
 
 work/* は含まれいないので注意．
 

@@ -1,9 +1,9 @@
 ---
-title: "ASE in your local PC"
+title: "ASE on your local PC"
 weight: 8
 ---
 
-2023 July 10
+2026年6月16日 更新
 
 [ASE](https://wiki.fysik.dtu.dk/ase/)<i class="fas fa-external-link-alt"></i>は様々なコードのインターフェースを提供しているPythonライブラリであり，
 [Pure Python EMT calculator](https://wiki.fysik.dtu.dk/ase/ase/calculators/emt.html#ase.calculators.emt.EMT)<i class="fas fa-external-link-alt"></i>というシンプルなEMTの計算も実行できる．CrySPYさえインストールしてあれば，精度はともかく簡単に計算できるので，CrySPYのテストにちょうど良い．
@@ -21,7 +21,7 @@ weight: 8
 ## Input files
 どこか適当なワーキングディレクトリに移動して，まずはexampleをコピーしてくる．下記のどちらからコピーしてきても良い．
 
-- Download from [cryspy_utility/examples/ase_Cu8_RS]({{< ref "/cryspy_utility/examples/ase_Cu8_RS" >}})
+- Download from [CrySPY_utility/examples/ase_Cu8_RS](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/ase_Cu8_RS)
 - Copy from CrySPY utility that you installed
 
 
@@ -48,12 +48,11 @@ algo = RS
 calc_code = ASE
 tot_struc = 5
 nstage = 1
-njob = 2
+njob = 5
 jobcmd = zsh
 jobfile = job_cryspy
 
 [structure]
-natot = 8
 atype = Cu
 nat = 8
 
@@ -121,12 +120,10 @@ ASEのチュートリアルでは`nstage = 1`を用いるので，ASEのイン�
 
 
 ``` python
-from ase.constraints import ExpCellFilter, StrainFilter
+from ase.constraints import FixSymmetry
+from ase.filters import FrechetCellFilter
 from ase.calculators.emt import EMT
-from ase.calculators.lj import LennardJones
-from ase.optimize.sciopt import SciPyFminCG
 from ase.optimize import BFGS
-from ase.spacegroup.symmetrize import FixSymmetry
 import numpy as np
 from ase.io import read, write
 
@@ -137,21 +134,23 @@ atoms = read('POSCAR', format='vasp')
 # ---------- setting and run
 atoms.calc = EMT()
 atoms.set_constraint([FixSymmetry(atoms)])
-atoms = ExpCellFilter(atoms, hydrostatic_strain=False)
-opt = BFGS(atoms)
-#opt=SciPyFminCG(atoms)
-opt.run()
+cell_filter = FrechetCellFilter(atoms, hydrostatic_strain=False)
+opt = BFGS(cell_filter)
+opt.run(fmax=0.01, steps=2000)
 
 # ---------- opt. structure and energy
 # [rule in ASE interface]
 # output file for energy: 'log.tote' in eV/cell
 #                         CrySPY reads the last line of 'log.tote'
 # output file for structure: 'CONTCAR' in vasp format
-e = atoms.atoms.get_total_energy()
+e = cell_filter.atoms.get_total_energy()
 with open('log.tote', mode='w') as f:
     f.write(str(e))
 
-write('CONTCAR', atoms.atoms, format='vasp')
+# ------ write structure
+opt_atoms = cell_filter.atoms.copy()
+opt_atoms.set_constraint(None)    # remove constraint for pymatgen
+write('CONTCAR', opt_atoms, format='vasp', direct=True)
 ```
 
 ASEはVASPやQEなどと違って，入力ファイル（python script）は自分で書くことになるので自由度がある．

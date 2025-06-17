@@ -17,11 +17,18 @@ CrySPY（クリスピー）は機械学習を利用したPython製の結晶構�
 - 構造最適化データの収集
 - 機械学習による候補の選択
 
+`pip install csp-cryspy`でインストールできる．
+
+![fig_csp](/images/csp/csp.png?width=40vw)
+
 
 ## 最新バージョン
-CrySPY 1.3.0 （2024年5月31日）
+CrySPY 1.4.0 （2025年6月17日）
 
 ## ニュース
++ [2025 June 17] CrySPY 1.4.0 released. [Version information/version 1.4.0]({{< ref "version_info/ver_1.4.0.md" >}})
+  - 組成可変型進化的アルゴリズム
+  - インタラクティブモード
 + [2024 May 31] CrySPY 1.3.0 released. [Version information/version 1.3.0]({{< ref "version_info/ver_1.3.0.md" >}})
   - いくつか重要な変更あり．See version information.
 + [2024 May 10] CrySPY 1.2.5 released. [Version information/version 1.2.5]({{< ref "version_info/ver_1.2.5.md" >}})

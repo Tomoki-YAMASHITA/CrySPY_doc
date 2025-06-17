@@ -11,15 +11,29 @@ weight: 10
   - (optional) mpi4py
   - (optional, required if algo is BO) [PHYSBO](https://www.pasums.issp.u-tokyo.ac.jp/physbo/en/about)<i class="fas fa-external-link-alt"></i> (Not COMBO)
   - (optional, required if algo is BO) [dscribe](https://singroup.github.io/dscribe/latest)<i class="fas fa-external-link-alt"></i>
+  - (optional) [nglview](https://github.com/nglviewer/nglview)<i class="fas fa-external-link-alt"></i>
 
 If you install csp-cryspy with pip, necessary libraries such as PyXtal, pymatgen, and ASE will be installed automatically.
 Go to [Installation > CrySPY]({{< relref "installation/cryspy" >}}) for detail.
 
+2025 June 17, Tested and confirmed to work in the following environments (as installed via `pip install csp-cryspy`)
+- python 3.13.5
+- CrySPY 1.4.0
+- numpy 1.26.4 (with physbo) and 2.3.0（without physbo. physbo requires numpy < 2.0）
+- pandas 2.3.0
+- pymatgen 2025.6.14
+- pyxtal 1.0.9
+- scipy 1.15.3
+
 #### Quick install
 ``` bash
-pip3 install csp-cryspy dscribe physbo
+pip install csp-cryspy
 ```
 
+When using BO
+``` bash
+pip install dscribe physbo
+```
 
 ### CrySPY 1.1.0 -- 1.2.5
 

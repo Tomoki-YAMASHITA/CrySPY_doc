@@ -1,10 +1,10 @@
 ---
-title: "Restriction on interatomic distances"
+title: "原子間距離の制限"
 weight: 60
 ---
 
 
-2024年4月23日 更新
+2025年6月17日 更新
 
 構造生成時に原子間距離の制限を行うことができる．
 下記はA-B 2元系における[structure]セクションの最低原子間距離の設定例．
@@ -23,6 +23,16 @@ mindist_2 = 1.8 1.5
 
 ３元系では `mindist_1`，`mindist_2`および`mindist_3`が必要になる．
 mindistの行列は対称行列でなければならない．
+
+
+CrySPY 1.4.0以降では，この最低原子間距離のチェックは構造最適化後にも行われる．
+導入した理由は，機械学習ポテンシャルなどでは時々原子がほぼ重なるような構造が得られてしまうため．
+`cryspy.in`で下記のようにすることでこの機能をオフにすることもできる（デフォルトはオン）
+``` python
+[option]
+check_mindist_opt = False
+```
+
 
 ## Example: Na8Cl8
 

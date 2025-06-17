@@ -1,9 +1,9 @@
 ---
-title: "soiap in your local PC"
+title: "soiap on your local PC"
 weight: 10
 ---
 
-2024年4月21日 日本語化
+2025年3月6日 更新
 
 [soiap](https://github.com/nbsato/soiap)<i class="fas fa-external-link-alt"></i>は原子間ポテンシャルを使用した計算ができるソフトウェアであり，計算が軽いのでCrySPYのテストにちょうど良い．
 soiapのインストールや詳細は[instructions](https://github.com/nbsato/soiap/blob/master/doc/instructions.md)<i class="fas fa-external-link-alt"></i>を参照．
@@ -25,7 +25,7 @@ soiapのインストールや詳細は[instructions](https://github.com/nbsato/s
 ## Input files
 どこか適当なワーキングディレクトリに移動して，まずはexampleをコピーしてくる．下記のどちらからコピーしてきても良い．
 
-- Download from [cryspy_utility/examples/soiap_Si8_RS]({{< ref "/cryspy_utility/examples/soiap_Si8_RS" >}})
+- Download from [Cryspy_utility/examples/soiap_Si8_RS](https://github.com/Tomoki-YAMASHITA/CrySPY_utility/tree/master/examples/soiap_Si8_RS)
 - Copy from CrySPY utility that you installed
 - (only version 0.10.3 or earlier) `cp -r ~/CrySPY_root/CrySPY-0.9.0/example/v0.9.0/soiap_RS_Si8 .`
 
@@ -59,7 +59,6 @@ jobcmd = zsh
 jobfile = job_cryspy
 
 [structure]
-natot = 8
 atype = Si
 nat = 8
 
